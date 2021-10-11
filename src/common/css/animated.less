@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.animated {
+    &.infinite {
+        animation-iteration-count: infinite;
+    }
+}
+.luminousBoxFlow {
+    animation-name: luminousBoxFlow;
+    transform-origin: center bottom;
+}
+@keyframes luminousBoxFlow {
+    0% {
+          border-image: linear-gradient(270deg, rgba(81,217,250,0.00), #28b1f2 0%, rgba(40,177,242,0.00)) 1 1;
+    }
+
+    to {
+         border-image: linear-gradient(270deg, rgba(81,217,250,0.00), #28b1f2 100%, rgba(40,177,242,0.00)) 1 1;
+
+    }
+}
