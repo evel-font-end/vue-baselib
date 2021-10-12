@@ -1,9 +1,9 @@
 <template>
   <div class='content'>
     <box-container class='bg-grey' :spinShow='spinShow1'>
-      <base-Bar :chartId='"chartBar"' :source='infoData' @listenChild='getChild' />
+      <base-Bar :chartId='"chartBar"' />
     </box-container>
-    <box-container class='bg-grey' :spinShow='spinShow2'>
+    <!-- <box-container class='bg-grey' :spinShow='spinShow2'>
       <bar-style-two :source='personTypeData' />
     </box-container>
     <box-container class='bg-grey' :spinShow='spinShow3'>
@@ -14,7 +14,7 @@
     </box-container>
     <box-container class='bg-grey' :spinShow='spinShow5'>
       <pictorial-bar :source='pictorialSource' />
-    </box-container>
+    </box-container> -->
   </div>
 </template>
 <script>
@@ -64,7 +64,7 @@ export default {
       spinShow1: true,
       spinShow2: true,
       spinShow3: true,
-      spinShow4: false,
+      spinShow4: true,
       spinShow5: false,
       bothSource: [
         { name: '北京', data1: 100, data2: 10 },
@@ -89,7 +89,7 @@ export default {
     }, 1000)
   },
   created() {
-    this.$http.get('/bar/personRangeSource')
+    /* this.$http.get('/bar/personRangeSource')
       .then(res => {
         if (res.state && res.data) {
           this.personRangeData = res.data
@@ -103,7 +103,7 @@ export default {
             this.personRangeData = res
             this.spinShow3 = false
           })
-      })
+      }) */
   },
   methods: {
     getChild(type) {

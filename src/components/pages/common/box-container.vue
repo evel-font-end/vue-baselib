@@ -1,21 +1,22 @@
 <template>
   <div
-      class='show-item'
-      @mouseenter='isActive = true'
-      @mouseleave='isActive = false'>
-      <slot />
-      <Spin size='large' fix v-if='spinShow' />
-      <div
-        v-if='toolsShow'
-        :class='["tools-cont", isActive ? "active" : ""]'>
-        <Button
-          type='ghost'
-          icon='code-working'
-          size='small'
-          class='tools-btn'
-          @click='clickHandler'>查看option</Button>
-      </div>
+    class="show-item"
+    @mouseenter="isActive = true"
+    @mouseleave="isActive = false"
+  >
+    <slot />
+    <Spin size="large" fix v-if="spinShow" />
+    <div v-if="toolsShow" :class="['tools-cont', isActive ? 'active' : '']">
+      <Button
+        type="ghost"
+        icon="code-working"
+        size="small"
+        class="tools-btn"
+        @click="clickHandler"
+        >查看options</Button
+      >
     </div>
+  </div>
 </template>
 <script>
 export default {
@@ -23,64 +24,65 @@ export default {
     spinShow: {
       require: true,
       type: Boolean,
-      default: () => false,
+      default: () => false
     },
     toolsShow: {
       type: Boolean,
-      default: () => true,
+      default: () => true
     },
-    showOptionHandler: {
+    /* showOptionHandler: {
       type: Function,
       default: () => {
-        console.log('当前组件无配置项')
-      },
-    },
+        console.log("当前组件无配置项");
+      }
+    } */
   },
   data() {
     return {
-      isActive: false,
-    }
+      isActive: false
+    };
   },
   methods: {
     clickHandler() {
-      this.$emit('showOptionHandler')
-    },
-  },
-}
+      console.log('5555')
+      this.$emit("showOptionHandler");
+    }
+  }
+};
 </script>
 <style lang="scss" scoped>
-$showBoxWidth: 400px;
-$showBoxHeight: 300px;
+$showBoxWidth: 800px;
+$showBoxHeight: 333px;
 @function scaleHeight($realWidth, $realHeight) {
   @return $showBoxWidth * $realHeight / $realWidth;
 }
-.show-item{
+.show-item {
   width: $showBoxWidth;
   height: $showBoxHeight;
   margin: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #ccc;
-  box-shadow: 1px 1px 3px #ccc;
-  border-radius: 10px;
-  background-color: #fff;
+  // border: 1px solid #ccc;
+  // box-shadow: 1px 1px 3px #ccc;
+  border-radius: 16px;
+  background-color: #132845;
   padding: 15px;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
 
-  &.bg-black{
-    background-color: #000;
-    color: rgba(255, 255, 255, .8);
-  }
-  &.bg-grey{
-    /* background-color: rgba(0, 0, 0, .6); */
+  &.bg-black {
     background-color: #495060;
-    color: rgba(255, 255, 255, .8);
+    color: rgba(255, 255, 255, 0.8);
+  }
+  &.bg-grey {
+    /* background-color: rgba(0, 0, 0, .6); */
+    background-color: #132845;
+    color: rgba(255, 255, 255, 0.8);
   }
 
-  .tools-cont{
+  .tools-cont {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -90,22 +92,21 @@ $showBoxHeight: 300px;
     padding: 0 15px;
     box-sizing: border-box;
     text-align: right;
-    background-color: rgba(0, 0, 0, .4);
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 0 0 10px 10px;
     transform: translateY(100%);
-    transition: all .3s ease-in;
+    transition: all 0.3s ease-in;
 
-    &.active{
+    &.active {
       transform: translateY(0);
     }
   }
 }
-.tools-btn{
+.tools-btn {
   color: #fff;
 
-  &:hover{
+  &:hover {
     color: #57a3f3;
   }
 }
 </style>
-
