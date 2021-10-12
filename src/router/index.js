@@ -11,20 +11,28 @@ export default new Router({
       name: 'home',
       component: res => require(['@/components/pages/home'], res),
       children: [{
-        path: '/pie',
-        name: 'pie',
-        component: res => require(['@/components/pages/pie'], res),
-      }, {
         path: '/bar',
         name: 'bar',
+        title: '柱状图',
+        icon: 'stats-bars',
         component: res => require(['@/components/pages/bar'], res),
       }, {
         path: '/line',
         name: 'line',
+        title: '折线图',
+        icon: 'arrow-graph-up-right',
         component: res => require(['@/components/pages/line'], res),
       }, {
+        path: '/pie',
+        name: 'pie',
+        title: '饼状图',
+        icon: 'ios-pie-outline',
+        component: res => require(['@/components/pages/pie'], res),
+      }, 
+      /* {
         path: '/radar',
         name: 'radar',
+        icon: 'ionic',
         component: res => require(['@/components/pages/radar'], res),
       }, {
         path: '/table',
@@ -46,7 +54,8 @@ export default new Router({
         path: '/ball',
         name: 'ball',
         component: res => require(['@/components/pages/ball'], res),
-      }],
+      } */
+    ]
     },
   ],
 })

@@ -9,7 +9,7 @@ import echarts from 'echarts'
 import liquidfill from 'echarts-liquidfill'
 import TFetch from 'tfetch'
 import 'iview/dist/styles/iview.css'
-
+require('./common/fonts/PingFangSC-Regular/PingFang Regular.css')
 Vue.config.productionTip = false;
 Vue.use(iView)
 Vue.use(liquidfill)

@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "DS-Digital";
+  src:
+    url("DS-Digital-Bold-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
