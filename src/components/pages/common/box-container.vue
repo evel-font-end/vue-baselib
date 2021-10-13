@@ -32,6 +32,10 @@ export default {
       type: Boolean,
       default: () => true
     },
+    title: {
+      type: String,
+      default: ''
+    }
     /* showOptionHandler: {
       type: Function,
       default: () => {
@@ -41,7 +45,7 @@ export default {
   },
   data() {
     return {
-      isActive: false
+      isActive: false,
     };
   },
   methods: {

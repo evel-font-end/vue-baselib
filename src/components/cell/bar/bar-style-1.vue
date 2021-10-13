@@ -17,6 +17,10 @@ export default {
       type: String,
       default: "chartId"
     },
+    chartData: {
+      type: Object,
+      default: {}
+    },
     source: {
       type: Array,
       default: () => {
@@ -46,9 +50,9 @@ export default {
     }, */
   },
   mounted() {
-    // this.charts = this.initCharts();
-    // this.updateCharts(this.source);
-    this.initChart();
+    this.$nextTick(() => {
+      this.initChart();
+    });
   },
   methods: {
     initChart() {
@@ -56,35 +60,42 @@ export default {
         document.getElementById(this.chartId),
         "chalk"
       );
-      const ydata2 = [1, 2, 3, 4, 5, 6, 7, 8],
-        ydata = [1, 2, 3, 4, 5, 6, 7, 8],
-        xdata = ["af", "feew", "few", "eew", "dfe", "egrreg", "egerg", "jty"],
-        average = 2,
-        standard = 1;
+      let { lineTitle, barTitle, xdata, ydata, ydata2 } = this.chartData;
       let option = {
+        color: ["#EFE438", "#015BCC"],
+        legend: {
+          itemWidth: 13,
+          itemHeight: 4,
+          left: "right",
+          data: [
+            {
+              name: lineTitle,
+              icon: "stack",
+              textStyle: {
+                fontSize: 12,
+                fontFamily: "PingFangSC-Regular",
+                color: "#FFFFFF"
+              }
+            },
+            {
+              name: barTitle,
+              icon: "stack",
+              itemWidth: 10,
+              itemHeight: 10,
+              textStyle: {
+                fontSize: 12,
+                fontFamily: "PingFangSC-Regular",
+                color: "#FFFFFF"
+              }
+            }
+          ]
+        },
         tooltip: {
           trigger: "axis",
           backgroundColor: "transparent",
           padding: 0,
           formatter(params) {
             let text = "";
-            params = params.concat([
-              {
-                seriesName: "光缆覆盖率达标线",
-                value: standard * 100
-              },
-              {
-                seriesName: "光缆覆盖率平均线",
-                value: average * 100
-              }
-            ]);
-            params.forEach(element => {
-              if (element.seriesName === "光缆皮长") {
-                element.unit = "km";
-              } else {
-                element.unit = "%";
-              }
-            });
             for (let i = 0; i < params.length; i++) {
               const element = params[i];
               text += `<p style='display:flex;justify-conten:space-between;'>
@@ -93,17 +104,16 @@ export default {
             ${element.seriesName}:</span> 
             <span style='text-align:right;flex:1;color: #51FEFFFF'>${Number(
               element.value
-            ).toFixed(2)}${element.unit}</span></p>`;
+            )}</span></p>`;
             }
             text = `<div style='border: 1px solid #51feff;color: #ffffff;padding: 15px 15px 7px;border-radius: 5px;background: rgba(0,0,0,0.5);'>${text}</div>`;
             return text;
           }
         },
         grid: {
-          top: "5%",
-          left: "1%",
-          right: "1%",
-          bottom: "4%",
+          left: "3%",
+          right: "0%",
+          bottom: "0%",
           containLabel: true
         },
         xAxis: {
@@ -131,28 +141,10 @@ export default {
               color: "#88D7FDFF"
             },
             interval: 0,
-            margin: 15,
-            rotate: 30
+            margin: 15
           }
         },
         yAxis: [
-          {
-            type: "value",
-            name: "",
-            splitLine: {
-              //刻度线
-              show: false
-            },
-            axisLabel: {
-              //调整y轴的lable
-              textStyle: {
-                color: "#88D7FD",
-                fontSize: 14 // 字体
-              },
-              show: true,
-              formatter: "{value} %"
-            }
-          },
           {
             type: "value",
             name: "",
@@ -172,23 +164,39 @@ export default {
               show: true
             },
             axisLine: {
-              // symbol: ["none", "arrow"],
-              symbolSize: [15, 17],
-              lineStyle: {
-                color: "#000000",
-                width: 2 //  改变坐标线的颜色
-              }
+              show: false
+            }
+          },
+          {
+            type: "value",
+            name: "",
+            splitLine: {
+              //刻度线
+              show: false
+            },
+            axisTick: {
+              show: false
+            },
+            axisLine: {
+              show: false
+            },
+            axisLabel: {
+              //调整y轴的lable
+              textStyle: {
+                color: "#88D7FD",
+                fontSize: 14 // 字体
+              },
+              show: true,
+              formatter: "{value} %"
             }
           }
         ],
         series: [
           {
-            name: "光缆覆盖率",
+            name: lineTitle,
             type: "line",
             // yAxisIndex: 1,
-            data: ydata2.map(item => {
-              return item * 100;
-            }),
+            data: ydata2,
             smooth: true,
             symbol: "none",
             lineStyle: {
@@ -201,48 +209,23 @@ export default {
                 colorStops: [
                   {
                     offset: 0,
-                    color: "#F49C491C" // 0% 处的颜色
+                    color: "rgba(239,228,56,0.08)" // 0% 处的颜色
                   },
                   {
                     offset: 0.5,
-                    color: "#F49C49FF" // 50% 处的颜色
+                    color: "rgba(239,228,56,1)" // 50% 处的颜色
                   },
                   {
                     offset: 1,
-                    color: "#F49C491A" // 100% 处的颜色
+                    color: "rgba(239,228,56,0.08)" // 100% 处的颜色
                   }
                 ],
                 global: false // 缺省为 false
               }
-            },
-            markLine: {
-              symbol: "none",
-              animation: false,
-              label: {
-                show: false
-                // position: 'start',
-                // formatter: '平均值'
-              },
-              data: [
-                {
-                  lineStyle: {
-                    color: "#FFB93FFF"
-                  },
-                  name: "光缆覆盖率平均线",
-                  yAxis: average * 100
-                },
-                {
-                  lineStyle: {
-                    color: "#5BE7B4FF"
-                  },
-                  name: "光缆覆盖率达标线",
-                  yAxis: standard * 100
-                }
-              ]
             }
           },
           {
-            name: "光缆皮长",
+            name: barTitle,
             type: "bar",
             yAxisIndex: 1,
             showBackground: true,

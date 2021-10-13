@@ -47,7 +47,7 @@ export default {
         tooltip: {
           trigger: "axis"
         },
-        color: ["#38DFEF", "#27DDA8"],
+        color: ["#21B791", "#FFBA1E"],
         legend: {
           itemWidth: 10,
           itemHeight: 4,
@@ -148,19 +148,23 @@ export default {
           {
             name: lineTitle1,
             type: "line",
+            symbol: "circle", //拐点设置为实心
+            symbolSize: 6,
             yAxisIndex: 0,
-            smooth: true,
-            symbol: "none",
+            smooth: false,
             itemStyle: {
               normal: {
                 lineStyle: {
-                  width: 4,
-                  color: getLinearColor(
-                    "rgba(56,223,239,0.08)",
-                    "rgba(56,223,239,1)",
-                    "rgba(56,223,239,0.08)"
-                  ) //改变折线颜色
+                  width: 2,
+                  color: "#21B791" //改变折线颜色
                 }
+              }
+            },
+            itemStyle: {
+              normal: {
+                color: "#21B791", //拐点颜色
+                borderColor: "#FFFFFF", //拐点边框颜色
+                borderWidth: 2 //拐点边框大小
               }
             },
             data: ydata1
@@ -168,19 +172,23 @@ export default {
           {
             name: lineTitle2,
             type: "line",
+            symbol: "circle", //拐点设置为实心
+            symbolSize: 6,
             yAxisIndex: 0,
-            smooth: true,
-            symbol: "none",
+            smooth: false,
             itemStyle: {
               normal: {
                 lineStyle: {
-                  width: 4,
-                  color: getLinearColor(
-                    "rgba(39,221,168,0.08)",
-                    "rgba(39,221,168,1)",
-                    "rgba(39,221,168,0.08)"
-                  ) //改变折线颜色
+                  width: 2,
+                  color: "#FFBA1E" //改变折线颜色
                 }
+              }
+            },
+            itemStyle: {
+              normal: {
+                color: "#FFBA1E", //拐点颜色
+                borderColor: "#FFFFFF", //拐点边框颜色
+                borderWidth: 2 //拐点边框大小
               }
             },
             data: ydata2

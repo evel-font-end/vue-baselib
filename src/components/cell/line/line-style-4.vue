@@ -12,6 +12,12 @@ function getLinearColor(colorStart, colorMiddle, colorEnd) {
     { offset: 1, color: colorEnd }
   ]);
 }
+function getAreaColor(colorStart, colorEnd) {
+  return new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+    { offset: 0, color: colorStart },
+    { offset: 1, color: colorEnd }
+  ]);
+}
 export default {
   props: {
     chartId: {
@@ -47,36 +53,11 @@ export default {
         tooltip: {
           trigger: "axis"
         },
-        color: ["#38DFEF", "#27DDA8"],
-        legend: {
-          itemWidth: 10,
-          itemHeight: 4,
-          left: "right",
-          data: [
-            {
-              name: lineTitle1,
-              icon: "stack",
-              textStyle: {
-                fontSize: 14,
-                fontFamily: "PingFangSC",
-                color: "#ffff"
-              }
-            },
-            {
-              name: lineTitle2,
-              icon: "stack",
-              textStyle: {
-                fontSize: 14,
-                fontFamily: "PingFangSC",
-                color: "#ffff"
-              }
-            }
-          ]
-        },
         tooltip: {
           trigger: "axis",
           backgroundColor: "transparent",
           padding: 0,
+          show: false,
           formatter(params) {
             let text = "";
             for (let i = 0; i < params.length; i++) {
@@ -149,41 +130,24 @@ export default {
             name: lineTitle1,
             type: "line",
             yAxisIndex: 0,
-            smooth: true,
+            smooth: false,
             symbol: "none",
+            areaStyle: {
+              normal: {
+                color: getAreaColor(
+                  "rgba(18,186,149,0.38)",
+                  "rgba(18,186,149,0)"
+                ) //改变区域颜色
+              }
+            },
             itemStyle: {
               normal: {
                 lineStyle: {
-                  width: 4,
-                  color: getLinearColor(
-                    "rgba(56,223,239,0.08)",
-                    "rgba(56,223,239,1)",
-                    "rgba(56,223,239,0.08)"
-                  ) //改变折线颜色
+                  color: "#21B791" //改变折线颜色
                 }
               }
             },
             data: ydata1
-          },
-          {
-            name: lineTitle2,
-            type: "line",
-            yAxisIndex: 0,
-            smooth: true,
-            symbol: "none",
-            itemStyle: {
-              normal: {
-                lineStyle: {
-                  width: 4,
-                  color: getLinearColor(
-                    "rgba(39,221,168,0.08)",
-                    "rgba(39,221,168,1)",
-                    "rgba(39,221,168,0.08)"
-                  ) //改变折线颜色
-                }
-              }
-            },
-            data: ydata2
           }
         ]
       };
