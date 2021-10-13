@@ -28,7 +28,14 @@ export default new Router({
         title: '饼状图',
         icon: 'ios-pie-outline',
         component: res => require(['@/components/pages/pie'], res),
-      }, 
+      },
+      {
+        path: '/board',
+        name: 'board',
+        title: '仪表盘',
+        icon: 'ios-pie-outline',
+        component: res => require(['@/components/pages/board'], res),
+      },
       /* {
         path: '/radar',
         name: 'radar',

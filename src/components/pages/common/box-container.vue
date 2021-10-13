@@ -3,7 +3,10 @@
       class='show-item'
       @mouseenter='isActive = true'
       @mouseleave='isActive = false'>
+      <div class='title'>{{title}}</div>
+      <div class='content'>
       <slot />
+      </div>
       <Spin size='large' fix v-if='spinShow' />
       <div
         v-if='toolsShow'
@@ -35,6 +38,10 @@ export default {
         console.log('当前组件无配置项')
       },
     },
+    title: {
+      type: String,
+      default: '组件',
+    },
   },
   data() {
     return {
@@ -49,8 +56,8 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-$showBoxWidth: 400px;
-$showBoxHeight: 300px;
+$showBoxWidth: calc(33.3% - 13.3px);
+$showBoxHeight: 420px;
 @function scaleHeight($realWidth, $realHeight) {
   @return $showBoxWidth * $realHeight / $realWidth;
 }
@@ -59,25 +66,34 @@ $showBoxHeight: 300px;
   height: $showBoxHeight;
   margin: 15px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #ccc;
-  box-shadow: 1px 1px 3px #ccc;
-  border-radius: 10px;
-  background-color: #fff;
-  padding: 15px;
+  flex-direction: column;
+  border-radius: 16px;
+  background-color: #132845;
+  padding: 20px;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
-
+  .title{
+    font-size: 16px;
+    font-family: PingFangSC, PingFangSC-Semibold;
+    font-weight: 600;
+    text-align: left;
+    color: #ffffff;
+    line-height: 22px;
+    margin-bottom: 35px;
+  }
+  .content{
+    width: 100%;
+    height: calc(100% - 60px);
+  }
   &.bg-black{
-    background-color: #000;
-    color: rgba(255, 255, 255, .8);
+    // background-color: #000;
+    // color: rgba(255, 255, 255, .8);
   }
   &.bg-grey{
     /* background-color: rgba(0, 0, 0, .6); */
-    background-color: #495060;
-    color: rgba(255, 255, 255, .8);
+    // background-color: #495060;
+    // color: rgba(255, 255, 255, .8);
   }
 
   .tools-cont{
