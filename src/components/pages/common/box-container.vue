@@ -32,6 +32,10 @@ export default {
       type: Boolean,
       default: () => true
     },
+    title: {
+      type: String,
+      default: '组件'
+    },
     /* showOptionHandler: {
       type: Function,
       default: () => {
@@ -82,6 +86,9 @@ $showBoxHeight: 420px;
   .content{
     width: 100%;
     height: calc(100% - 60px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   &.bg-black{
     // background-color: #000;

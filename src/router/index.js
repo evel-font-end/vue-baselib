@@ -36,6 +36,13 @@ export default new Router({
         icon: 'ios-pie-outline',
         component: res => require(['@/components/pages/board'], res),
       },
+      {
+        path: '/radarMap',
+        name: 'radarMap',
+        title: '雷达图',
+        icon: 'ios-pie-outline',
+        component: res => require(['@/components/pages/radarMap'], res),
+      },
       /* {
         path: '/radar',
         name: 'radar',
