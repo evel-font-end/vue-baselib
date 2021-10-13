@@ -13,7 +13,7 @@ export default new Router({
       children: [{
         path: '/bar',
         name: 'bar',
-        title: '柱状图',
+        title: '混合图表',
         icon: 'stats-bars',
         component: res => require(['@/components/pages/bar'], res),
       }, {
