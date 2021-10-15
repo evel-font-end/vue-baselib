@@ -25,7 +25,7 @@ export default {
   user-select: none;
 }
 .content {
-  justify-content: space-between;
+  /* justify-content: space-between; */
   padding: 20px 0;
 }
 /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/

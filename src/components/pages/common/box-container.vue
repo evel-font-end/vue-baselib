@@ -66,6 +66,8 @@ $showBoxHeight: 420px;
   width: $showBoxWidth;
   height: $showBoxHeight;
   // margin: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
   display: flex;
   flex-direction: column;
   border-radius: 16px;
@@ -74,6 +76,9 @@ $showBoxHeight: 420px;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
+  &:nth-of-type(n + 3) {
+    margin-right: 0;
+  }
   .title{
     font-size: 16px;
     font-family: PingFangSC, PingFangSC-Semibold;
