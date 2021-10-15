@@ -19,9 +19,7 @@ export default {
     },
     chartData: {
       type: Object,
-      default: function() {
-        return {};
-      }
+      default: {}
     }
   },
   data() {
@@ -43,34 +41,6 @@ export default {
       );
       let { lineTitle, barTitle, xdata, ydata, ydata2 } = this.chartData;
       let option = {
-        color:['#0FF1FC', '#07EE95'],
-        legend: {
-          itemWidth: 13,
-          itemHeight: 4,
-          left: "right",
-          data: [
-            {
-              name: lineTitle,
-              icon: "stack",
-              textStyle: {
-                fontSize: 12,
-                fontFamily: "PingFangSC-Regular",
-                color: "#FFFFFF"
-              }
-            },
-            {
-              name: barTitle,
-              icon: "stack",
-              itemWidth: 10,
-              itemHeight: 10,
-              textStyle: {
-                fontSize: 12,
-                fontFamily: "PingFangSC-Regular",
-                color: "#FFFFFF"
-              }
-            }
-          ]
-        },
         tooltip: {
           trigger: "axis",
           backgroundColor: "transparent",
@@ -82,7 +52,7 @@ export default {
               text += `<p style='display:flex;justify-conten:space-between;'>
             <span style='text-align:left;width: 100px;margin-bottom: 8px'>
             <span></span>
-            ${element.seriesName}:</span> 
+            ${element.name}</span> 
             <span style='text-align:right;flex:1;color: #51FEFFFF'>${Number(
               element.value
             )}</span></p>`;
@@ -128,6 +98,29 @@ export default {
         yAxis: [
           {
             type: "value",
+            name: "b",
+            splitLine: {
+              //刻度线
+              show: false
+            },
+            axisTick: {
+              show: false
+            },
+            axisLine: {
+              show: false
+            },
+            axisLabel: {
+              //调整y轴的lable
+              textStyle: {
+                color: "#88D7FD",
+                fontSize: 14 // 字体
+              },
+              show: true
+            }
+          },
+          {
+            show: false,
+            type: "value",
             name: "",
             splitLine: {
               //刻度线
@@ -147,63 +140,9 @@ export default {
             axisLine: {
               show: false
             }
-          },
-          {
-            type: "value",
-            name: "",
-            splitLine: {
-              //刻度线
-              show: false
-            },
-            axisTick: {
-              show: false
-            },
-            axisLine: {
-              show: false
-            },
-            axisLabel: {
-              //调整y轴的lable
-              textStyle: {
-                color: "#88D7FD",
-                fontSize: 14 // 字体
-              },
-              show: false
-            }
           }
         ],
         series: [
-          {
-            name: lineTitle,
-            type: "line",
-            // yAxisIndex: 1,
-            data: ydata2,
-            smooth: true,
-            symbol: "none",
-            lineStyle: {
-              color: {
-                type: "linear",
-                x: 0,
-                y: 0,
-                x2: 1,
-                y2: 0,
-                colorStops: [
-                  {
-                    offset: 0,
-                    color: "rgba(15,241,252,0.08)" // 0% 处的颜色
-                  },
-                  {
-                    offset: 0.5,
-                    color: "rgba(15,241,252,1)" // 50% 处的颜色
-                  },
-                  {
-                    offset: 1,
-                    color: "rgba(15,241,252,0.08)" // 100% 处的颜色
-                  }
-                ],
-                global: false // 缺省为 false
-              }
-            }
-          },
           {
             name: barTitle,
             type: "bar",
@@ -218,14 +157,62 @@ export default {
             showSymbol: false,
             hoverAnimation: false,
             data: ydata,
-            barWidth: 11, //柱图宽度
+            barWidth: 8, //柱图宽度
             itemStyle: {
               //左面
               normal: {
-                color: getLinearColor("#07F096", "#07F0E2"),
+                color: getLinearColor("#10DAFF", "#015BCC"),
                 barBorderRadius: [0, 0, 0, 0]
               }
             }
+          },
+          {
+            name: "a",
+            tooltip: {
+              show: false
+            },
+            type: "bar",
+            yAxisIndex: 1,
+            showBackground: true,
+            backgroundStyle: {
+              color: "#3B9DE629",
+              shadowBlur: 0,
+              shadowColor: "#3B9DE629",
+              shadowOffsetX: -13
+            },
+            barWidth: 7,
+            itemStyle: {
+              //右面
+              normal: {
+                color: getLinearColor("#2B89FC", "#023E8A"),
+                barBorderRadius: [0, 0, 0, 0]
+              }
+            },
+            data: ydata,
+            barGap: 0
+          },
+          {
+            name: "b",
+            tooltip: {
+              show: false
+            },
+            yAxisIndex: 1,
+            type: "pictorialBar",
+            itemStyle: {
+              //顶部
+              normal: {
+                color: "#39FCF7",
+                borderColor: "#2996e7",
+                borderWidth: 0.01
+              }
+            },
+            // symbolRotate: 9,
+            symbol: "diamond",
+            symbolSize: ["16", "3"],
+            symbolOffset: [0, "-38%"],
+            symbolPosition: "end",
+            data: ydata,
+            z: 3
           }
         ]
       };

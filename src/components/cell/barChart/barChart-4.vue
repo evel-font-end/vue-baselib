@@ -19,9 +19,7 @@ export default {
     },
     chartData: {
       type: Object,
-      default: function() {
-        return {};
-      }
+      default: {}
     }
   },
   data() {
@@ -41,36 +39,8 @@ export default {
         document.getElementById(this.chartId),
         "chalk"
       );
-      let { lineTitle, barTitle, xdata, ydata, ydata2 } = this.chartData;
+      let { barTitle1, barTitle2, xdata, ydata1, ydata2 } = this.chartData;
       let option = {
-        color:['#0FF1FC', '#07EE95'],
-        legend: {
-          itemWidth: 13,
-          itemHeight: 4,
-          left: "right",
-          data: [
-            {
-              name: lineTitle,
-              icon: "stack",
-              textStyle: {
-                fontSize: 12,
-                fontFamily: "PingFangSC-Regular",
-                color: "#FFFFFF"
-              }
-            },
-            {
-              name: barTitle,
-              icon: "stack",
-              itemWidth: 10,
-              itemHeight: 10,
-              textStyle: {
-                fontSize: 12,
-                fontFamily: "PingFangSC-Regular",
-                color: "#FFFFFF"
-              }
-            }
-          ]
-        },
         tooltip: {
           trigger: "axis",
           backgroundColor: "transparent",
@@ -79,15 +49,16 @@ export default {
             let text = "";
             for (let i = 0; i < params.length; i++) {
               const element = params[i];
-              text += `<p style='display:flex;justify-conten:space-between;'>
-            <span style='text-align:left;width: 100px;margin-bottom: 8px'>
+              text += `<p style='display:flex;justify-conten:space-between'>
+            <span style='text-align:left;width: 150px'>
             <span></span>
             ${element.seriesName}:</span> 
-            <span style='text-align:right;flex:1;color: #51FEFFFF'>${Number(
-              element.value
-            )}</span></p>`;
+            <span style='text-align:right;flex:1;color: #51FEFFFF'>${element.value}</span></p>`;
             }
-            text = `<div style='border: 1px solid #51feff;color: #ffffff;padding: 15px 15px 7px;border-radius: 5px;background: rgba(0,0,0,0.5);'>${text}</div>`;
+            text = `<div style='border: 1px solid #51feff;color: #ffffff;
+            padding: 7px;
+            border-radius: 5px;
+            background: rgba(0,0,0,0.5);'>${text}</div>`;
             return text;
           }
         },
@@ -122,7 +93,8 @@ export default {
               color: "#88D7FDFF"
             },
             interval: 0,
-            margin: 15
+            margin: 15,
+            rotate: 30
           }
         },
         yAxis: [
@@ -133,19 +105,15 @@ export default {
               //刻度线
               show: false
             },
-            axisTick: {
-              show: false
-            },
             axisLabel: {
               //调整y轴的lable
               textStyle: {
                 color: "#88D7FD",
-                fontSize: 14 // 字体
+                fontSize: 14, // 字体
+                align: "right"
               },
+              margin: 30,
               show: true
-            },
-            axisLine: {
-              show: false
             }
           },
           {
@@ -153,12 +121,12 @@ export default {
             name: "",
             splitLine: {
               //刻度线
-              show: false
+              show: true,
+              lineStyle: {
+                color: ["rgba(41,153,234,0.2)"]
+              }
             },
             axisTick: {
-              show: false
-            },
-            axisLine: {
               show: false
             },
             axisLabel: {
@@ -167,65 +135,58 @@ export default {
                 color: "#88D7FD",
                 fontSize: 14 // 字体
               },
-              show: false
+              show: true,
+              formatter: "{value}%"
+            },
+            axisLine: {
+              // symbol: ["none", "arrow"],
+              symbolSize: [15, 17],
+              lineStyle: {
+                color: "#000000",
+                width: 2 //  改变坐标线的颜色
+              }
             }
           }
         ],
         series: [
           {
-            name: lineTitle,
-            type: "line",
-            // yAxisIndex: 1,
-            data: ydata2,
-            smooth: true,
-            symbol: "none",
-            lineStyle: {
-              color: {
-                type: "linear",
-                x: 0,
-                y: 0,
-                x2: 1,
-                y2: 0,
-                colorStops: [
-                  {
-                    offset: 0,
-                    color: "rgba(15,241,252,0.08)" // 0% 处的颜色
-                  },
-                  {
-                    offset: 0.5,
-                    color: "rgba(15,241,252,1)" // 50% 处的颜色
-                  },
-                  {
-                    offset: 1,
-                    color: "rgba(15,241,252,0.08)" // 100% 处的颜色
-                  }
-                ],
-                global: false // 缺省为 false
+            name: barTitle1,
+            type: "bar",
+            yAxisIndex: 1,
+            showSymbol: false,
+            hoverAnimation: false,
+            data: ydata1,
+            barWidth: 12, //柱图宽度
+            itemStyle: {
+              //左面
+              normal: {
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                  { offset: 0, color: "#00adff" },
+                  { offset: 1, color: "rgba(0,173,255,0.25)" }
+                ]),
+                barBorderRadius: [0, 0, 0, 0]
               }
             }
           },
           {
-            name: barTitle,
+            name: barTitle2,
             type: "bar",
             yAxisIndex: 1,
-            showBackground: true,
-            backgroundStyle: {
-              color: "#3B9DE629",
-              shadowBlur: 0,
-              shadowColor: "#3B9DE629",
-              shadowOffsetX: 6
-            },
             showSymbol: false,
             hoverAnimation: false,
-            data: ydata,
-            barWidth: 11, //柱图宽度
+            data: ydata2,
+            barWidth: 12, //柱图宽度
             itemStyle: {
               //左面
               normal: {
-                color: getLinearColor("#07F096", "#07F0E2"),
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                  { offset: 0, color: "#06e789" },
+                  { offset: 1, color: "rgba(6,231,137,0.10)" }
+                ]),
                 barBorderRadius: [0, 0, 0, 0]
               }
-            }
+            },
+            barGap: "-100%"
           }
         ]
       };

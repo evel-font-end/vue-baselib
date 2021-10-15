@@ -14,7 +14,7 @@ export default new Router({
         path: '/bar',
         name: 'bar',
         title: '混合图表',
-        icon: 'stats-bars',
+        icon: 'ios-repeat',
         component: res => require(['@/components/pages/bar'], res),
       }, {
         path: '/line',
@@ -22,7 +22,15 @@ export default new Router({
         title: '折线图',
         icon: 'arrow-graph-up-right',
         component: res => require(['@/components/pages/line'], res),
-      }, {
+      },
+      {
+        path: '/barChart',
+        name: 'barChart',
+        title: '柱状图',
+        icon: 'md-stats',
+        component: res => require(['@/components/pages/barChart'], res),
+      },
+      {
         path: '/pie',
         name: 'pie',
         title: '饼状图',
