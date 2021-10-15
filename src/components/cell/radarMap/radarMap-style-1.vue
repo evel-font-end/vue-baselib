@@ -12,11 +12,11 @@ export default {
     source: {
       type: [Array, Object],
       default: () => [
-        { text: '库水位', color: '#3ABBF7', max: 100 },
-        { text: '内部位移', color: '#3ABBF7', max: 100 },
-        { text: '内部位移', color: '#3ABBF7', max: 100 },
-        { text: '浸润线', color: '#3ABBF7', max: 100 },
-        { text: '干滩监测', color: '#3ABBF7', max: 100 },
+        { text: '库水位', value: 100, max: 300 },
+        { text: '内部位移', value: 100, max: 300 },
+        { text: '内部位移', value: 100, max: 300 },
+        { text: '浸润线', value: 100, max: 300 },
+        { text: '干滩监测', value: 100, max: 300 },
       ],
     },
   },
@@ -54,7 +54,8 @@ export default {
         },
         radar: {
           // shape: 'circle',
-          radius: '60%',
+          radius: '85%',
+          center: ['50%', '55%'],
           name: {
             color: '#fff',
             fontSize: 16,
@@ -94,7 +95,7 @@ export default {
             type: 'radar',
             data: [
               {
-                value: [50, 90, 45, 67, 98],
+                value: source.map(sourceItem => sourceItem.value),
                 symbol: 'none',
                 areaStyle: {
                   normal: {

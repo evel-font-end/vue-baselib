@@ -4,7 +4,7 @@
     @mouseenter='isActive = true'
     @mouseleave='isActive = false'>
     <div class='title'>{{title}}</div>
-    <div class='content'>
+    <div class='contentMain'>
     <slot />
     </div>
     <Spin size='large' fix v-if='spinShow' />
@@ -65,7 +65,7 @@ $showBoxHeight: 420px;
 .show-item {
   width: $showBoxWidth;
   height: $showBoxHeight;
-  margin: 15px;
+  // margin: 15px;
   display: flex;
   flex-direction: column;
   border-radius: 16px;
@@ -83,7 +83,7 @@ $showBoxHeight: 420px;
     line-height: 22px;
     margin-bottom: 35px;
   }
-  .content{
+  .contentMain{
     width: 100%;
     height: calc(100% - 60px);
     display: flex;

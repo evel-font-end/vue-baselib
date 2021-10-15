@@ -12,11 +12,11 @@ export default {
     source: {
       type: [Array, Object],
       default: () => [
-        { text: '库水位', color: '#3ABBF7', max: 100 },
-        { text: '内部位移', color: '#3ABBF7', max: 100 },
-        { text: '内部位移', color: '#3ABBF7', max: 100 },
-        { text: '浸润线', color: '#3ABBF7', max: 100 },
-        { text: '干滩监测', color: '#3ABBF7', max: 100 },
+        { text: '库水位', value: 100, max: 300 },
+        { text: '内部位移', value: 100, max: 300 },
+        { text: '内部位移', value: 100, max: 300 },
+        { text: '浸润线', value: 100, max: 300 },
+        { text: '干滩监测', value: 100, max: 300 },
       ],
     },
   },
@@ -53,6 +53,8 @@ export default {
         },
         tooltip: {},
         radar: {
+          radius: '85%',
+          center: ['50%', '55%'],
           // shape: 'circle',
           name: {
             textStyle: {
@@ -60,21 +62,43 @@ export default {
               fontSize: 16,
             },
           },
-          indicator: [
-            { name: '硫化氢' },
-            { name: '氨气' },
-            { name: '温度' },
-            { name: '湿度' },
-          ],
+          indicator: source,
         },
         series: [
           {
             name: '当前男厕环境情况',
             type: 'radar',
+            areaStyle: {
+              normal: {
+                color: this.$echarts.graphic.LinearGradient(0, 1, 0, 0, [
+                  {
+                    offset: 1,
+                    color: '#FFED58',
+                  },
+                  {
+                    offset: 0,
+                    color: '#FF5B2C',
+                  },
+                ]),
+              },
+            },
+            lineStyle: {
+              width: 3,
+              color: this.$echarts.graphic.LinearGradient(0, 1, 0, 0, [
+                {
+                  offset: 1,
+                  color: '#FFED58',
+                },
+                {
+                  offset: 0,
+                  color: '#FF5B2C',
+                },
+              ]),
+            },
             // areaStyle: {normal: {}},
             data: [
               {
-                value: [10, 10, 20, 30, 40],
+                value: source.map(sourceItem => sourceItem.value),
               },
             ],
           },

@@ -99,7 +99,7 @@ export default {
       const demoData = {
         name: '时钟',
         value: percentage,
-        pos: ['50%', '60%'],
+        pos: ['100%', '60%'],
       };
       this.option = {
         title: {
@@ -125,7 +125,7 @@ export default {
             name: demoData.name,
             type: 'gauge',
             center: demoData.pos,
-            radius: '96%',
+            radius: '100%',
             startAngle: 225,
             endAngle: -45,
             min: 0,
@@ -230,7 +230,7 @@ export default {
                 color: [
                   [
                     1,
-                    this.$echarts.graphic.LinearGradient(0, 0, 1, 0, [
+                    new this.$echarts.graphic.LinearGradient(0, 0, 1, 0, [
                       {
                         offset: 0,
                         color: '#25D9FF',

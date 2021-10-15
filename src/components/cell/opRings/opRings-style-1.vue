@@ -1,13 +1,13 @@
 <template>
-  <div :id='sid' class='board-container' />
+  <div :id='sid' class='opRings-container' />
 </template>
 <script>
 export default {
-  name: 'BoardStyle1',
+  name: 'OpRingsStyle1',
   props: {
     sid: {
       type: String,
-      default: () => 'board1',
+      default: () => 'opRings1',
     },
     percentage: {
       type: String,
@@ -72,7 +72,7 @@ export default {
             name: demoData.name,
             type: 'gauge',
             center: demoData.pos,
-            radius: '100%',
+            radius: '96%',
             startAngle: 225,
             endAngle: -45,
             min: 0,
@@ -114,7 +114,7 @@ export default {
             type: 'pie',
             hoverAnimation: false,
             legendHoverLink: false,
-            radius: ['0%', '21%'],
+            radius: ['0%', '11%'],
             z: 0,
             center: demoData.pos,
             labelLine: {
@@ -165,7 +165,7 @@ export default {
             name: demoData.name,
             type: 'gauge',
             center: demoData.pos,
-            radius: '80%',
+            radius: '90%',
             startAngle: 226,
             endAngle: -46,
             min: 0,
@@ -252,7 +252,7 @@ export default {
           {
             type: 'gauge',
             center: demoData.pos,
-            radius: '90%',
+            radius: '79%',
             splitNumber: 10,
             min: 0,
             max: 100,
@@ -301,7 +301,7 @@ export default {
 }
 </script>
 <style lang='scss' scoped>
-.board-container{
+.opRings-container{
   width: 100%;
   height: 100%;
 }
