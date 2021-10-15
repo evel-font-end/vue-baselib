@@ -34,13 +34,8 @@ export default {
     },
     title: {
       type: String,
-<<<<<<< HEAD
       default: '组件'
     },
-=======
-      default: ''
-    }
->>>>>>> f655b428323e1958eafad5b7063eaf61d26be897
     /* showOptionHandler: {
       type: Function,
       default: () => {
