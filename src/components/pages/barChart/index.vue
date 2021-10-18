@@ -21,6 +21,9 @@
     <box-container class="bg-grey" :spinShow="spinShow3" :title="'堆叠柱状图'">
       <bar7 :chartId="'bar7'" :chartData="barData3" />
     </box-container>
+    <box-container class="bg-grey" :spinShow="spinShow3" :title="'柱状图8'">
+      <bar8 :chartId="'bar8'" :chartData="barData1" />
+    </box-container>
   </div>
 </template>
 <script>
@@ -32,6 +35,7 @@ import bar4 from "~components/cell/barChart/barChart-4.vue";
 import bar5 from "~components/cell/barChart/barChart-5.vue";
 import bar6 from "~components/cell/barChart/barChart-6.vue";
 import bar7 from "~components/cell/barChart/barChart-7.vue";
+import bar8 from "~components/cell/barChart/barChart-8.vue";
 
 export default {
   components: {
@@ -42,7 +46,8 @@ export default {
     bar4,
     bar5,
     bar6,
-    bar7
+    bar7,
+    bar8
   },
   data() {
     return {

@@ -31,6 +31,13 @@ export default new Router({
         component: res => require(['@/components/pages/barChart'], res),
       },
       {
+        path: '/indexData',
+        name: 'indexData',
+        title: '指标数据',
+        icon: 'md-stats',
+        component: res => require(['@/components/pages/indexData'], res),
+      },
+      {
         path: '/pie',
         name: 'pie',
         title: '饼状图',
@@ -58,33 +65,33 @@ export default new Router({
         icon: 'ios-pie-outline',
         component: res => require(['@/components/pages/opRings'], res),
       },
-      /* {
-        path: '/radar',
-        name: 'radar',
-        icon: 'ionic',
-        component: res => require(['@/components/pages/radar'], res),
-      }, {
-        path: '/table',
-        name: 'table',
-        component: res => require(['@/components/pages/table'], res),
-      }, {
-        path: '/box',
-        name: 'box',
-        component: res => require(['@/components/pages/box'], res),
-      }, {
-        path: '/load',
-        name: 'load',
-        component: res => require(['@/components/pages/load'], res),
-      }, {
-        path: '/funnel',
-        name: 'funnel',
-        component: res => require(['@/components/pages/funnel'], res),
-      }, {
-        path: '/ball',
-        name: 'ball',
-        component: res => require(['@/components/pages/ball'], res),
-      } */
-    ]
+        /* {
+          path: '/radar',
+          name: 'radar',
+          icon: 'ionic',
+          component: res => require(['@/components/pages/radar'], res),
+        }, {
+          path: '/table',
+          name: 'table',
+          component: res => require(['@/components/pages/table'], res),
+        }, {
+          path: '/box',
+          name: 'box',
+          component: res => require(['@/components/pages/box'], res),
+        }, {
+          path: '/load',
+          name: 'load',
+          component: res => require(['@/components/pages/load'], res),
+        }, {
+          path: '/funnel',
+          name: 'funnel',
+          component: res => require(['@/components/pages/funnel'], res),
+        }, {
+          path: '/ball',
+          name: 'ball',
+          component: res => require(['@/components/pages/ball'], res),
+        } */
+      ]
     },
   ],
 })
