@@ -2,12 +2,12 @@
   <div class="indexData">
     <div class="tooltipBox">
       <div class="tooltipBg">
-        <div class="tooltipImg">
+        <!-- <div class="tooltipImg">
           <img :src="bgImg" alt="" />
-        </div>
+        </div> -->
         <div class="tooltipInfo">
-          <p class="tipTitle">{{text}}</p>
-          <p class="tip1" :style="dataNum.style">{{ dataNum.data }}</p>
+          <p class="tip1">{{ dataNum }}</p>
+          <p class="tipTitle">{{ text }}</p>
         </div>
       </div>
     </div>
@@ -21,16 +21,16 @@ export default {
   },
   props: {
     dataNum: {
-      type: Object,
-      default: {}
+      type: String,
+      default: ""
     },
     bgImg: {
       type: String,
-      default: ''
+      default: ""
     },
     text: {
       type: String,
-      default: ''
+      default: ""
     }
   }
 };
@@ -43,20 +43,18 @@ export default {
   .tooltipBox {
     width: 100%;
     height: 100%;
-    background: url("./images/tooltip.gif") center center no-repeat;
-    background-size: 100% 100%;
     .tooltipBg {
       display: flex;
-      justify-content: flex-start;
+      justify-content: center;
       align-items: center;
       width: 100%;
       height: 100%;
-      padding-left: 30px;
-      background: url("./images/gray_bg.png") center center no-repeat;
+      padding-left: 10px;
+      background: url("./images/indexdata7.png") center center no-repeat;
       background-size: 100% 100%;
       .tooltipImg {
-        width: 80px;
-        height: 70px;
+        width: 47px;
+        height: 44px;
         display: flex;
         align-content: center;
         img {
@@ -64,21 +62,21 @@ export default {
         }
       }
       .tooltipInfo {
-        margin-left: 20px;
         .tipTitle {
-          font-size: 20px;
-          font-family: PingFangSC, PingFangSC-Semibold;
+          font-size: 16px;
+          font-family: PingFangSC;
           font-weight: 600;
-          text-align: left;
-          color: #ffffff;
-          line-height: 28px;
+          text-align: center;
+          color: #b7e9ff;
+          line-height: 26px;
         }
         .tip1 {
-          font-size: 32px;
-          font-family: PangMenZhengDao;
-          text-align: left;
-          color: #fb7757;
-          line-height: 37px;
+          font-size: 26px;
+          font-family: PingFangSC;
+          font-weight: 600;
+          text-align: center;
+          color: #ffffff;
+          line-height: 30px;
         }
       }
     }
