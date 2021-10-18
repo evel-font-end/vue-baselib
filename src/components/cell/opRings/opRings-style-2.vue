@@ -42,6 +42,9 @@ export default {
     initChart() {
       const el = document.getElementById(this.sid)
       const _chart = this.$echarts.init(el)
+      window.addEventListener('resize', () => {
+        _chart.resize();
+      })
       return _chart
     },
     updateChart(value) {

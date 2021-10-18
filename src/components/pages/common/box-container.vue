@@ -76,7 +76,7 @@ $showBoxHeight: 420px;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
-  &:nth-of-type(n + 3) {
+  &:nth-of-type(3n) {
     margin-right: 0;
   }
   .title{
