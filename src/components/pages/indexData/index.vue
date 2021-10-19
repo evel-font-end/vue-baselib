@@ -21,35 +21,48 @@
         </div>
         <div class="module indexData3">
           <indexData3
-            :bgImg="indexData3.img"
-            :dataNum="indexData3.num"
+            :num="indexData3.num"
+            :borderStyle="indexData3.borderStyle"
+            :backgroundStyle="indexData3.backgroundStyle"
             :text="indexData3.text"
             :iconClass="indexData3.iconClass"
+            :iconStyle="indexData3.iconStyle"
+            :iconBgStyle="indexData3.iconBgStyle"
           />
         </div>
         <div class="module indexData4">
           <indexData4
-            :bgImg="indexData4.img"
-            :dataNum="indexData4.num"
+            :bgImg="indexData4.bgImg"
+            :num="indexData4.num"
             :text="indexData4.text"
+            :iconClass="indexData4.iconClass"
+            :iconStyle="indexData4.iconStyle"
           />
         </div>
         <div class="module indexData5">
           <indexData5
-            :bgImg="indexData5.img"
-            :dataNum="indexData5.num"
+            :iconImg="indexData5.iconImg"
+            :num="indexData5.num"
             :text="indexData5.text"
+            :borderStyle="indexData5.borderStyle"
+            :backgroundStyle="indexData5.backgroundStyle"
           />
         </div>
         <div class="module indexData6">
           <indexData6
-            :bgImg="indexData6.img"
-            :dataNum="indexData6.num"
+            :iconImg="indexData6.iconImg"
+            :num="indexData6.num"
             :text="indexData6.text"
+            :borderStyle="indexData6.borderStyle"
+            :backgroundStyle="indexData6.backgroundStyle"
           />
         </div>
         <div class="module indexData7">
-          <indexData7 :dataNum="indexData7.num" :text="indexData7.text" />
+          <indexData7
+            :num="indexData7.num"
+            :text="indexData7.text"
+            :bgImg="indexData7.bgImg"
+          />
         </div>
         <div class="module indexData8">
           <indexData8
@@ -113,29 +126,77 @@ export default {
         }
       },
       indexData3: {
-        img: require("../../cell/indexData/images/tooltip2.png"),
-        num: 300,
-        text: "调度调单数",
-        iconClass: "iconfont icon-tiaodan"
+        num: {
+          //数字值以及样式
+          value: 300,
+          style: {}
+        },
+        text: {
+          //文字值以及样式
+          value: "调度调单数",
+          style: {}
+        },
+        iconClass: "iconfont icon-tiaodan", //字体图标iconfont
+        borderStyle: "", //背景边框样式
+        backgroundStyle: "", //背景色样式
+        iconStyle: {}, //字体图标样式
+        iconBgStyle: {} //字体图标外围圆圈样式
+        /* iconStyle: {
+          color: 'red',
+          fontSize: '20px'
+        } */
+        // borderStyle: "1px solid red",
+        // backgroundStyle: "#08EBF2",
       },
       indexData4: {
-        img: require("../../cell/indexData/images/tooltip4.png"),
-        num: "49504",
-        text: "全国日诊断告警量"
+        bgImg: "",
+        iconClass: "iconfont icon-zhenduan", //字体图标iconfont
+        iconStyle: {},
+        num: {
+          value: "49504",
+          style: {}
+        },
+        text: {
+          value: "全国日诊断告警量",
+          style: {}
+        }
       },
       indexData5: {
-        img: require("../../cell/indexData/images/tooltip5.png"),
-        num: "49504",
-        text: "全国日诊断告警量"
+        iconImg: require("../../cell/indexData/images/tooltip5.png"),
+        borderStyle: "", //背景边框样式
+        backgroundStyle: "", //背景色样式
+        num: {
+          value: "49504",
+          style: {}
+        },
+        text: {
+          value: "全国日诊断告警量",
+          style: {}
+        }
       },
       indexData6: {
-        img: require("../../cell/indexData/images/tooltip6.png"),
-        num: "6972929",
-        text: "上联带宽"
+        iconImg: require("../../cell/indexData/images/tooltip6.png"),
+        borderStyle: "", //背景边框样式
+        backgroundStyle: "", //背景色样式
+        num: {
+          value: "6972929",
+          style: {}
+        },
+        text: {
+          value: "上联带宽",
+          style: {}
+        }
       },
       indexData7: {
-        num: "390",
-        text: "全国4G小区"
+        bgImg: "",
+        num: {
+          value: "390",
+          style: {}
+        },
+        text: {
+          value: "全国4G小区",
+          style: {}
+        }
       },
       indexData8: {
         num: "390",

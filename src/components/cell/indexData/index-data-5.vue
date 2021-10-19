@@ -1,13 +1,13 @@
 <template>
   <div class="indexData">
-    <div class="tooltipBox">
+    <div class="tooltipBox" :style="[border, background]">
       <div class="tooltipBg">
         <div class="tooltipImg">
-          <img :src="bgImg" alt="" />
+          <img :src="iconImg" alt="" />
         </div>
         <div class="tooltipInfo">
-          <p class="tipTitle">{{ text }}</p>
-          <p class="tip1">{{ dataNum }}</p>
+          <p class="tipTitle" :style="text.style">{{ text.value }}</p>
+          <p class="tip1" :style="num.style">{{ num.value }}</p>
         </div>
       </div>
     </div>
@@ -20,17 +20,37 @@ export default {
     return {};
   },
   props: {
-    dataNum: {
-      type: String,
-      default: ""
+    num: {
+      type: Object,
+      default: {}
     },
-    bgImg: {
+    iconImg: {
       type: String,
       default: ""
     },
     text: {
+      type: Object,
+      default: {}
+    },
+    borderStyle: {
       type: String,
       default: ""
+    },
+    backgroundStyle: {
+      type: String,
+      default: ""
+    }
+  },
+  computed: {
+    border: function() {
+      return {
+        border: this.borderStyle
+      };
+    },
+    background: function() {
+      return {
+        background: this.backgroundStyle
+      }
     }
   }
 };

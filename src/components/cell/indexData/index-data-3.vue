@@ -1,13 +1,13 @@
 <template>
   <div class="indexData">
-    <div class="tooltipBox">
+    <div class="tooltipBox" :style="[border, background]">
       <div class="tooltipBg">
-        <div class="tooltipImg">
-          <i :class="iconClass"></i>
+        <div class="tooltipImg" :style="iconBgStyle">
+          <i :class="iconClass" :style="iconStyle"></i>
         </div>
         <div class="tooltipInfo">
-          <p class="tip1">{{ dataNum }}</p>
-          <p class="tipTitle">{{ text }}</p>
+          <p class="tip1" :style="num.style">{{ num.value }}</p>
+          <p class="tipTitle" :style="text.style">{{ text.value }}</p>
         </div>
       </div>
     </div>
@@ -20,21 +20,45 @@ export default {
     return {};
   },
   props: {
-    dataNum: {
-      type: Number,
-      default: 0
-    },
-    bgImg: {
-      type: String,
-      default: ""
+    num: {
+      type: Object,
+      default: {}
     },
     text: {
-      type: String,
-      default: ""
+      type: Object,
+      default: {}
     },
     iconClass: {
       type: String,
       default: ""
+    },
+    borderStyle: {
+      type: String,
+      default: ""
+    },
+    backgroundStyle: {
+      type: String,
+      default: ""
+    },
+    iconStyle: {
+      type: Object,
+      default: {}
+    },
+    iconBgStyle: {
+      type: Object,
+      default: {}
+    }
+  },
+  computed: {
+    border: function() {
+      return {
+        border: this.borderStyle
+      };
+    },
+    background: function() {
+      return {
+        background: this.backgroundStyle
+      };
     }
   }
 };
@@ -65,7 +89,7 @@ export default {
         justify-content: center;
         background: linear-gradient(207deg, #08ebf2 14%, #28baf8 86%);
         border-radius: 50%;
-        .iconfont {
+        i {
           font-size: 26px;
           color: #ffffff;
         }
