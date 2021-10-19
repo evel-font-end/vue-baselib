@@ -5,15 +5,17 @@
       <div class="item-content">
         <div class="module indexData1">
           <indexData1
-            :bgImg="indexData1.img"
-            :dataNum="indexData1.num"
+            :iconImg="indexData1.iconImg"
+            :bgImg="indexData2.bgImg"
+            :num="indexData1.num"
             :text="indexData1.text"
           />
         </div>
         <div class="module indexData2">
           <indexData2
-            :bgImg="indexData2.img"
-            :dataNum="indexData2.num"
+            :iconImg="indexData2.iconImg"
+            :bgImg="indexData2.bgImg"
+            :num="indexData2.num"
             :text="indexData2.text"
           />
         </div>
@@ -47,10 +49,7 @@
           />
         </div>
         <div class="module indexData7">
-          <indexData7
-            :dataNum="indexData7.num"
-            :text="indexData7.text"
-          />
+          <indexData7 :dataNum="indexData7.num" :text="indexData7.text" />
         </div>
         <div class="module indexData8">
           <indexData8
@@ -88,17 +87,30 @@ export default {
   data() {
     return {
       indexData1: {
-        img: require("../../cell/indexData/images/tooltip.png"),
+        iconImg: require("../../cell/indexData/images/tooltip.png"),
+        bgImg: "",
         num: {
-          data: 200,
+          value: 200,
           style: {}
         },
-        text: "使用中"
+        text: {
+          value: "使用中",
+          style: {}
+        }
       },
       indexData2: {
-        img: require("../../cell/indexData/images/tooltip2.png"),
-        num: "200%",
-        text: "一干成端熔接率"
+        iconImg: require("../../cell/indexData/images/tooltip2.png"),
+        bgImg: "",
+        num: {
+          value: "200%",
+          style: {
+            color: "red"
+          }
+        },
+        text: {
+          value: "一干成端熔接率",
+          style: {}
+        }
       },
       indexData3: {
         img: require("../../cell/indexData/images/tooltip2.png"),
@@ -129,7 +141,7 @@ export default {
         num: "390",
         text: "总数",
         title: "调用"
-      },
+      }
     };
   },
   mounted() {},
