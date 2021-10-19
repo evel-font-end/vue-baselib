@@ -66,9 +66,29 @@
         </div>
         <div class="module indexData8">
           <indexData8
-            :dataNum="indexData8.num"
+            :num="indexData8.num"
             :text="indexData8.text"
-            :title="indexData8.title"
+            :iconTitle="indexData8.iconTitle"
+            :iconBgStyle="indexData8.iconBgStyle"
+            :borderStyle="indexData8.borderStyle"
+            :backgroundStyle="indexData8.backgroundStyle"
+          />
+        </div>
+        <div class="module indexData9">
+          <indexData9
+            :num="indexData9.num"
+            :text="indexData9.text"
+            :iconImg="indexData9.iconImg"
+            :unit="indexData9.unit"
+          />
+        </div>
+        <div class="module indexData10">
+          <indexData10
+            :icon="indexData10.icon"
+            :buildTitle="indexData10.buildTitle"
+            :timeText="indexData10.timeText"
+            :num="indexData10.num"
+            :boxStyle="indexData10.boxStyle"
           />
         </div>
       </div>
@@ -85,6 +105,8 @@ import indexData5 from "../../cell/indexData/index-data-5";
 import indexData6 from "../../cell/indexData/index-data-6";
 import indexData7 from "../../cell/indexData/index-data-7";
 import indexData8 from "../../cell/indexData/index-data-8";
+import indexData9 from "../../cell/indexData/index-data-9";
+import indexData10 from "../../cell/indexData/index-data-10";
 
 export default {
   components: {
@@ -95,7 +117,9 @@ export default {
     indexData5,
     indexData6,
     indexData7,
-    indexData8
+    indexData8,
+    indexData9,
+    indexData10
   },
   data() {
     return {
@@ -199,9 +223,55 @@ export default {
         }
       },
       indexData8: {
-        num: "390",
-        text: "总数",
-        title: "调用"
+        num: {
+          value: "390",
+          style: {}
+        },
+        text: {
+          value: "总数",
+          style: {}
+        },
+        iconTitle: {
+          value: "调用",
+          style: {}
+        },
+        iconBgStyle: {},
+        borderStyle: "", //背景边框样式
+        backgroundStyle: "" //背景色样式
+      },
+      indexData9: {
+        num: {
+          value: "65",
+          style: {}
+        },
+        text: {
+          value: "广播器总数",
+          style: {}
+        },
+        unit: {
+          value: "个",
+          style: {}
+        },
+        iconImg: require("../../cell/indexData/images/tooltip9.png")
+      },
+      indexData10: {
+        icon: {
+          class: "iconfont icon-Clei",
+          style: {}
+        },
+        buildTitle: {
+          value: "C类楼宇",
+          style: {}
+        },
+        timeText: {
+          value: '6日通',
+          style: {}
+        },
+        num: {
+          value: "750",
+          style: {}
+        },
+        boxStyle: {}  //椭圆框
       }
     };
   },
@@ -285,6 +355,14 @@ $showBoxWidth: 100%;
     .indexData8 {
       width: 132px;
       height: 50px;
+    }
+    .indexData9 {
+      width: 190px;
+      height: 80px;
+    }
+    .indexData10 {
+      width: 205px;
+      height: 60px;
     }
   }
 }

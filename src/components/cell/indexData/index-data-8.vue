@@ -1,13 +1,13 @@
 <template>
   <div class="indexData">
-    <div class="tooltipBox">
+    <div class="tooltipBox" :style="[border, background]">
       <div class="tooltipBg">
-        <div class="tooltipImg">
-          <span>{{ title }}</span>
+        <div class="tooltipImg" :style="iconBgStyle">
+          <span :style="iconTitle.style">{{ iconTitle.value }}</span>
         </div>
         <div class="tooltipInfo">
-          <p class="tipTitle">{{ text }}</p>
-          <p class="tip1">{{ dataNum }}</p>
+          <p class="tipTitle" :style="text.style">{{ text.value }}</p>
+          <p class="tip1" :style="num.style">{{ num.value }}</p>
         </div>
       </div>
     </div>
@@ -20,21 +20,41 @@ export default {
     return {};
   },
   props: {
-    dataNum: {
-      type: String,
-      default: ""
-    },
-    bgImg: {
-      type: String,
-      default: ""
+    num: {
+      type: Object,
+      default: {}
     },
     text: {
+      type: Object,
+      default: {}
+    },
+    iconTitle: {
+      type: Object,
+      default: {}
+    },
+    iconBgStyle: {
+      type: Object,
+      default: {}
+    },
+    backgroundStyle: {
       type: String,
       default: ""
     },
-    title: {
+    borderStyle: {
       type: String,
       default: ""
+    }
+  },
+  computed: {
+    background: function() {
+      return {
+        background: this.backgroundStyle
+      }
+    },
+    border: function() {
+      return {
+        border: this.borderStyle
+      }
     }
   }
 };
@@ -77,7 +97,7 @@ export default {
         border-radius: 4px;
         span {
           font-size: 14px;
-          font-family: PingFangSC, PingFangSC-Semibold;
+          font-family: PingFangSC;
           font-weight: 600;
           text-align: center;
           color: linear-gradient(303deg, #0ab2f9 8%, #76cdfb 84%);
