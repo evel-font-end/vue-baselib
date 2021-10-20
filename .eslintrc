@@ -19,7 +19,8 @@
     }],
     "quotes":"off",
     "comma-dangle":"off",
-    "singleQuote": 0,//把双引号换成单引号
+    "singleQuote": "off",//把双引号换成单引号
+    "vue/html-quotes": "off",
     "vue/no-parsing-error": [2, { "x-invalid-end-tag": false }]
   }
 }

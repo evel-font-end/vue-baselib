@@ -65,6 +65,13 @@ export default new Router({
         icon: 'ios-pie-outline',
         component: res => require(['@/components/pages/opRings'], res),
       },
+      {
+        path: '/ranking',
+        name: 'ranking',
+        title: '排名',
+        icon: 'ios-pie-outline',
+        component: res => require(['@/components/pages/ranking'], res),
+      },
         /* {
           path: '/radar',
           name: 'radar',
