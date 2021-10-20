@@ -1,21 +1,25 @@
 <template>
 <div class="ranking-container">
-  <div v-for='(item, index) in value' :key='index'>
-    <div class='item'>
-      <div class='num'>{{index + 1}}</div>
-      <!-- <div class="content"> -->
-        <CityBldNum class='content' :obj='item' />
-      <!-- </div> -->
+  <VueSeamlessScroll :class-option="scrollOptions" :data="value" class="seamless-box">
+    <div v-for='(item, index) in value' :key='index'>
+      <div class='item'>
+        <div class='num'>{{index + 1}}</div>
+        <!-- <div class="content"> -->
+          <CityBldNum class='content' :obj='item' />
+        <!-- </div> -->
+      </div>
     </div>
-  </div>
+  </VueSeamlessScroll>
 </div>
 </template>
 <script>
+import VueSeamlessScroll from "vue-seamless-scroll";
 import CityBldNum from "./components/cityBldNum.vue";
 export default {
   name: 'RankingStyle1',
   components: {
-    CityBldNum
+    CityBldNum,
+    VueSeamlessScroll
   },
   props: {
     sid: {
@@ -40,6 +44,16 @@ export default {
 
   data() {
     return {
+      scrollOptions: {
+        step: 0.2, // 数值越大速度滚动越快
+        limitMoveNum: 5, // 开始无缝滚动的数据量 this.dataList.length
+        hoverStop: true, // 是否开启鼠标悬停stop
+        direction: 1, // 0向下 1向上 2向左 3向右
+        openWatch: true, // 开启数据实时监控刷新dom
+        singleHeight: 0, // 单步运动停止的高度(默认值0是无缝不停止的滚动) direction => 0/1
+        singleWidth: 0, // 单步运动停止的宽度(默认值0是无缝不停止的滚动) direction => 2/3
+        waitTime: 1000, // 单步运动停止的时间(默认值1000ms)
+      }
     }
   },
   watch: {
@@ -62,9 +76,13 @@ export default {
 .ranking-container{
   width: 100%;
   height: 100%;
-  overflow-y: scroll;
-  scrollbar-color:#203248 transparent;
-  scrollbar-width:thin;
+  // overflow-y: scroll;
+  // scrollbar-color:#203248 transparent;
+  // scrollbar-width:thin;
+  .seamless-box {
+    height: 100%;
+    overflow: hidden;
+  }
   /* 设置滚动条的样式 */
   &::-webkit-scrollbar {
     width:5px;
