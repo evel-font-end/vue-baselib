@@ -1,5 +1,6 @@
 <template>
-  <div :id='sid' class='radarMap-container' />
+    <div :id='sid' class='radarMap-container' />
+
 </template>
 <script>
 export default {
@@ -9,7 +10,7 @@ export default {
       type: String,
       default: () => 'radarMap1',
     },
-    source: {
+    value: {
       type: [Array, Object],
       default: () => [
         { text: '库水位', value: 100, max: 300 },
@@ -27,7 +28,7 @@ export default {
     }
   },
   watch: {
-    source(newVal) {
+    value(newVal) {
       if (this.chart === null) {
         this.initChart()
       }
@@ -38,7 +39,7 @@ export default {
   },
   mounted() {
     this.chart = this.initChart()
-    this.updateChart(this.source)
+    this.updateChart(this.value)
   },
   methods: {
     initChart() {
@@ -123,8 +124,11 @@ export default {
 }
 </script>
 <style lang='scss' scoped>
+
 .radarMap-container{
   width: 100%;
   height: 100%;
 }
+
+
 </style>

@@ -36,9 +36,17 @@
       class='bg-grey'
       title='环形图5'
       @showOptionHandler='showOption("opRings5")'>
-      <opRings-style-4
+      <opRings-style-5
         sid='opRings5'
         ref='opRings5' />
+    </box-container>
+    <box-container
+      class='bg-grey'
+      title='环形图6'
+      @showOptionHandler='showOption("opRings6")'>
+      <opRings-style-6
+        sid='opRings6'
+        ref='opRings6' />
     </box-container>
   </div>
 </template>
@@ -48,6 +56,8 @@ import OpRings1 from '../../cell/opRings/opRings-style-1'
 import OpRings2 from '../../cell/opRings/opRings-style-2'
 import OpRings3 from '../../cell/opRings/opRings-style-3'
 import OpRings4 from '../../cell/opRings/opRings-style-4'
+import OpRings5 from '../../cell/opRings/opRings-style-5'
+import OpRings6 from '../../cell/opRings/opRings-style-6'
 export default {
   name: 'OpRings',
   components: {
@@ -56,6 +66,8 @@ export default {
     'opRings-style-2': OpRings2,
     'opRings-style-3': OpRings3,
     'opRings-style-4': OpRings4,
+    'opRings-style-5': OpRings5,
+    'opRings-style-6': OpRings6,
   },
   data() {
     return {
