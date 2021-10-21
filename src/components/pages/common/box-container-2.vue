@@ -2,7 +2,8 @@
   <div
     class='show-item'
     @mouseenter='isActive = true'
-    @mouseleave='isActive = false'>
+    @mouseleave='isActive = false'
+    :style="'height:'+ height +';'+'width:'+ width +';'">
     <div class='title'>{{title}}</div>
     <div class='content'>
     <slot />
@@ -36,6 +37,14 @@ export default {
       type: Boolean,
       default: () => true
     },
+    width: {
+      type: String,
+      default: '48%'
+    },
+    height: {
+      type: String,
+      default: 'auto'
+    }
     /* showOptionHandler: {
       type: Function,
       default: () => {
@@ -57,20 +66,21 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-$showBoxWidth: calc(33.3% - 13.3px);
-$showBoxHeight: 420px;
-@function scaleHeight($realWidth, $realHeight) {
-  @return $showBoxWidth * $realHeight / $realWidth;
-}
+// $showBoxWidth: calc(33.3% - 13.3px);
+// $showBoxHeight: 'auto';
+// @function scaleHeight($realWidth, $realHeight) {
+//   @return $showBoxWidth * $realHeight / $realWidth;
+// }
 .show-item {
-  width: $showBoxWidth;
-  height: $showBoxHeight;
+  // width: $showBoxWidth;
+  // height: $showBoxHeight;
   margin: 15px;
   display: flex;
   flex-direction: column;
   border-radius: 16px;
   background-color: #132845;
   padding: 20px;
+  padding-bottom: 60px;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
@@ -81,11 +91,10 @@ $showBoxHeight: 420px;
     text-align: left;
     color: #ffffff;
     line-height: 22px;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
   }
   .content{
     width: 100%;
-    height: calc(100% - 60px);
   }
   &.bg-black{
     // background-color: #000;

@@ -7,12 +7,15 @@ import iView from 'iview'
 import store from './store'
 import echarts from 'echarts'
 import liquidfill from 'echarts-liquidfill'
+import ElementUI from 'element-ui'
 import TFetch from 'tfetch'
 import 'iview/dist/styles/iview.css'
 require('./common/fonts/PingFangSC-Regular/PingFang Regular.css')
+import 'element-ui/lib/theme-chalk/index.css'
 Vue.config.productionTip = false;
 Vue.use(iView)
 Vue.use(liquidfill)
+Vue.use(ElementUI)
 
 Vue.prototype.$echarts = echarts
 

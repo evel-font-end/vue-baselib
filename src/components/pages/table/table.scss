@@ -3,4 +3,14 @@
   height: 100%;
   display: flex;
   flex-wrap: wrap;
+  .tabletitle{
+    height: 20px;
+    font-size: 14px;
+    font-family: PingFangSC, PingFangSC-Semibold;
+    font-weight: 600;
+    text-align: left;
+    color: #ffffff;
+    line-height: 20px;
+    padding-left: 20px;
+  }
 }
