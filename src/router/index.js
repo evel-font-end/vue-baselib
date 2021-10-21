@@ -52,6 +52,46 @@ export default new Router({
         component: res => require(['@/components/pages/board'], res),
       },
       {
+        path: '/crumbs',
+        name: 'crumbs',
+        title: '面包屑',
+        icon: 'ios-pie-outline',
+        meta:{
+          title: '面包屑'
+        },
+        component: res => require(['@/components/pages/crumbs'], res),
+      },
+      {
+        path: '/topology',
+        name: 'topology',
+        title: '拓补图',
+        icon: 'ios-pie-outline',
+        meta:{
+          title: '拓补图'
+        },
+        component: res => require(['@/components/pages/topology'], res),
+      },
+      {
+        path: '/table',
+        name: 'table',
+        title: '表格',
+        icon: 'ios-pie-outline',
+        meta:{
+          title: '表格'
+        },
+        component: res => require(['@/components/pages/table'], res),
+      },
+      {
+        path: '/suspension',
+        name: 'suspension',
+        title: '悬浮框',
+        icon: 'ios-pie-outline',
+        meta:{
+          title: '悬浮框'
+        },
+        component: res => require(['@/components/pages/suspension'], res),
+      },
+      {
         path: '/radarMap',
         name: 'radarMap',
         title: '雷达图',

@@ -2,9 +2,10 @@
   <div
     class='show-item'
     @mouseenter='isActive = true'
-    @mouseleave='isActive = false'>
+    @mouseleave='isActive = false'
+    :style="'height:'+ height +';'+'width:'+ width +';'">
     <div class='title'>{{title}}</div>
-    <div class='contentMain'>
+    <div class='content'>
     <slot />
     </div>
     <Spin size='large' fix v-if='spinShow' />
@@ -36,10 +37,14 @@ export default {
       type: Boolean,
       default: () => true
     },
-    title: {
+    width: {
       type: String,
-      default: '组件'
+      default: '48%'
     },
+    height: {
+      type: String,
+      default: 'auto'
+    }
     /* showOptionHandler: {
       type: Function,
       default: () => {
@@ -49,7 +54,7 @@ export default {
   },
   data() {
     return {
-      isActive: false,
+      isActive: false
     };
   },
   methods: {
@@ -61,28 +66,24 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-$showBoxWidth: calc(33.3% - 13.3px);
-$showBoxHeight: 420px;
-@function scaleHeight($realWidth, $realHeight) {
-  @return $showBoxWidth * $realHeight / $realWidth;
-}
+// $showBoxWidth: calc(33.3% - 13.3px);
+// $showBoxHeight: 'auto';
+// @function scaleHeight($realWidth, $realHeight) {
+//   @return $showBoxWidth * $realHeight / $realWidth;
+// }
 .show-item {
-  width: $showBoxWidth;
-  height: $showBoxHeight;
-  // margin: 15px;
-  margin-right: 15px;
-  margin-bottom: 15px;
+  // width: $showBoxWidth;
+  // height: $showBoxHeight;
+  margin: 15px;
   display: flex;
   flex-direction: column;
   border-radius: 16px;
   background-color: #132845;
   padding: 20px;
+  padding-bottom: 60px;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
-  &:nth-of-type(3n) {
-    margin-right: 0;
-  }
   .title{
     font-size: 16px;
     font-family: PingFangSC, PingFangSC-Semibold;
@@ -90,14 +91,10 @@ $showBoxHeight: 420px;
     text-align: left;
     color: #ffffff;
     line-height: 22px;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
   }
-  .contentMain{
+  .content{
     width: 100%;
-    height: calc(100% - 60px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
   &.bg-black{
     // background-color: #000;

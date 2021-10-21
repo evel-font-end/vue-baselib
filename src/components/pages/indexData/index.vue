@@ -91,6 +91,44 @@
             :boxStyle="indexData10.boxStyle"
           />
         </div>
+        <div class="module indexData11">
+          <indexData11
+            :num="indexData11.num"
+            :text="indexData11.text"
+            :iconImg="indexData11.iconImg"
+            :icon="indexData11.icon"
+            :borderStyle="indexData11.borderStyle"
+            :backgroundStyle="indexData11.backgroundStyle"
+          />
+        </div>
+        <div class="module indexData12">
+          <indexData12
+            :num="indexData12.num"
+            :text="indexData12.text"
+            :unit="indexData12.unit"
+            :iconImg="indexData12.iconImg"
+            :borderStyle="indexData12.borderStyle"
+            :backgroundStyle="indexData12.backgroundStyle"
+            :progressBgStyle="indexData12.progressBgStyle"
+            :progressValueStyle="indexData12.progressValueStyle"
+          />
+        </div>
+        <div class="module indexData13">
+          <indexData13
+            :num="indexData13.num"
+            :text="indexData13.text"
+            :iconImg="indexData13.iconImg"
+            :borderStyle="indexData13.borderStyle"
+            :backgroundStyle="indexData13.backgroundStyle"
+          />
+        </div>
+        <div class="module indexData14">
+          <indexData14
+            :num="indexData14.num"
+            :text="indexData14.text"
+            :bgImg="indexData14.bgImg"
+          />
+        </div>
       </div>
     </div>
     <div class="show-item bg-black"></div>
@@ -107,6 +145,10 @@ import indexData7 from "../../cell/indexData/index-data-7";
 import indexData8 from "../../cell/indexData/index-data-8";
 import indexData9 from "../../cell/indexData/index-data-9";
 import indexData10 from "../../cell/indexData/index-data-10";
+import indexData11 from "../../cell/indexData/index-data-11";
+import indexData12 from "../../cell/indexData/index-data-12";
+import indexData13 from "../../cell/indexData/index-data-13";
+import indexData14 from "../../cell/indexData/index-data-14";
 
 export default {
   components: {
@@ -119,7 +161,11 @@ export default {
     indexData7,
     indexData8,
     indexData9,
-    indexData10
+    indexData10,
+    indexData11,
+    indexData12,
+    indexData13,
+    indexData14
   },
   data() {
     return {
@@ -264,15 +310,85 @@ export default {
           style: {}
         },
         timeText: {
-          value: '6日通',
+          value: "6日通",
           style: {}
         },
         num: {
           value: "750",
           style: {}
         },
-        boxStyle: {}  //椭圆框
-      }
+        boxStyle: {} //椭圆框
+      },
+      indexData11: {
+        num: {
+          value: "65",
+          style: {}
+        },
+        text: {
+          value: "基站机房",
+          style: {}
+        },
+        icon: {
+          class: "iconfont icon-jifang",
+          style: {}
+        },
+        iconImg: require("../../cell/indexData/images/tooltip11.png"),
+        borderStyle: {}, //背景边框样式
+        backgroundStyle: {} //背景色样式
+      },
+      indexData12: {
+        num: {
+          value: "65",
+          style: {}
+        },
+        text: {
+          value: "接入",
+          style: {}
+        },
+        icon: {
+          class: "iconfont icon-jifang",
+          style: {}
+        },
+        unit: {
+          value: '%',
+          style: {}
+        },
+        progressBgStyle: {  //进度条底色样式
+          startColor: 'rgba(15,121,163,0.36)',
+          endColor: 'rgba(15,121,163,0.36)'
+        },
+        progressValueStyle: { //进度条刻度值
+          startColor: 'rgba(0,209,255,1)',
+          endColor: 'rgba(0,209,255,0.15)'
+        },
+        iconImg: require("../../cell/indexData/images/tooltip12.png"),
+        borderStyle: {}, //背景边框样式
+        backgroundStyle: {} //背景色样式
+      },
+      indexData13: {
+        num: {
+          value: "65",
+          style: {}
+        },
+        text: {
+          value: "耗电量总计",
+          style: {}
+        },
+        iconImg: require("../../cell/indexData/images/tooltip13.png"),
+        borderStyle: {}, //背景边框样式
+        backgroundStyle: {} //背景色样式
+      },
+      indexData14: {
+        bgImg: require("../../cell/indexData/images/indexdata14.png"),
+        num: {
+          value: "390",
+          style: {}
+        },
+        text: {
+          value: "全国4G小区",
+          style: {}
+        }
+      },
     };
   },
   mounted() {},
@@ -363,6 +479,22 @@ $showBoxWidth: 100%;
     .indexData10 {
       width: 205px;
       height: 60px;
+    }
+    .indexData11 {
+      width: 240px;
+      height: 60px;
+    }
+    .indexData12 {
+      width: 100px;
+      height: 46px;
+    }
+    .indexData13 {
+      width: 230px;
+      height: 37px;
+    }
+    .indexData14 {
+      width: 275px;
+      height: 225px;
     }
   }
 }

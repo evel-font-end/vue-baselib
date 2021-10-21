@@ -1,68 +1,49 @@
 <template>
-    <div class="work_order_table" id="table1">
+    <div class="work_order_table2" id="table2">
         <el-table 
             :data="orderTableDataList.dataList" 
-            :element-loading-text="loadingText"
             :empty-text="emptyText"
-            @row-click="rowClickFn"
+            row-key="id"
+            :tree-props="{children: 'children', hasChildren: 'hasChildren'}"
             >
             <template  v-for="(item,index) in orderTableDataList.titleList" >
                 <el-table-column
                     :prop="item.field" 
                     :label="item.title"
-                    :width="item.width"
                     :show-overflow-tooltip="showOverflowTooltip"
-                    :align="colAlign"
                     :key="'ordercolumn'+index"
                     >
-                    <!-- 这里通过插槽实现自定义列 (上下箭头) -->
-                    <!-- <template slot-scope="scope">
-                        <slot 
-                            v-if="scope.column.property=='accessAutoKaryogamy'"
-                            :name="scope.column.property"
-                            :$index="scope.$index"
-                        >
-                            <span>{{ scope.row[scope.column.property] }}</span>
-                            <span class="icon iconfont icon-shangsheng" v-if="scope.row.autoKaryogamyStatus=='1'"></span>
-                            <span class="icon iconfont icon-xiajiang" v-if="scope.row.autoKaryogamyStatus=='2'"></span>
-                        </slot>
-                        <slot 
-                            v-else-if="scope.column.property=='resourceIPAutoKaryogamy'"
-                            :name="scope.column.property"
-                            :$index="scope.$index"
-                        >
-                            <span>{{ scope.row[scope.column.property] }}</span>
-                            <span class="icon iconfont icon-shangsheng" v-if="scope.row.resourceIPStatus=='1'"></span>
-                            <span class="icon iconfont icon-xiajiang" v-if="scope.row.resourceIPStatus=='2'"></span>
-                        </slot>
-                        <span v-else>{{ scope.row[scope.column.property] }}</span>
-                    </template> -->
                 </el-table-column>
             </template>
-            
         </el-table>
     </div>
 </template>
 
 <script>
 export default {
-    name: "table1",
+    name: "table2",
     props: {
         orderTableDataList: { //表格数据
             type: Object,
-            default: {}
+            default: function(){
+                let data = {
+                    dataList:[],
+                    titleList:[]
+                }
+                return data
+            }
         },
         emptyText: { // 空数据时显示的文本内容
             type: String,
             default: "暂无数据"
         },
-        loadingText: { // 数据加载时显示的文本内容
-            type: String,
-            default: "数据加载中...",
-        },
         showOverflowTooltip: { // 当内容过长被隐藏时显示 tooltip
             type: Boolean,
             default: true,
+        },
+        operator: { // 是否显示操作列
+            type: Boolean,
+            default: false,
         },
         colAlign: { // 每列文字的对齐方式
             type: String,
@@ -72,10 +53,6 @@ export default {
             type: [String, Number],
             default: 80,
         },
-        cityTableRowClickFn:{ // 表格行点击事件
-            type: Function
-        },
-        
     },
     data(){
         return{
@@ -84,24 +61,20 @@ export default {
     mounted(){
     },
     methods:{
-        // 行点击事件
-        rowClickFn(val){
-            if(this.cityTableRowClickFn){
-                this.cityTableRowClickFn(val)
-            }
-        },
     }
 };
 </script>
 
 <style lang="scss" scoped>
-#table1.work_order_table {
+#table2.work_order_table2 {
     box-sizing: border-box;
     padding: 20px;
+    
+    
 }
 </style>
 <style lang="scss">
-#table1.work_order_table {
+#table2.work_order_table2 {
     .el-table {
         color: #9BCDFF;
         text-align: left;
@@ -115,14 +88,17 @@ export default {
                     tr{
                         background: transparent;
                         th{
-                            background: rgba(3,131,175,0.26);
+                            background: rgba(4,89,138,0.38);
                             border: none;
-                            border-bottom: 1px solid #3ca1c4;
-                            border-top: 1px solid #3ca1c4;
                             .cell{
                                 padding-left: 28px;
                                 font-size: 16px;
-                                color: #51feff;
+                                color: #9bcdff;
+                                .el-table__expand-icon{
+                                    .el-icon-arrow-right{
+                                        color: #9BCDFF;
+                                    }
+                                }
                             }
                         }
                     }
@@ -137,15 +113,15 @@ export default {
                     td{
                         border: none;
                         .cell{
-                            font-size: 16px;
+                            font-size: 14px;
                             font-family: PingFangSC, PingFangSC-Regular;
                             font-weight: 400;
-                            color: #ffffff;
+                            color: #9bcdff;
                             padding-left: 28px;
                         }
                     }
                     &:nth-child(2n) {
-                        background: rgba(81,195,255,0.19);
+                        background: rgba(4,89,138,0.30);
                         border-color: transparent;
                     }
                     &:hover>td{

@@ -1,13 +1,10 @@
 <template>
   <div class="indexData">
     <div class="tooltipBox">
-      <div
-        class="tooltipBg"
-        :style="{ backgroundImage: bgImg ? 'url(' + bgImg + ')' : '' }"
-      >
-        <div class="tooltipImg">
-          <i :class="iconClass" :style="iconStyle"></i>
-        </div>
+      <div class="tooltipBg" :style="{ backgroundImage: 'url(' + bgImg + ')' }">
+        <!-- <div class="tooltipImg">
+          <img :src="bgImg" alt="" />
+        </div> -->
         <div class="tooltipInfo">
           <p class="tip1" :style="num.style">{{ num.value }}</p>
           <p class="tipTitle" :style="text.style">{{ text.value }}</p>
@@ -24,14 +21,6 @@ export default {
   },
   props: {
     num: {
-      type: Object,
-      default: {}
-    },
-    iconClass: {
-      type: String,
-      default: ""
-    },
-    iconStyle: {
       type: Object,
       default: {}
     },
@@ -54,47 +43,42 @@ export default {
   .tooltipBox {
     width: 100%;
     height: 100%;
-    // background: url("./images/tooltip.gif") center center no-repeat;
-    // background-size: 100% 100%;
     .tooltipBg {
       display: flex;
-      justify-content: flex-start;
+      justify-content: center;
       align-items: center;
       width: 100%;
       height: 100%;
       padding-left: 10px;
-      background: url("./images/indexdata4.png") center center no-repeat;
+      background-position: center center;
+      background-repeat: no-repeat;
+      // background: url("./images/indexdata7.png") center center no-repeat;
       background-size: 100% 100%;
       .tooltipImg {
-        width: 58px;
-        height: 58px;
+        width: 47px;
+        height: 44px;
         display: flex;
-        align-items: center;
-        justify-content: center;
-        i {
-          font-size: 36px;
-          background-image: linear-gradient(180deg, #04f7f0, #1cc8ff);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
+        align-content: center;
+        img {
+          max-width: 100%;
         }
       }
       .tooltipInfo {
-        margin-left: 5px;
         .tipTitle {
           font-size: 16px;
           font-family: PingFangSC;
           font-weight: 600;
-          text-align: left;
+          text-align: center;
           color: #b7e9ff;
-          line-height: 22px;
+          line-height: 26px;
         }
         .tip1 {
-          font-size: 20px;
+          font-size: 26px;
           font-family: PingFangSC;
           font-weight: 600;
-          text-align: left;
+          text-align: center;
           color: #ffffff;
-          line-height: 26px;
+          line-height: 30px;
         }
       }
     }
