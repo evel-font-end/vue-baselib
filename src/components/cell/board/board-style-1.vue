@@ -40,6 +40,9 @@ export default {
     initChart() {
       const el = document.getElementById(this.sid)
       const _chart = this.$echarts.init(el)
+      window.addEventListener('resize', () => {
+        _chart.resize();
+      })
       return _chart
     },
     updateChart(percentage) {
@@ -72,7 +75,7 @@ export default {
             name: demoData.name,
             type: 'gauge',
             center: demoData.pos,
-            radius: '96%',
+            radius: '100%',
             startAngle: 225,
             endAngle: -45,
             min: 0,
@@ -114,7 +117,7 @@ export default {
             type: 'pie',
             hoverAnimation: false,
             legendHoverLink: false,
-            radius: ['0%', '11%'],
+            radius: ['0%', '21%'],
             z: 0,
             center: demoData.pos,
             labelLine: {
@@ -165,7 +168,7 @@ export default {
             name: demoData.name,
             type: 'gauge',
             center: demoData.pos,
-            radius: '90%',
+            radius: '80%',
             startAngle: 226,
             endAngle: -46,
             min: 0,
@@ -252,7 +255,7 @@ export default {
           {
             type: 'gauge',
             center: demoData.pos,
-            radius: '79%',
+            radius: '90%',
             splitNumber: 10,
             min: 0,
             max: 100,

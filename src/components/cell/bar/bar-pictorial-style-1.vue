@@ -1,180 +1,203 @@
 <template>
-  <div class='chart-container' :id='chartId' />
+  <div class="bar">
+    <div :id="chartId" class="chart-wrap" />
+  </div>
 </template>
 <script>
-import _lodash_last from 'lodash/last'
-import _lodash_isArray from 'lodash/isArray'
-import _lodash_isObject from 'lodash/isObject'
+const echarts = require("echarts");
+function getLinearColor(colorStart, colorEnd) {
+  return new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+    { offset: 0, color: colorStart },
+    { offset: 1, color: colorEnd }
+  ]);
+}
 export default {
   props: {
     chartId: {
       type: String,
-      default: () => 'pictorailBar1',
+      default: "chartId"
     },
-    pictorailUrl: {
-      type: String,
-      default: () => 'image://data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAADYElEQVR4nO2dz0sUYRjHP7tIdAmxQ1LdlhCKMohAIsgiyEuHjkUEFQTlpejS/xCCBB06RBGBBKIG4cGyH0qHBKE9eKyFqBQPRQeNCt06vGNY7bq7szPfeZLnAwuzM+/zgw/DDvMu70wOIVveLscJOwycA44A24CfwAfgKXAbeFVvovlC/o/vuVwuTj+x0FWiYdGbgXvA8RrjHgAXgIVaCbMU3SKr1BhtwEtgZx1jTwI7gG7ga5pNNUO+9pBMuEN9klfYD9xMqZdEsCj6AHAiRtxZYFeyrSSHRdGnYsblCD8jJrEoek8TsbsT6yJhLIrelFFsqlgUPZtRbKpYFP2kidjxxLpIGIuiB4AvMeLmgJGEe0kMi6I/AVdjxPVSx91hVlgUDXAXuEaY16jFMnAJeJhqR01iVTTAdeAYUFxjzBRwCLgl6agJrM51rDAO7AP2EmbxthPO8vfAc2Ams84axLpoCGKLrH1mm8eC6KPAGaAL2Fpj7AZgY7T9DfhRY/wc4eflPmH+OjOynI8uEGbpukXlJ4Dz84V8aWWHcj46q4thFzCNTjJRren2UrlLWPM3WYjuAMYIk/tq2oCx9lK5Q11YLboFGARaxXVX0woMtpfK0uuTWvRFoFNcsxKdhF5kqEX3iuuthbQXtehG/gdMG2kvlm/B1xUuWoSLFmFF9CRwg2TnM4pRzskEc8bGiugR4ArhNjkpJqKcJv51sSJ63eOiRbhoES5ahIsW4aJFuGgRLlqEixbhokW4aBEuWoSLFuGiRbhoES5ahIsW4aJFuGgRLlqEWvTHKvs/p1izWu5qvaSCWvTlCvtmgeEUaw5TeUVtpV5SQy16COgBRoHXhMWb3aS7PnAhqjEQ1RwFeuYL+aEUa/5DFmtYHkefOEwQVmcBvKD+FQNvgNN/P+pHiV8MRbhoES5ahIsW4aJFuGgRLlqEixbhokW4aBEuWoSLFuGiRbhoES5ahIsW4aJFuGgRLlqEixbhokVYEx3nudGKXE1jTfS6xUWLcNEiXLQIFy3CRYtw0SJctAgXLcJFi3DRIv430eUq2+axJvp7jePPqmzHySXFmuhHwFKVYzNA/6rv/VR/s9BSlMsM1kTPEN4DPkU4I8vAO6APOAgsrhq7GO3ri8aUo5ipKIep1zv9AtipgOACGIrLAAAAAElFTkSuQmCC',
-    },
-    source: {
-      type: [Array, Object],
-      default: () => {
-        return {
-          '区域1': 100,
-          '区域2': 189,
-          '区域3': 79,
-          '区域4': 90,
-          '区域5': 120,
-          '区域6': 10,
-        }
-      },
-    },
+    chartData: {
+      type: Object,
+      default: function() {
+        return {};
+      }
+    }
   },
   data() {
     return {
-      chart: null,
-    }
+      chart: null
+    };
   },
-  watch: {
-    source(newVal) {
-      if (this.chart === null) {
-        this.initChart()
-      }
-      this.updateChart(newVal)
-    },
-  },
+  watch: {},
   mounted() {
-    this.chart = this.initChart()
-    this.updateChart(this.source)
+    this.$nextTick(() => {
+      this.initChart();
+    });
   },
   methods: {
     initChart() {
-      const el = document.getElementById(this.chartId)
-      const _chart = this.$echarts.init(el)
-      return _chart
-    },
-    initData(source) {
-      let _maxVal = 0
-      const _seriesData = []
-      const _yAxisData = []
-      if (_lodash_isArray(source)) {
-        source.forEach(item => {
-          _seriesData.push(item.value)
-          _yAxisData.push(item.name)
-        });
-        _maxVal = _lodash_last(_seriesData.slice().sort((a, b) => a - b))
-      } else if (_lodash_isObject(source)) {
-        Object.entries(source).forEach(([key, value]) => {
-          _seriesData.push(value)
-          _yAxisData.push(key)
-        })
-        _maxVal = _lodash_last(_seriesData.slice().sort((a, b) => a - b))
-      }
-      return {
-        max: _maxVal * 1.2,
-        yAxisData: _yAxisData,
-        seriesData: _seriesData,
-      }
-    },
-    updateChart(source) {
-      const _this = this
-      const data = this.initData(source)
-      this.chart.setOption({
+      this.chart = this.$echarts.init(
+        document.getElementById(this.chartId),
+        "chalk"
+      );
+      let { lineTitle1, lineTitle2, xdata, ydata1, ydata2 } = this.chartData;
+      let option = {
         tooltip: {
-          trigger: 'item',
-          formatter: '{b0}: {c0}',
+          trigger: "axis"
+        },
+        color: ["#FFBA1E", "#21B791"],
+        legend: {
+          itemWidth: 13,
+          itemHeight: 4,
+          left: "right",
+          data: [
+            {
+              name: lineTitle1,
+              icon: "stack",
+              textStyle: {
+                fontSize: 14,
+                fontFamily: "PingFangSC",
+                color: "#ffff"
+              }
+            },
+            {
+              name: lineTitle2,
+              icon: "stack",
+              textStyle: {
+                fontSize: 14,
+                fontFamily: "PingFangSC",
+                color: "#ffff"
+              }
+            }
+          ]
+        },
+        tooltip: {
+          trigger: "axis",
+          backgroundColor: "transparent",
+          padding: 0,
+          formatter(params) {
+            let text = "";
+            for (let i = 0; i < params.length; i++) {
+              const element = params[i];
+              text += `<p style='display:flex;justify-conten:space-between;'>
+            <span style='text-align:left;width: 100px;margin-bottom: 8px'>
+            <span></span>
+            ${element.seriesName}:</span> 
+            <span style='text-align:right;flex:1;color: #51FEFFFF'>${Number(
+              element.value
+            )}</span></p>`;
+            }
+            text = `<div style='border: 1px solid #51feff;color: #ffffff;padding: 15px 15px 7px;border-radius: 5px;background: rgba(0,0,0,0.5);'>${text}</div>`;
+            return text;
+          }
         },
         grid: {
-          left: '5%',
-          bottom: '5%',
-          top: '5%',
-          right: '15%',
-          containLabel: true,
+          left: "3%",
+          right: "0%",
+          bottom: "0%",
+          containLabel: true
         },
         xAxis: {
-          max: data.max,
+          type: "category",
           axisLine: {
-            show: false,
-          },
-          axisLabel: {
-            show: false,
-          },
-          axisTick: {
-            show: false,
-          },
-          splitLine: {
-            show: false,
-          },
-        },
-        yAxis: {
-          type: 'category',
-          inverse: true,
-          axisLine: {
-            show: false,
+            lineStyle: {
+              type: "solid",
+              color: "#325F76", //坐标轴的颜色
+              width: "1" //坐标轴的宽度
+            }
           },
           axisLabel: {
             textStyle: {
-              color: '#00deff',
-            },
+              color: "#88D7FD",
+              fontSize: 14,
+              fontFamily: "PingFangSC"
+            }
           },
-          axisTick: {
-            show: false,
-          },
-          splitLine: {
-            show: false,
-          },
-          data: data.yAxisData,
+          data: xdata
         },
-        series: [{
-          // current data
-          type: 'pictorialBar',
-          symbol: _this.pictorailUrl,
-          symbolRepeat: 'fixed',
-          symbolMargin: '5%',
-          symbolClip: true,
-          symbolSize: 20,
-          symbolBoundingData: data.max,
-          data: data.seriesData,
-          z: 10,
-        }, {
-          // full data
-          type: 'pictorialBar',
-          itemStyle: {
-            normal: {
-              // bg bar opacity
-              opacity: .2,
+        yAxis: [
+          {
+            type: "value",
+            axisLine: {
+              show: false //不显示坐标轴轴线
             },
-          },
-          label: {
-            normal: {
+            axisTick: {
+              //y轴刻度线
+              show: false
+            },
+            splitLine: {
               show: true,
-              formatter: (params) => {
-                return `${(params.value / data.max * 100).toFixed(1)} %`
-              },
-              position: 'right',
-              offset: [10, 0],
-              textStyle: {
-                color: '#00deff',
-              },
+              lineStyle: {
+                color: "#325F76",
+                width: 1,
+                type: "solid"
+              }
             },
+            axisLabel: {
+              textStyle: {
+                color: "#88D7FD",
+                fontSize: 14,
+                fontFamily: "PingFangSC"
+              }
+            }
+          }
+        ],
+        series: [
+          {
+            name: lineTitle1,
+            type: "line",
+            yAxisIndex: 0,
+            smooth: false,
+            symbol: "none",
+            itemStyle: {
+              normal: {
+                lineStyle: {
+                  color: "#FFBA1E" //改变折线颜色
+                }
+              }
+            },
+            data: ydata1
           },
-          animationDuration: 2000,
-          symbolRepeat: 'fixed',
-          symbolMargin: '5%',
-          symbol: _this.pictorailUrl,
-          symbolSize: 20,
-          symbolBoundingData: data.max,
-          data: data.seriesData,
-          z: 5,
-        }],
-      })
-    },
-  },
-}
+          {
+            name: lineTitle2,
+            type: "line",
+            yAxisIndex: 0,
+            smooth: false,
+            symbol: "none",
+            areaStyle: {
+              normal: {
+                color: getLinearColor(
+                  "rgba(18,186,149,0.38)",
+                  "rgba(18,186,149,0)"
+                ) //改变区域颜色
+              }
+            },
+            itemStyle: {
+              normal: {
+                lineStyle: {
+                  color: "#21B791" //改变折线颜色
+                }
+              }
+            },
+            data: ydata2
+          }
+        ]
+      };
+      this.chart.setOption(option);
+      window.addEventListener("resize", () => this.chart.resize(), false);
+    }
+  }
+};
 </script>
 <style lang="scss" scoped>
-.chart-container{
+.bar {
   width: 100%;
   height: 100%;
+  position: relative;
+  .chart-wrap {
+    width: 100%;
+    height: 100%;
+  }
 }
 </style>
-

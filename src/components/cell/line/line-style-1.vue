@@ -1,188 +1,206 @@
 <template>
-  <div class='line-container' :id='sid' />
+  <div class="bar">
+    <div :id="chartId" class="chart-wrap" />
+  </div>
 </template>
 <script>
+const echarts = require("echarts");
+function getLinearColor(colorStart, colorMiddle, colorEnd) {
+  return new echarts.graphic.LinearGradient(0, 0, 1, 0, [
+    { offset: 0, color: colorStart },
+    { offset: 0.5, color: colorMiddle },
+    { offset: 1, color: colorEnd }
+  ]);
+}
 export default {
-  name: 'LineStyle1',
   props: {
-    sid: {
+    chartId: {
       type: String,
-      default: () => 'line1',
+      default: ""
     },
-    source: {
-      type: [Array, Object],
-      default: () => {
-        return {
-          '2016/12': 8000,
-          '2017/1': 10000,
-          '2017/2': 9000,
-          '2017/3': 11000,
-          '2017/4': 8000,
-          '2017/5': 12000,
-        }
-      },
-    },
+    chartData: {
+      type: Object,
+      default: function() {
+        return {};
+      }
+    }
   },
   data() {
     return {
-      chart: null,
-    }
+      chart: null
+    };
   },
-  watch: {
-    source(newVal) {
-      if (this.chart === null) {
-        this.chart = this.initChart()
-      }
-      this.updateChart(newVal)
-    },
-  },
+  watch: {},
   mounted() {
-    this.chart = this.initChart()
-    this.updateChart(this.source)
+    this.$nextTick(() => {
+      this.initChart();
+    });
   },
   methods: {
     initChart() {
-      const el = document.getElementById(this.sid)
-      const _chart = this.$echarts.init(el)
-      return _chart
-    },
-    initData(source) {
-      if (source && Object.prototype.toString.call(source) === '[object Object]') {
-        const _xAxisData = []
-        const _seriesData = []
-        Object.entries(source).forEach(([key, value]) => {
-          _xAxisData.push(key)
-          _seriesData.push(value)
-        })
-        return {
-          xAxis: _xAxisData,
-          seriesData: _seriesData,
-        }
-      } else if (source && Object.prototype.toString.call(source) === '[object Array]') {
-        const _xAxisData = []
-        const _seriesData = []
-        source.forEach(item => {
-          _xAxisData.push(Object.keys(item)[0])
-          _seriesData.push(Object.values(item)[0])
-        })
-        return {
-          xAxis: _xAxisData,
-          seriesData: _seriesData,
-        }
-      }
-    },
-    updateChart(source) {
-      const data = this.initData(source)
-      this.chart.setOption({
+      this.chart = this.$echarts.init(
+        document.getElementById(this.chartId),
+        "chalk"
+      );
+      let { lineTitle1, lineTitle2, xdata, ydata1, ydata2 } = this.chartData;
+      let option = {
         tooltip: {
-          trigger: 'axis',
-          axisPointer: {
-            type: 'line',
-            label: {
-              backgroundColor: 'rgba(14,25,69,.9)',
-              borderColor: '#2a92ce',
-              borderWidth: 3,
+          trigger: "axis"
+        },
+        color: ["#38DFEF", "#27DDA8"],
+        legend: {
+          itemWidth: 10,
+          itemHeight: 4,
+          left: "right",
+          data: [
+            {
+              name: lineTitle1,
+              icon: "stack",
+              textStyle: {
+                fontSize: 14,
+                fontFamily: "PingFangSC",
+                color: "#ffff"
+              }
             },
-            lineStyle: {
-              color: '#0e9ac2',
-            },
-          },
+            {
+              name: lineTitle2,
+              icon: "stack",
+              textStyle: {
+                fontSize: 14,
+                fontFamily: "PingFangSC",
+                color: "#ffff"
+              }
+            }
+          ]
+        },
+        tooltip: {
+          trigger: "axis",
+          backgroundColor: "transparent",
+          padding: 0,
+          formatter(params) {
+            let text = "";
+            for (let i = 0; i < params.length; i++) {
+              const element = params[i];
+              text += `<p style='display:flex;justify-conten:space-between;'>
+            <span style='text-align:left;width: 100px;margin-bottom: 8px'>
+            <span></span>
+            ${element.seriesName}:</span> 
+            <span style='text-align:right;flex:1;color: #51FEFFFF'>${Number(
+              element.value
+            )}</span></p>`;
+            }
+            text = `<div style='border: 1px solid #51feff;color: #ffffff;padding: 15px 15px 7px;border-radius: 5px;background: rgba(0,0,0,0.5);'>${text}</div>`;
+            return text;
+          }
         },
         grid: {
-          left: '5%',
-          right: '5%',
-          bottom: '5%',
-          top: '10%',
-          containLabel: true,
+          left: "3%",
+          right: "0%",
+          bottom: "0%",
+          containLabel: true
         },
         xAxis: {
-          type: 'category',
-          boundaryGap: false,
-          data: data.xAxis,
-          axisLabel: {
-            color: '#00deff',
-          },
+          type: "category",
           axisLine: {
             lineStyle: {
-              color: '#00deff',
-            },
+              type: "solid",
+              color: "rgba(41,153,234,0.2)", //坐标轴的颜色
+              width: "1" //坐标轴的宽度
+            }
           },
-          axisTick: {
-            show: false,
+          axisLabel: {
+            textStyle: {
+              color: "#88D7FD",
+              fontSize: 14,
+              fontFamily: "PingFangSC"
+            }
           },
+          data: xdata
         },
-        yAxis: [{
-          type: 'value',
-          axisLine: {
-            lineStyle: {
-              color: '#00deff',
+        yAxis: [
+          {
+            type: "value",
+            axisLine: {
+              show: false //不显示坐标轴轴线
             },
-          },
-          splitLine: {
-            lineStyle: {
-              color: '#1b357e',
-              type: 'dashed',
+            axisTick: {
+              //y轴刻度线
+              show: false
             },
-          },
-          axisLabel: {
-            color: '#00deff',
-          },
-          axisTick: {
-            show: false,
-          },
-        }],
-        series: [{
-          type: 'line',
-          stack: '总量',
-          smooth: true,
-          showSymbol: false,
-          label: {
-            normal: {
-              show: false,
-              position: 'top',
+            splitLine: {
+              show: true,
+              lineStyle: {
+                color: "rgba(41,153,234,0.2)",
+                width: 1,
+                type: "solid"
+              }
             },
-          },
-          lineStyle: {
-            normal: {
-              color: '#34cbf6',
+            axisLabel: {
+              textStyle: {
+                color: "#88D7FD",
+                fontSize: 14,
+                fontFamily: "PingFangSC"
+              }
+            }
+          }
+        ],
+        series: [
+          {
+            name: lineTitle1,
+            type: "line",
+            yAxisIndex: 0,
+            smooth: true,
+            symbol: "none",
+            itemStyle: {
+              normal: {
+                lineStyle: {
+                  width: 4,
+                  color: getLinearColor(
+                    "rgba(56,223,239,0.08)",
+                    "rgba(56,223,239,1)",
+                    "rgba(56,223,239,0.08)"
+                  ) //改变折线颜色
+                }
+              }
             },
+            data: ydata1
           },
-          areaStyle: {
-            normal: {
-              color: {
-                type: 'linear',
-                x: 0,
-                y: 0,
-                x2: 0,
-                y2: 1,
-                colorStops: [{
-                  offset: 0, color: '#082fa2', // 0% 处的颜色
-                }, {
-                  offset: .5, color: 'rgba(8,47,162,.3)',
-                }, {
-                  offset: 1, color: 'transparent', // 100% 处的颜色
-                }],
-                globalCoord: false, // 缺省为 false
-              },
+          {
+            name: lineTitle2,
+            type: "line",
+            yAxisIndex: 0,
+            smooth: true,
+            symbol: "none",
+            itemStyle: {
+              normal: {
+                lineStyle: {
+                  width: 4,
+                  color: getLinearColor(
+                    "rgba(39,221,168,0.08)",
+                    "rgba(39,221,168,1)",
+                    "rgba(39,221,168,0.08)"
+                  ) //改变折线颜色
+                }
+              }
             },
-          },
-          itemStyle: {
-            normal: {
-              color: '#34cbf6',
-              borderWidth: 1,
-            },
-          },
-          data: data.seriesData,
-        }],
-      })
-    },
-  },
-}
+            data: ydata2
+          }
+        ]
+      };
+      this.chart.setOption(option);
+      window.addEventListener("resize", () => this.chart.resize(), false);
+    }
+  }
+};
 </script>
 <style lang="scss" scoped>
-.line-container{
+.bar {
   width: 100%;
   height: 100%;
+  position: relative;
+  .chart-wrap {
+    width: 100%;
+    height: 100%;
+  }
 }
 </style>
-

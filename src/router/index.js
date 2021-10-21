@@ -14,7 +14,7 @@ export default new Router({
         path: '/bar',
         name: 'bar',
         title: '混合图表',
-        icon: 'stats-bars',
+        icon: 'ios-repeat',
         component: res => require(['@/components/pages/bar'], res),
       }, {
         path: '/line',
@@ -22,7 +22,22 @@ export default new Router({
         title: '折线图',
         icon: 'arrow-graph-up-right',
         component: res => require(['@/components/pages/line'], res),
-      }, {
+      },
+      {
+        path: '/barChart',
+        name: 'barChart',
+        title: '柱状图',
+        icon: 'md-stats',
+        component: res => require(['@/components/pages/barChart'], res),
+      },
+      {
+        path: '/indexData',
+        name: 'indexData',
+        title: '指标数据',
+        icon: 'md-stats',
+        component: res => require(['@/components/pages/indexData'], res),
+      },
+      {
         path: '/pie',
         name: 'pie',
         title: '饼状图',
@@ -76,30 +91,54 @@ export default new Router({
         },
         component: res => require(['@/components/pages/suspension'], res),
       },
-      /* {
-        path: '/radar',
-        name: 'radar',
-        icon: 'ionic',
-        component: res => require(['@/components/pages/radar'], res),
-      }, 
-       {
-        path: '/box',
-        name: 'box',
-        component: res => require(['@/components/pages/box'], res),
-      }, {
-        path: '/load',
-        name: 'load',
-        component: res => require(['@/components/pages/load'], res),
-      }, {
-        path: '/funnel',
-        name: 'funnel',
-        component: res => require(['@/components/pages/funnel'], res),
-      }, {
-        path: '/ball',
-        name: 'ball',
-        component: res => require(['@/components/pages/ball'], res),
-      } */
-    ]
+      {
+        path: '/radarMap',
+        name: 'radarMap',
+        title: '雷达图',
+        icon: 'ios-pie-outline',
+        component: res => require(['@/components/pages/radarMap'], res),
+      },
+      {
+        path: '/opRings',
+        name: 'opRings',
+        title: '环形图',
+        icon: 'ios-pie-outline',
+        component: res => require(['@/components/pages/opRings'], res),
+      },
+      {
+        path: '/ranking',
+        name: 'ranking',
+        title: '排名',
+        icon: 'ios-pie-outline',
+        component: res => require(['@/components/pages/ranking'], res),
+      },
+        /* {
+          path: '/radar',
+          name: 'radar',
+          icon: 'ionic',
+          component: res => require(['@/components/pages/radar'], res),
+        }, {
+          path: '/table',
+          name: 'table',
+          component: res => require(['@/components/pages/table'], res),
+        }, {
+          path: '/box',
+          name: 'box',
+          component: res => require(['@/components/pages/box'], res),
+        }, {
+          path: '/load',
+          name: 'load',
+          component: res => require(['@/components/pages/load'], res),
+        }, {
+          path: '/funnel',
+          name: 'funnel',
+          component: res => require(['@/components/pages/funnel'], res),
+        }, {
+          path: '/ball',
+          name: 'ball',
+          component: res => require(['@/components/pages/ball'], res),
+        } */
+      ]
     },
   ],
 })
