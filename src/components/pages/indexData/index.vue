@@ -127,6 +127,55 @@
             :num="indexData14.num"
             :text="indexData14.text"
             :bgImg="indexData14.bgImg"
+            :btnImg="indexData14.btnImg"
+            :icon="indexData14.icon"
+            :btn="indexData14.btn"
+          />
+        </div>
+        <div class="module indexData15">
+          <indexData15
+            :num="indexData15.num"
+            :text="indexData15.text"
+            :bgImg="indexData15.bgImg"
+            :iconImg="indexData15.iconImg"
+          />
+        </div>
+        <div class="module indexData16">
+          <indexData16
+            :num="indexData16.num"
+            :text="indexData16.text"
+            :bgImg="indexData16.bgImg"
+          />
+        </div>
+        <div class="module indexData17">
+          <indexData17
+            :num="indexData17.num"
+            :text="indexData17.text"
+            :bgImg="indexData17.bgImg"
+          />
+        </div>
+        <div class="module indexData18">
+          <indexData18
+            :text="indexData18.text"
+            :bgImg="indexData18.bgImg"
+            :icon="indexData18.icon"
+          />
+        </div>
+        <div class="module indexData19">
+          <indexData19
+            :num="indexData19.num"
+            :text="indexData19.text"
+            :bottomBgImg="indexData19.bottomBgImg"
+            :topBgImg="indexData19.topBgImg"
+            :btnText="indexData19.btnText"
+          />
+        </div>
+        <div class="module indexData20">
+          <indexData20
+            :num="indexData20.num"
+            :text="indexData20.text"
+            :topBgImg="indexData20.topBgImg"
+            :btnText="indexData20.btnText"
           />
         </div>
       </div>
@@ -149,6 +198,12 @@ import indexData11 from "../../cell/indexData/index-data-11";
 import indexData12 from "../../cell/indexData/index-data-12";
 import indexData13 from "../../cell/indexData/index-data-13";
 import indexData14 from "../../cell/indexData/index-data-14";
+import indexData15 from "../../cell/indexData/index-data-15";
+import indexData16 from "../../cell/indexData/index-data-16";
+import indexData17 from "../../cell/indexData/index-data-17";
+import indexData18 from "../../cell/indexData/index-data-18";
+import indexData19 from "../../cell/indexData/index-data-19";
+import indexData20 from "../../cell/indexData/index-data-20";
 
 export default {
   components: {
@@ -165,7 +220,13 @@ export default {
     indexData11,
     indexData12,
     indexData13,
-    indexData14
+    indexData14,
+    indexData15,
+    indexData16,
+    indexData17,
+    indexData18,
+    indexData19,
+    indexData20
   },
   data() {
     return {
@@ -380,12 +441,97 @@ export default {
       },
       indexData14: {
         bgImg: require("../../cell/indexData/images/indexdata14.png"),
+        btnImg: require("../../cell/indexData/images/tooltip14.png"),
         num: {
           value: "390",
           style: {}
         },
+        icon: {
+          class: 'iconfont icon-banka',
+          style: {}
+        },
         text: {
-          value: "全国4G小区",
+          value: "板卡",
+          style: {}
+        },
+        btn: {
+          value: '查看',
+          style: {}
+        }
+      },
+      indexData15: {
+        bgImg: require("../../cell/indexData/images/indexdata15.png"),
+        num: {
+          value: "390",
+          style: {}
+        },
+        iconImg: require("../../cell/indexData/images/tooltip15.png"),
+        text: {
+          value: "政企电路数",
+          style: {}
+        }
+      },
+      indexData16: {
+        bgImg: require("../../cell/indexData/images/indexdata16.png"),
+        num: {
+          value: "9.75min",
+          style: {}
+        },
+        text: {
+          value: "执行时长",
+          style: {}
+        }
+      },
+      indexData17: {
+        bgImg: require("../../cell/indexData/images/indexdata17.png"),
+        num: {
+          value: "84990",
+          style: {}
+        },
+        text: {
+          value: "169骨干网",
+          style: {}
+        }
+      },
+      indexData18: {
+        bgImg: require("../../cell/indexData/images/indexdata18.png"),
+        text: {
+          value: "4G",
+          style: {}
+        },
+        icon: {
+          class: 'iconfont icon-wangluo',
+          style: {}
+        }
+      },
+      indexData19: {
+        topBgImg: require("../../cell/indexData/images/indexdata19_top.png"),
+        bottomBgImg: require("../../cell/indexData/images/indexdata19_bottom.png"),
+        num: {
+          value: "378885",
+          style: {}
+        },
+        text: {
+          value: "传输网",
+          style: {}
+        },
+        btnText: {
+          value: '查看',
+          style: {}
+        }
+      },
+      indexData20: {
+        topBgImg: require("../../cell/indexData/images/indexdata19_top.png"),
+        num: {
+          value: "378885",
+          style: {}
+        },
+        text: {
+          value: "传输网",
+          style: {}
+        },
+        btnText: {
+          value: '查看',
           style: {}
         }
       },
@@ -495,6 +641,30 @@ $showBoxWidth: 100%;
     .indexData14 {
       width: 275px;
       height: 225px;
+    }
+    .indexData15 {
+      width: 172px;
+      height: 180px;
+    }
+    .indexData16 {
+      width: 200px;
+      height: 175px;
+    }
+    .indexData17 {
+      width: 130px;
+      height: 98px;
+    }
+    .indexData18 {
+      width: 100px;
+      height: 152px;
+    }
+    .indexData19{
+      width: 120px;
+      height: 142px;
+    }
+    .indexData20{
+      width: 80px;
+      height: 150px;
     }
   }
 }
