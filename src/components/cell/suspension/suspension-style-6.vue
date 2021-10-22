@@ -139,6 +139,7 @@ export default {
                 }
             }
             .content{
+                padding: 0;
                 .contentitem{
                     margin-top: 10px;
                     display: flex;

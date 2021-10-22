@@ -92,6 +92,16 @@ export default new Router({
         component: res => require(['@/components/pages/suspension'], res),
       },
       {
+        path: '/mapcharts',
+        name: 'mapcharts',
+        title: '地图',
+        icon: 'ios-pie-outline',
+        meta:{
+          title: '地图'
+        },
+        component: res => require(['@/components/pages/mapcharts'], res),
+      },
+      {
         path: '/radarMap',
         name: 'radarMap',
         title: '雷达图',
