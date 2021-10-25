@@ -173,14 +173,36 @@
         <div class="module indexData20">
           <indexData20
             :num="indexData20.num"
+            :unit="indexData20.unit"
             :text="indexData20.text"
-            :topBgImg="indexData20.topBgImg"
-            :btnText="indexData20.btnText"
+            :bgImg="indexData20.bgImg"
+            :icon="indexData20.icon"
+          />
+        </div>
+        <div class="module indexData21">
+          <indexData21
+            :num="indexData21.num"
+            :text="indexData21.text"
+            :bgImg="indexData21.bgImg"
+          />
+        </div>
+        <div class="module indexData22">
+          <indexData22
+            :num="indexData22.num"
+            :text="indexData22.text"
+            :bgImg="indexData22.bgImg"
           />
         </div>
       </div>
     </div>
-    <div class="show-item bg-black"></div>
+    <div class="show-item bg-black">
+      <p class="title">多指标数据</p>
+      <div class="item-content">
+        <div class="module">
+          
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -204,6 +226,8 @@ import indexData17 from "../../cell/indexData/index-data-17";
 import indexData18 from "../../cell/indexData/index-data-18";
 import indexData19 from "../../cell/indexData/index-data-19";
 import indexData20 from "../../cell/indexData/index-data-20";
+import indexData21 from "../../cell/indexData/index-data-21";
+import indexData22 from "../../cell/indexData/index-data-22";
 
 export default {
   components: {
@@ -226,7 +250,9 @@ export default {
     indexData17,
     indexData18,
     indexData19,
-    indexData20
+    indexData20,
+    indexData21,
+    indexData22
   },
   data() {
     return {
@@ -411,16 +437,18 @@ export default {
           style: {}
         },
         unit: {
-          value: '%',
+          value: "%",
           style: {}
         },
-        progressBgStyle: {  //进度条底色样式
-          startColor: 'rgba(15,121,163,0.36)',
-          endColor: 'rgba(15,121,163,0.36)'
+        progressBgStyle: {
+          //进度条底色样式
+          startColor: "rgba(15,121,163,0.36)",
+          endColor: "rgba(15,121,163,0.36)"
         },
-        progressValueStyle: { //进度条刻度值
-          startColor: 'rgba(0,209,255,1)',
-          endColor: 'rgba(0,209,255,0.15)'
+        progressValueStyle: {
+          //进度条刻度值
+          startColor: "rgba(0,209,255,1)",
+          endColor: "rgba(0,209,255,0.15)"
         },
         iconImg: require("../../cell/indexData/images/tooltip12.png"),
         borderStyle: {}, //背景边框样式
@@ -447,7 +475,7 @@ export default {
           style: {}
         },
         icon: {
-          class: 'iconfont icon-banka',
+          class: "iconfont icon-banka",
           style: {}
         },
         text: {
@@ -455,7 +483,7 @@ export default {
           style: {}
         },
         btn: {
-          value: '查看',
+          value: "查看",
           style: {}
         }
       },
@@ -500,7 +528,7 @@ export default {
           style: {}
         },
         icon: {
-          class: 'iconfont icon-wangluo',
+          class: "iconfont icon-wangluo",
           style: {}
         }
       },
@@ -516,25 +544,51 @@ export default {
           style: {}
         },
         btnText: {
-          value: '查看',
+          value: "查看",
           style: {}
         }
       },
       indexData20: {
-        topBgImg: require("../../cell/indexData/images/indexdata19_top.png"),
+        bgImg: require("../../cell/indexData/images/indexdata20.png"),
+        icon: {
+          class: "iconfont icon-rili",
+          style: {}
+        },
         num: {
-          value: "378885",
+          value: "778",
           style: {}
         },
         text: {
-          value: "传输网",
+          value: "月用电量",
           style: {}
         },
-        btnText: {
-          value: '查看',
+        unit: {
+          value: "度",
           style: {}
         }
       },
+      indexData21: {
+        bgImg: require("../../cell/indexData/images/indexdata21.png"),
+        num: {
+          value: "4G",
+          style: {}
+        },
+        text: {
+          value: "月用电量",
+          style: {}
+        }
+      },
+      indexData22: {
+        bgImg: require("../../cell/indexData/images/indexdata22.png"),
+        num: {
+          value: "23676",
+          style: {}
+        },
+        text: {
+          value: "不达标资源",
+          style: {}
+        }
+      }
     };
   },
   mounted() {},
@@ -658,13 +712,21 @@ $showBoxWidth: 100%;
       width: 100px;
       height: 152px;
     }
-    .indexData19{
+    .indexData19 {
       width: 120px;
       height: 142px;
     }
-    .indexData20{
+    .indexData20 {
       width: 80px;
       height: 150px;
+    }
+    .indexData21 {
+      width: 110px;
+      height: 110px;
+    }
+    .indexData22 {
+      width: 140px;
+      height: 80px;
     }
   }
 }

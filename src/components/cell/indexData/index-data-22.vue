@@ -1,16 +1,22 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-10-25 10:41:45
+ * @LastEditTime: 2021-10-25 10:57:42
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \task_broad_webd:\project\GIT\vue-baselib\src\components\cell\indexData\index-data-22.vue
+-->
 <template>
   <div class="indexData">
     <div class="tooltipBox">
       <div class="tooltipBg" :style="{ backgroundImage: 'url(' + bgImg + ')' }">
-        <div class="tooltipImg">
+        <!-- <div class="tooltipImg">
           <i :class="icon.class" :style="icon.style"></i>
+        </div> -->
+        <div class="tooltipInfo">
+          <p class="tip1" :style="num.style">{{ num.value }}</p>
+          <p class="tipTitle" :style="text.style">{{ text.value }}</p>
         </div>
-      </div>
-      <div class="tooltipInfo">
-        <p class="tipTitle" :style="text.style">{{ text.value }}</p>
-        <p class="tip1" :style="num.style">
-          {{ num.value }}<span :style="unit.style">{{ unit.value }}</span>
-        </p>
       </div>
     </div>
   </div>
@@ -30,19 +36,7 @@ export default {
       type: String,
       default: ""
     },
-    iconImg: {
-      type: String,
-      default: ""
-    },
     text: {
-      type: Object,
-      default: {}
-    },
-    unit: {
-      type: Object,
-      default: {}
-    },
-    icon: {
       type: Object,
       default: {}
     }
@@ -67,7 +61,7 @@ export default {
       justify-content: center;
       align-items: center;
       width: 100%;
-      height: 80px;
+      height: 100%;
       background-position: center center;
       background-repeat: no-repeat;
       background-size: 100% 100%;
@@ -78,32 +72,29 @@ export default {
         font-size: 14px;
         color: #ffffff;
       }
-    }
-    .tooltipInfo {
-      /* width: 100%;
-      height: 100%; */
-      /* display: flex;
-        flex-direction: column;
-        align-items: center; */
-      .tipTitle {
-        font-size: 14px;
+      .tooltipInfo {
+        text-align: center;
+        font-size: 16px;
         font-family: PingFangSC, PingFangSC-Semibold;
         font-weight: 600;
         text-align: center;
         color: #ffffff;
-        line-height: 20px;
-        margin-top: 10px;
-        margin-bottom: 6px;
-      }
-      .tip1 {
-        font-size: 26px;
-        font-family: PangMenZhengDao;
-        text-align: left;
-        color: #ffffff;
-        line-height: 30px;
-        span {
-          font-size: 14px;
+        line-height: 22px;
+        .tip1 {
+          font-size: 24px;
           font-family: PingFangSC, PingFangSC-Semibold;
+          font-weight: 600;
+          text-align: left;
+          color: #ffffff;
+          line-height: 33px;
+        }
+        .tipTitle {
+          font-size: 16px;
+          font-family: PingFangSC, PingFangSC-Semibold;
+          font-weight: 600;
+          text-align: center;
+          color: #ffffff;
+          line-height: 22px;
         }
       }
     }
