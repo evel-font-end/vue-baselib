@@ -199,7 +199,14 @@
       <p class="title">多指标数据</p>
       <div class="item-content">
         <div class="module">
-          
+          <div class="module indexData23">
+            <indexData23
+              :num="indexData23.num"
+              :text="indexData23.text"
+              :province="indexData23.province"
+              :pieChartData="indexData23.pieChartData"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -228,6 +235,7 @@ import indexData19 from "../../cell/indexData/index-data-19";
 import indexData20 from "../../cell/indexData/index-data-20";
 import indexData21 from "../../cell/indexData/index-data-21";
 import indexData22 from "../../cell/indexData/index-data-22";
+import indexData23 from "../../cell/indexData/index-data-23";
 
 export default {
   components: {
@@ -252,7 +260,8 @@ export default {
     indexData19,
     indexData20,
     indexData21,
-    indexData22
+    indexData22,
+    indexData23
   },
   data() {
     return {
@@ -588,6 +597,24 @@ export default {
           value: "不达标资源",
           style: {}
         }
+      },
+      indexData23: {
+        province: {
+          value: "山东省",
+          style: {}
+        },
+        pieChartData: [
+          { value: 1048, name: "Search Engine" },
+          { value: 735, name: "Direct" }
+        ],
+        num: {
+          value: "877499",
+          style: {}
+        },
+        text: {
+          value: "总资源数",
+          style: {}
+        }
       }
     };
   },
@@ -727,6 +754,10 @@ $showBoxWidth: 100%;
     .indexData22 {
       width: 140px;
       height: 80px;
+    }
+    .indexData23 {
+      width: 400px;
+      height: 290px;
     }
   }
 }
