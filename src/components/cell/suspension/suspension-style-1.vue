@@ -69,6 +69,7 @@ export default {
         .header{
             padding: 10px;
             background: linear-gradient(270deg,rgba(32,45,85,0.20), rgba(40,222,255,0.47) 85%, rgba(40,222,255,0.25));
+            display: flex;
             .header_information{
                 .title{
                     display: block;

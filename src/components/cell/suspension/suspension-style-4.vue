@@ -77,6 +77,7 @@ export default {
             text-shadow: 0px 2px 4px 0px #1c4696; 
         }
         .content{
+            padding: 0;
             .item{
                 margin-top: 10px;
                 display: flex;

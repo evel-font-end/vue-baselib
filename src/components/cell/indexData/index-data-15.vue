@@ -3,18 +3,11 @@
     <div class="tooltipBox">
       <div class="tooltipBg" :style="{ backgroundImage: 'url(' + bgImg + ')' }">
         <div class="tooltipImg">
-          <i :class="icon.class" :style="icon.style"></i>
+          <img :src="iconImg" alt="" />
         </div>
         <div class="tooltipInfo">
           <p class="tip1" :style="num.style">{{ num.value }}</p>
           <p class="tipTitle" :style="text.style">{{ text.value }}</p>
-        </div>
-        <div class="btnImg">
-          <p class="btn" :style="{ backgroundImage: 'url(' + btnImg + ')' }">
-            <span :style="btn.style">
-              {{btn.value}}
-            </span>
-          </p>
         </div>
       </div>
     </div>
@@ -39,17 +32,9 @@ export default {
       type: Object,
       default: {}
     },
-    btnImg: {
+    iconImg: {
       type: String,
       default: ""
-    },
-    icon: {
-      type: Object,
-      default: {}
-    },
-    btn: {
-      type: Object,
-      default: {}
     }
   },
   methods: {}
@@ -66,18 +51,18 @@ export default {
     .tooltipBg {
       width: 100%;
       height: 100%;
+      padding-top: 27px;
       background-position: center center;
       background-repeat: no-repeat;
       // background: url("./images/indexdata7.png") center center no-repeat;
       background-size: 100% 100%;
       .tooltipImg {
-        // width: 47px;
-        height: 90px;
+        width: 53px;
+        height: 73px;
         display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        i {
-          font-size: 42px;
+        margin: 0 auto;
+        img {
+          max-width: 100%;
         }
       }
       .tooltipInfo {
@@ -90,36 +75,12 @@ export default {
           line-height: 22px;
         }
         .tip1 {
-          margin-top: 25px;
-          font-size: 28px;
+          font-size: 26px;
           font-family: PangMenZhengDao;
           text-align: center;
           color: #bcf5ff;
-          line-height: 30px;
+          line-height: 36px;
           letter-spacing: 1px;
-        }
-      }
-      .btnImg {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-        .btn {
-          cursor: pointer;
-          width: 65px;
-          height: 35px;
-          background-position: center center;
-          background-repeat: no-repeat;
-          background-size: 100% 100%;
-          text-align: center;
-          span {
-            font-size: 14px;
-            font-family: PingFangSC;
-            font-weight: 600;
-            line-height: 35px;
-            color: #ffffff;
-            letter-spacing: 0px;
-          }
         }
       }
     }
