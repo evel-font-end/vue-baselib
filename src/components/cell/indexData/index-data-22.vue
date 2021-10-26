@@ -1,11 +1,3 @@
-<!--
- * @Author: your name
- * @Date: 2021-10-25 10:41:45
- * @LastEditTime: 2021-10-25 10:57:42
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \task_broad_webd:\project\GIT\vue-baselib\src\components\cell\indexData\index-data-22.vue
--->
 <template>
   <div class="indexData">
     <div class="tooltipBox">

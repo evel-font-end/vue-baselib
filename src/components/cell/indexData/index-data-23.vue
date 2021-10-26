@@ -1,7 +1,7 @@
 <template>
   <div class="indexData">
     <div class="tooltipBox">
-      <div class="tooltipBg">
+      <div class="tooltipBg" :style="backgroundStyle">
         <div class="tooltipInfo">
           <p class="provinceName" :style="province.style">
             {{ province.value }}
@@ -13,16 +13,20 @@
           <div id="pieChart" class="pieChart"></div>
         </div>
       </div>
-      <div class="lineChartContainer"></div>
+      <div class="lineChartContainer">
+        <div id="lineChart" class="lineChart"></div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import echarts from "echarts";
 export default {
   data() {
     return {
-      pieChart: null
+      pieChart: null,
+      lineChart: null
     };
   },
   props: {
@@ -38,14 +42,33 @@ export default {
       type: Object,
       default: {}
     },
+    /**
+     * @description: 饼图数据
+     * @param {pieChartData}
+     * @return {*}
+     */
     pieChartData: {
-      type: Array,
-      default: []
+      type: Object,
+      default: {}
+    },
+    /**
+     * @description: 折线图参数
+     * @param {lineChartData}
+     * @return {*}
+     */
+    lineChartData: {
+      type: Object,
+      default: {}
+    },
+    backgroundStyle: {
+      type: Object,
+      default: {}
     }
   },
   mounted() {
     this.$nextTick(() => {
       this.initPieChart();
+      this.initLineChart();
     });
   },
   methods: {
@@ -54,61 +77,103 @@ export default {
         document.getElementById("pieChart"),
         "chalk"
       );
-      let option = {
-        tooltip: {
+      let { data, color, legend, series } = this.pieChartData;
+      let pieOption = {
+        /* tooltip: {
           trigger: "item"
-        },
-        legend: {
-          orient: "vertical",
-          icon: "circle",
-          left: '50%',
-          top: "center",
-          fontsize: "12",
-          // data: ["正常", "异常"],
-          itemWidth: 8,
-          /* formatter: (params) => {
-            params =
-              params === "正常"
-                ? params + '    ' + this.row.normalNum
-                : params + '    ' + this.row.anomalNum
-            return params
-          }, */
-          textStyle: {
-            color: "#9BCDFF",
-          },
-        },
-        color: ["#36ECD6", "#FF8161"],
-        series: [
-          {
-            type: "pie",
-            radius: ["50%", "80%"],
-            center: ["30%", "50%"],
-            avoidLabelOverlap: false,
-            hoverAnimation: false,
-            label: {
-              show: false
-            },
-            emphasis: {
-              label: {
-                show: false,
-                fontSize: "12"
-              }
-            },
-            labelLine: {
-              show: false
-            },
-            itemStyle: {
-              normal: {
-                borderWidth: 6, //设置border的宽度有多大
-                borderColor: "#083F60"
-              }
-            },
-            data: this.pieChartData
-          }
-        ]
+        }, */
+        legend,
+        color,
+        series
       };
-      this.pieChart.setOption(option);
+      /**
+       * @description: 饼图legend的formatter函数
+       * @param {*} params
+       * @return {*}
+       */
+      function formatterPieLegend(params) {
+        data.map(e => {
+          if (e.name == params) {
+            params = params + "    " + e.value;
+          }
+        });
+        return params;
+      }
+      this.$set(legend, "formatter", formatterPieLegend);
+      this.$set(series, "data", data);
+      this.pieChart.setOption(pieOption);
       window.addEventListener("resize", () => this.pieChart.resize(), false);
+    },
+    initLineChart() {
+      this.lineChart = this.$echarts.init(
+        document.getElementById("lineChart"),
+        "chalk"
+      );
+      let {
+        xData,
+        xAxisLabel,
+        ySplitLine,
+        yAxisLabel,
+        yData,
+        lineStyle,
+        areaStyle,
+        title
+      } = this.lineChartData;
+      let lineChartOption = {
+        title,
+        grid: {
+          top: 40,
+          left: 55,
+          bottom: 30,
+          right: 30,
+          shadowColr: "rgba(0, 0, 0, 0.5)",
+          shadowBlur: 10
+        },
+        xAxis: {
+          type: "category",
+          data: xData,
+          axisLine: {
+            show: false
+          },
+          axisTick: {
+            show: false
+          },
+          axisLabel: xAxisLabel
+        },
+        yAxis: {
+          type: "value",
+          axisLine: {
+            show: false
+          },
+          axisTick: {
+            show: false
+          },
+          splitLine: ySplitLine,
+          axisLabel: yAxisLabel
+        },
+        series: {
+          data: yData,
+          type: "line",
+          smooth: true,
+          symbol: "none",
+          lineStyle: lineStyle,
+          areaStyle: {
+            //区域填充样式
+            normal: {
+              color: new echarts.graphic.LinearGradient(
+                0,
+                0,
+                0,
+                1,
+                areaStyle,
+                false
+              )
+            }
+          }
+        }
+      };
+      this.lineChart.setOption(lineChartOption);
+      window.addEventListener("resize", () => this.lineChart.resize(), false);
     }
   }
 };
@@ -188,6 +253,10 @@ export default {
     .lineChartContainer {
       width: 100%;
       height: calc(100% - 120px);
+      .lineChart {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 }

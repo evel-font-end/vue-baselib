@@ -204,7 +204,9 @@
               :num="indexData23.num"
               :text="indexData23.text"
               :province="indexData23.province"
+              :backgroundStyle="indexData23.backgroundStyle"
               :pieChartData="indexData23.pieChartData"
+              :lineChartData="indexData23.lineChartData"
             />
           </div>
         </div>
@@ -603,10 +605,136 @@ export default {
           value: "山东省",
           style: {}
         },
-        pieChartData: [
-          { value: 1048, name: "Search Engine" },
-          { value: 735, name: "Direct" }
-        ],
+        pieChartData: { //饼图配置参数
+          data: [ //饼图数据
+            { value: 1048, name: "正常" },
+            { value: 735, name: "异常" }
+          ],
+          color: ["#36ECD6", "#FF8161"], //饼图各圆环颜色
+          legend: { //饼图图例样式
+            orient: "vertical",
+            icon: "circle",
+            left: "50%",
+            top: "center",
+            fontsize: "12",
+            itemWidth: 8,
+            textStyle: {
+              color: "#9BCDFF"
+            }
+          },
+          series: { //饼图series系列参数
+            type: "pie",
+            radius: ["50%", "80%"],
+            center: ["30%", "50%"],
+            avoidLabelOverlap: false,
+            hoverAnimation: false,
+            label: {
+              show: false
+            },
+            emphasis: {
+              label: {
+                show: false,
+                fontSize: "12"
+              }
+            },
+            labelLine: {
+              show: false
+            },
+            itemStyle: {
+              normal: {
+                borderWidth: 6, //设置border的宽度有多大
+                borderColor: "#083F60"
+              }
+            }
+          }
+        },
+        lineChartData: { //折线图配置参数
+          xData: [ //X轴数据
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"
+          ],
+          xAxisLabel: { //X轴刻度值样式
+            textStyle: {
+              color: "#63aee5"
+            }
+          },
+          ySplitLine: { //横向网格线样式
+            show: true,
+            lineStyle: {
+              color: "rgba(255,255,255,0.18)",
+              width: 1,
+              opacity: 0.7
+            }
+          },
+          yAxisLabel: { //Y轴刻度值样式
+            textStyle: {
+              color: "#63aee5"
+            }
+          },
+          yData: [  //Y轴数据
+            2432,
+            465,
+            8686,
+            131,
+            3455,
+            2425,
+            654,
+            321,
+            675,
+            321,
+            5423,
+            1245
+          ],
+          lineStyle: {  //折线样式
+            normal: {
+              width: 2,
+              color: {
+                type: "linear",
+                colorStops: [
+                  {
+                    offset: 0,
+                    color: "#00EBFF"
+                  },
+                  {
+                    offset: 1,
+                    color: "#00EBFF"
+                  }
+                ],
+                globalCoord: false
+              }
+            }
+          },
+          areaStyle: [ //折线区域面积颜色
+            {
+              offset: 0,
+              color: "rgba(49,251,217,0.38)"
+            },
+
+            {
+              offset: 1,
+              color: "rgba(49,251,217,0)"
+            }
+          ],
+          title: {  //折线标题文字样式
+            text: "近三天资源入库趋势",
+            left: "left",
+            top: "10",
+            textStyle: {
+              fontSize: "12",
+              color: "#9BCDFF"
+            }
+          }
+        },
         num: {
           value: "877499",
           style: {}
@@ -614,7 +742,8 @@ export default {
         text: {
           value: "总资源数",
           style: {}
-        }
+        },
+        backgroundStyle: {} //上方背景颜色
       }
     };
   },
