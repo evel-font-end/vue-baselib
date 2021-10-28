@@ -11,6 +11,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@jiaminghi/data-view": "^2.10.0",
     "echarts": "^4.0.4",
     "echarts-liquidfill": "^2.0.0",
     "element-ui": "^2.15.6",
