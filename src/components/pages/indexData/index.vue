@@ -173,14 +173,45 @@
         <div class="module indexData20">
           <indexData20
             :num="indexData20.num"
+            :unit="indexData20.unit"
             :text="indexData20.text"
-            :topBgImg="indexData20.topBgImg"
-            :btnText="indexData20.btnText"
+            :bgImg="indexData20.bgImg"
+            :icon="indexData20.icon"
+          />
+        </div>
+        <div class="module indexData21">
+          <indexData21
+            :num="indexData21.num"
+            :text="indexData21.text"
+            :bgImg="indexData21.bgImg"
+          />
+        </div>
+        <div class="module indexData22">
+          <indexData22
+            :num="indexData22.num"
+            :text="indexData22.text"
+            :bgImg="indexData22.bgImg"
           />
         </div>
       </div>
     </div>
-    <div class="show-item bg-black"></div>
+    <div class="show-item bg-black">
+      <p class="title">多指标数据</p>
+      <div class="item-content">
+        <div class="module">
+          <div class="module indexData23">
+            <indexData23
+              :num="indexData23.num"
+              :text="indexData23.text"
+              :province="indexData23.province"
+              :backgroundStyle="indexData23.backgroundStyle"
+              :pieChartData="indexData23.pieChartData"
+              :lineChartData="indexData23.lineChartData"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -204,6 +235,9 @@ import indexData17 from "../../cell/indexData/index-data-17";
 import indexData18 from "../../cell/indexData/index-data-18";
 import indexData19 from "../../cell/indexData/index-data-19";
 import indexData20 from "../../cell/indexData/index-data-20";
+import indexData21 from "../../cell/indexData/index-data-21";
+import indexData22 from "../../cell/indexData/index-data-22";
+import indexData23 from "../../cell/indexData/index-data-23";
 
 export default {
   components: {
@@ -226,7 +260,10 @@ export default {
     indexData17,
     indexData18,
     indexData19,
-    indexData20
+    indexData20,
+    indexData21,
+    indexData22,
+    indexData23
   },
   data() {
     return {
@@ -411,16 +448,18 @@ export default {
           style: {}
         },
         unit: {
-          value: '%',
+          value: "%",
           style: {}
         },
-        progressBgStyle: {  //进度条底色样式
-          startColor: 'rgba(15,121,163,0.36)',
-          endColor: 'rgba(15,121,163,0.36)'
+        progressBgStyle: {
+          //进度条底色样式
+          startColor: "rgba(15,121,163,0.36)",
+          endColor: "rgba(15,121,163,0.36)"
         },
-        progressValueStyle: { //进度条刻度值
-          startColor: 'rgba(0,209,255,1)',
-          endColor: 'rgba(0,209,255,0.15)'
+        progressValueStyle: {
+          //进度条刻度值
+          startColor: "rgba(0,209,255,1)",
+          endColor: "rgba(0,209,255,0.15)"
         },
         iconImg: require("../../cell/indexData/images/tooltip12.png"),
         borderStyle: {}, //背景边框样式
@@ -447,7 +486,7 @@ export default {
           style: {}
         },
         icon: {
-          class: 'iconfont icon-banka',
+          class: "iconfont icon-banka",
           style: {}
         },
         text: {
@@ -455,7 +494,7 @@ export default {
           style: {}
         },
         btn: {
-          value: '查看',
+          value: "查看",
           style: {}
         }
       },
@@ -500,7 +539,7 @@ export default {
           style: {}
         },
         icon: {
-          class: 'iconfont icon-wangluo',
+          class: "iconfont icon-wangluo",
           style: {}
         }
       },
@@ -516,25 +555,196 @@ export default {
           style: {}
         },
         btnText: {
-          value: '查看',
+          value: "查看",
           style: {}
         }
       },
       indexData20: {
-        topBgImg: require("../../cell/indexData/images/indexdata19_top.png"),
+        bgImg: require("../../cell/indexData/images/indexdata20.png"),
+        icon: {
+          class: "iconfont icon-rili",
+          style: {}
+        },
         num: {
-          value: "378885",
+          value: "778",
           style: {}
         },
         text: {
-          value: "传输网",
+          value: "月用电量",
           style: {}
         },
-        btnText: {
-          value: '查看',
+        unit: {
+          value: "度",
           style: {}
         }
       },
+      indexData21: {
+        bgImg: require("../../cell/indexData/images/indexdata21.png"),
+        num: {
+          value: "4G",
+          style: {}
+        },
+        text: {
+          value: "月用电量",
+          style: {}
+        }
+      },
+      indexData22: {
+        bgImg: require("../../cell/indexData/images/indexdata22.png"),
+        num: {
+          value: "23676",
+          style: {}
+        },
+        text: {
+          value: "不达标资源",
+          style: {}
+        }
+      },
+      indexData23: {
+        province: {
+          value: "山东省",
+          style: {}
+        },
+        pieChartData: { //饼图配置参数
+          data: [ //饼图数据
+            { value: 1048, name: "正常" },
+            { value: 735, name: "异常" }
+          ],
+          color: ["#36ECD6", "#FF8161"], //饼图各圆环颜色
+          legend: { //饼图图例样式
+            orient: "vertical",
+            icon: "circle",
+            left: "50%",
+            top: "center",
+            fontsize: "12",
+            itemWidth: 8,
+            textStyle: {
+              color: "#9BCDFF"
+            }
+          },
+          series: { //饼图series系列参数
+            type: "pie",
+            radius: ["50%", "80%"],
+            center: ["30%", "50%"],
+            avoidLabelOverlap: false,
+            hoverAnimation: false,
+            label: {
+              show: false
+            },
+            emphasis: {
+              label: {
+                show: false,
+                fontSize: "12"
+              }
+            },
+            labelLine: {
+              show: false
+            },
+            itemStyle: {
+              normal: {
+                borderWidth: 6, //设置border的宽度有多大
+                borderColor: "#083F60"
+              }
+            }
+          }
+        },
+        lineChartData: { //折线图配置参数
+          xData: [ //X轴数据
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"
+          ],
+          xAxisLabel: { //X轴刻度值样式
+            textStyle: {
+              color: "#63aee5"
+            }
+          },
+          ySplitLine: { //横向网格线样式
+            show: true,
+            lineStyle: {
+              color: "rgba(255,255,255,0.18)",
+              width: 1,
+              opacity: 0.7
+            }
+          },
+          yAxisLabel: { //Y轴刻度值样式
+            textStyle: {
+              color: "#63aee5"
+            }
+          },
+          yData: [  //Y轴数据
+            2432,
+            465,
+            8686,
+            131,
+            3455,
+            2425,
+            654,
+            321,
+            675,
+            321,
+            5423,
+            1245
+          ],
+          lineStyle: {  //折线样式
+            normal: {
+              width: 2,
+              color: {
+                type: "linear",
+                colorStops: [
+                  {
+                    offset: 0,
+                    color: "#00EBFF"
+                  },
+                  {
+                    offset: 1,
+                    color: "#00EBFF"
+                  }
+                ],
+                globalCoord: false
+              }
+            }
+          },
+          areaStyle: [ //折线区域面积颜色
+            {
+              offset: 0,
+              color: "rgba(49,251,217,0.38)"
+            },
+
+            {
+              offset: 1,
+              color: "rgba(49,251,217,0)"
+            }
+          ],
+          title: {  //折线标题文字样式
+            text: "近三天资源入库趋势",
+            left: "left",
+            top: "10",
+            textStyle: {
+              fontSize: "12",
+              color: "#9BCDFF"
+            }
+          }
+        },
+        num: {
+          value: "877499",
+          style: {}
+        },
+        text: {
+          value: "总资源数",
+          style: {}
+        },
+        backgroundStyle: {} //上方背景颜色
+      }
     };
   },
   mounted() {},
@@ -658,13 +868,25 @@ $showBoxWidth: 100%;
       width: 100px;
       height: 152px;
     }
-    .indexData19{
+    .indexData19 {
       width: 120px;
       height: 142px;
     }
-    .indexData20{
+    .indexData20 {
       width: 80px;
       height: 150px;
+    }
+    .indexData21 {
+      width: 110px;
+      height: 110px;
+    }
+    .indexData22 {
+      width: 140px;
+      height: 80px;
+    }
+    .indexData23 {
+      width: 400px;
+      height: 290px;
     }
   }
 }

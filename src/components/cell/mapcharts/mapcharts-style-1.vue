@@ -6,7 +6,6 @@
 
 <script>
 import echarts from "echarts"; //引入echarts
-import { color } from 'highcharts';
 require("echarts/map/js/china");
 
 export default {
@@ -118,34 +117,66 @@ export default {
             [["北京市", chinaDatas]].forEach(function(item, i) {
                 seriesData.push(
                     {
+                        type: 'map',
+                        map: 'china', //使用
+                        zoom: 1.2,
+                        aspectScale: 1, //长宽比
+                        zlevel:1,
+                        label: {
+                            normal: {
+                                show: true,
+                                color: '#fff',
+                            },
+                            emphasis: {
+                                show: true,
+                                color: '#fff',
+                            }
+                        },
+                        roam: false, //是否允许缩放
+                        itemStyle: {
+                            normal: {
+                                areaColor:"rgba(8,164,230)",
+                                borderColor: '#79e1ff', //省市边界线00fcff 516a89
+                                borderWidth: 1,
+                                globalCoord: true, // 缺省为 false
+                            },
+                            emphasis: {
+                                areaColor:"#1ACFFF",
+                                // color: '#1ACFFF', //悬浮背景
+                            },
+                        },
+                        
+                    },
+                    {
                         type: 'lines',
                         zlevel: 2,
                         effect: {
                             show: true,
-                            period: 1.8, //箭头指向速度，值越小速度越快
-                            trailLength: 0.01, //特效尾迹长度[0,1]值越大，尾迹越长重
-                            symbol: 'roundRect', //箭头图标
-                            symbolSize: 4, //图标大小
-                            color: "#FFFFFF",
+                            period: 1.6, //箭头指向速度，值越小速度越快
+                            trailLength: 0.1, //特效尾迹长度[0,1]值越大，尾迹越长重
+                            symbol: 'circle', //动画图标（可设置成图片）
+                            symbolSize: 8, //图标大小
+                            color:"#ffffff",
                         },
                         lineStyle: {
                             normal: {
-                                width: 1, //尾迹线条宽度
-                                opacity: 0.5, //尾迹线条透明度
-                                curveness: .3, //尾迹线条曲直度
+                                width: 3, //尾迹线条宽度
+                                opacity: 0.2, //尾迹线条透明度
+                                curveness: -0.3, //尾迹线条曲直度
                                 color: "#FFEE71",
                             }
                         },
                         data: convertData(item[1])
                     }, 
                     {
+                        // 有数据省份打点
                         type: 'effectScatter',
                         coordinateSystem: 'geo',
                         zlevel: 2,
                         rippleEffect: { //涟漪特效
                             period: 4, //动画时间，值越小速度越快
                             brushType: 'stroke', //波纹绘制方式 stroke, fill
-                            scale: 6 //波纹圆环最大限制，值越大波纹越大
+                            scale: 5 //波纹圆环最大限制，值越大波纹越大
                         },
                         label: {
                             normal: {
@@ -164,11 +195,12 @@ export default {
                         },
                         symbol: 'circle',
                         symbolSize: function(val) {
-                            return  6; //圆环大小
+                            return  8; //圆环大小
                         },
                         itemStyle: {
                             normal: {
                                 color: '#FFEE71',
+                                
                             }
                         },
                         data: item[1].map(function(dataItem) {
@@ -178,6 +210,7 @@ export default {
                             };
                         }),
                     },
+                    // 初始出发点
                     {
                         type: 'effectScatter',
                         coordinateSystem: 'geo',
@@ -217,32 +250,12 @@ export default {
                 
             })
             let option = {
-                tooltip: {
-                    trigger: 'item',
-                    backgroundColor: 'rgba(166, 200, 76, 0.82)',
-                    borderColor: '#FFFFCC',
-                    showDelay: 0,
-                    hideDelay: 0,
-                    enterable: true,
-                    transitionDuration: 0,
-                    extraCssText: 'z-index:100',
-                    formatter: function(params, ticket, callback) {
-                        //根据业务自己拓展要显示的内容
-                        let res = "";
-                        if(params.name==''){
-                            return
-                        }
-                        let name = params.name;
-                        let value = params.value[params.seriesIndex + 1];
-                        res = "<span style='color:#fff;'>" + name + "</span><br/>数据：" + value;
-                        return res;
-                    }
-                },
                 backgroundColor:"#132845", //地图画布背景色
                 geo: [
                     {
                         map: 'china',
                         zoom: 1.2,
+                        aspectScale: 1, //长宽比
                         label: {
                             normal: {
                                 show: true,
@@ -259,14 +272,28 @@ export default {
                                 color: 'rgba(8,164,230)', //地图背景色
                                 borderColor: '#79e1ff', //省市边界线00fcff 516a89
                                 borderWidth: 1,
-                                // shadowColor:'rgb(58,115,192)', //地图阴影设置
-                                // shadowOffsetX: 14,
-                                // shadowOffsetY: 11
+                                shadowColor:'#0073B2', //地图阴影设置
+                                shadowOffsetX: 0,
+                                shadowOffsetY: 23,
                             },
                             emphasis: {
-                                color: '#18F5DC', //悬浮背景
+                                color: '#1ACFFF', //悬浮背景
                             },
                         },
+                        regions:[{
+                            name: '南海诸岛',
+                            itemStyle: {
+                                areaColor: 'rgba(0, 10, 52, 1)',
+                                borderColor: 'rgba(0, 10, 52, 1)',
+                                normal: {
+                                    opacity: 0,
+                                    label: {
+                                        show: false,
+                                        color: "#009cc9",
+                                    }
+                                }
+                            },
+                        }],
                     },
                 ],
                 series: seriesData
@@ -283,7 +310,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 1567px;
     height: 760px;
     .map{
         width: 100%;
