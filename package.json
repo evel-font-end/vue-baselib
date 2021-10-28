@@ -1,6 +1,6 @@
 {
   "name": "@efont/vue-baselib",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "vue-baselib",
   "author": "efont",
   "main": "./src/components/cell/index.js",
