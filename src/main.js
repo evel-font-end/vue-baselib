@@ -12,6 +12,7 @@ import dataV from '@jiaminghi/data-view'
 import TFetch from 'tfetch'
 import 'iview/dist/styles/iview.css'
 import 'element-ui/lib/theme-chalk/index.css'
+import MyComponent from './components/cell'
 
 require('./common/fonts/PingFangSC-Regular/PingFang Regular.css')
 require('./common/fonts/DIN_Alternate_Bold.css')
@@ -19,6 +20,7 @@ require('./common/fonts/YouSheBiaoTiHei-2.css')
 require('./common/fonts/PangMenZhengDaoBiaoTiTi-1.css')
 Vue.config.productionTip = false;
 Vue.use(iView)
+Vue.use(MyComponent)
 Vue.use(liquidfill)
 Vue.use(dataV)
 Vue.use(ElementUI)
