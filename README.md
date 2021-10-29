@@ -92,7 +92,7 @@ npm who am i
 #  - 次版本号：向下兼容的功能性新增
 #  - 修订号：向下兼容的问题修正
 #  大版本为 1.0.0，小版本是0.1.0，小修复是0.0.2
-npm version <update_type>
+npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease [--preid=<prerelease-id>]
 
 # 发布@efont/vue-baselib
 npm publish --access public
