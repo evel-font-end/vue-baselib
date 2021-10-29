@@ -78,6 +78,7 @@ npm config set registry=http://registry.npmjs.org
 
 # 项目打包
 npm run build
+npm run build:vue-baselib
 
 # 注册 npm <https://www.npmjs.com/>账号密码，并在命令行进行登录
 npm adduser

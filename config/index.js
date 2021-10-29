@@ -88,5 +88,12 @@ module.exports = {
     // `npm run build --report`
     // Set to `true` or `false` to always turn it on or off
     bundleAnalyzerReport: process.env.npm_config_report
+  },
+  publish: {
+    env: require('./publish.env'),
+    distRoot: path.resolve(__dirname, '../'),
+    assetsSubDirectory: '',
+    assetsPublicPath: '',
+    productionSourceMap: false
   }
 }

@@ -3,13 +3,14 @@
   "version": "0.0.2",
   "description": "vue-baselib",
   "author": "efont",
-  "main": "./src/components/cell/index.js",
-  "bin": "./src/components/cell/index.js",
+  "main": "./lib/vue-baselib.js",
+  "bin": "./lib/vue-baselib.js",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "build:vue-baselib": "node build/publish.js"
   },
   "dependencies": {
     "@jiaminghi/data-view": "^2.10.0",
