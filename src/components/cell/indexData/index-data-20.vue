@@ -18,6 +18,7 @@
 
 <script>
 export default {
+  name: "index-data-20",
   data() {
     return {};
   },
