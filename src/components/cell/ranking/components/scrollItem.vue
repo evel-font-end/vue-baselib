@@ -11,7 +11,7 @@
         </div>
         <div :class="{ 'normal-progress': index > 2 }">
           <el-progress
-            :percentage="+itemInfo.score * 100"
+            :percentage="(+itemInfo.score)"
             :color="customColor"
             :format="format"
             stroke-linecap="dashboard" />
@@ -26,7 +26,9 @@ export default {
   props: {
     itemInfo: {
       type: Object,
-      default: {},
+      default: () => {
+        return {}
+      },
     },
     index: {
       type: Number,
