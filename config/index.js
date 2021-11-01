@@ -92,7 +92,7 @@ module.exports = {
   publish: {
     env: require('./publish.env'),
     distRoot: path.resolve(__dirname, '../'),
-    assetsSubDirectory: '',
+    assetsSubDirectory: 'static',
     assetsPublicPath: '',
     productionSourceMap: false
   }

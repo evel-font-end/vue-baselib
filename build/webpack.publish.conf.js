@@ -7,6 +7,7 @@ const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 baseWebpackConfig.entry = {}
 
@@ -48,6 +49,13 @@ const webpackConfig = merge(baseWebpackConfig, {
         safe: true
       }
     }),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, '../static'),
+        to: config.publish.assetsSubDirectory,
+        ignore: ['.*']
+      }
+    ]),
     // keep module.id stable when vender modules does not change
     new webpack.HashedModuleIdsPlugin()
     // new BundleAnalyzerPlugin({

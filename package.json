@@ -19,13 +19,17 @@
     "element-ui": "^2.15.6",
     "gsap": "^1.20.4",
     "highcharts": "^9.2.2",
-    "iview": "^2.8.0",
+    "iview": "^3.5.4",
     "lodash": "^4.17.10",
     "vue": "^2.5.2",
     "vue-count-to": "^1.0.13",
     "vue-router": "^3.0.1",
     "vue-seamless-scroll": "^1.1.23"
   },
+  "keywords": [
+    "vue",
+    "chart"
+  ],
   "devDependencies": {
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.22.1",
@@ -94,5 +98,10 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/evel-font-end/vue-baselib/issues"
+  },
+  "homepage": "https://github.com/evel-font-end/vue-baselib#readme"
 }

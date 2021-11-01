@@ -1,8 +1,5 @@
 <template>
   <div id='app'>
-    <!-- <RadarMapStyle1
-        sid='radarMap1'
-        ref='radarMap1' /> -->
     <router-view />
   </div>
 </template>
