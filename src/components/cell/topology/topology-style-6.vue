@@ -11,7 +11,7 @@
 import echarts from "echarts"; //引入echarts
 
 export default {
-    name: "topology6",
+    name: "TopologyStyle6",
     props: {
     },
     data(){

@@ -21,7 +21,7 @@
 
 <script>
 export default {
-    name: "table2",
+    name: "TableStyle2",
     props: {
         orderTableDataList: { //表格数据
             type: Object,

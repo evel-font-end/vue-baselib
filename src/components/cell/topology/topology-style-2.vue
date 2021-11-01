@@ -44,7 +44,7 @@
 
 <script>
 export default {
-    name: "topology2",
+    name: "TopologyStyle2",
     props: {
     },
     data(){

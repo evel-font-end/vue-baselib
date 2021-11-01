@@ -29,7 +29,7 @@
 
 <script>
 export default {
-    name: "table3",
+    name: "TableStyle3",
     props: {
         orderTableDataList: { //表格数据
             type: Object,
