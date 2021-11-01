@@ -91,7 +91,8 @@
                         <div class="trapezoid">
                             <div class="inner"></div>
                         </div>
-                        <span :title="subItem">{{ subItem }}</span>
+                        <span :title="subItem">{{ subItem.title }}</span>
+                        <span>{{ subItem.num }}</span>
                     </div>
                 </div>
             </li>
@@ -110,7 +111,24 @@ export default {
                 dataProcessing: {
                     title: "数据加工",
                     image: require("../../../assets/image/machining.png"),
-                    subData:['算力规模','已执行任务','等待平均时延','平均执行时长']
+                    subData:[
+                        {
+                            title:"算力规模",
+                            num:"10个",
+                        },
+                        {
+                            title:"已执行任务",
+                            num:"20个",
+                        },
+                        {
+                            title:"等待平均时延",
+                            num:"29个",
+                        },
+                        {
+                            title:"平均执行时长",
+                            num:"119.57PiB",
+                        },
+                    ]
                 },
                 // dataStorage: {
                 //     title: "数据存储",
