@@ -277,7 +277,6 @@ export default {
                     "label":"北京",
                     color:"#FF8989",
                 },
-                
                 {
                     "name": "上海", 
                     "value": "2",
@@ -387,18 +386,6 @@ export default {
                     color:"#1CABB8",
                 },
                 {
-                    "name": "香港", 
-                    "value": 40,
-                    "label":"南部",
-                    color:"#1CABB8",
-                },
-                {
-                    "name": "澳门", 
-                    "value": 40,
-                    "label":"南部",
-                    color:"#1CABB8",
-                },
-                {
                     "name": "台湾",
                     "value": 40,
                     "label":"南部",
@@ -489,10 +476,9 @@ export default {
                     name: '',
                     type: "map",
                     map: "china",
-                    zoom: 1.152,
+                    zoom: 1.2,
+                    aspectScale: 1, //长宽比
                     zlevel: 1,
-                    left: 'center',
-                    align: 'right',
                     label: {
                         normal: {
                             color:"#fff",
@@ -506,6 +492,7 @@ export default {
                         normal: {
                             borderColor: "#fff", //省市边界线
                             fontSize: 13,
+                            globalCoord: true, // 缺省为 false
                         },
                         emphasis: {
                             areaColor: "#1ACFFF",
@@ -522,6 +509,8 @@ export default {
                         type: "effectScatter",
                         coordinateSystem: "geo",
                         name: item[0].name,
+                        aspectScale: 1, //长宽比
+                        zoom: 1.2,
                         zlevel: 5,
                         rippleEffect: {
                             //涟漪特效
@@ -606,29 +595,52 @@ export default {
                         fontSize: 14,
                     },
                 },
-                geo: {
-                    map: "china",
-                    show: false,
-                    roam: false, //是否允许缩放
-                    layoutCenter: ["50%", "50%"], //地图位置
-                    layoutSize: "120%",
-                    itemStyle: {
-                        normal: {
-                            show: 'true',
-                            color: "#fff", //地图背景色
-                            borderWidth: 2,
-                            borderColor: "#a7e4e6", //省市边界线
-                            shadowColor: 'rgba(166, 230, 236, 0.6)',
-                            shadowOffsetX: 0,
-                            shadowOffsetY: 0,
-                            shadowBlur: 120
+                geo: [
+                    {
+                        map: 'china',
+                        zoom: 1.2,
+                        aspectScale: 1, //长宽比
+                        label: {
+                            normal: {
+                                show: false,
+                                color: '#fff',
+                            },
+                            emphasis: {
+                                show: false,
+                                color: '#fff',
+                            }
                         },
-                        emphasis: {
-                            show: 'true',
-                            color: "rgba(255, 43, 61, .9)" //悬浮背景
-                        }
-                    }
-                },
+                        roam: false, //是否允许缩放
+                        itemStyle: {
+                            normal: {
+                                show:true,
+                                color: 'rgba(8,164,230)', //地图背景色
+                                borderColor: '#79e1ff', //省市边界线00fcff 516a89
+                                borderWidth: 1,
+                                shadowColor:'#0073B2', //地图阴影设置
+                                shadowOffsetX: 8,
+                                shadowOffsetY: 16,
+                            },
+                            emphasis: {
+                                color: '#1ACFFF', //悬浮背景
+                            },
+                        },
+                        regions:[{
+                            name: '南海诸岛',
+                            itemStyle: {
+                                areaColor: 'rgba(0, 10, 52, 1)',
+                                borderColor: 'rgba(0, 10, 52, 1)',
+                                normal: {
+                                    opacity: 0,
+                                    label: {
+                                        show: false,
+                                        color: "#009cc9",
+                                    }
+                                }
+                            },
+                        }],
+                    },
+                ],
                 series: series
             };
             option && this.myChart.setOption(option, true);

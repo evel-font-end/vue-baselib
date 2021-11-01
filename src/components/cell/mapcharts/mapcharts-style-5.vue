@@ -86,7 +86,6 @@ export default {
                 "海南": [110.3893, 19.8516],
                 '上海': [121.4648, 31.2891]
             };
-            
             let chinaDatas = [
                 {
                     type:"移动网",
@@ -386,6 +385,7 @@ export default {
                 {
                     type: 'map',
                     zoom: 1.2,
+                    aspectScale: 1, //长宽比
                     map: 'china', //使用
                     zlevel:1,
                     label: {
@@ -549,13 +549,14 @@ export default {
                     {
                         map: 'china',
                         zoom: 1.2,
+                        aspectScale: 1, //长宽比
                         label: {
                             normal: {
-                                show: true,
+                                show: false,
                                 color: '#fff',
                             },
                             emphasis: {
-                                show: true,
+                                show: false,
                                 color: '#fff',
                             }
                         },
@@ -566,8 +567,8 @@ export default {
                                 borderColor: '#79e1ff', //省市边界线00fcff 516a89
                                 borderWidth: 1,
                                 shadowColor:'rgb(58,115,192)', //地图阴影设置
-                                shadowOffsetX: 11,
-                                shadowOffsetY: 11
+                                shadowOffsetX: 10,
+                                shadowOffsetY: 16
                             },
                             emphasis: {
                                 color: '#1ACFFF', //悬浮背景
