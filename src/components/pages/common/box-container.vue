@@ -12,7 +12,7 @@
       v-if='toolsShow'
       :class='["tools-cont", isActive ? "active" : ""]'>
       <Button
-        type='ghost'
+        type='primary'
         icon='code-working'
         size='small'
         class='tools-btn'
@@ -27,10 +27,6 @@ export default {
       require: true,
       type: Boolean,
       default: () => false
-    },
-    title: {
-      type: String,
-      default: ''
     },
     toolsShow: {
       type: Boolean,
