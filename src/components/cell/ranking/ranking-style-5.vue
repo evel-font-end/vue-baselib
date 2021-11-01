@@ -2,7 +2,7 @@
   <div class="customize-table ranking-container">
     <dv-scroll-board
       :config="tableConfig"
-      style="width:100%;height:200px"
+      style="width:100%;height:100%"
       ref="scrollBoard"
     />
   </div>
@@ -11,7 +11,7 @@
 import VueSeamlessScroll from "vue-seamless-scroll";
 import ScrollItem from './components/scrollItem'
 export default {
-  name: 'RankingStyle4',
+  name: 'RankingStyle5',
   components: {
     VueSeamlessScroll,
     ScrollItem
@@ -19,7 +19,7 @@ export default {
   props: {
     sid: {
       type: String,
-      default: () => 'ranking4',
+      default: () => 'ranking5',
     },
     value: {
       type: [Array, Object],
@@ -42,8 +42,8 @@ export default {
       tableConfig: {
         hoverPause: true,
         headerHeight: 40,
-        columnWidth: [90, 314, 205, 420, 120],
-        header: ["排名", "API服务", "API服务数量", "文件服务", "文件服务数量"],
+        columnWidth: [125, 125, 125, 125],
+        header: ["排名", "API服务", "API服务数量", "文件服务"],
         headerBGC: "#31498173",
         evenRowBGC: "transparent",
         oddRowBGC: "#31498173",
@@ -55,14 +55,35 @@ export default {
     }
   },
   watch: {
-  },
-  created() {
+    value: {
+      deep: true,
+      handler(val) {
+        this.init(val)
+      }
+    }
   },
   mounted() {
-    this.init()
+    this.$nextTick(() => {
+      this.init(this.value)
+    })
   },
   methods: {
-    init() {
+    async init(value) {
+      const rows = await value.map((valueItem, valueIndex) => {
+        // 图标颜色
+        const iconColor = ["#EB3737FF", "#FF8D00FF", "#00DFC7FF"];
+        // 皇冠图标
+        const indexText =
+        valueIndex < 3 ?
+          `<i class="iconfont icon-huangguan"
+            style="color: ${iconColor[valueIndex]}"><span>${valueIndex + 1}</span></i>` :
+          `<span class='rank'>${valueIndex + 1}<span>`;
+        return ([
+          indexText,
+          ...Object.keys(valueItem).map(valItem => valueItem[valItem])
+        ])
+      });
+      this.$refs["scrollBoard"].updateRows(rows, 0);
     },
   },
 }
