@@ -25,7 +25,7 @@ const webpackConfig = merge(baseWebpackConfig, {
   entry: './src/main.js',
   output: {
     path: config.build.assetsRoot,
-    publicPath: '/',
+    publicPath: './',
     filename: 'vue-baselib.js',
     library: 'vue-baselib',
     libraryTarget: 'umd', //libraryTarget会生成不同umd的代码,可以只是commonjs标准的，也可以是指amd标准的，也可以只是通过script标签引入的。

@@ -10,7 +10,7 @@ import echarts from "echarts"; //引入echarts
 require("echarts/map/js/china");
 
 export default {
-    name: "mapcharts4",
+    name: "MapchartsStyle4",
     props: {
     },
     data(){

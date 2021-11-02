@@ -1,6 +1,510 @@
 webpackJsonpvue_baselib([8],{
 
-/***/ "+/+Q":
+/***/ "3i48":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_index_js_ref_0_1_table_style_2_vue__ = __webpack_require__("QNCx");
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0c24c529_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_table_style_2_vue__ = __webpack_require__("Am7H");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__("XyMi");
+function injectStyle (context) {
+  __webpack_require__("rCUY")
+  __webpack_require__("eO1b")
+}
+/* script */
+
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-0c24c529"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+
+var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_index_js_ref_0_1_table_style_2_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0c24c529_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_table_style_2_vue__["a" /* render */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0c24c529_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_table_style_2_vue__["b" /* staticRenderFns */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+
+/***/ "66Hl":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("WrFB");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("rjj0").default
+var update = add("9c76f61c", content, true, {});
+
+/***/ }),
+
+/***/ "Am7H":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"work_order_table2",attrs:{"id":"table2"}},[_c('el-table',{attrs:{"data":_vm.orderTableDataList.dataList,"empty-text":_vm.emptyText,"row-key":"id","tree-props":{children: 'children', hasChildren: 'hasChildren'}}},[_vm._l((_vm.orderTableDataList.titleList),function(item,index){return [_c('el-table-column',{key:'ordercolumn'+index,attrs:{"prop":item.field,"label":item.title,"show-overflow-tooltip":_vm.showOverflowTooltip}})]})],2)],1)}
+var staticRenderFns = []
+
+
+/***/ }),
+
+/***/ "AngC":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("FZ+f")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n#table3.work_order_table3[data-v-04ab00c4] {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  padding: 20px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "BnGf":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"content"},[_c('box-container',{staticClass:"bg-grey",attrs:{"spinShow":_vm.spinShow1,"title":'展示类表格',"toolsShow":false,"width":'100%'}},[_c('div',{staticClass:"tabletitle"},[_vm._v("单层级表格")]),_vm._v(" "),_c('table-style-1',{attrs:{"orderTableDataList":_vm.orderTableDataList1}}),_vm._v(" "),_c('div',{staticClass:"tabletitle"},[_vm._v("多层级表格")]),_vm._v(" "),_c('table-style-2',{attrs:{"orderTableDataList":_vm.orderTableDataList2}})],1),_vm._v(" "),_c('box-container',{staticClass:"bg-grey",attrs:{"spinShow":_vm.spinShow1,"title":'操作类表格',"toolsShow":false,"width":'100%'}},[_c('table-style-3',{attrs:{"orderTableDataList":_vm.orderTableDataList3}})],1)],1)}
+var staticRenderFns = []
+
+
+/***/ }),
+
+/***/ "CEID":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_index_js_ref_0_1_table_style_1_vue__ = __webpack_require__("RKoh");
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_c3211b8e_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_table_style_1_vue__ = __webpack_require__("tPdb");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__("XyMi");
+function injectStyle (context) {
+  __webpack_require__("66Hl")
+  __webpack_require__("GvHa")
+}
+/* script */
+
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-c3211b8e"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+
+var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_index_js_ref_0_1_table_style_1_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_c3211b8e_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_table_style_1_vue__["a" /* render */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_c3211b8e_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_table_style_1_vue__["b" /* staticRenderFns */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+
+/***/ "GvHa":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("q6f/");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("rjj0").default
+var update = add("bd892e80", content, true, {});
+
+/***/ }),
+
+/***/ "ICER":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("FZ+f")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n#table3.work_order_table3 .el-table {\n  color: #9BCDFF;\n  text-align: left;\n  background: transparent;\n}\n#table3.work_order_table3 .el-table .el-table__header-wrapper {\n    background: rgba(3, 131, 175, 0.26);\n}\n#table3.work_order_table3 .el-table .el-table__header-wrapper .el-table__header {\n      background: transparent;\n}\n#table3.work_order_table3 .el-table .el-table__header-wrapper .el-table__header .has-gutter {\n        background: transparent;\n}\n#table3.work_order_table3 .el-table .el-table__header-wrapper .el-table__header .has-gutter tr {\n          background: transparent;\n}\n#table3.work_order_table3 .el-table .el-table__header-wrapper .el-table__header .has-gutter tr th {\n            background: rgba(4, 89, 138, 0.38);\n            border: none;\n}\n#table3.work_order_table3 .el-table .el-table__header-wrapper .el-table__header .has-gutter tr th .cell {\n              padding-left: 28px;\n              font-size: 16px;\n              color: #9bcdff;\n}\n#table3.work_order_table3 .el-table .el-table__header-wrapper .el-table__header .has-gutter tr th .cell .el-checkbox .el-checkbox__input .el-checkbox__original {\n                background: transparent;\n                border: 1px solid #1cb3e8;\n}\n#table3.work_order_table3 .el-table .el-table__body-wrapper {\n    background: transparent;\n}\n#table3.work_order_table3 .el-table .el-table__body-wrapper .el-table__body .el-table__row {\n      background: -webkit-gradient(linear, right top, left top, from(rgba(0, 141, 224, 0)), color-stop(51%, rgba(0, 128, 224, 0.2)), color-stop(99%, rgba(0, 141, 224, 0)));\n      background: linear-gradient(270deg, rgba(0, 141, 224, 0), rgba(0, 128, 224, 0.2) 51%, rgba(0, 141, 224, 0) 99%);\n}\n#table3.work_order_table3 .el-table .el-table__body-wrapper .el-table__body .el-table__row td {\n        border: none;\n}\n#table3.work_order_table3 .el-table .el-table__body-wrapper .el-table__body .el-table__row td .cell {\n          font-size: 14px;\n          font-family: PingFangSC, PingFangSC-Regular;\n          font-weight: 400;\n          color: #9bcdff;\n          padding-left: 28px;\n}\n#table3.work_order_table3 .el-table .el-table__body-wrapper .el-table__body .el-table__row td .cell .xinzengclass {\n            color: #4ddac6;\n            background: rgba(77, 218, 198, 0.2);\n            padding: 0 5px;\n}\n#table3.work_order_table3 .el-table .el-table__body-wrapper .el-table__body .el-table__row td .cell .biangengclass {\n            color: #1ed2fb;\n            background: rgba(30, 210, 251, 0.2);\n            padding: 0 5px;\n}\n#table3.work_order_table3 .el-table .el-table__body-wrapper .el-table__body .el-table__row td .cell .kongxianclass {\n            color: #4ddac6;\n            background: rgba(30, 210, 251, 0.2);\n            padding: 0 5px;\n}\n#table3.work_order_table3 .el-table .el-table__body-wrapper .el-table__body .el-table__row td .cell .zhanyongclass {\n            color: #ff8161;\n            background: rgba(255, 129, 97, 0.2);\n            padding: 0 5px;\n}\n#table3.work_order_table3 .el-table .el-table__body-wrapper .el-table__body .el-table__row:nth-child(2n) {\n        background: rgba(4, 89, 138, 0.3);\n        border-color: transparent;\n}\n#table3.work_order_table3 .el-table .el-table__body-wrapper .el-table__body .el-table__row:hover > td {\n        background-color: rgba(7, 172, 247, 0.46);\n}\n#table3.work_order_table3 .el-table::before {\n    height: 0;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "IENk":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    name: "TableStyle3",
+    props: {
+        orderTableDataList: { //表格数据
+            type: Object,
+            default: function _default() {
+                var data = {
+                    dataList: [],
+                    titleList: []
+                };
+                return data;
+            }
+        },
+        emptyText: { // 空数据时显示的文本内容
+            type: String,
+            default: "暂无数据"
+        },
+        showOverflowTooltip: { // 当内容过长被隐藏时显示 tooltip
+            type: Boolean,
+            default: true
+        },
+        operator: { // 是否显示操作列
+            type: Boolean,
+            default: true
+        },
+        colAlign: { // 每列文字的对齐方式
+            type: String,
+            default: "left"
+        },
+        operatorWidth: { // 操作列的宽度
+            type: [String, Number],
+            default: 180
+        }
+
+    },
+    data: function data() {
+        return {};
+    },
+    mounted: function mounted() {},
+
+    methods: {
+        handleSelectionChange: function handleSelectionChange(data) {
+            console.log('单行选择：', data);
+        },
+        handleEdit: function handleEdit(index, row) {
+            console.log(index, row);
+        },
+        handleDelete: function handleDelete(index, row) {
+            console.log(index, row);
+        }
+    }
+});
+
+/***/ }),
+
+/***/ "KpFb":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"work_order_table3",attrs:{"id":"table3"}},[_c('el-table',{attrs:{"data":_vm.orderTableDataList.dataList,"empty-text":_vm.emptyText},on:{"selection-change":_vm.handleSelectionChange}},[_c('el-table-column',{attrs:{"type":"selection","width":"55"}}),_vm._v(" "),_vm._l((_vm.orderTableDataList.titleList),function(item){return [_c('el-table-column',{key:item.field,attrs:{"prop":item.field,"label":item.title,"show-overflow-tooltip":_vm.showOverflowTooltip,"width":item.width},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [(scope.column.property=='text6')?_vm._t(scope.column.property,function(){return [_c('span',{class:[scope.row[scope.column.property]=='新增'?'xinzengclass':'biangengclass']},[_vm._v(_vm._s(scope.row[scope.column.property]))])]},{"$index":scope.$index}):(scope.column.property=='text7')?_vm._t(scope.column.property,function(){return [_c('span',{class:[scope.row[scope.column.property]=='空闲'?'kongxianclass':'zhanyongclass']},[_vm._v(_vm._s(scope.row[scope.column.property]))])]},{"$index":scope.$index}):_c('span',[_vm._v(_vm._s(scope.row[scope.column.property]))])]}}],null,true)})]}),_vm._v(" "),(_vm.operator)?_c('el-table-column',{attrs:{"width":_vm.operatorWidth,"label":"操作","align":_vm.colAlign},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_c('el-button',{attrs:{"size":"mini"},on:{"click":function($event){return _vm.handleEdit(scope.$index, scope.row)}}},[_vm._v("Edit")]),_vm._v(" "),_c('el-button',{attrs:{"size":"mini","type":"danger"},on:{"click":function($event){return _vm.handleDelete(scope.$index, scope.row)}}},[_vm._v("Delete")])]}}],null,false,729520613)}):_vm._e()],2)],1)}
+var staticRenderFns = []
+
+
+/***/ }),
+
+/***/ "QNCx":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    name: "TableStyle2",
+    props: {
+        orderTableDataList: { //表格数据
+            type: Object,
+            default: function _default() {
+                var data = {
+                    dataList: [],
+                    titleList: []
+                };
+                return data;
+            }
+        },
+        emptyText: { // 空数据时显示的文本内容
+            type: String,
+            default: "暂无数据"
+        },
+        showOverflowTooltip: { // 当内容过长被隐藏时显示 tooltip
+            type: Boolean,
+            default: true
+        },
+        operator: { // 是否显示操作列
+            type: Boolean,
+            default: false
+        },
+        colAlign: { // 每列文字的对齐方式
+            type: String,
+            default: "left"
+        },
+        operatorWidth: { // 操作列的宽度
+            type: [String, Number],
+            default: 80
+        }
+    },
+    data: function data() {
+        return {};
+    },
+    mounted: function mounted() {},
+
+    methods: {}
+});
+
+/***/ }),
+
+/***/ "RKoh":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    name: "TableStyle1",
+    props: {
+        orderTableDataList: { //表格数据
+            type: Object,
+            default: {}
+        },
+        emptyText: { // 空数据时显示的文本内容
+            type: String,
+            default: "暂无数据"
+        },
+        loadingText: { // 数据加载时显示的文本内容
+            type: String,
+            default: "数据加载中..."
+        },
+        showOverflowTooltip: { // 当内容过长被隐藏时显示 tooltip
+            type: Boolean,
+            default: true
+        },
+        colAlign: { // 每列文字的对齐方式
+            type: String,
+            default: "left"
+        },
+        operatorWidth: { // 操作列的宽度
+            type: [String, Number],
+            default: 80
+        },
+        cityTableRowClickFn: { // 表格行点击事件
+            type: Function
+        }
+
+    },
+    data: function data() {
+        return {};
+    },
+    mounted: function mounted() {},
+
+    methods: {
+        // 行点击事件
+        rowClickFn: function rowClickFn(val) {
+            if (this.cityTableRowClickFn) {
+                this.cityTableRowClickFn(val);
+            }
+        }
+    }
+});
+
+/***/ }),
+
+/***/ "VdG+":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_index_js_ref_0_1_index_vue__ = __webpack_require__("yr2n");
+/* empty harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_072e266b_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_vue__ = __webpack_require__("BnGf");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__("XyMi");
+function injectStyle (context) {
+  __webpack_require__("h3mv")
+}
+/* script */
+
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-072e266b"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+
+var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_index_js_ref_0_1_index_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_072e266b_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_vue__["a" /* render */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_072e266b_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_vue__["b" /* staticRenderFns */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+
+/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
+
+
+/***/ }),
+
+/***/ "WrFB":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("FZ+f")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n#table1.work_order_table[data-v-c3211b8e] {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  padding: 20px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "X+AO":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("ICER");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("rjj0").default
+var update = add("17ff7b78", content, true, {});
+
+/***/ }),
+
+/***/ "ZFTQ":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("FZ+f")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.content[data-v-072e266b] {\n  width: 100%;\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n}\n.content .tabletitle[data-v-072e266b] {\n    height: 20px;\n    font-size: 14px;\n    font-family: PingFangSC, PingFangSC-Semibold;\n    font-weight: 600;\n    text-align: left;\n    color: #ffffff;\n    line-height: 20px;\n    padding-left: 20px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "a6Dj":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -77,523 +581,57 @@ webpackJsonpvue_baselib([8],{
 
 /***/ }),
 
-/***/ "1nIn":
+/***/ "bWNR":
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__("AoI6");
+var content = __webpack_require__("AngC");
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var add = __webpack_require__("gWR6").default
-var update = add("224cb039", content, true, {});
+var add = __webpack_require__("rjj0").default
+var update = add("29e14fad", content, true, {});
 
 /***/ }),
 
-/***/ "3Bw1":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-    name: "table2",
-    props: {
-        orderTableDataList: { //表格数据
-            type: Object,
-            default: function _default() {
-                var data = {
-                    dataList: [],
-                    titleList: []
-                };
-                return data;
-            }
-        },
-        emptyText: { // 空数据时显示的文本内容
-            type: String,
-            default: "暂无数据"
-        },
-        showOverflowTooltip: { // 当内容过长被隐藏时显示 tooltip
-            type: Boolean,
-            default: true
-        },
-        operator: { // 是否显示操作列
-            type: Boolean,
-            default: false
-        },
-        colAlign: { // 每列文字的对齐方式
-            type: String,
-            default: "left"
-        },
-        operatorWidth: { // 操作列的宽度
-            type: [String, Number],
-            default: 80
-        }
-    },
-    data: function data() {
-        return {};
-    },
-    mounted: function mounted() {},
-
-    methods: {}
-});
-
-/***/ }),
-
-/***/ "3i48":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_14_2_4_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_1_3_0_iview_loader_index_js_ref_0_1_table_style_2_vue__ = __webpack_require__("3Bw1");
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_14_2_4_vue_loader_lib_template_compiler_index_id_data_v_23fe125c_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_14_2_4_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_1_3_0_iview_loader_index_js_ref_0_1_table_style_2_vue__ = __webpack_require__("aLWR");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_14_2_4_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__("W5g0");
-function injectStyle (context) {
-  __webpack_require__("zTEH")
-  __webpack_require__("VOtX")
-}
-/* script */
-
-
-/* template */
-
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = "data-v-23fe125c"
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-
-var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_14_2_4_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_14_2_4_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_1_3_0_iview_loader_index_js_ref_0_1_table_style_2_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_14_2_4_vue_loader_lib_template_compiler_index_id_data_v_23fe125c_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_14_2_4_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_1_3_0_iview_loader_index_js_ref_0_1_table_style_2_vue__["a" /* render */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_14_2_4_vue_loader_lib_template_compiler_index_id_data_v_23fe125c_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_14_2_4_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_1_3_0_iview_loader_index_js_ref_0_1_table_style_2_vue__["b" /* staticRenderFns */],
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-
-/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
-
-
-/***/ }),
-
-/***/ "6WvB":
+/***/ "cJNO":
 /***/ (function(module, exports, __webpack_require__) {
 
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("exFL");
-if(content.__esModule) content = content.default;
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("gWR6").default
-var update = add("780233de", content, true, {});
-
-/***/ }),
-
-/***/ "ADtx":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("UTlt")(false);
+exports = module.exports = __webpack_require__("FZ+f")(false);
 // imports
 
 
 // module
-exports.push([module.i, "\n#table2.work_order_table2 .el-table {\n  color: #9BCDFF;\n  text-align: left;\n  background: transparent;\n}\n#table2.work_order_table2 .el-table .el-table__header-wrapper {\n    background: rgba(3, 131, 175, 0.26);\n}\n#table2.work_order_table2 .el-table .el-table__header-wrapper .el-table__header {\n      background: transparent;\n}\n#table2.work_order_table2 .el-table .el-table__header-wrapper .el-table__header .has-gutter {\n        background: transparent;\n}\n#table2.work_order_table2 .el-table .el-table__header-wrapper .el-table__header .has-gutter tr {\n          background: transparent;\n}\n#table2.work_order_table2 .el-table .el-table__header-wrapper .el-table__header .has-gutter tr th {\n            background: rgba(4, 89, 138, 0.38);\n            border: none;\n}\n#table2.work_order_table2 .el-table .el-table__header-wrapper .el-table__header .has-gutter tr th .cell {\n              padding-left: 28px;\n              font-size: 16px;\n              color: #9bcdff;\n}\n#table2.work_order_table2 .el-table .el-table__header-wrapper .el-table__header .has-gutter tr th .cell .el-table__expand-icon .el-icon-arrow-right {\n                color: #9BCDFF;\n}\n#table2.work_order_table2 .el-table .el-table__body-wrapper {\n    background: transparent;\n}\n#table2.work_order_table2 .el-table .el-table__body-wrapper .el-table__body .el-table__row {\n      background: -webkit-gradient(linear, right top, left top, from(rgba(0, 141, 224, 0)), color-stop(51%, rgba(0, 128, 224, 0.2)), color-stop(99%, rgba(0, 141, 224, 0)));\n      background: linear-gradient(270deg, rgba(0, 141, 224, 0), rgba(0, 128, 224, 0.2) 51%, rgba(0, 141, 224, 0) 99%);\n}\n#table2.work_order_table2 .el-table .el-table__body-wrapper .el-table__body .el-table__row td {\n        border: none;\n}\n#table2.work_order_table2 .el-table .el-table__body-wrapper .el-table__body .el-table__row td .cell {\n          font-size: 14px;\n          font-family: PingFangSC, PingFangSC-Regular;\n          font-weight: 400;\n          color: #9bcdff;\n          padding-left: 28px;\n}\n#table2.work_order_table2 .el-table .el-table__body-wrapper .el-table__body .el-table__row:nth-child(2n) {\n        background: rgba(4, 89, 138, 0.3);\n        border-color: transparent;\n}\n#table2.work_order_table2 .el-table .el-table__body-wrapper .el-table__body .el-table__row:hover > td {\n        background-color: rgba(7, 172, 247, 0.46);\n}\n#table2.work_order_table2 .el-table::before {\n    height: 0;\n}\n", ""]);
+exports.push([module.i, "\n#table2.work_order_table2[data-v-0c24c529] {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  padding: 20px;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ "AoI6":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("UTlt")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n#table3.work_order_table3 .el-table {\n  color: #9BCDFF;\n  text-align: left;\n  background: transparent;\n}\n#table3.work_order_table3 .el-table .el-table__header-wrapper {\n    background: rgba(3, 131, 175, 0.26);\n}\n#table3.work_order_table3 .el-table .el-table__header-wrapper .el-table__header {\n      background: transparent;\n}\n#table3.work_order_table3 .el-table .el-table__header-wrapper .el-table__header .has-gutter {\n        background: transparent;\n}\n#table3.work_order_table3 .el-table .el-table__header-wrapper .el-table__header .has-gutter tr {\n          background: transparent;\n}\n#table3.work_order_table3 .el-table .el-table__header-wrapper .el-table__header .has-gutter tr th {\n            background: rgba(4, 89, 138, 0.38);\n            border: none;\n}\n#table3.work_order_table3 .el-table .el-table__header-wrapper .el-table__header .has-gutter tr th .cell {\n              padding-left: 28px;\n              font-size: 16px;\n              color: #9bcdff;\n}\n#table3.work_order_table3 .el-table .el-table__header-wrapper .el-table__header .has-gutter tr th .cell .el-checkbox .el-checkbox__input .el-checkbox__original {\n                background: transparent;\n                border: 1px solid #1cb3e8;\n}\n#table3.work_order_table3 .el-table .el-table__body-wrapper {\n    background: transparent;\n}\n#table3.work_order_table3 .el-table .el-table__body-wrapper .el-table__body .el-table__row {\n      background: -webkit-gradient(linear, right top, left top, from(rgba(0, 141, 224, 0)), color-stop(51%, rgba(0, 128, 224, 0.2)), color-stop(99%, rgba(0, 141, 224, 0)));\n      background: linear-gradient(270deg, rgba(0, 141, 224, 0), rgba(0, 128, 224, 0.2) 51%, rgba(0, 141, 224, 0) 99%);\n}\n#table3.work_order_table3 .el-table .el-table__body-wrapper .el-table__body .el-table__row td {\n        border: none;\n}\n#table3.work_order_table3 .el-table .el-table__body-wrapper .el-table__body .el-table__row td .cell {\n          font-size: 14px;\n          font-family: PingFangSC, PingFangSC-Regular;\n          font-weight: 400;\n          color: #9bcdff;\n          padding-left: 28px;\n}\n#table3.work_order_table3 .el-table .el-table__body-wrapper .el-table__body .el-table__row td .cell .xinzengclass {\n            color: #4ddac6;\n            background: rgba(77, 218, 198, 0.2);\n            padding: 0 5px;\n}\n#table3.work_order_table3 .el-table .el-table__body-wrapper .el-table__body .el-table__row td .cell .biangengclass {\n            color: #1ed2fb;\n            background: rgba(30, 210, 251, 0.2);\n            padding: 0 5px;\n}\n#table3.work_order_table3 .el-table .el-table__body-wrapper .el-table__body .el-table__row td .cell .kongxianclass {\n            color: #4ddac6;\n            background: rgba(30, 210, 251, 0.2);\n            padding: 0 5px;\n}\n#table3.work_order_table3 .el-table .el-table__body-wrapper .el-table__body .el-table__row td .cell .zhanyongclass {\n            color: #ff8161;\n            background: rgba(255, 129, 97, 0.2);\n            padding: 0 5px;\n}\n#table3.work_order_table3 .el-table .el-table__body-wrapper .el-table__body .el-table__row:nth-child(2n) {\n        background: rgba(4, 89, 138, 0.3);\n        border-color: transparent;\n}\n#table3.work_order_table3 .el-table .el-table__body-wrapper .el-table__body .el-table__row:hover > td {\n        background-color: rgba(7, 172, 247, 0.46);\n}\n#table3.work_order_table3 .el-table::before {\n    height: 0;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ "CEID":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_14_2_4_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_1_3_0_iview_loader_index_js_ref_0_1_table_style_1_vue__ = __webpack_require__("G0tf");
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_14_2_4_vue_loader_lib_template_compiler_index_id_data_v_25d0c13c_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_14_2_4_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_1_3_0_iview_loader_index_js_ref_0_1_table_style_1_vue__ = __webpack_require__("lKfT");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_14_2_4_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__("W5g0");
-function injectStyle (context) {
-  __webpack_require__("JPci")
-  __webpack_require__("dF13")
-}
-/* script */
-
-
-/* template */
-
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = "data-v-25d0c13c"
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-
-var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_14_2_4_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_14_2_4_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_1_3_0_iview_loader_index_js_ref_0_1_table_style_1_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_14_2_4_vue_loader_lib_template_compiler_index_id_data_v_25d0c13c_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_14_2_4_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_1_3_0_iview_loader_index_js_ref_0_1_table_style_1_vue__["a" /* render */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_14_2_4_vue_loader_lib_template_compiler_index_id_data_v_25d0c13c_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_14_2_4_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_1_3_0_iview_loader_index_js_ref_0_1_table_style_1_vue__["b" /* staticRenderFns */],
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-
-/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
-
-
-/***/ }),
-
-/***/ "Ed0e":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"work_order_table3",attrs:{"id":"table3"}},[_c('el-table',{attrs:{"data":_vm.orderTableDataList.dataList,"empty-text":_vm.emptyText},on:{"selection-change":_vm.handleSelectionChange}},[_c('el-table-column',{attrs:{"type":"selection","width":"55"}}),_vm._v(" "),_vm._l((_vm.orderTableDataList.titleList),function(item){return [_c('el-table-column',{key:item.field,attrs:{"prop":item.field,"label":item.title,"show-overflow-tooltip":_vm.showOverflowTooltip,"width":item.width},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [(scope.column.property=='text6')?_vm._t(scope.column.property,function(){return [_c('span',{class:[scope.row[scope.column.property]=='新增'?'xinzengclass':'biangengclass']},[_vm._v(_vm._s(scope.row[scope.column.property]))])]},{"$index":scope.$index}):(scope.column.property=='text7')?_vm._t(scope.column.property,function(){return [_c('span',{class:[scope.row[scope.column.property]=='空闲'?'kongxianclass':'zhanyongclass']},[_vm._v(_vm._s(scope.row[scope.column.property]))])]},{"$index":scope.$index}):_c('span',[_vm._v(_vm._s(scope.row[scope.column.property]))])]}}],null,true)})]}),_vm._v(" "),(_vm.operator)?_c('el-table-column',{attrs:{"width":_vm.operatorWidth,"label":"操作","align":_vm.colAlign},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_c('el-button',{attrs:{"size":"mini"},on:{"click":function($event){return _vm.handleEdit(scope.$index, scope.row)}}},[_vm._v("Edit")]),_vm._v(" "),_c('el-button',{attrs:{"size":"mini","type":"danger"},on:{"click":function($event){return _vm.handleDelete(scope.$index, scope.row)}}},[_vm._v("Delete")])]}}],null,false,729520613)}):_vm._e()],2)],1)}
-var staticRenderFns = []
-
-
-/***/ }),
-
-/***/ "F4Pu":
+/***/ "eO1b":
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__("lPdx");
+var content = __webpack_require__("wUgo");
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var add = __webpack_require__("gWR6").default
-var update = add("63f55bc4", content, true, {});
+var add = __webpack_require__("rjj0").default
+var update = add("6ac454fc", content, true, {});
 
 /***/ }),
 
-/***/ "FZqM":
+/***/ "f9L8":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("UTlt")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n#table1.work_order_table .el-table {\n  color: #9BCDFF;\n  text-align: left;\n  background: transparent;\n}\n#table1.work_order_table .el-table .el-table__header-wrapper {\n    background: rgba(3, 131, 175, 0.26);\n}\n#table1.work_order_table .el-table .el-table__header-wrapper .el-table__header {\n      background: transparent;\n}\n#table1.work_order_table .el-table .el-table__header-wrapper .el-table__header .has-gutter {\n        background: transparent;\n}\n#table1.work_order_table .el-table .el-table__header-wrapper .el-table__header .has-gutter tr {\n          background: transparent;\n}\n#table1.work_order_table .el-table .el-table__header-wrapper .el-table__header .has-gutter tr th {\n            background: rgba(3, 131, 175, 0.26);\n            border: none;\n            border-bottom: 1px solid #3ca1c4;\n            border-top: 1px solid #3ca1c4;\n}\n#table1.work_order_table .el-table .el-table__header-wrapper .el-table__header .has-gutter tr th .cell {\n              padding-left: 28px;\n              font-size: 16px;\n              color: #51feff;\n}\n#table1.work_order_table .el-table .el-table__body-wrapper {\n    background: transparent;\n}\n#table1.work_order_table .el-table .el-table__body-wrapper .el-table__body .el-table__row {\n      background: -webkit-gradient(linear, right top, left top, from(rgba(0, 141, 224, 0)), color-stop(51%, rgba(0, 128, 224, 0.2)), color-stop(99%, rgba(0, 141, 224, 0)));\n      background: linear-gradient(270deg, rgba(0, 141, 224, 0), rgba(0, 128, 224, 0.2) 51%, rgba(0, 141, 224, 0) 99%);\n}\n#table1.work_order_table .el-table .el-table__body-wrapper .el-table__body .el-table__row td {\n        border: none;\n}\n#table1.work_order_table .el-table .el-table__body-wrapper .el-table__body .el-table__row td .cell {\n          font-size: 16px;\n          font-family: PingFangSC, PingFangSC-Regular;\n          font-weight: 400;\n          color: #ffffff;\n          padding-left: 28px;\n}\n#table1.work_order_table .el-table .el-table__body-wrapper .el-table__body .el-table__row:nth-child(2n) {\n        background: rgba(81, 195, 255, 0.19);\n        border-color: transparent;\n}\n#table1.work_order_table .el-table .el-table__body-wrapper .el-table__body .el-table__row:hover > td {\n        background-color: rgba(7, 172, 247, 0.46);\n}\n#table1.work_order_table .el-table::before {\n    height: 0;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ "G0tf":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-    name: "table1",
-    props: {
-        orderTableDataList: { //表格数据
-            type: Object,
-            default: {}
-        },
-        emptyText: { // 空数据时显示的文本内容
-            type: String,
-            default: "暂无数据"
-        },
-        loadingText: { // 数据加载时显示的文本内容
-            type: String,
-            default: "数据加载中..."
-        },
-        showOverflowTooltip: { // 当内容过长被隐藏时显示 tooltip
-            type: Boolean,
-            default: true
-        },
-        colAlign: { // 每列文字的对齐方式
-            type: String,
-            default: "left"
-        },
-        operatorWidth: { // 操作列的宽度
-            type: [String, Number],
-            default: 80
-        },
-        cityTableRowClickFn: { // 表格行点击事件
-            type: Function
-        }
-
-    },
-    data: function data() {
-        return {};
-    },
-    mounted: function mounted() {},
-
-    methods: {
-        // 行点击事件
-        rowClickFn: function rowClickFn(val) {
-            if (this.cityTableRowClickFn) {
-                this.cityTableRowClickFn(val);
-            }
-        }
-    }
-});
-
-/***/ }),
-
-/***/ "INSL":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("UTlt")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n#table1.work_order_table[data-v-25d0c13c] {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  padding: 20px;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ "JPci":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("INSL");
-if(content.__esModule) content = content.default;
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("gWR6").default
-var update = add("d1925272", content, true, {});
-
-/***/ }),
-
-/***/ "SexU":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("vHVY");
-if(content.__esModule) content = content.default;
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("gWR6").default
-var update = add("4610f218", content, true, {});
-
-/***/ }),
-
-/***/ "VOtX":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("ADtx");
-if(content.__esModule) content = content.default;
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("gWR6").default
-var update = add("0e2b7912", content, true, {});
-
-/***/ }),
-
-/***/ "VdG+":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_14_2_4_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_1_3_0_iview_loader_index_js_ref_0_1_index_vue__ = __webpack_require__("t3gu");
-/* empty harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_14_2_4_vue_loader_lib_template_compiler_index_id_data_v_072e266b_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_14_2_4_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_1_3_0_iview_loader_index_js_ref_0_1_index_vue__ = __webpack_require__("YXpY");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_14_2_4_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__("W5g0");
-function injectStyle (context) {
-  __webpack_require__("SexU")
-}
-/* script */
-
-
-/* template */
-
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = "data-v-072e266b"
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-
-var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_14_2_4_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_14_2_4_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_1_3_0_iview_loader_index_js_ref_0_1_index_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_14_2_4_vue_loader_lib_template_compiler_index_id_data_v_072e266b_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_14_2_4_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_1_3_0_iview_loader_index_js_ref_0_1_index_vue__["a" /* render */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_14_2_4_vue_loader_lib_template_compiler_index_id_data_v_072e266b_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_14_2_4_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_1_3_0_iview_loader_index_js_ref_0_1_index_vue__["b" /* staticRenderFns */],
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-
-/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
-
-
-/***/ }),
-
-/***/ "XYAM":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"show-item",style:('height:'+ _vm.height +';'+'width:'+ _vm.width +';'),on:{"mouseenter":function($event){_vm.isActive = true},"mouseleave":function($event){_vm.isActive = false}}},[_c('div',{staticClass:"title"},[_vm._v(_vm._s(_vm.title))]),_vm._v(" "),_c('div',{staticClass:"content"},[_vm._t("default")],2),_vm._v(" "),(_vm.spinShow)?_c('Spin',{attrs:{"size":"large","fix":""}}):_vm._e(),_vm._v(" "),(_vm.toolsShow)?_c('div',{class:["tools-cont", _vm.isActive ? "active" : ""]},[_c('Button',{staticClass:"tools-btn",attrs:{"type":"ghost","icon":"code-working","size":"small"},on:{"click":_vm.clickHandler}},[_vm._v("查看option")])],1):_vm._e()],1)}
-var staticRenderFns = []
-
-
-/***/ }),
-
-/***/ "YXpY":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"content"},[_c('box-container',{staticClass:"bg-grey",attrs:{"spinShow":_vm.spinShow1,"title":'展示类表格',"toolsShow":false,"width":'100%'}},[_c('div',{staticClass:"tabletitle"},[_vm._v("单层级表格")]),_vm._v(" "),_c('table-style-1',{attrs:{"orderTableDataList":_vm.orderTableDataList1}}),_vm._v(" "),_c('div',{staticClass:"tabletitle"},[_vm._v("多层级表格")]),_vm._v(" "),_c('table-style-2',{attrs:{"orderTableDataList":_vm.orderTableDataList2}})],1),_vm._v(" "),_c('box-container',{staticClass:"bg-grey",attrs:{"spinShow":_vm.spinShow1,"title":'操作类表格',"toolsShow":false,"width":'100%'}},[_c('table-style-3',{attrs:{"orderTableDataList":_vm.orderTableDataList3}})],1)],1)}
-var staticRenderFns = []
-
-
-/***/ }),
-
-/***/ "aLWR":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"work_order_table2",attrs:{"id":"table2"}},[_c('el-table',{attrs:{"data":_vm.orderTableDataList.dataList,"empty-text":_vm.emptyText,"row-key":"id","tree-props":{children: 'children', hasChildren: 'hasChildren'}}},[_vm._l((_vm.orderTableDataList.titleList),function(item,index){return [_c('el-table-column',{key:'ordercolumn'+index,attrs:{"prop":item.field,"label":item.title,"show-overflow-tooltip":_vm.showOverflowTooltip}})]})],2)],1)}
-var staticRenderFns = []
-
-
-/***/ }),
-
-/***/ "dF13":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("FZqM");
-if(content.__esModule) content = content.default;
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("gWR6").default
-var update = add("60f05296", content, true, {});
-
-/***/ }),
-
-/***/ "exFL":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("UTlt")(false);
+exports = module.exports = __webpack_require__("FZ+f")(false);
 // imports
 
 
@@ -605,106 +643,17 @@ exports.push([module.i, "\n.show-item[data-v-ce6f9a8e] {\n  margin: 15px;\n  dis
 
 /***/ }),
 
-/***/ "fc1L":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-    name: "table3",
-    props: {
-        orderTableDataList: { //表格数据
-            type: Object,
-            default: function _default() {
-                var data = {
-                    dataList: [],
-                    titleList: []
-                };
-                return data;
-            }
-        },
-        emptyText: { // 空数据时显示的文本内容
-            type: String,
-            default: "暂无数据"
-        },
-        showOverflowTooltip: { // 当内容过长被隐藏时显示 tooltip
-            type: Boolean,
-            default: true
-        },
-        operator: { // 是否显示操作列
-            type: Boolean,
-            default: true
-        },
-        colAlign: { // 每列文字的对齐方式
-            type: String,
-            default: "left"
-        },
-        operatorWidth: { // 操作列的宽度
-            type: [String, Number],
-            default: 180
-        }
-
-    },
-    data: function data() {
-        return {};
-    },
-    mounted: function mounted() {},
-
-    methods: {
-        handleSelectionChange: function handleSelectionChange(data) {
-            console.log('单行选择：', data);
-        },
-        handleEdit: function handleEdit(index, row) {
-            console.log(index, row);
-        },
-        handleDelete: function handleDelete(index, row) {
-            console.log(index, row);
-        }
-    }
-});
-
-/***/ }),
-
 /***/ "fcVL":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_14_2_4_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_1_3_0_iview_loader_index_js_ref_0_1_table_style_3_vue__ = __webpack_require__("fc1L");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_index_js_ref_0_1_table_style_3_vue__ = __webpack_require__("IENk");
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_14_2_4_vue_loader_lib_template_compiler_index_id_data_v_e40ed7da_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_14_2_4_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_1_3_0_iview_loader_index_js_ref_0_1_table_style_3_vue__ = __webpack_require__("Ed0e");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_14_2_4_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__("W5g0");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_04ab00c4_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_table_style_3_vue__ = __webpack_require__("KpFb");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__("XyMi");
 function injectStyle (context) {
-  __webpack_require__("F4Pu")
-  __webpack_require__("1nIn")
+  __webpack_require__("bWNR")
+  __webpack_require__("X+AO")
 }
 /* script */
 
@@ -716,14 +665,14 @@ var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-e40ed7da"
+var __vue_scopeId__ = "data-v-04ab00c4"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 
-var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_14_2_4_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_14_2_4_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_1_3_0_iview_loader_index_js_ref_0_1_table_style_3_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_14_2_4_vue_loader_lib_template_compiler_index_id_data_v_e40ed7da_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_14_2_4_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_1_3_0_iview_loader_index_js_ref_0_1_table_style_3_vue__["a" /* render */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_14_2_4_vue_loader_lib_template_compiler_index_id_data_v_e40ed7da_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_14_2_4_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_1_3_0_iview_loader_index_js_ref_0_1_table_style_3_vue__["b" /* staticRenderFns */],
+var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_index_js_ref_0_1_table_style_3_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_04ab00c4_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_table_style_3_vue__["a" /* render */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_04ab00c4_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_table_style_3_vue__["b" /* staticRenderFns */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -735,16 +684,32 @@ var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_14_2
 
 /***/ }),
 
+/***/ "h3mv":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("ZFTQ");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("rjj0").default
+var update = add("1a1baaed", content, true, {});
+
+/***/ }),
+
 /***/ "lCot":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_14_2_4_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_1_3_0_iview_loader_index_js_ref_0_1_box_container_2_vue__ = __webpack_require__("+/+Q");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_index_js_ref_0_1_box_container_2_vue__ = __webpack_require__("a6Dj");
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_14_2_4_vue_loader_lib_template_compiler_index_id_data_v_ce6f9a8e_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_14_2_4_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_1_3_0_iview_loader_index_js_ref_0_1_box_container_2_vue__ = __webpack_require__("XYAM");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_14_2_4_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__("W5g0");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_ce6f9a8e_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_box_container_2_vue__ = __webpack_require__("qYnB");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__("XyMi");
 function injectStyle (context) {
-  __webpack_require__("6WvB")
+  __webpack_require__("p5PS")
 }
 /* script */
 
@@ -760,10 +725,10 @@ var __vue_scopeId__ = "data-v-ce6f9a8e"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 
-var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_14_2_4_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_14_2_4_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_1_3_0_iview_loader_index_js_ref_0_1_box_container_2_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_14_2_4_vue_loader_lib_template_compiler_index_id_data_v_ce6f9a8e_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_14_2_4_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_1_3_0_iview_loader_index_js_ref_0_1_box_container_2_vue__["a" /* render */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_14_2_4_vue_loader_lib_template_compiler_index_id_data_v_ce6f9a8e_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_14_2_4_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_1_3_0_iview_loader_index_js_ref_0_1_box_container_2_vue__["b" /* staticRenderFns */],
+var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_index_js_ref_0_1_box_container_2_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_ce6f9a8e_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_box_container_2_vue__["a" /* render */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_ce6f9a8e_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_box_container_2_vue__["b" /* staticRenderFns */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -775,7 +740,66 @@ var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_14_2
 
 /***/ }),
 
-/***/ "lKfT":
+/***/ "p5PS":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("f9L8");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("rjj0").default
+var update = add("395acbe9", content, true, {});
+
+/***/ }),
+
+/***/ "q6f/":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("FZ+f")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n#table1.work_order_table .el-table {\n  color: #9BCDFF;\n  text-align: left;\n  background: transparent;\n}\n#table1.work_order_table .el-table .el-table__header-wrapper {\n    background: rgba(3, 131, 175, 0.26);\n}\n#table1.work_order_table .el-table .el-table__header-wrapper .el-table__header {\n      background: transparent;\n}\n#table1.work_order_table .el-table .el-table__header-wrapper .el-table__header .has-gutter {\n        background: transparent;\n}\n#table1.work_order_table .el-table .el-table__header-wrapper .el-table__header .has-gutter tr {\n          background: transparent;\n}\n#table1.work_order_table .el-table .el-table__header-wrapper .el-table__header .has-gutter tr th {\n            background: rgba(3, 131, 175, 0.26);\n            border: none;\n            border-bottom: 1px solid #3ca1c4;\n            border-top: 1px solid #3ca1c4;\n}\n#table1.work_order_table .el-table .el-table__header-wrapper .el-table__header .has-gutter tr th .cell {\n              padding-left: 28px;\n              font-size: 16px;\n              color: #51feff;\n}\n#table1.work_order_table .el-table .el-table__body-wrapper {\n    background: transparent;\n}\n#table1.work_order_table .el-table .el-table__body-wrapper .el-table__body .el-table__row {\n      background: -webkit-gradient(linear, right top, left top, from(rgba(0, 141, 224, 0)), color-stop(51%, rgba(0, 128, 224, 0.2)), color-stop(99%, rgba(0, 141, 224, 0)));\n      background: linear-gradient(270deg, rgba(0, 141, 224, 0), rgba(0, 128, 224, 0.2) 51%, rgba(0, 141, 224, 0) 99%);\n}\n#table1.work_order_table .el-table .el-table__body-wrapper .el-table__body .el-table__row td {\n        border: none;\n}\n#table1.work_order_table .el-table .el-table__body-wrapper .el-table__body .el-table__row td .cell {\n          font-size: 16px;\n          font-family: PingFangSC, PingFangSC-Regular;\n          font-weight: 400;\n          color: #ffffff;\n          padding-left: 28px;\n}\n#table1.work_order_table .el-table .el-table__body-wrapper .el-table__body .el-table__row:nth-child(2n) {\n        background: rgba(81, 195, 255, 0.19);\n        border-color: transparent;\n}\n#table1.work_order_table .el-table .el-table__body-wrapper .el-table__body .el-table__row:hover > td {\n        background-color: rgba(7, 172, 247, 0.46);\n}\n#table1.work_order_table .el-table::before {\n    height: 0;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "qYnB":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"show-item",style:('height:'+ _vm.height +';'+'width:'+ _vm.width +';'),on:{"mouseenter":function($event){_vm.isActive = true},"mouseleave":function($event){_vm.isActive = false}}},[_c('div',{staticClass:"title"},[_vm._v(_vm._s(_vm.title))]),_vm._v(" "),_c('div',{staticClass:"content"},[_vm._t("default")],2),_vm._v(" "),(_vm.spinShow)?_c('Spin',{attrs:{"size":"large","fix":""}}):_vm._e(),_vm._v(" "),(_vm.toolsShow)?_c('div',{class:["tools-cont", _vm.isActive ? "active" : ""]},[_c('Button',{staticClass:"tools-btn",attrs:{"type":"ghost","icon":"code-working","size":"small"},on:{"click":_vm.clickHandler}},[_vm._v("查看option")])],1):_vm._e()],1)}
+var staticRenderFns = []
+
+
+/***/ }),
+
+/***/ "rCUY":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("cJNO");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("rjj0").default
+var update = add("57c6fcda", content, true, {});
+
+/***/ }),
+
+/***/ "tPdb":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -787,22 +811,22 @@ var staticRenderFns = []
 
 /***/ }),
 
-/***/ "lPdx":
+/***/ "wUgo":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("UTlt")(false);
+exports = module.exports = __webpack_require__("FZ+f")(false);
 // imports
 
 
 // module
-exports.push([module.i, "\n#table3.work_order_table3[data-v-e40ed7da] {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  padding: 20px;\n}\n", ""]);
+exports.push([module.i, "\n#table2.work_order_table2 .el-table {\n  color: #9BCDFF;\n  text-align: left;\n  background: transparent;\n}\n#table2.work_order_table2 .el-table .el-table__header-wrapper {\n    background: rgba(3, 131, 175, 0.26);\n}\n#table2.work_order_table2 .el-table .el-table__header-wrapper .el-table__header {\n      background: transparent;\n}\n#table2.work_order_table2 .el-table .el-table__header-wrapper .el-table__header .has-gutter {\n        background: transparent;\n}\n#table2.work_order_table2 .el-table .el-table__header-wrapper .el-table__header .has-gutter tr {\n          background: transparent;\n}\n#table2.work_order_table2 .el-table .el-table__header-wrapper .el-table__header .has-gutter tr th {\n            background: rgba(4, 89, 138, 0.38);\n            border: none;\n}\n#table2.work_order_table2 .el-table .el-table__header-wrapper .el-table__header .has-gutter tr th .cell {\n              padding-left: 28px;\n              font-size: 16px;\n              color: #9bcdff;\n}\n#table2.work_order_table2 .el-table .el-table__header-wrapper .el-table__header .has-gutter tr th .cell .el-table__expand-icon .el-icon-arrow-right {\n                color: #9BCDFF;\n}\n#table2.work_order_table2 .el-table .el-table__body-wrapper {\n    background: transparent;\n}\n#table2.work_order_table2 .el-table .el-table__body-wrapper .el-table__body .el-table__row {\n      background: -webkit-gradient(linear, right top, left top, from(rgba(0, 141, 224, 0)), color-stop(51%, rgba(0, 128, 224, 0.2)), color-stop(99%, rgba(0, 141, 224, 0)));\n      background: linear-gradient(270deg, rgba(0, 141, 224, 0), rgba(0, 128, 224, 0.2) 51%, rgba(0, 141, 224, 0) 99%);\n}\n#table2.work_order_table2 .el-table .el-table__body-wrapper .el-table__body .el-table__row td {\n        border: none;\n}\n#table2.work_order_table2 .el-table .el-table__body-wrapper .el-table__body .el-table__row td .cell {\n          font-size: 14px;\n          font-family: PingFangSC, PingFangSC-Regular;\n          font-weight: 400;\n          color: #9bcdff;\n          padding-left: 28px;\n}\n#table2.work_order_table2 .el-table .el-table__body-wrapper .el-table__body .el-table__row:nth-child(2n) {\n        background: rgba(4, 89, 138, 0.3);\n        border-color: transparent;\n}\n#table2.work_order_table2 .el-table .el-table__body-wrapper .el-table__body .el-table__row:hover > td {\n        background-color: rgba(7, 172, 247, 0.46);\n}\n#table2.work_order_table2 .el-table::before {\n    height: 0;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ "t3gu":
+/***/ "yr2n":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1061,52 +1085,6 @@ exports.push([module.i, "\n#table3.work_order_table3[data-v-e40ed7da] {\n  -webk
 
     methods: {}
 });
-
-/***/ }),
-
-/***/ "v5YZ":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("UTlt")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n#table2.work_order_table2[data-v-23fe125c] {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  padding: 20px;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ "vHVY":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("UTlt")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.content[data-v-072e266b] {\n  width: 100%;\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n}\n.content .tabletitle[data-v-072e266b] {\n    height: 20px;\n    font-size: 14px;\n    font-family: PingFangSC, PingFangSC-Semibold;\n    font-weight: 600;\n    text-align: left;\n    color: #ffffff;\n    line-height: 20px;\n    padding-left: 20px;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ "zTEH":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("v5YZ");
-if(content.__esModule) content = content.default;
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("gWR6").default
-var update = add("6cd60c32", content, true, {});
 
 /***/ })
 

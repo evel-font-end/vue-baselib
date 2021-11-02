@@ -39,7 +39,7 @@ import echarts from "echarts"; //引入echarts
 require("echarts/map/js/china");
 
 export default {
-    name: "mapcharts5",
+    name: "MapchartsStyle5",
     props: {
     },
     data(){

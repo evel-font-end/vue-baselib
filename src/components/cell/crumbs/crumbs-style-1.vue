@@ -11,6 +11,7 @@
 </template>
 <script>
 export default {
+    name:"CrumbsStyle1",
     props: {
         // 测试数据
         breadcrumbList1: {

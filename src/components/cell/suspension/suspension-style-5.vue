@@ -20,7 +20,7 @@
 
 <script>
 export default {
-    name: "suspension5",
+    name: "SuspensionStyle5",
     props: {
     },
     data(){

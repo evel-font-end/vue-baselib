@@ -14,7 +14,7 @@
 
 <script>
 export default {
-    name: "suspension4",
+    name: "SuspensionStyle4",
     props: {
     },
     data(){
