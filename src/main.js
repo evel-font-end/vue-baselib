@@ -10,6 +10,8 @@ import liquidfill from 'echarts-liquidfill'
 import ElementUI from 'element-ui'
 import dataV from '@jiaminghi/data-view'
 import TFetch from 'tfetch'
+import mavonEditor from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
 import 'iview/dist/styles/iview.css'
 import 'element-ui/lib/theme-chalk/index.css'
 // import MyComponent from '../lib/vue-baselib.js'
@@ -24,6 +26,7 @@ Vue.use(iView)
 Vue.use(liquidfill)
 Vue.use(dataV)
 Vue.use(ElementUI)
+Vue.use(mavonEditor)
 
 Vue.prototype.$echarts = echarts
 
@@ -32,7 +35,7 @@ const http = new TFetch({
   timeout: 5000,
 })
 
-const fetchMock = url => {
+export const fetchMock = url => {
   return new Promise((resolve, reject) => {
     fetch(url, {
       method: 'GET',

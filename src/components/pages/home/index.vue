@@ -32,6 +32,22 @@
         </Content>
       </Layout>
     </Layout>
+    <el-dialog
+      title="提示"
+      :visible.sync="dialogVisible"
+      class="dialogMd"
+      :before-close="() => handleClose(false)">
+      <span>
+        <mavon-editor
+          :value="htmlValue"
+          :editable="false"
+          :toolbarsFlag="false"
+        />
+      </span>
+      <span slot="footer" class="dialog-footer">
+        <el-button type="primary" @click="() => handleClose(false)">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 <script>
@@ -49,7 +65,14 @@ export default {
     },
     menuitemClasses() {
       return ['sider-bar', this.isCollapsed ? 'collapsed-menu' : ''];
-    }
+    },
+    dialogVisible() {
+      return (!!this.$store.state.Home.dialogShow) || false;
+    },
+    htmlValue() {
+      console.log(this.$store.state.Home)
+      return this.$store.state.Home.dialogMd || '';
+    },
   },
   created() {},
   mounted() {
@@ -61,6 +84,9 @@ export default {
   methods: {
     changeMenuHandler(name) {
       this.$store.commit('UPDATE_ACTIVE_MENU', name);
+    },
+    handleClose(show) {
+      this.$store.commit('UPDATE_DIALOG_SHOW', show);
     }
   }
 };
