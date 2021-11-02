@@ -6,7 +6,8 @@
         <div class="module indexData1">
           <indexData1
             :iconImg="indexData1.iconImg"
-            :bgImg="indexData2.bgImg"
+            :bgImg="indexData1.bgImg"
+            :gifImg="indexData1.gifImg"
             :num="indexData1.num"
             :text="indexData1.text"
           />
@@ -277,11 +278,10 @@
         </div>
         <div class="module indexData31">
           <indexData31
-            :title="indexData31.title"
-            :iconImg="indexData31.iconImg"
-            :icon="indexData31.icon"
+            :tag="indexData31.tag"
             :backgroundStyle="indexData31.backgroundStyle"
             :info="indexData31.info"
+            :borderStyle="indexData31.borderStyle"
           />
         </div>
       </div>
@@ -359,7 +359,8 @@ export default {
     return {
       indexData1: {
         iconImg: require("../../cell/indexData/images/tooltip.png"),
-        bgImg: "",
+        bgImg: require("../../cell/indexData/images/gray_bg.png"),
+        gifImg: require("../../cell/indexData/images/tooltip.gif"),
         num: {
           value: 200,
           style: {}
@@ -371,7 +372,7 @@ export default {
       },
       indexData2: {
         iconImg: require("../../cell/indexData/images/tooltip2.png"),
-        bgImg: "",
+        bgImg: require("../../cell/indexData/images/indexdata2.png"),
         num: {
           value: "200%",
           style: {
@@ -1042,27 +1043,27 @@ export default {
         },
         iconImg: require("../../cell/indexData/images/tooltip29.png"),
         icon: {
-          class: 'iconfont icon-jizhan',
+          class: "iconfont icon-jizhan",
           style: {}
         },
         info: [
           {
             name: {
-              value: '基站数',
+              value: "基站数",
               style: {}
             },
             num: {
-              value: '20',
+              value: "20",
               style: {}
             }
           },
           {
             name: {
-              value: '小区数',
+              value: "小区数",
               style: {}
             },
             num: {
-              value: '5869',
+              value: "5869",
               style: {}
             }
           }
@@ -1072,63 +1073,75 @@ export default {
       indexData30: {
         title: {
           index: {
-            value: '1',
+            value: "1",
             style: {}
           },
           text: {
-            value: '审计厅省信息中心琼山区审计监督局FE03FE03',
+            value: "审计厅省信息中心琼山区审计监督局FE03FE03",
             style: {}
           }
         },
         info: [
           {
             name: {
-              value: '数字电路',
+              value: "数字电路",
               style: {}
             }
           },
           {
             name: {
-              value: '8M',
+              value: "8M",
               style: {}
             }
-          },
+          }
         ],
         backgroundStyle: {}
       },
       indexData31: {
-        title: {
-          value: "3G基站",
-          style: {}
-        },
-        iconImg: require("../../cell/indexData/images/tooltip29.png"),
-        icon: {
-          class: 'iconfont icon-jizhan',
-          style: {}
+        tag: {
+          name: {
+            value: "传输网元",
+            style: {}
+          },
+          label: {
+            value: "TRS_SEG",
+            style: {}
+          }
         },
         info: [
           {
             name: {
-              value: '基站数',
+              value: "总数据",
               style: {}
             },
             num: {
-              value: '20',
+              value: "920445",
               style: {}
             }
           },
           {
             name: {
-              value: '小区数',
+              value: "正常",
               style: {}
             },
             num: {
-              value: '5869',
+              value: "345",
+              style: {}
+            }
+          },
+          {
+            name: {
+              value: "异常",
+              style: {}
+            },
+            num: {
+              value: "8294",
               style: {}
             }
           }
         ],
-        backgroundStyle: {}
+        backgroundStyle: {},
+        borderStyle: {}
       }
     };
   },

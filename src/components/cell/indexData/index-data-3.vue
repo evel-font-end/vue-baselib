@@ -22,11 +22,15 @@ export default {
   props: {
     num: {
       type: Object,
-      default: {}
+      default: () => {
+        return {}
+      }
     },
     text: {
       type: Object,
-      default: {}
+      default: () => {
+        return {}
+      }
     },
     iconClass: {
       type: String,
@@ -42,11 +46,15 @@ export default {
     },
     iconStyle: {
       type: Object,
-      default: {}
+      default: () => {
+        return {}
+      }
     },
     iconBgStyle: {
       type: Object,
-      default: {}
+      default: () => {
+        return {}
+      }
     }
   },
   computed: {

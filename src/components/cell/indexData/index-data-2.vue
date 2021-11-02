@@ -25,7 +25,9 @@ export default {
   props: {
     num: {
       type: Object,
-      default: {}
+      default: () => {
+        return {}
+      }
     },
     iconImg: {
       type: String,
@@ -37,7 +39,9 @@ export default {
     },
     text: {
       type: Object,
-      default: {}
+      default: () => {
+        return {}
+      }
     }
   }
 };
@@ -50,8 +54,6 @@ export default {
   .tooltipBox {
     width: 100%;
     height: 100%;
-    // background: url("./images/tooltip.gif") center center no-repeat;
-    // background-size: 100% 100%;
     .tooltipBg {
       display: flex;
       justify-content: flex-start;
@@ -59,7 +61,9 @@ export default {
       width: 100%;
       height: 100%;
       padding-left: 20px;
-      background: url("./images/indexdata2.png") center center no-repeat;
+      // background: url("./images/indexdata2.png") center center no-repeat;
+      background-size: center center;
+      background-repeat: no-repeat;
       background-size: 100% 100%;
       .tooltipImg {
         width: 90px;

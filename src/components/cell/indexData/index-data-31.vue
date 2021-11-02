@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-11-01 14:49:24
- * @LastEditTime: 2021-11-01 17:23:54
+ * @LastEditTime: 2021-11-02 14:47:29
  * @LastEditors: Please set LastEditors
  * @Description: 传输网元
  * @FilePath: \task_broad_webd:\project\GIT\vue-baselib\src\components\cell\indexData\index-data-29.vue
@@ -11,8 +11,10 @@
     <ul class="top_right">
       <li :style="backgroundStyle">
         <div class="title">
-          <p :style="title.style">{{ title.value }}</p>
+          <p class="name" :style="tag.name.style">{{ tag.name.value }}</p>
+          <p class="label" :style="tag.label.style">{{ tag.label.value }}</p>
         </div>
+        <div class="lineBorder" :style="borderStyle"></div>
         <div class="right">
           <p v-for="(item, index) in info" :key="index">
             <span :style="item.name.style">{{ item.name.value }}</span>
@@ -26,12 +28,12 @@
 
 <script>
 export default {
-  name: "index-data-29",
+  name: "index-data-31",
   data() {
     return {};
   },
   props: {
-    title: {
+    tag: {
       type: Object,
       default: () => {
         return {};
@@ -47,6 +49,12 @@ export default {
       type: Array,
       default: () => {
         return [];
+      }
+    },
+    borderStyle: {
+      type: Object,
+      default: () => {
+        return {};
       }
     }
   },
@@ -80,48 +88,81 @@ export default {
         )
         1 1;
       box-shadow: 7px 5px 7px 0px rgba(10, 42, 59, 0.5);
+      padding: 10px 0;
       .title {
-        width: 80px;
-        height: 100%;
-        background: linear-gradient(
-          270deg,
-          rgba(5, 188, 243, 0.22) 1%,
-          rgba(29, 50, 116, 0.84) 99%
-        );
         display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        padding-right: 7px;
-        p {
-          font-size: 14px;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 116px;
+        height: 100%;
+        padding-left: 16px;
+        /* border-right: 1px solid;
+        border-image: linear-gradient(
+            180deg,
+            rgba(0, 215, 233, 0),
+            rgba(0, 233, 232, 0.56) 52%,
+            rgba(0, 215, 233, 0)
+          )
+          1 1; */
+        // margin-right: 30px;
+        .name {
+          font-size: 12px;
           font-family: PingFangSC, PingFangSC-Semibold;
           font-weight: 600;
+          text-align: left;
           color: #ffffff;
+          line-height: 17px;
         }
+        .label {
+          font-size: 12px;
+          font-family: PingFangSC, PingFangSC-Regular;
+          font-weight: 400;
+          text-align: left;
+          color: #9bcdff;
+          line-height: 17px;
+        }
+      }
+      .lineBorder {
+        width: 1px;
+        height: 100%;
+        border: 1px solid;
+        border-image: linear-gradient(
+            180deg,
+            rgba(0,215,233,0),
+            rgba(0,233,232,0.56) 52%,
+            rgba(0,215,233,0)
+          )
+          1 1;
       }
       .right {
         width: 0;
         flex: 1;
-        padding: 0 10px;
+        padding-right: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 30px;
         p {
           display: flex;
-          justify-content: space-between;
+          flex-direction: column;
+          justify-content: center;
           align-items: center;
           & span:first-child {
             font-size: 12px;
-            font-family: PingFangSC, PingFangSC-Semibold;
-            font-weight: 600;
-            text-align: left;
-            color: #88d7fd;
-            line-height: 17px;
+            font-family: PingFangSC, PingFangSC-Regular;
+            font-weight: 400;
+            text-align: center;
+            color: #9bcdff;
+            line-height: 24px;
           }
           & span:last-child {
-            font-size: 12px;
-            font-family: PingFangSC, PingFangSC-Semibold;
-            font-weight: 600;
-            text-align: right;
+            font-size: 14px;
+            font-family: DINAlternate;
+            font-weight: 700;
+            text-align: center;
             color: #ffffff;
-            line-height: 17px;
+            line-height: 12px;
           }
         }
       }
