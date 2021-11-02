@@ -54,7 +54,7 @@
 
 <script>
 export default {
-  name: 'index-data-27',
+  name: 'indexData27',
   data() {
     return {
       pieChart: null,

@@ -33,6 +33,7 @@
 <script>
 import electricLine from "./electricLine.vue";
 export default {
+  name: "indexData12",
   data() {
     return {};
   },

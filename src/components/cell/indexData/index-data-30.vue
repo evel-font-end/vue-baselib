@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-11-01 14:49:24
- * @LastEditTime: 2021-11-01 17:17:08
+ * @LastEditTime: 2021-11-02 17:27:56
  * @LastEditors: Please set LastEditors
  * @Description: 审计厅省信息中心琼山区审计监督局FE03…
  * @FilePath: \task_broad_webd:\project\GIT\vue-baselib\src\components\cell\indexData\index-data-29.vue
@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: "index-data-30",
+  name: "indexData30",
   data() {
     return {};
   },

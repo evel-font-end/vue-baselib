@@ -17,6 +17,7 @@
 <script>
 import echarts from "echarts";
 export default {
+  name: "indexData26",
   data() {
     return {
       pieChart: null,

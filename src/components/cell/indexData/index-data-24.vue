@@ -41,6 +41,7 @@
 <script>
 import echarts from "echarts";
 export default {
+  name: "indexData24",
   data() {
     return {
       pieChart: null,

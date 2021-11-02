@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-11-01 14:49:24
- * @LastEditTime: 2021-11-01 15:55:32
+ * @LastEditTime: 2021-11-02 17:27:50
  * @LastEditors: Please set LastEditors
  * @Description: 3G基站组件
  * @FilePath: \task_broad_webd:\project\GIT\vue-baselib\src\components\cell\indexData\index-data-29.vue
@@ -32,7 +32,7 @@
 
 <script>
 export default {
-  name: "index-data-29",
+  name: "indexData29",
   data() {
     return {};
   },
