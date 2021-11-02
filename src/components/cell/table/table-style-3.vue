@@ -19,8 +19,11 @@
             </template>
             <el-table-column v-if="operator" :width="operatorWidth" label="操作" :align="colAlign">
                 <template slot-scope="scope">
-                    <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">Edit</el-button>
-                    <el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">Delete</el-button>
+                    <i class="iconfont icon-chakan" @click="handleEdit(scope.$index, scope.row, '查看')"></i>
+                    <i class="iconfont icon-bianji" @click="handleEdit(scope.$index, scope.row, '编辑')"></i>
+                    <i class="iconfont icon-shanchu" @click="handleEdit(scope.$index, scope.row, '删除')"></i>
+                    <i class="iconfont icon-shangyi" @click="handleEdit(scope.$index, scope.row, '上移')"></i>
+                    <i class="iconfont icon-xiayi" @click="handleEdit(scope.$index, scope.row, '下移')"></i>
                 </template>
             </el-table-column>
         </el-table>
@@ -73,8 +76,8 @@ export default {
         handleSelectionChange(data){
             console.log('单行选择：',data)
         },
-        handleEdit(index, row) {
-            console.log(index, row);
+        handleEdit(index, row, text) {
+            console.log(index, row, text);
         },
         handleDelete(index, row) {
             console.log(index, row);
@@ -87,8 +90,6 @@ export default {
 #table3.work_order_table3 {
     box-sizing: border-box;
     padding: 20px;
-    
-    
 }
 </style>
 <style lang="scss">
@@ -115,7 +116,7 @@ export default {
                                 color: #9bcdff;
                                 .el-checkbox{
                                     .el-checkbox__input{
-                                        .el-checkbox__original{
+                                        .el-checkbox__inner{
                                             background: transparent;
                                             border: 1px solid #1cb3e8;
                                         }
@@ -160,6 +161,24 @@ export default {
                                 color: #ff8161;;
                                 background: rgba(255,129,97,0.2);
                                 padding: 0 5px;
+                            }
+                            .iconfont{
+                                margin-right: 4px;
+                                cursor: pointer;
+                            }
+                            .el-checkbox{
+                                .el-checkbox__input{
+                                    .el-checkbox__inner{
+                                        background: transparent;
+                                        border: 1px solid #1cb3e8;
+                                    }
+                                }
+                                .el-checkbox__input.is-checked{
+                                    .el-checkbox__inner{
+                                        background: rgba(33,139,193,0.44);
+                                        border: 1px solid #1cb3e8;
+                                    }
+                                }
                             }
                         }
                     }
