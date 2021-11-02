@@ -3,11 +3,11 @@
 </template>
 <script>
 export default {
-  name: 'BoardStyle1',
+  name: 'BoardStyle2',
   props: {
     sid: {
       type: String,
-      default: () => 'board1',
+      default: () => 'board2',
     },
     percentage: {
       type: String,

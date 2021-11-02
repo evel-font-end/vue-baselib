@@ -22,7 +22,7 @@
 </template>
 <script>
 import boxContainer from '../common/box-container'
-import Board2 from '../../cell/board/board-style-1'
+import Board2 from '../../cell/board/board-style-2'
 import Board3 from '../../cell/board/board-style-3'
 export default {
   name: 'Board',
@@ -46,7 +46,8 @@ export default {
   },
   methods: {
     showOption(ref) {
-      console.log(JSON.parse(JSON.stringify(this.$refs[ref].option)))
+      console.log('this.$refs[ref]', this.$refs[ref]);
+      this.$store.commit('UPDATE_DIALOG_SHOW', this.$refs[ref].$options._componentTag);
     },
   },
 }

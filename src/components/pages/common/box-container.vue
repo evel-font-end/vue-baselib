@@ -36,12 +36,12 @@ export default {
       type: String,
       default: '组件'
     },
-    /* showOptionHandler: {
+    showOptionHandler: {
       type: Function,
       default: () => {
         console.log("当前组件无配置项");
       }
-    } */
+    }
   },
   data() {
     return {
@@ -50,8 +50,7 @@ export default {
   },
   methods: {
     clickHandler() {
-      console.log('5555')
-      this.$emit("showOptionHandler");
+      this.$emit("showOptionHandler", {});
     }
   }
 };

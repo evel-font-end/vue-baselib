@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@jiaminghi/data-view": "^2.10.0",
+    "axios": "^0.24.0",
     "echarts": "^4.0.4",
     "echarts-liquidfill": "^2.0.0",
     "element-ui": "^2.15.6",
@@ -21,6 +22,7 @@
     "highcharts": "^9.2.2",
     "iview": "^3.5.4",
     "lodash": "^4.17.10",
+    "mavon-editor": "^2.9.1",
     "vue": "^2.5.2",
     "vue-count-to": "^1.0.13",
     "vue-router": "^3.0.1",
@@ -81,6 +83,7 @@
     "uglifyjs-webpack-plugin": "^1.1.1",
     "url-loader": "^0.5.8",
     "vue-loader": "^14.2.2",
+    "vue-markdown-loader": "^2.5.0",
     "vue-style-loader": "^4.1.0",
     "vue-template-compiler": "^2.5.2",
     "vuex": "^3.0.1",

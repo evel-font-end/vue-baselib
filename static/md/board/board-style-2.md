@@ -20,7 +20,28 @@
   各类别组件编写规范，请见src/components/pages下各组件类文件夹下README.md
 
 ## 预览
-https://evel-font-end.github.io/vue-baselib/dist/
+
+![Pie](/static/tinified/pie.png)
+
+![Bar1](/static/tinified/bar-1.png)
+
+![Bar2](/static/tinified/bar-2.png)
+
+![Box1](/static/tinified/box-1.png)
+
+![Box2](/static/tinified/box-2.png)
+
+![Pie](/static/tinified/pie.png)
+
+![Funnel](/static/tinified/funnel.png)
+
+![loading](/static/tinified/loading.png)
+
+![Line](/static/tinified/line.png)
+
+![Radar](/static/tinified/radar.png)
+
+![ScrollList](/static/tinified/scroll-list.png)
 
 ## Version Info
 
