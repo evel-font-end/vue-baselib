@@ -241,6 +241,49 @@
             :backgroundStyle="indexData26.backgroundStyle"
           />
         </div>
+        <div class="module indexData27">
+          <indexData27
+            :title1="indexData27.title1"
+            :title2="indexData27.title2"
+            :iconImg="indexData27.iconImg"
+            :progress1="indexData27.progress1"
+            :progress2="indexData27.progress2"
+            :backgroundStyle="indexData27.backgroundStyle"
+          />
+        </div>
+        <div class="module indexData28">
+          <indexData28
+            :icon="indexData28.icon"
+            :title="indexData28.title"
+            :info="indexData28.info"
+            :backgroundStyle="indexData28.backgroundStyle"
+          />
+        </div>
+        <div class="module indexData29">
+          <indexData29
+            :title="indexData29.title"
+            :iconImg="indexData29.iconImg"
+            :icon="indexData29.icon"
+            :backgroundStyle="indexData29.backgroundStyle"
+            :info="indexData29.info"
+          />
+        </div>
+        <div class="module indexData30">
+          <indexData30
+            :title="indexData30.title"
+            :backgroundStyle="indexData30.backgroundStyle"
+            :info="indexData30.info"
+          />
+        </div>
+        <div class="module indexData31">
+          <indexData31
+            :title="indexData31.title"
+            :iconImg="indexData31.iconImg"
+            :icon="indexData31.icon"
+            :backgroundStyle="indexData31.backgroundStyle"
+            :info="indexData31.info"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -272,6 +315,11 @@ import indexData23 from "../../cell/indexData/index-data-23";
 import indexData24 from "../../cell/indexData/index-data-24";
 import indexData25 from "../../cell/indexData/index-data-25";
 import indexData26 from "../../cell/indexData/index-data-26";
+import indexData27 from "../../cell/indexData/index-data-27";
+import indexData28 from "../../cell/indexData/index-data-28";
+import indexData29 from "../../cell/indexData/index-data-29";
+import indexData30 from "../../cell/indexData/index-data-30";
+import indexData31 from "../../cell/indexData/index-data-31";
 
 export default {
   components: {
@@ -300,7 +348,12 @@ export default {
     indexData23,
     indexData24,
     indexData25,
-    indexData26
+    indexData26,
+    indexData27,
+    indexData28,
+    indexData29,
+    indexData30,
+    indexData31
   },
   data() {
     return {
@@ -902,7 +955,7 @@ export default {
             style: {}
           }
         },
-        bgImg: require('../../cell/indexData/images/indexdata25.png')
+        bgImg: require("../../cell/indexData/images/indexdata25.png")
       },
       indexData26: {
         title: {
@@ -930,9 +983,151 @@ export default {
           }
         },
         unit: {
-          value: '%',
+          value: "%",
           style: {}
         },
+        backgroundStyle: {}
+      },
+      indexData27: {
+        title1: {
+          value: "二干光缆资源",
+          style: {}
+        },
+        title2: {
+          value: "清查录入进度",
+          style: {}
+        },
+        progress1: {
+          name: {
+            value: "光缆覆盖率",
+            style: {}
+          },
+          value: "34",
+          innerBackground: "#2262a0",
+          outterBackground: "linear-gradient(270deg,#3ff5f8 0%, #50bbff 99%)"
+        },
+        progress2: {
+          name: {
+            value: "成端熔接率",
+            style: {}
+          },
+          value: "55",
+          innerBackground: "#2262a0",
+          outterBackground: "linear-gradient(270deg,#ffb84f 0%, #ed586d 99%)"
+        },
+        iconImg: require("../../cell/indexData/images/tooltip27.png"),
+        backgroundStyle: {}
+      },
+      indexData28: {
+        backgroundStyle: {},
+        icon: {
+          class: "iconfont icon-shebei",
+          style: {}
+        },
+        title: {
+          value: "富力盈通大厦(无业务)",
+          style: {}
+        },
+        info: [
+          { value: "2M-空闲67个", style: {} },
+          { value: "100M-空闲7个", style: {} },
+          { value: "622M-空闲1个", style: {} }
+          // {value: '155M-空闲7个', style: {}},
+        ]
+      },
+      indexData29: {
+        title: {
+          value: "3G基站",
+          style: {}
+        },
+        iconImg: require("../../cell/indexData/images/tooltip29.png"),
+        icon: {
+          class: 'iconfont icon-jizhan',
+          style: {}
+        },
+        info: [
+          {
+            name: {
+              value: '基站数',
+              style: {}
+            },
+            num: {
+              value: '20',
+              style: {}
+            }
+          },
+          {
+            name: {
+              value: '小区数',
+              style: {}
+            },
+            num: {
+              value: '5869',
+              style: {}
+            }
+          }
+        ],
+        backgroundStyle: {}
+      },
+      indexData30: {
+        title: {
+          index: {
+            value: '1',
+            style: {}
+          },
+          text: {
+            value: '审计厅省信息中心琼山区审计监督局FE03FE03',
+            style: {}
+          }
+        },
+        info: [
+          {
+            name: {
+              value: '数字电路',
+              style: {}
+            }
+          },
+          {
+            name: {
+              value: '8M',
+              style: {}
+            }
+          },
+        ],
+        backgroundStyle: {}
+      },
+      indexData31: {
+        title: {
+          value: "3G基站",
+          style: {}
+        },
+        iconImg: require("../../cell/indexData/images/tooltip29.png"),
+        icon: {
+          class: 'iconfont icon-jizhan',
+          style: {}
+        },
+        info: [
+          {
+            name: {
+              value: '基站数',
+              style: {}
+            },
+            num: {
+              value: '20',
+              style: {}
+            }
+          },
+          {
+            name: {
+              value: '小区数',
+              style: {}
+            },
+            num: {
+              value: '5869',
+              style: {}
+            }
+          }
+        ],
         backgroundStyle: {}
       }
     };
@@ -1089,6 +1284,26 @@ $showBoxWidth: 100%;
     .indexData26 {
       width: 126px;
       height: 140px;
+    }
+    .indexData27 {
+      width: 320px;
+      height: 66px;
+    }
+    .indexData28 {
+      width: 280px;
+      height: 72px;
+    }
+    .indexData29 {
+      width: 205px;
+      height: 36px;
+    }
+    .indexData30 {
+      width: 370px;
+      height: 88px;
+    }
+    .indexData31 {
+      width: 397px;
+      height: 62px;
     }
   }
 }
