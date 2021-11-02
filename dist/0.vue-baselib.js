@@ -163,10 +163,10 @@ var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_index_js_ref_0_1_index_vue__ = __webpack_require__("JgWy");
 /* empty harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_37a39d7e_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_vue__ = __webpack_require__("F+kd");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_45f36f77_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_vue__ = __webpack_require__("quJo");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__("XyMi");
 function injectStyle (context) {
-  __webpack_require__("IFgK")
+  __webpack_require__("UlFL")
 }
 /* script */
 
@@ -178,14 +178,14 @@ var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-37a39d7e"
+var __vue_scopeId__ = "data-v-45f36f77"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 
 var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_index_js_ref_0_1_index_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_37a39d7e_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_vue__["a" /* render */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_37a39d7e_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_vue__["b" /* staticRenderFns */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_45f36f77_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_vue__["a" /* render */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_45f36f77_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_vue__["b" /* staticRenderFns */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -530,21 +530,6 @@ var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_
 
 /***/ }),
 
-/***/ "2nn/":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("FZ+f")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.indexData[data-v-1cdded52] {\n  width: 100%;\n  height: 100%;\n}\n.indexData .tooltipBox[data-v-1cdded52] {\n  width: 100%;\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.indexData .tooltipBox .tooltipBg[data-v-1cdded52] {\n  position: relative;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%;\n  height: 80px;\n  background-position: center center;\n  background-repeat: no-repeat;\n  background-size: 100% 100%;\n}\n.indexData .tooltipBox .tooltipBg .tooltipImg[data-v-1cdded52] {\n  position: absolute;\n  bottom: 2px;\n  right: 12px;\n  font-size: 14px;\n  color: #ffffff;\n}\n.indexData .tooltipBox .tooltipInfo[data-v-1cdded52] {\n  /* width: 100%;\n      height: 100%; */\n  /* display: flex;\n        flex-direction: column;\n        align-items: center; */\n}\n.indexData .tooltipBox .tooltipInfo .tipTitle[data-v-1cdded52] {\n  font-size: 14px;\n  font-family: PingFangSC, PingFangSC-Semibold;\n  font-weight: 600;\n  text-align: center;\n  color: #ffffff;\n  line-height: 20px;\n  margin-top: 10px;\n  margin-bottom: 6px;\n}\n.indexData .tooltipBox .tooltipInfo .tip1[data-v-1cdded52] {\n  font-size: 26px;\n  font-family: PangMenZhengDao;\n  text-align: left;\n  color: #ffffff;\n  line-height: 30px;\n}\n.indexData .tooltipBox .tooltipInfo .tip1 span[data-v-1cdded52] {\n  font-size: 14px;\n  font-family: PingFangSC, PingFangSC-Semibold;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
 /***/ "35Hi":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -613,6 +598,22 @@ var update = add("587b408a", content, true, {});
 
 /***/ }),
 
+/***/ "4OLA":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("QXve");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("rjj0").default
+var update = add("9175c888", content, true, {});
+
+/***/ }),
+
 /***/ "5C69":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -638,6 +639,133 @@ if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
 var add = __webpack_require__("rjj0").default
 var update = add("d2d3e0f2", content, true, {});
+
+/***/ }),
+
+/***/ "69ef":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  name: 'index-data-27',
+  data: function data() {
+    return {
+      pieChart: null,
+      lineChart: null
+    };
+  },
+
+  props: {
+    title1: {
+      type: Object,
+      default: function _default() {
+        return {
+          value: '',
+          style: {}
+        };
+      }
+    },
+    title2: {
+      type: Object,
+      default: function _default() {
+        return {
+          value: '',
+          style: {}
+        };
+      }
+    },
+    backgroundStyle: {
+      type: Object,
+      default: function _default() {
+        return {};
+      }
+    },
+    iconImg: {
+      type: String,
+      default: function _default() {
+        return {};
+      }
+    },
+    progress2: {
+      type: Object,
+      default: function _default() {
+        return {};
+      }
+    },
+    progress1: {
+      type: Object,
+      default: function _default() {
+        return {};
+      }
+    }
+  },
+  mounted: function mounted() {},
+
+  methods: {},
+  watch: {},
+  filters: {
+    setRate: function setRate(value) {
+      if (!value) return 0;
+      value = Math.max(0, value);
+      return value.toFixed(0);
+    }
+  }
+});
 
 /***/ }),
 
@@ -840,6 +968,18 @@ var staticRenderFns = []
 
 /***/ }),
 
+/***/ "AjiX":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"indexData"},[_c('ul',{staticClass:"top_right"},[_c('li',{style:(_vm.backgroundStyle)},[_c('div',{staticClass:"title"},[_c('p',{style:(_vm.title.style)},[_vm._v(_vm._s(_vm.title.value))])]),_vm._v(" "),_c('div',{staticClass:"right"},_vm._l((_vm.info),function(item,index){return _c('p',{key:index},[_c('span',{style:(item.name.style)},[_vm._v(_vm._s(item.name.value))]),_vm._v(" "),_c('span',{style:(item.num.style)},[_vm._v(_vm._s(item.num.value))])])}),0)])])])}
+var staticRenderFns = []
+
+
+/***/ }),
+
 /***/ "BCuM":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1018,21 +1158,6 @@ module.exports = __webpack_require__.p + "static/img/indexdata18.7b79f3d.png";
 
 /***/ }),
 
-/***/ "BxxX":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("FZ+f")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.content[data-v-37a39d7e] {\n  width: 100%;\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n}\n.show-item[data-v-37a39d7e] {\n  width: 100%;\n  margin: 15px;\n  border-radius: 16px;\n  background-color: #fff;\n  padding: 15px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  position: relative;\n}\n.show-item.bg-black[data-v-37a39d7e] {\n    background-color: #132845;\n    color: rgba(255, 255, 255, 0.8);\n}\n.show-item .title[data-v-37a39d7e] {\n    font-size: 16px;\n    font-family: PingFangSC;\n    font-weight: 600;\n    text-align: left;\n    color: #ffffff;\n}\n.show-item .item-content[data-v-37a39d7e] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: start;\n        -ms-flex-pack: start;\n            justify-content: flex-start;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n}\n.show-item .item-content .module[data-v-37a39d7e] {\n      margin-right: 30px;\n      margin-bottom: 40px;\n}\n.show-item .item-content .module[data-v-37a39d7e]:nth-child(6) {\n        margin-right: none;\n}\n.show-item .item-content .indexData1[data-v-37a39d7e] {\n      width: 300px;\n      height: 130px;\n}\n.show-item .item-content .indexData2[data-v-37a39d7e] {\n      width: 310px;\n      height: 110px;\n}\n.show-item .item-content .indexData3[data-v-37a39d7e] {\n      width: 193px;\n      height: 80px;\n}\n.show-item .item-content .indexData4[data-v-37a39d7e] {\n      width: 230px;\n      height: 60px;\n}\n.show-item .item-content .indexData5[data-v-37a39d7e] {\n      width: 214px;\n      height: 60px;\n}\n.show-item .item-content .indexData6[data-v-37a39d7e] {\n      width: 128px;\n      height: 50px;\n}\n.show-item .item-content .indexData7[data-v-37a39d7e] {\n      width: 168px;\n      height: 90px;\n}\n.show-item .item-content .indexData8[data-v-37a39d7e] {\n      width: 132px;\n      height: 50px;\n}\n.show-item .item-content .indexData9[data-v-37a39d7e] {\n      width: 190px;\n      height: 80px;\n}\n.show-item .item-content .indexData10[data-v-37a39d7e] {\n      width: 205px;\n      height: 60px;\n}\n.show-item .item-content .indexData11[data-v-37a39d7e] {\n      width: 240px;\n      height: 60px;\n}\n.show-item .item-content .indexData12[data-v-37a39d7e] {\n      width: 100px;\n      height: 46px;\n}\n.show-item .item-content .indexData13[data-v-37a39d7e] {\n      width: 230px;\n      height: 37px;\n}\n.show-item .item-content .indexData14[data-v-37a39d7e] {\n      width: 275px;\n      height: 225px;\n}\n.show-item .item-content .indexData15[data-v-37a39d7e] {\n      width: 172px;\n      height: 180px;\n}\n.show-item .item-content .indexData16[data-v-37a39d7e] {\n      width: 200px;\n      height: 175px;\n}\n.show-item .item-content .indexData17[data-v-37a39d7e] {\n      width: 130px;\n      height: 98px;\n}\n.show-item .item-content .indexData18[data-v-37a39d7e] {\n      width: 100px;\n      height: 152px;\n}\n.show-item .item-content .indexData19[data-v-37a39d7e] {\n      width: 120px;\n      height: 142px;\n}\n.show-item .item-content .indexData20[data-v-37a39d7e] {\n      width: 80px;\n      height: 150px;\n}\n.show-item .item-content .indexData21[data-v-37a39d7e] {\n      width: 110px;\n      height: 110px;\n}\n.show-item .item-content .indexData22[data-v-37a39d7e] {\n      width: 140px;\n      height: 80px;\n}\n.show-item .item-content .indexData23[data-v-37a39d7e] {\n      width: 400px;\n      height: 290px;\n}\n.show-item .item-content .indexData24[data-v-37a39d7e] {\n      width: 220px;\n      height: 166px;\n}\n.show-item .item-content .indexData25[data-v-37a39d7e] {\n      width: 125px;\n      height: 160px;\n}\n.show-item .item-content .indexData26[data-v-37a39d7e] {\n      width: 126px;\n      height: 140px;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
 /***/ "CRl/":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1042,6 +1167,21 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 // module
 exports.push([module.i, "\n.flex[data-v-e6e82826] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n[data-v-e6e82826] .el-progress-bar__outer {\n  background-color: aquamarine;\n}\n.indexData[data-v-e6e82826] {\n  width: 100%;\n  height: 100%;\n}\n.indexData .tooltipBox[data-v-e6e82826] {\n  width: 100%;\n  height: 100%;\n  padding: 20px;\n  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 58, 95, 0.63)), color-stop(97%, rgba(0, 30, 52, 0.4)));\n  background: linear-gradient(180deg, rgba(7, 58, 95, 0.63), rgba(0, 30, 52, 0.4) 97%);\n  border: 2px solid;\n  -o-border-image: linear-gradient(360deg, rgba(14, 180, 212, 0.19) 39%, rgba(45, 180, 255, 0.69) 100%) 2 2;\n     border-image: -webkit-gradient(linear, left bottom, left top, color-stop(39%, rgba(14, 180, 212, 0.19)), to(rgba(45, 180, 255, 0.69))) 2 2;\n     border-image: linear-gradient(360deg, rgba(14, 180, 212, 0.19) 39%, rgba(45, 180, 255, 0.69) 100%) 2 2;\n  -webkit-box-shadow: 7px 5px 7px 0px rgba(10, 42, 59, 0.5);\n          box-shadow: 7px 5px 7px 0px rgba(10, 42, 59, 0.5);\n}\n.indexData .tooltipBox .tooltipTitle[data-v-e6e82826] {\n  font-size: 18px;\n  font-family: PingFangSC, PingFangSC-Semibold;\n  font-weight: 600;\n  text-align: left;\n  color: #ffffff;\n  line-height: 16px;\n  margin-bottom: 16px;\n}\n.indexData .tooltipBox .infoData[data-v-e6e82826] {\n  width: 100%;\n}\n.indexData .tooltipBox .infoData .name span[data-v-e6e82826] {\n  font-size: 12px;\n  font-family: PingFangSC, PingFangSC-Regular;\n  font-weight: 400;\n  text-align: left;\n  color: #ffffff;\n  line-height: 12px;\n}\n.indexData .tooltipBox .infoData .num span[data-v-e6e82826] {\n  font-size: 14px;\n  font-family: PingFangSC;\n  font-weight: 600;\n  text-align: left;\n  color: #1edfff;\n  line-height: 34px;\n}\n.indexData .tooltipBox .allNum span[data-v-e6e82826]:first-child {\n  font-size: 12px;\n  font-family: PingFangSC, PingFangSC-Regular;\n  font-weight: 400;\n  text-align: left;\n  color: #9bcdff;\n  line-height: 12px;\n}\n.indexData .tooltipBox .allNum span[data-v-e6e82826]:last-child {\n  font-size: 13px;\n  font-family: PingFangSC;\n  font-weight: 700;\n  text-align: left;\n  color: #ffffff;\n  line-height: 12px;\n}\n.indexData .tooltipBox .progress[data-v-e6e82826] {\n  margin: 6px 0;\n}\n.indexData .tooltipBox .isNormal[data-v-e6e82826] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.indexData .tooltipBox .isNormal p span[data-v-e6e82826]:first-child {\n  font-size: 12px;\n  font-family: PingFangSC, PingFangSC-Regular;\n  font-weight: 400;\n  text-align: left;\n  color: #9bcdff;\n  line-height: 12px;\n  margin-right: 4px;\n}\n.indexData .tooltipBox .isNormal p span[data-v-e6e82826]:last-child {\n  font-size: 12px;\n  font-family: PingFangSC;\n  font-weight: 700;\n  text-align: left;\n  color: #ffffff;\n  line-height: 14px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "CiY8":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("FZ+f")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.indexData[data-v-44aeecc9] {\n  width: 100%;\n  height: 100%;\n}\n.indexData .top_right[data-v-44aeecc9] {\n  width: 100%;\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n.indexData .top_right li[data-v-44aeecc9] {\n  list-style-type: none;\n  width: 100%;\n  height: 100%;\n  padding-left: 22px;\n  background: -webkit-gradient(linear, right top, left top, from(rgba(109, 195, 225, 0.04)), to(rgba(58, 145, 191, 0.28)));\n  background: linear-gradient(270deg, rgba(109, 195, 225, 0.04), rgba(58, 145, 191, 0.28) 100%);\n  border: 1px solid;\n  -o-border-image: linear-gradient(270deg, rgba(0, 173, 226, 0.35), #00ade2 100%) 1 1;\n     border-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 173, 226, 0.35)), to(#00ade2)) 1 1;\n     border-image: linear-gradient(270deg, rgba(0, 173, 226, 0.35), #00ade2 100%) 1 1;\n  border-left: 2px solid #00c5ff;\n}\n.indexData .top_right li .title[data-v-44aeecc9] {\n  width: 86%;\n  height: 50%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.indexData .top_right li .title .index[data-v-44aeecc9] {\n  font-size: 14px;\n  font-family: DINAlternate, DINAlternate-Bold;\n  font-weight: 700;\n  text-align: left;\n  color: #0cdfe6;\n  line-height: 12px;\n  margin-right: 10px;\n  margin-left: 2px;\n}\n.indexData .top_right li .title .text[data-v-44aeecc9] {\n  width: 100%;\n  font-size: 14px;\n  font-family: PingFangSC, PingFangSC-Regular;\n  font-weight: 400;\n  text-align: left;\n  color: #ffffff;\n  line-height: 16px;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  overflow: hidden;\n  word-break: break-all;\n}\n.indexData .top_right li .label[data-v-44aeecc9] {\n  width: 100%;\n}\n.indexData .top_right li .label span[data-v-44aeecc9] {\n  display: inline-block;\n  padding: 6px 4px;\n  background: linear-gradient(135deg, rgba(37, 125, 170, 0.32), rgba(39, 112, 178, 0.72));\n  -webkit-box-shadow: 0px 5px 4px 0px rgba(16, 46, 97, 0.22);\n          box-shadow: 0px 5px 4px 0px rgba(16, 46, 97, 0.22);\n  font-size: 12px;\n  font-family: PingFangSC, PingFangSC-Regular;\n  font-weight: 400;\n  text-align: center;\n  color: #99cbff;\n  line-height: 12px;\n  margin-right: 10px;\n  margin-bottom: 5px;\n}\n", ""]);
 
 // exports
 
@@ -1151,14 +1291,17 @@ module.exports = __webpack_require__.p + "static/img/indexdata16.067cdf1.png";
 
 /***/ }),
 
-/***/ "F+kd":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "FYc/":
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"content"},[_c('div',{staticClass:"show-item bg-black"},[_c('p',{staticClass:"title"},[_vm._v("单指标数据")]),_vm._v(" "),_c('div',{staticClass:"item-content"},[_c('div',{staticClass:"module indexData1"},[_c('indexData1',{attrs:{"iconImg":_vm.indexData1.iconImg,"bgImg":_vm.indexData2.bgImg,"num":_vm.indexData1.num,"text":_vm.indexData1.text}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData2"},[_c('indexData2',{attrs:{"iconImg":_vm.indexData2.iconImg,"bgImg":_vm.indexData2.bgImg,"num":_vm.indexData2.num,"text":_vm.indexData2.text}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData3"},[_c('indexData3',{attrs:{"num":_vm.indexData3.num,"borderStyle":_vm.indexData3.borderStyle,"backgroundStyle":_vm.indexData3.backgroundStyle,"text":_vm.indexData3.text,"iconClass":_vm.indexData3.iconClass,"iconStyle":_vm.indexData3.iconStyle,"iconBgStyle":_vm.indexData3.iconBgStyle}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData4"},[_c('indexData4',{attrs:{"bgImg":_vm.indexData4.bgImg,"num":_vm.indexData4.num,"text":_vm.indexData4.text,"iconClass":_vm.indexData4.iconClass,"iconStyle":_vm.indexData4.iconStyle}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData5"},[_c('indexData5',{attrs:{"iconImg":_vm.indexData5.iconImg,"num":_vm.indexData5.num,"text":_vm.indexData5.text,"borderStyle":_vm.indexData5.borderStyle,"backgroundStyle":_vm.indexData5.backgroundStyle}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData6"},[_c('indexData6',{attrs:{"iconImg":_vm.indexData6.iconImg,"num":_vm.indexData6.num,"text":_vm.indexData6.text,"borderStyle":_vm.indexData6.borderStyle,"backgroundStyle":_vm.indexData6.backgroundStyle}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData7"},[_c('indexData7',{attrs:{"num":_vm.indexData7.num,"text":_vm.indexData7.text,"bgImg":_vm.indexData7.bgImg}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData8"},[_c('indexData8',{attrs:{"num":_vm.indexData8.num,"text":_vm.indexData8.text,"iconTitle":_vm.indexData8.iconTitle,"iconBgStyle":_vm.indexData8.iconBgStyle,"borderStyle":_vm.indexData8.borderStyle,"backgroundStyle":_vm.indexData8.backgroundStyle}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData9"},[_c('indexData9',{attrs:{"num":_vm.indexData9.num,"text":_vm.indexData9.text,"iconImg":_vm.indexData9.iconImg,"unit":_vm.indexData9.unit}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData10"},[_c('indexData10',{attrs:{"icon":_vm.indexData10.icon,"buildTitle":_vm.indexData10.buildTitle,"timeText":_vm.indexData10.timeText,"num":_vm.indexData10.num,"boxStyle":_vm.indexData10.boxStyle}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData11"},[_c('indexData11',{attrs:{"num":_vm.indexData11.num,"text":_vm.indexData11.text,"iconImg":_vm.indexData11.iconImg,"icon":_vm.indexData11.icon,"borderStyle":_vm.indexData11.borderStyle,"backgroundStyle":_vm.indexData11.backgroundStyle}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData12"},[_c('indexData12',{attrs:{"num":_vm.indexData12.num,"text":_vm.indexData12.text,"unit":_vm.indexData12.unit,"iconImg":_vm.indexData12.iconImg,"borderStyle":_vm.indexData12.borderStyle,"backgroundStyle":_vm.indexData12.backgroundStyle,"progressBgStyle":_vm.indexData12.progressBgStyle,"progressValueStyle":_vm.indexData12.progressValueStyle}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData13"},[_c('indexData13',{attrs:{"num":_vm.indexData13.num,"text":_vm.indexData13.text,"iconImg":_vm.indexData13.iconImg,"borderStyle":_vm.indexData13.borderStyle,"backgroundStyle":_vm.indexData13.backgroundStyle}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData14"},[_c('indexData14',{attrs:{"num":_vm.indexData14.num,"text":_vm.indexData14.text,"bgImg":_vm.indexData14.bgImg,"btnImg":_vm.indexData14.btnImg,"icon":_vm.indexData14.icon,"btn":_vm.indexData14.btn}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData15"},[_c('indexData15',{attrs:{"num":_vm.indexData15.num,"text":_vm.indexData15.text,"bgImg":_vm.indexData15.bgImg,"iconImg":_vm.indexData15.iconImg}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData16"},[_c('indexData16',{attrs:{"num":_vm.indexData16.num,"text":_vm.indexData16.text,"bgImg":_vm.indexData16.bgImg}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData17"},[_c('indexData17',{attrs:{"num":_vm.indexData17.num,"text":_vm.indexData17.text,"bgImg":_vm.indexData17.bgImg}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData18"},[_c('indexData18',{attrs:{"text":_vm.indexData18.text,"bgImg":_vm.indexData18.bgImg,"icon":_vm.indexData18.icon}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData19"},[_c('indexData19',{attrs:{"num":_vm.indexData19.num,"text":_vm.indexData19.text,"bottomBgImg":_vm.indexData19.bottomBgImg,"topBgImg":_vm.indexData19.topBgImg,"btnText":_vm.indexData19.btnText}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData20"},[_c('indexData20',{attrs:{"num":_vm.indexData20.num,"unit":_vm.indexData20.unit,"text":_vm.indexData20.text,"bgImg":_vm.indexData20.bgImg,"icon":_vm.indexData20.icon}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData21"},[_c('indexData21',{attrs:{"num":_vm.indexData21.num,"text":_vm.indexData21.text,"bgImg":_vm.indexData21.bgImg}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData22"},[_c('indexData22',{attrs:{"num":_vm.indexData22.num,"text":_vm.indexData22.text,"bgImg":_vm.indexData22.bgImg}})],1)])]),_vm._v(" "),_c('div',{staticClass:"show-item bg-black"},[_c('p',{staticClass:"title"},[_vm._v("多指标数据")]),_vm._v(" "),_c('div',{staticClass:"item-content"},[_c('div',{staticClass:"module"},[_c('div',{staticClass:"module indexData23"},[_c('indexData23',{attrs:{"num":_vm.indexData23.num,"text":_vm.indexData23.text,"province":_vm.indexData23.province,"backgroundStyle":_vm.indexData23.backgroundStyle,"pieChartData":_vm.indexData23.pieChartData,"lineChartData":_vm.indexData23.lineChartData}})],1)]),_vm._v(" "),_c('div',{staticClass:"module indexData24"},[_c('indexData24',{attrs:{"normal":_vm.indexData24.normal,"abnormal":_vm.indexData24.abnormal,"title":_vm.indexData24.title,"info1":_vm.indexData24.info1,"info2":_vm.indexData24.info2,"allNum":_vm.indexData24.allNum,"progress":_vm.indexData24.progress,"backgroundStyle":_vm.indexData24.backgroundStyle}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData25"},[_c('indexData25',{attrs:{"title":_vm.indexData25.title,"info1":_vm.indexData25.info1,"info2":_vm.indexData25.info2,"info3":_vm.indexData25.info3,"info4":_vm.indexData25.info4,"bgImg":_vm.indexData25.bgImg}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData26"},[_c('indexData26',{attrs:{"title":_vm.indexData26.title,"info1":_vm.indexData26.info1,"info2":_vm.indexData26.info2,"unit":_vm.indexData26.unit,"backgroundStyle":_vm.indexData26.backgroundStyle}})],1)])])])}
-var staticRenderFns = []
+exports = module.exports = __webpack_require__("FZ+f")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.indexData[data-v-105b9393] {\n  width: 100%;\n  height: 100%;\n}\n.indexData .top_right[data-v-105b9393] {\n  width: 100%;\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n.indexData .top_right li[data-v-105b9393] {\n  position: relative;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  width: 100%;\n  height: 100%;\n  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 58, 95, 0.63)), color-stop(97%, undefined));\n  background: linear-gradient(180deg, rgba(7, 58, 95, 0.63), undefined 97%);\n  border: 1px solid;\n  -o-border-image: linear-gradient(360deg, rgba(14, 180, 212, 0.19) 39%, rgba(45, 180, 255, 0.69) 100%) 1 1;\n     border-image: -webkit-gradient(linear, left bottom, left top, color-stop(39%, rgba(14, 180, 212, 0.19)), to(rgba(45, 180, 255, 0.69))) 1 1;\n     border-image: linear-gradient(360deg, rgba(14, 180, 212, 0.19) 39%, rgba(45, 180, 255, 0.69) 100%) 1 1;\n  -webkit-box-shadow: 7px 5px 7px 0px rgba(10, 42, 59, 0.5);\n          box-shadow: 7px 5px 7px 0px rgba(10, 42, 59, 0.5);\n}\n.indexData .top_right li .title[data-v-105b9393] {\n  width: 80px;\n  height: 100%;\n  background: -webkit-gradient(linear, right top, left top, color-stop(1%, rgba(5, 188, 243, 0.22)), color-stop(99%, rgba(29, 50, 116, 0.84)));\n  background: linear-gradient(270deg, rgba(5, 188, 243, 0.22) 1%, rgba(29, 50, 116, 0.84) 99%);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding-right: 7px;\n}\n.indexData .top_right li .title p[data-v-105b9393] {\n  font-size: 14px;\n  font-family: PingFangSC, PingFangSC-Semibold;\n  font-weight: 600;\n  color: #ffffff;\n}\n.indexData .top_right li .right[data-v-105b9393] {\n  width: 0;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  padding: 0 10px;\n}\n.indexData .top_right li .right p[data-v-105b9393] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.indexData .top_right li .right p span[data-v-105b9393]:first-child {\n  font-size: 12px;\n  font-family: PingFangSC, PingFangSC-Semibold;\n  font-weight: 600;\n  text-align: left;\n  color: #88d7fd;\n  line-height: 17px;\n}\n.indexData .top_right li .right p span[data-v-105b9393]:last-child {\n  font-size: 12px;\n  font-family: PingFangSC, PingFangSC-Semibold;\n  font-weight: 600;\n  text-align: right;\n  color: #ffffff;\n  line-height: 17px;\n}\n.indexData .top_right li .imgBox[data-v-105b9393] {\n  width: 22px;\n  height: 24px;\n  position: absolute;\n  left: -10px;\n  top: 50%;\n  -webkit-transform: translate(0, -50%);\n          transform: translate(0, -50%);\n  background-position: center center;\n  background-size: 100% 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.indexData .top_right li .imgBox i[data-v-105b9393] {\n  font-size: 12px;\n  color: #ffffff;\n}\n.indexData .top_right li[data-v-105b9393]:nth-child(2n) {\n  margin-left: 15px;\n}\n", ""]);
+
+// exports
 
 
 /***/ }),
@@ -1264,6 +1407,18 @@ var update = add("1581a924", content, true, {});
 
 /***/ }),
 
+/***/ "GsOK":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"indexData"},[_c('ul',{staticClass:"top_right"},[_c('li',{style:(_vm.backgroundStyle)},[_c('p',{staticClass:"title"},[_c('span',{staticClass:"index",style:(_vm.title.index.style)},[_vm._v(_vm._s(_vm.title.index.value))]),_vm._v(" "),_c('span',{staticClass:"text",style:(_vm.title.text.style),attrs:{"title":_vm.title.text.value}},[_vm._v(_vm._s(_vm.title.text.value))])]),_vm._v(" "),_c('div',{staticClass:"label"},_vm._l((_vm.info),function(item,index){return _c('span',{key:index,style:(item.name.style)},[_vm._v(_vm._s(item.name.value))])}),0)])])])}
+var staticRenderFns = []
+
+
+/***/ }),
+
 /***/ "H9Ds":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1277,6 +1432,22 @@ if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
 var add = __webpack_require__("rjj0").default
 var update = add("1c950f02", content, true, {});
+
+/***/ }),
+
+/***/ "HBJy":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("OjIa");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("rjj0").default
+var update = add("190cce87", content, true, {});
 
 /***/ }),
 
@@ -1339,22 +1510,6 @@ var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "static/img/tooltip9.35fb367.png";
-
-/***/ }),
-
-/***/ "IFgK":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("BxxX");
-if(content.__esModule) content = content.default;
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("rjj0").default
-var update = add("3388b3c0", content, true, {});
 
 /***/ }),
 
@@ -1426,6 +1581,157 @@ var update = add("3388b3c0", content, true, {});
 
 /***/ }),
 
+/***/ "IWL8":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  name: "index-data-29",
+  data: function data() {
+    return {};
+  },
+
+  props: {
+    title: {
+      type: Object,
+      default: function _default() {
+        return {};
+      }
+    },
+    backgroundStyle: {
+      type: Object,
+      default: function _default() {
+        return {};
+      }
+    },
+    iconImg: {
+      type: String,
+      default: ""
+    },
+    icon: {
+      type: Object,
+      default: function _default() {
+        return {};
+      }
+    },
+    info: {
+      type: Array,
+      default: function _default() {
+        return [];
+      }
+    }
+  },
+  mounted: function mounted() {},
+
+  methods: {},
+  watch: {}
+});
+
+/***/ }),
+
+/***/ "IaOG":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  name: "index-data-28",
+  data: function data() {
+    return {};
+  },
+
+  props: {
+    backgroundStyle: {
+      type: Object,
+      default: function _default() {
+        return {};
+      }
+    },
+    icon: {
+      type: Object,
+      default: function _default() {
+        return {};
+      }
+    },
+    title: {
+      type: Object,
+      default: function _default() {
+        return {};
+      }
+    },
+    info: {
+      type: Array,
+      default: function _default() {
+        return [];
+      }
+    }
+  },
+  mounted: function mounted() {},
+
+  methods: {}
+});
+
+/***/ }),
+
 /***/ "If6j":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1475,6 +1781,24 @@ var update = add("3388b3c0", content, true, {});
 
 /***/ }),
 
+/***/ "JQr4":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"indexData"},[_c('ul',{staticClass:"top_right"},[_c('li',[_c('div',{staticClass:"imgBox"},[_c('img',{attrs:{"src":_vm.iconImg,"alt":"","srcset":""}})]),_vm._v(" "),_c('div',{staticClass:"title"},[_c('p',{style:(_vm.title1.style)},[_vm._v(_vm._s(_vm.title1.value))]),_vm._v(" "),_c('p',{style:(_vm.title2.style)},[_vm._v(_vm._s(_vm.title2.value))])]),_vm._v(" "),_c('div',{staticClass:"right"},[_c('div',{staticClass:"lineBox"},[_c('span',{style:(_vm.progress1.name.style)},[_vm._v(_vm._s(_vm.progress1.name.value))]),_vm._v(" "),_c('div',{staticClass:"line",style:({ backgroundColor: _vm.progress1.innerBackground })},[_c('div',{staticClass:"lineInner",style:([
+                { width: _vm.progress1.value + '%' },
+                { background: _vm.progress1.outterBackground }
+              ])})]),_vm._v(" "),_c('span',{staticClass:"rate"},[_vm._v(_vm._s(_vm._f("setRate")(Number(_vm.progress1.value)))+" %")])]),_vm._v(" "),_c('div',{staticClass:"lineBox"},[_c('span',{style:(_vm.progress2.name.style)},[_vm._v(_vm._s(_vm.progress2.name.value))]),_vm._v(" "),_c('div',{staticClass:"line",style:({ backgroundColor: _vm.progress2.innerBackground })},[_c('div',{staticClass:"lineInner",style:([
+                { width: _vm.progress2.value + '%' },
+                { background: _vm.progress2.outterBackground }
+              ])})]),_vm._v(" "),_c('span',{staticClass:"rate"},[_vm._v(_vm._s(_vm._f("setRate")(Number(_vm.progress2.value)))+" %")])])])])])])}
+var staticRenderFns = []
+
+
+/***/ }),
+
 /***/ "JgWy":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1505,6 +1829,11 @@ var update = add("3388b3c0", content, true, {});
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__cell_indexData_index_data_24__ = __webpack_require__("uszU");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__cell_indexData_index_data_25__ = __webpack_require__("drY6");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__cell_indexData_index_data_26__ = __webpack_require__("VgVw");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__cell_indexData_index_data_27__ = __webpack_require__("e6Dz");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__cell_indexData_index_data_28__ = __webpack_require__("Mwxr");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__cell_indexData_index_data_29__ = __webpack_require__("a/7D");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__cell_indexData_index_data_30__ = __webpack_require__("kFzt");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__cell_indexData_index_data_31__ = __webpack_require__("nL0A");
 //
 //
 //
@@ -1752,6 +2081,54 @@ var update = add("3388b3c0", content, true, {});
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
 
 
 
@@ -1807,7 +2184,12 @@ var update = add("3388b3c0", content, true, {});
     indexData23: __WEBPACK_IMPORTED_MODULE_22__cell_indexData_index_data_23__["a" /* default */],
     indexData24: __WEBPACK_IMPORTED_MODULE_23__cell_indexData_index_data_24__["a" /* default */],
     indexData25: __WEBPACK_IMPORTED_MODULE_24__cell_indexData_index_data_25__["a" /* default */],
-    indexData26: __WEBPACK_IMPORTED_MODULE_25__cell_indexData_index_data_26__["a" /* default */]
+    indexData26: __WEBPACK_IMPORTED_MODULE_25__cell_indexData_index_data_26__["a" /* default */],
+    indexData27: __WEBPACK_IMPORTED_MODULE_26__cell_indexData_index_data_27__["a" /* default */],
+    indexData28: __WEBPACK_IMPORTED_MODULE_27__cell_indexData_index_data_28__["a" /* default */],
+    indexData29: __WEBPACK_IMPORTED_MODULE_28__cell_indexData_index_data_29__["a" /* default */],
+    indexData30: __WEBPACK_IMPORTED_MODULE_29__cell_indexData_index_data_30__["a" /* default */],
+    indexData31: __WEBPACK_IMPORTED_MODULE_30__cell_indexData_index_data_31__["a" /* default */]
   },
   data: function data() {
     return {
@@ -2405,9 +2787,139 @@ var update = add("3388b3c0", content, true, {});
           }
         },
         unit: {
-          value: '%',
+          value: "%",
           style: {}
         },
+        backgroundStyle: {}
+      },
+      indexData27: {
+        title1: {
+          value: "二干光缆资源",
+          style: {}
+        },
+        title2: {
+          value: "清查录入进度",
+          style: {}
+        },
+        progress1: {
+          name: {
+            value: "光缆覆盖率",
+            style: {}
+          },
+          value: "34",
+          innerBackground: "#2262a0",
+          outterBackground: "linear-gradient(270deg,#3ff5f8 0%, #50bbff 99%)"
+        },
+        progress2: {
+          name: {
+            value: "成端熔接率",
+            style: {}
+          },
+          value: "55",
+          innerBackground: "#2262a0",
+          outterBackground: "linear-gradient(270deg,#ffb84f 0%, #ed586d 99%)"
+        },
+        iconImg: __webpack_require__("wOMN"),
+        backgroundStyle: {}
+      },
+      indexData28: {
+        backgroundStyle: {},
+        icon: {
+          class: "iconfont icon-shebei",
+          style: {}
+        },
+        title: {
+          value: "富力盈通大厦(无业务)",
+          style: {}
+        },
+        info: [{ value: "2M-空闲67个", style: {} }, { value: "100M-空闲7个", style: {} }, { value: "622M-空闲1个", style: {}
+          // {value: '155M-空闲7个', style: {}},
+        }]
+      },
+      indexData29: {
+        title: {
+          value: "3G基站",
+          style: {}
+        },
+        iconImg: __webpack_require__("qnce"),
+        icon: {
+          class: 'iconfont icon-jizhan',
+          style: {}
+        },
+        info: [{
+          name: {
+            value: '基站数',
+            style: {}
+          },
+          num: {
+            value: '20',
+            style: {}
+          }
+        }, {
+          name: {
+            value: '小区数',
+            style: {}
+          },
+          num: {
+            value: '5869',
+            style: {}
+          }
+        }],
+        backgroundStyle: {}
+      },
+      indexData30: {
+        title: {
+          index: {
+            value: '1',
+            style: {}
+          },
+          text: {
+            value: '审计厅省信息中心琼山区审计监督局FE03FE03',
+            style: {}
+          }
+        },
+        info: [{
+          name: {
+            value: '数字电路',
+            style: {}
+          }
+        }, {
+          name: {
+            value: '8M',
+            style: {}
+          }
+        }],
+        backgroundStyle: {}
+      },
+      indexData31: {
+        title: {
+          value: "3G基站",
+          style: {}
+        },
+        iconImg: __webpack_require__("qnce"),
+        icon: {
+          class: 'iconfont icon-jizhan',
+          style: {}
+        },
+        info: [{
+          name: {
+            value: '基站数',
+            style: {}
+          },
+          num: {
+            value: '20',
+            style: {}
+          }
+        }, {
+          name: {
+            value: '小区数',
+            style: {}
+          },
+          num: {
+            value: '5869',
+            style: {}
+          }
+        }],
         backgroundStyle: {}
       }
     };
@@ -2505,6 +3017,46 @@ exports.push([module.i, "\n.indexData[data-v-b7e68efc] {\n  width: 100%;\n  heig
 
 /***/ }),
 
+/***/ "Mwxr":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_28_vue__ = __webpack_require__("IaOG");
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3c953d5b_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_28_vue__ = __webpack_require__("dktP");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__("XyMi");
+function injectStyle (context) {
+  __webpack_require__("yQ3P")
+}
+/* script */
+
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-3c953d5b"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+
+var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_28_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3c953d5b_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_28_vue__["a" /* render */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3c953d5b_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_28_vue__["b" /* staticRenderFns */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+
 /***/ "MxvV":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2552,6 +3104,21 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 // module
 exports.push([module.i, "\n.indexData[data-v-5ef81611] {\n  width: 100%;\n  height: 100%;\n}\n.indexData .tooltipBox[data-v-5ef81611] {\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 64, 112, 0.55);\n  border: 1px solid;\n  -o-border-image: linear-gradient(270deg, #0098ad, #00dfff 51%, #0098ad) 1 1;\n     border-image: -webkit-gradient(linear, right top, left top, from(#0098ad), color-stop(51%, #00dfff), to(#0098ad)) 1 1;\n     border-image: linear-gradient(270deg, #0098ad, #00dfff 51%, #0098ad) 1 1;\n}\n.indexData .tooltipBox .tooltipBg[data-v-5ef81611] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%;\n  height: 100%;\n  padding-left: 20px;\n}\n.indexData .tooltipBox .tooltipBg .tooltipImg[data-v-5ef81611] {\n  width: 46px;\n  height: 46px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  background: linear-gradient(207deg, #08ebf2 14%, #28baf8 86%);\n  border-radius: 50%;\n}\n.indexData .tooltipBox .tooltipBg .tooltipImg i[data-v-5ef81611] {\n  font-size: 26px;\n  color: #ffffff;\n}\n.indexData .tooltipBox .tooltipBg .tooltipInfo[data-v-5ef81611] {\n  margin-left: 15px;\n}\n.indexData .tooltipBox .tooltipBg .tooltipInfo .tipTitle[data-v-5ef81611] {\n  font-size: 14px;\n  font-family: PingFangSC;\n  font-weight: 400;\n  text-align: left;\n  color: #ffffff;\n  line-height: 14px;\n}\n.indexData .tooltipBox .tooltipBg .tooltipInfo .tip1[data-v-5ef81611] {\n  font-size: 24px;\n  font-family: DINAlternate;\n  font-weight: 700;\n  text-align: left;\n  color: #ffffff;\n  line-height: 30px;\n  letter-spacing: 1px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "OjIa":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("FZ+f")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.indexData[data-v-4d121513] {\n  width: 100%;\n  height: 100%;\n}\n.indexData .tooltipBox[data-v-4d121513] {\n  width: 100%;\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.indexData .tooltipBox .tooltipBg[data-v-4d121513] {\n  position: relative;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 100%;\n  height: 80px;\n  background-position: center center;\n  background-repeat: no-repeat;\n  background-size: 100% 100%;\n}\n.indexData .tooltipBox .tooltipBg .tooltipImg[data-v-4d121513] {\n  position: absolute;\n  bottom: 2px;\n  right: 12px;\n  font-size: 14px;\n  color: #ffffff;\n}\n.indexData .tooltipBox .tooltipInfo[data-v-4d121513] {\n  /* width: 100%;\n      height: 100%; */\n  /* display: flex;\n        flex-direction: column;\n        align-items: center; */\n}\n.indexData .tooltipBox .tooltipInfo .tipTitle[data-v-4d121513] {\n  font-size: 14px;\n  font-family: PingFangSC, PingFangSC-Semibold;\n  font-weight: 600;\n  text-align: center;\n  color: #ffffff;\n  line-height: 20px;\n  margin-top: 10px;\n  margin-bottom: 6px;\n}\n.indexData .tooltipBox .tooltipInfo .tip1[data-v-4d121513] {\n  font-size: 26px;\n  font-family: PangMenZhengDao;\n  text-align: left;\n  color: #ffffff;\n  line-height: 30px;\n}\n.indexData .tooltipBox .tooltipInfo .tip1 span[data-v-4d121513] {\n  font-size: 14px;\n  font-family: PingFangSC, PingFangSC-Semibold;\n}\n", ""]);
 
 // exports
 
@@ -2771,6 +3338,21 @@ exports.push([module.i, "\n.indexData[data-v-5a99f9ce] {\n  width: 100%;\n  heig
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAmCAYAAADnYOp+AAAAAXNSR0IArs4c6QAAATVJREFUOE91U2FLwzAQvftLMkRUFBVRFEVRFFFURIb4J9K/lq7rNvZbRuecOh3NabI2vWRnvxTu3cu7d3lBEL4VPVIY11t6pMhQEgAtXSgg44oeWK2K9QkOWLNFoARoUbY/XNeFIoAk1sINXVDV6DGnsamLuO6kcSsdU03xkyAAbqdjaoZryLiTvskau+mEvBvWgnudCS3txcrvd96FqQDw4D/gMJMYCHiUTb0k18LjbCr7OMk+mKtqXbb1tPvJpmI9ZwHQLB/Pu18y4yLnAGNcCgDa+7jKZ/JKrvMZIS6sEUsD3vS+ZcatAyKGXftd76e5KJYhvO/PZR8PAcB8PPbn/mprqgvc06BUQBRG1ObKkp+HpQIDiffBn0F7UAbhDpLTHpICY9yxS5F6sSBFT60e9vUP/AVYtZocLTsykQAAAABJRU5ErkJggg=="
+
+/***/ }),
+
+/***/ "QXve":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("FZ+f")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.indexData[data-v-8685b502] {\n  width: 100%;\n  height: 100%;\n}\n.indexData .top_right[data-v-8685b502] {\n  width: 100%;\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n.indexData .top_right li[data-v-8685b502] {\n  position: relative;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 6px;\n  width: 100%;\n  height: 100%;\n  background: -webkit-gradient(linear, right top, left top, color-stop(1%, rgba(135, 233, 255, 0)), color-stop(99%, rgba(13, 188, 254, 0.26)));\n  background: linear-gradient(270deg, rgba(135, 233, 255, 0) 1%, rgba(13, 188, 254, 0.26) 99%);\n  border: 1px solid rgba(88, 229, 255, 0.27);\n  border-radius: 5px;\n}\n.indexData .top_right li .title[data-v-8685b502] {\n  width: 114px;\n  height: 100%;\n  padding: 3px 0;\n  background: rgba(96, 204, 250, 0.1);\n  border-radius: 4px;\n  text-align: center;\n}\n.indexData .top_right li .title p[data-v-8685b502] {\n  font-size: 16px;\n  font-family: PingFangSC, PingFangSC-Regular;\n  font-weight: 400;\n  text-align: center;\n  color: #ffffff;\n  line-height: 23px;\n}\n.indexData .top_right li .right[data-v-8685b502] {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  padding: 3px 0;\n  font-size: 14px;\n  color: #b7e9ff;\n}\n.indexData .top_right li .imgBox[data-v-8685b502] {\n  width: 13px;\n  height: 26px;\n  position: absolute;\n  left: -8px;\n  top: 21px;\n}\n.indexData .top_right li .imgBox img[data-v-8685b502] {\n  max-width: 100%;\n}\n.indexData .top_right li[data-v-8685b502]:nth-child(2n) {\n  margin-left: 15px;\n}\n.indexData .lineBox[data-v-8685b502] {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 26px;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n  padding: 0 5px;\n}\n.indexData .lineBox .rate[data-v-8685b502] {\n  color: white;\n}\n.indexData .lineBox .line[data-v-8685b502] {\n  width: 56px;\n  position: relative;\n  margin-top: 5px;\n  height: 6px;\n  padding: 0 12px;\n  border-radius: 4px;\n}\n.indexData .lineBox .line .lineInner[data-v-8685b502] {\n  position: absolute;\n  left: 0;\n  height: 6px;\n  border-radius: 15px;\n  /* &.blue {\n          background: linear-gradient(270deg, #4fe1ff 0%, #49b8fc 100%);\n        } */\n}\n", ""]);
+
+// exports
+
 
 /***/ }),
 
@@ -3047,6 +3629,21 @@ var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_
 
 /***/ }),
 
+/***/ "TQmJ":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("FZ+f")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.content[data-v-45f36f77] {\n  width: 100%;\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n}\n.show-item[data-v-45f36f77] {\n  width: 100%;\n  margin: 15px;\n  border-radius: 16px;\n  background-color: #fff;\n  padding: 15px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  position: relative;\n}\n.show-item.bg-black[data-v-45f36f77] {\n    background-color: #132845;\n    color: rgba(255, 255, 255, 0.8);\n}\n.show-item .title[data-v-45f36f77] {\n    font-size: 16px;\n    font-family: PingFangSC;\n    font-weight: 600;\n    text-align: left;\n    color: #ffffff;\n}\n.show-item .item-content[data-v-45f36f77] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: start;\n        -ms-flex-pack: start;\n            justify-content: flex-start;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n}\n.show-item .item-content .module[data-v-45f36f77] {\n      margin-right: 30px;\n      margin-bottom: 40px;\n}\n.show-item .item-content .module[data-v-45f36f77]:nth-child(6) {\n        margin-right: none;\n}\n.show-item .item-content .indexData1[data-v-45f36f77] {\n      width: 300px;\n      height: 130px;\n}\n.show-item .item-content .indexData2[data-v-45f36f77] {\n      width: 310px;\n      height: 110px;\n}\n.show-item .item-content .indexData3[data-v-45f36f77] {\n      width: 193px;\n      height: 80px;\n}\n.show-item .item-content .indexData4[data-v-45f36f77] {\n      width: 230px;\n      height: 60px;\n}\n.show-item .item-content .indexData5[data-v-45f36f77] {\n      width: 214px;\n      height: 60px;\n}\n.show-item .item-content .indexData6[data-v-45f36f77] {\n      width: 128px;\n      height: 50px;\n}\n.show-item .item-content .indexData7[data-v-45f36f77] {\n      width: 168px;\n      height: 90px;\n}\n.show-item .item-content .indexData8[data-v-45f36f77] {\n      width: 132px;\n      height: 50px;\n}\n.show-item .item-content .indexData9[data-v-45f36f77] {\n      width: 190px;\n      height: 80px;\n}\n.show-item .item-content .indexData10[data-v-45f36f77] {\n      width: 205px;\n      height: 60px;\n}\n.show-item .item-content .indexData11[data-v-45f36f77] {\n      width: 240px;\n      height: 60px;\n}\n.show-item .item-content .indexData12[data-v-45f36f77] {\n      width: 100px;\n      height: 46px;\n}\n.show-item .item-content .indexData13[data-v-45f36f77] {\n      width: 230px;\n      height: 37px;\n}\n.show-item .item-content .indexData14[data-v-45f36f77] {\n      width: 275px;\n      height: 225px;\n}\n.show-item .item-content .indexData15[data-v-45f36f77] {\n      width: 172px;\n      height: 180px;\n}\n.show-item .item-content .indexData16[data-v-45f36f77] {\n      width: 200px;\n      height: 175px;\n}\n.show-item .item-content .indexData17[data-v-45f36f77] {\n      width: 130px;\n      height: 98px;\n}\n.show-item .item-content .indexData18[data-v-45f36f77] {\n      width: 100px;\n      height: 152px;\n}\n.show-item .item-content .indexData19[data-v-45f36f77] {\n      width: 120px;\n      height: 142px;\n}\n.show-item .item-content .indexData20[data-v-45f36f77] {\n      width: 80px;\n      height: 150px;\n}\n.show-item .item-content .indexData21[data-v-45f36f77] {\n      width: 110px;\n      height: 110px;\n}\n.show-item .item-content .indexData22[data-v-45f36f77] {\n      width: 140px;\n      height: 80px;\n}\n.show-item .item-content .indexData23[data-v-45f36f77] {\n      width: 400px;\n      height: 290px;\n}\n.show-item .item-content .indexData24[data-v-45f36f77] {\n      width: 220px;\n      height: 166px;\n}\n.show-item .item-content .indexData25[data-v-45f36f77] {\n      width: 125px;\n      height: 160px;\n}\n.show-item .item-content .indexData26[data-v-45f36f77] {\n      width: 126px;\n      height: 140px;\n}\n.show-item .item-content .indexData27[data-v-45f36f77] {\n      width: 320px;\n      height: 66px;\n}\n.show-item .item-content .indexData28[data-v-45f36f77] {\n      width: 280px;\n      height: 72px;\n}\n.show-item .item-content .indexData29[data-v-45f36f77] {\n      width: 205px;\n      height: 36px;\n}\n.show-item .item-content .indexData30[data-v-45f36f77] {\n      width: 370px;\n      height: 88px;\n}\n.show-item .item-content .indexData31[data-v-45f36f77] {\n      width: 397px;\n      height: 62px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "TVut":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3115,6 +3712,34 @@ var update = add("64660862", content, true, {});
 
 /***/ }),
 
+/***/ "U/dh":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("CiY8");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("rjj0").default
+var update = add("25fb8f44", content, true, {});
+
+/***/ }),
+
+/***/ "US7m":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"indexData"},[_c('div',{staticClass:"tooltipBox"},[_c('div',{staticClass:"tooltipBg",style:({ backgroundImage: 'url(' + _vm.bgImg + ')' })},[_c('div',{staticClass:"tooltipImg"},[_c('i',{class:_vm.icon.class,style:(_vm.icon.style)})])]),_vm._v(" "),_c('div',{staticClass:"tooltipInfo"},[_c('p',{staticClass:"tipTitle",style:(_vm.text.style)},[_vm._v(_vm._s(_vm.text.value))]),_vm._v(" "),_c('p',{staticClass:"tip1",style:(_vm.num.style)},[_vm._v("\n        "+_vm._s(_vm.num.value)),_c('span',{style:(_vm.unit.style)},[_vm._v(_vm._s(_vm.unit.value))])])])])])}
+var staticRenderFns = []
+
+
+/***/ }),
+
 /***/ "UbEv":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3157,6 +3782,22 @@ var update = add("64660862", content, true, {});
   },
   methods: {}
 });
+
+/***/ }),
+
+/***/ "UlFL":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("TQmJ");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("rjj0").default
+var update = add("db6e3622", content, true, {});
 
 /***/ }),
 
@@ -3341,6 +3982,69 @@ exports.push([module.i, "\n.indexData[data-v-abd9c1bc] {\n  width: 100%;\n  heig
 
 /***/ }),
 
+/***/ "XTUn":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  name: "index-data-30",
+  data: function data() {
+    return {};
+  },
+
+  props: {
+    title: {
+      type: Object,
+      default: function _default() {
+        return {};
+      }
+    },
+    backgroundStyle: {
+      type: Object,
+      default: function _default() {
+        return {};
+      }
+    },
+    info: {
+      type: Array,
+      default: function _default() {
+        return [];
+      }
+    }
+  },
+  mounted: function mounted() {},
+
+  methods: {},
+  watch: {}
+});
+
+/***/ }),
+
 /***/ "XVli":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3365,14 +4069,17 @@ var staticRenderFns = []
 
 /***/ }),
 
-/***/ "YeFW":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "Ya5l":
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"indexData"},[_c('div',{staticClass:"tooltipBox"},[_c('div',{staticClass:"tooltipBg",style:({ backgroundImage: 'url(' + _vm.bgImg + ')' })},[_c('div',{staticClass:"tooltipImg"},[_c('i',{class:_vm.icon.class,style:(_vm.icon.style)})])]),_vm._v(" "),_c('div',{staticClass:"tooltipInfo"},[_c('p',{staticClass:"tipTitle",style:(_vm.text.style)},[_vm._v(_vm._s(_vm.text.value))]),_vm._v(" "),_c('p',{staticClass:"tip1",style:(_vm.num.style)},[_vm._v("\n        "+_vm._s(_vm.num.value)),_c('span',{style:(_vm.unit.style)},[_vm._v(_vm._s(_vm.unit.value))])])])])])}
-var staticRenderFns = []
+exports = module.exports = __webpack_require__("FZ+f")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.indexData[data-v-c1ebb824] {\n  width: 100%;\n  height: 100%;\n}\n.indexData .top_right[data-v-c1ebb824] {\n  width: 100%;\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n.indexData .top_right li[data-v-c1ebb824] {\n  position: relative;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  width: 100%;\n  height: 100%;\n  background: -webkit-gradient(linear, right top, left top, from(rgba(5, 223, 243, 0.15)), color-stop(99%, rgba(2, 188, 227, 0.29)));\n  background: linear-gradient(270deg, rgba(5, 223, 243, 0.15), rgba(2, 188, 227, 0.29) 99%);\n}\n.indexData .top_right li .title[data-v-c1ebb824] {\n  width: 80px;\n  height: 100%;\n  background: -webkit-gradient(linear, right top, left top, color-stop(1%, rgba(5, 188, 243, 0.22)), color-stop(99%, rgba(29, 50, 116, 0.84)));\n  background: linear-gradient(270deg, rgba(5, 188, 243, 0.22) 1%, rgba(29, 50, 116, 0.84) 99%);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding-right: 7px;\n}\n.indexData .top_right li .title p[data-v-c1ebb824] {\n  font-size: 14px;\n  font-family: PingFangSC, PingFangSC-Semibold;\n  font-weight: 600;\n  color: #ffffff;\n}\n.indexData .top_right li .right[data-v-c1ebb824] {\n  width: 0;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  padding: 0 10px;\n}\n.indexData .top_right li .right p[data-v-c1ebb824] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.indexData .top_right li .right p span[data-v-c1ebb824]:first-child {\n  font-size: 12px;\n  font-family: PingFangSC, PingFangSC-Semibold;\n  font-weight: 600;\n  text-align: left;\n  color: #88d7fd;\n  line-height: 17px;\n}\n.indexData .top_right li .right p span[data-v-c1ebb824]:last-child {\n  font-size: 12px;\n  font-family: PingFangSC, PingFangSC-Semibold;\n  font-weight: 600;\n  text-align: right;\n  color: #ffffff;\n  line-height: 17px;\n}\n.indexData .top_right li .imgBox[data-v-c1ebb824] {\n  width: 22px;\n  height: 24px;\n  position: absolute;\n  left: -10px;\n  top: 50%;\n  -webkit-transform: translate(0, -50%);\n          transform: translate(0, -50%);\n  background-position: center center;\n  background-size: 100% 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.indexData .top_right li .imgBox i[data-v-c1ebb824] {\n  font-size: 12px;\n  color: #ffffff;\n}\n.indexData .top_right li[data-v-c1ebb824]:nth-child(2n) {\n  margin-left: 15px;\n}\n", ""]);
+
+// exports
 
 
 /***/ }),
@@ -3408,6 +4115,7 @@ module.exports = __webpack_require__.p + "static/img/indexdata22.f34e478.png";
 //
 
 /* harmony default export */ __webpack_exports__["a"] = ({
+  name: "index-data-20",
   data: function data() {
     return {};
   },
@@ -3505,6 +4213,46 @@ var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_
 
 /***/ }),
 
+/***/ "a/7D":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_29_vue__ = __webpack_require__("IWL8");
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_c1ebb824_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_29_vue__ = __webpack_require__("zgZH");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__("XyMi");
+function injectStyle (context) {
+  __webpack_require__("bzqt")
+}
+/* script */
+
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-c1ebb824"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+
+var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_29_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_c1ebb824_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_29_vue__["a" /* render */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_c1ebb824_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_29_vue__["b" /* staticRenderFns */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+
 /***/ "a4I3":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3577,6 +4325,22 @@ var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_
 
 /* harmony default export */ __webpack_exports__["a"] = (Component.exports);
 
+
+/***/ }),
+
+/***/ "bzqt":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("Ya5l");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("rjj0").default
+var update = add("e54b3d66", content, true, {});
 
 /***/ }),
 
@@ -3680,6 +4444,18 @@ exports.push([module.i, "\n.indexData[data-v-bbc6d186] {\n  width: 100%;\n  heig
 
 /***/ }),
 
+/***/ "dktP":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"indexData"},[_c('ul',{staticClass:"top_right"},[_c('li',{style:(_vm.backgroundStyle)},[_c('div',{staticClass:"icon"},[_c('i',{class:_vm.icon.class,style:(_vm.icon.style)})]),_vm._v(" "),_c('div',{staticClass:"right"},[_c('p',{staticClass:"title",style:(_vm.title.style)},[_vm._v(_vm._s(_vm.title.value))]),_vm._v(" "),_c('p',{staticClass:"common"},_vm._l((_vm.info),function(item,index){return _c('span',{key:index,style:(item.style)},[_vm._v(_vm._s(item.value))])}),0)])])])])}
+var staticRenderFns = []
+
+
+/***/ }),
+
 /***/ "drY6":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3749,6 +4525,46 @@ var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_22_vue__["a" /* default */],
   __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_91426e50_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_22_vue__["a" /* render */],
   __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_91426e50_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_22_vue__["b" /* staticRenderFns */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+
+/***/ "e6Dz":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_27_vue__ = __webpack_require__("69ef");
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_8685b502_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_27_vue__ = __webpack_require__("JQr4");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__("XyMi");
+function injectStyle (context) {
+  __webpack_require__("4OLA")
+}
+/* script */
+
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-8685b502"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+
+var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_27_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_8685b502_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_27_vue__["a" /* render */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_8685b502_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_27_vue__["b" /* staticRenderFns */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -4044,6 +4860,22 @@ var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_
 
 /* harmony default export */ __webpack_exports__["a"] = (Component.exports);
 
+
+/***/ }),
+
+/***/ "hQy2":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("FYc/");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("rjj0").default
+var update = add("1194179e", content, true, {});
 
 /***/ }),
 
@@ -4364,6 +5196,46 @@ var staticRenderFns = []
 
 /***/ }),
 
+/***/ "kFzt":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_30_vue__ = __webpack_require__("XTUn");
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_44aeecc9_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_30_vue__ = __webpack_require__("GsOK");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__("XyMi");
+function injectStyle (context) {
+  __webpack_require__("U/dh")
+}
+/* script */
+
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-44aeecc9"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+
+var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_30_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_44aeecc9_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_30_vue__["a" /* render */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_44aeecc9_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_30_vue__["b" /* staticRenderFns */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+
 /***/ "lC4f":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4399,6 +5271,71 @@ if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
 var add = __webpack_require__("rjj0").default
 var update = add("579170c0", content, true, {});
+
+/***/ }),
+
+/***/ "lw3R":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  name: "index-data-29",
+  data: function data() {
+    return {};
+  },
+
+  props: {
+    title: {
+      type: Object,
+      default: function _default() {
+        return {};
+      }
+    },
+    backgroundStyle: {
+      type: Object,
+      default: function _default() {
+        return {};
+      }
+    },
+    info: {
+      type: Array,
+      default: function _default() {
+        return [];
+      }
+    }
+  },
+  mounted: function mounted() {},
+
+  methods: {},
+  watch: {}
+});
 
 /***/ }),
 
@@ -4464,10 +5401,10 @@ var update = add("b286b206", content, true, {});
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_20_vue__ = __webpack_require__("YtQE");
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1cdded52_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_20_vue__ = __webpack_require__("YeFW");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4d121513_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_20_vue__ = __webpack_require__("US7m");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__("XyMi");
 function injectStyle (context) {
-  __webpack_require__("uV6h")
+  __webpack_require__("HBJy")
 }
 /* script */
 
@@ -4479,14 +5416,14 @@ var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-1cdded52"
+var __vue_scopeId__ = "data-v-4d121513"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 
 var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_20_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1cdded52_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_20_vue__["a" /* render */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1cdded52_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_20_vue__["b" /* staticRenderFns */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4d121513_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_20_vue__["a" /* render */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4d121513_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_20_vue__["b" /* staticRenderFns */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -4590,6 +5527,46 @@ var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_5_vue__["a" /* default */],
   __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6bb0a1d9_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_5_vue__["a" /* render */],
   __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6bb0a1d9_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_5_vue__["b" /* staticRenderFns */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+
+/***/ "nL0A":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_31_vue__ = __webpack_require__("lw3R");
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_105b9393_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_31_vue__ = __webpack_require__("AjiX");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__("XyMi");
+function injectStyle (context) {
+  __webpack_require__("hQy2")
+}
+/* script */
+
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-105b9393"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+
+var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_31_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_105b9393_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_31_vue__["a" /* render */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_105b9393_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_index_data_31_vue__["b" /* staticRenderFns */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -4737,6 +5714,25 @@ var update = add("f9bbbffa", content, true, {});
     }
   }
 });
+
+/***/ }),
+
+/***/ "qnce":
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAwCAYAAABqkJjhAAAAAXNSR0IArs4c6QAACFRJREFUaEPNmW2MVFcZx//PuXdmdmF5cUt5+9JPDh9I2n7SxqRJjSZUjTElprFBY02pNi3CFkGgxbq2KG2xdJcgX4oRXzBqTGmipdVaxYJ9i1ExAp3ZAmkXlmV32ZeZnZ2Ze+85jzn3ZWbnzt65dxYS3YSQ3Dn3eX73//zPc849l3CD/1InL9zmCNkPBZhQW+w715y+kSnohgV7c7Db4OrTknkjWBKYAQYbjMOyonbi7rXjNyLX9QMzC/HWhc2s1JPMapEG7XZM6P/HyQJYgYiKJPGE+vTaAyBS1wN+XcDGqfc/o4A+hspqwAUOYXU1jU4lXKYySQwZM5ghW6sNUsgLEj1y3a2vzBd6XsCZk5eyllHpY/DdkIpSElhZMbHEMebkmCILw2IGNiS09KTo1TSMnurnbs+3C94e8JmRLnOyuEeCNzErgxRjWZlwc9UAcevUioAxKrv/WNuEIQ3mg0510W7cu3Y6KXgyYGYy3ry4UUE+zeBuKMbiKrCiREjVHJkslA2Fq1RCARXX58QYF8BOuf4ThxH72EBsFvPkwF3SFH2s1G06QYfFWFlkdNpJNZl7XBk2hqmECuuJqcHptCGpx7nvzhOtIkcDv372FqMj85wUvB6KyXAUlhcklpSDcGEPRIWK8ooez5hCBSM8Dcna32BD0YuS1bew4VMfzAXenOUvFztEWu5mwreZOaV9+pGig5uKEmJ2QwrujPFutFrBjQQFxjUuYYJLgb9tYnpWSXMPvvbJyuwYDcDGqfMbFGEfk1qlfbpwRmL5hIWUM2+qtnxjscQoF1FSZc8moCsCYru8f93RIJALnHrjwseclOpnxh16YLoqsWysggUVqW8KJY2zQisLzA5VV7gxAWOGLYzKAqy6v982CVvsjZ9/16URp97PKYGscCS6xypYWrDaUibR4Ci+iJv18ClVwrhTgGIJAZFX3/jCGg/45EBOEWdXf1hAZ9lJlD88qE2exDnKbGHIHoMgyquH7vGB//peThGyqz+YQkfFna3xf3pz0zAb2rVOfAo9osI2huxRT+FH1vvAJ87lFDi7SgPPU+Fk6eujklZEA1+RYx7wpi/6wK+fcT286uIkMpXrXBESk4cqElQsdLnqAo9DgPJq870+8Gv/ySnB2ZUauBwAJ9UgMWFEt2m94FThYFgDaw9v+ZIP/MfTrodXXJioA8cs2u0+Ttz4JoH9/FXYuKomIFjk1db7fOBX/plTBmWXn79WA45L0Kxr3NIXNSnnvh7kt+BghH3gbRs8YDr+jxwLZG+eBRzbtvyI7OeLxYlQoKZsREW1JUZ5Ui9ged7+FR/45b/nmJBddn4M6Zm5J13cti563fIePe7+QKDwOqkVHsOUB7zjqz7w797NsaDssoFRpMvBKueliATxpamBUMSsD0jCv/vX2c9QewGoB3RHuMA0BWKR5133+8AvvZNjA9mbBkaQilC4lreWqHV3SLrZjFtubDi4Jop6a5/nxx/wgY+95Xq4e2AE6Zm59xFNSgce9rkjBKyXKPzENZN4gaK8bEFi3PCBdz/oA7/4N9cS3blhpELAdU95WiRXrt1d3dxdxiKJCTGt30jy/N2v+8C/PekCL9XAJU/hQLF2J1NsJcKWiuiGQX4NPGmUPEv0PuQD//oN18Ma2CxVG8wZ112jnBx1X7vxHFKYNEu6snn+3sM+8K9OuAoveW8IZsgS4QQ1S/im0+8Fs61SM0LTbPJ+CV4Imgzjjw9fd0hiypzx2tpTj/jAv/xzjg3KLj431KTwfBUM99X59mGtcCE9A1KU5x980wc++idX4cVnL9eBa08ckSqiD9cUatovNy4gQWWC9tCUxb9gE6OYLnuTbu9mH/hnr7keXnTuMozpRg+37rbRv8b116RxpVAopivepHvmUR/4p6/m2BDZrjOXYJYa3qprK11TGw314cT9rta3G2dHVB92hMJ0xvKAn93qAx85nmMhsgvPDMKcbg1cVyZZH6gr3ah5sCTXhZg7niMYpQ7LPfnk57b5wIdfzrFJ2QVnB2EUPOBaH/aVjCxxm7VP2taC/Bp4RgNrD+/f7gHjhd/nYFKWLAfpwTGkRgq1bU/SBEk92U48O8WwMtI9DQKQx/M7feCDL30cGdEHwh36xEeUKkh/OAajUK6v+BF9tf2NY0TXmXVZmoDVqaD0Fs4z99tQqgf9j73TePehY18G1D4IWqnBjYki0oPXQNX5nVW0Un0updnQoASZ1gVWeuM0DIXt6N/5i6ZJXwve+5MOdHd9B4K3g5GCUjCHJ5EangSkajZ3LVJIuXAfDtPPniREsBcKOJ3kKarYBmMfpipP4Uhv9GFgQ8wfHr0FhtgPQfdAKYJlI3V5AsZ44sPyGFt7s1l2mrC7DO8sm4nB6hhscyt+tC3hcWs4zd6f34UU+kG41T1RnK7AvDQOEdokhba3sXNQZQw4S1JgU1eGAYl/w1FbcHDXPA+0G1MS9h55EMR7QXA/GYjxaRhXJkF22N+t+zMbBLk0A7XA+zQGxeOQahcO7Hph1htZ5AMn3ZN4AXp/04VUYQ+ATWA2tL/F1SkYo0WduLWqBMilHVCLMx4XQ0Kpg7Aqu3GoN7HP2gMOkHYfWgNT9MGgda6/qw7ElQmIqdr3hAZ41ZWB6u4ETOF+HYXj/AEQPejfkYv1TmjA/ICDILsOfhYm9YH4o255p6sQQxMg93yOwBkTakUXkPHLL3kASvbgwGPH2wWNbmvtRurtFbCWbgHoSYC7XGtMlDx/Lu70J5SaBtQTWFLtR2/v/+7TbcOzPbq/GyY/A6IHdH9ygaViKP4xqLwDz/f+n3wcD1fk4e/fjo5UnwtcdXpw6PF/tVu0VuP/C5H8Gm1uWcodAAAAAElFTkSuQmCC"
+
+/***/ }),
+
+/***/ "quJo":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"content"},[_c('div',{staticClass:"show-item bg-black"},[_c('p',{staticClass:"title"},[_vm._v("单指标数据")]),_vm._v(" "),_c('div',{staticClass:"item-content"},[_c('div',{staticClass:"module indexData1"},[_c('indexData1',{attrs:{"iconImg":_vm.indexData1.iconImg,"bgImg":_vm.indexData2.bgImg,"num":_vm.indexData1.num,"text":_vm.indexData1.text}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData2"},[_c('indexData2',{attrs:{"iconImg":_vm.indexData2.iconImg,"bgImg":_vm.indexData2.bgImg,"num":_vm.indexData2.num,"text":_vm.indexData2.text}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData3"},[_c('indexData3',{attrs:{"num":_vm.indexData3.num,"borderStyle":_vm.indexData3.borderStyle,"backgroundStyle":_vm.indexData3.backgroundStyle,"text":_vm.indexData3.text,"iconClass":_vm.indexData3.iconClass,"iconStyle":_vm.indexData3.iconStyle,"iconBgStyle":_vm.indexData3.iconBgStyle}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData4"},[_c('indexData4',{attrs:{"bgImg":_vm.indexData4.bgImg,"num":_vm.indexData4.num,"text":_vm.indexData4.text,"iconClass":_vm.indexData4.iconClass,"iconStyle":_vm.indexData4.iconStyle}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData5"},[_c('indexData5',{attrs:{"iconImg":_vm.indexData5.iconImg,"num":_vm.indexData5.num,"text":_vm.indexData5.text,"borderStyle":_vm.indexData5.borderStyle,"backgroundStyle":_vm.indexData5.backgroundStyle}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData6"},[_c('indexData6',{attrs:{"iconImg":_vm.indexData6.iconImg,"num":_vm.indexData6.num,"text":_vm.indexData6.text,"borderStyle":_vm.indexData6.borderStyle,"backgroundStyle":_vm.indexData6.backgroundStyle}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData7"},[_c('indexData7',{attrs:{"num":_vm.indexData7.num,"text":_vm.indexData7.text,"bgImg":_vm.indexData7.bgImg}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData8"},[_c('indexData8',{attrs:{"num":_vm.indexData8.num,"text":_vm.indexData8.text,"iconTitle":_vm.indexData8.iconTitle,"iconBgStyle":_vm.indexData8.iconBgStyle,"borderStyle":_vm.indexData8.borderStyle,"backgroundStyle":_vm.indexData8.backgroundStyle}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData9"},[_c('indexData9',{attrs:{"num":_vm.indexData9.num,"text":_vm.indexData9.text,"iconImg":_vm.indexData9.iconImg,"unit":_vm.indexData9.unit}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData10"},[_c('indexData10',{attrs:{"icon":_vm.indexData10.icon,"buildTitle":_vm.indexData10.buildTitle,"timeText":_vm.indexData10.timeText,"num":_vm.indexData10.num,"boxStyle":_vm.indexData10.boxStyle}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData11"},[_c('indexData11',{attrs:{"num":_vm.indexData11.num,"text":_vm.indexData11.text,"iconImg":_vm.indexData11.iconImg,"icon":_vm.indexData11.icon,"borderStyle":_vm.indexData11.borderStyle,"backgroundStyle":_vm.indexData11.backgroundStyle}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData12"},[_c('indexData12',{attrs:{"num":_vm.indexData12.num,"text":_vm.indexData12.text,"unit":_vm.indexData12.unit,"iconImg":_vm.indexData12.iconImg,"borderStyle":_vm.indexData12.borderStyle,"backgroundStyle":_vm.indexData12.backgroundStyle,"progressBgStyle":_vm.indexData12.progressBgStyle,"progressValueStyle":_vm.indexData12.progressValueStyle}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData13"},[_c('indexData13',{attrs:{"num":_vm.indexData13.num,"text":_vm.indexData13.text,"iconImg":_vm.indexData13.iconImg,"borderStyle":_vm.indexData13.borderStyle,"backgroundStyle":_vm.indexData13.backgroundStyle}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData14"},[_c('indexData14',{attrs:{"num":_vm.indexData14.num,"text":_vm.indexData14.text,"bgImg":_vm.indexData14.bgImg,"btnImg":_vm.indexData14.btnImg,"icon":_vm.indexData14.icon,"btn":_vm.indexData14.btn}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData15"},[_c('indexData15',{attrs:{"num":_vm.indexData15.num,"text":_vm.indexData15.text,"bgImg":_vm.indexData15.bgImg,"iconImg":_vm.indexData15.iconImg}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData16"},[_c('indexData16',{attrs:{"num":_vm.indexData16.num,"text":_vm.indexData16.text,"bgImg":_vm.indexData16.bgImg}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData17"},[_c('indexData17',{attrs:{"num":_vm.indexData17.num,"text":_vm.indexData17.text,"bgImg":_vm.indexData17.bgImg}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData18"},[_c('indexData18',{attrs:{"text":_vm.indexData18.text,"bgImg":_vm.indexData18.bgImg,"icon":_vm.indexData18.icon}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData19"},[_c('indexData19',{attrs:{"num":_vm.indexData19.num,"text":_vm.indexData19.text,"bottomBgImg":_vm.indexData19.bottomBgImg,"topBgImg":_vm.indexData19.topBgImg,"btnText":_vm.indexData19.btnText}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData20"},[_c('indexData20',{attrs:{"num":_vm.indexData20.num,"unit":_vm.indexData20.unit,"text":_vm.indexData20.text,"bgImg":_vm.indexData20.bgImg,"icon":_vm.indexData20.icon}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData21"},[_c('indexData21',{attrs:{"num":_vm.indexData21.num,"text":_vm.indexData21.text,"bgImg":_vm.indexData21.bgImg}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData22"},[_c('indexData22',{attrs:{"num":_vm.indexData22.num,"text":_vm.indexData22.text,"bgImg":_vm.indexData22.bgImg}})],1)])]),_vm._v(" "),_c('div',{staticClass:"show-item bg-black"},[_c('p',{staticClass:"title"},[_vm._v("多指标数据")]),_vm._v(" "),_c('div',{staticClass:"item-content"},[_c('div',{staticClass:"module"},[_c('div',{staticClass:"module indexData23"},[_c('indexData23',{attrs:{"num":_vm.indexData23.num,"text":_vm.indexData23.text,"province":_vm.indexData23.province,"backgroundStyle":_vm.indexData23.backgroundStyle,"pieChartData":_vm.indexData23.pieChartData,"lineChartData":_vm.indexData23.lineChartData}})],1)]),_vm._v(" "),_c('div',{staticClass:"module indexData24"},[_c('indexData24',{attrs:{"normal":_vm.indexData24.normal,"abnormal":_vm.indexData24.abnormal,"title":_vm.indexData24.title,"info1":_vm.indexData24.info1,"info2":_vm.indexData24.info2,"allNum":_vm.indexData24.allNum,"progress":_vm.indexData24.progress,"backgroundStyle":_vm.indexData24.backgroundStyle}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData25"},[_c('indexData25',{attrs:{"title":_vm.indexData25.title,"info1":_vm.indexData25.info1,"info2":_vm.indexData25.info2,"info3":_vm.indexData25.info3,"info4":_vm.indexData25.info4,"bgImg":_vm.indexData25.bgImg}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData26"},[_c('indexData26',{attrs:{"title":_vm.indexData26.title,"info1":_vm.indexData26.info1,"info2":_vm.indexData26.info2,"unit":_vm.indexData26.unit,"backgroundStyle":_vm.indexData26.backgroundStyle}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData27"},[_c('indexData27',{attrs:{"title1":_vm.indexData27.title1,"title2":_vm.indexData27.title2,"iconImg":_vm.indexData27.iconImg,"progress1":_vm.indexData27.progress1,"progress2":_vm.indexData27.progress2,"backgroundStyle":_vm.indexData27.backgroundStyle}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData28"},[_c('indexData28',{attrs:{"icon":_vm.indexData28.icon,"title":_vm.indexData28.title,"info":_vm.indexData28.info,"backgroundStyle":_vm.indexData28.backgroundStyle}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData29"},[_c('indexData29',{attrs:{"title":_vm.indexData29.title,"iconImg":_vm.indexData29.iconImg,"icon":_vm.indexData29.icon,"backgroundStyle":_vm.indexData29.backgroundStyle,"info":_vm.indexData29.info}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData30"},[_c('indexData30',{attrs:{"title":_vm.indexData30.title,"backgroundStyle":_vm.indexData30.backgroundStyle,"info":_vm.indexData30.info}})],1),_vm._v(" "),_c('div',{staticClass:"module indexData31"},[_c('indexData31',{attrs:{"title":_vm.indexData31.title,"iconImg":_vm.indexData31.iconImg,"icon":_vm.indexData31.icon,"backgroundStyle":_vm.indexData31.backgroundStyle,"info":_vm.indexData31.info}})],1)])])])}
+var staticRenderFns = []
+
 
 /***/ }),
 
@@ -4969,22 +5965,6 @@ var staticRenderFns = []
 
 /***/ }),
 
-/***/ "uV6h":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("2nn/");
-if(content.__esModule) content = content.default;
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("rjj0").default
-var update = add("72107530", content, true, {});
-
-/***/ }),
-
 /***/ "uszU":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -5121,6 +6101,13 @@ exports.push([module.i, "\n.flex[data-v-14bc1ea1] {\n  display: -webkit-box;\n  
 
 /***/ }),
 
+/***/ "wOMN":
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,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"
+
+/***/ }),
+
 /***/ "xW4O":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5184,6 +6171,22 @@ module.exports = __webpack_require__.p + "static/img/indexdata20.7ee18f8.png";
 
 /***/ }),
 
+/***/ "yQ3P":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("z03u");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("rjj0").default
+var update = add("609f4ec4", content, true, {});
+
+/***/ }),
+
 /***/ "yu2p":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -5192,6 +6195,21 @@ module.exports = __webpack_require__.p + "static/img/indexdata20.7ee18f8.png";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"indexData"},[_c('div',{staticClass:"tooltipBox",style:([_vm.border, _vm.background])},[_c('div',{staticClass:"tooltipBg"},[_c('div',{staticClass:"tooltipImg"},[_c('img',{attrs:{"src":_vm.iconImg,"alt":""}})]),_vm._v(" "),_c('div',{staticClass:"tooltipInfo"},[_c('p',{staticClass:"tipTitle",style:(_vm.text.style)},[_vm._v(_vm._s(_vm.text.value))]),_vm._v(" "),_c('p',{staticClass:"tip1",style:(_vm.num.style)},[_vm._v(_vm._s(_vm.num.value))])])])])])}
 var staticRenderFns = []
+
+
+/***/ }),
+
+/***/ "z03u":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("FZ+f")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.indexData[data-v-3c953d5b] {\n  width: 100%;\n  height: 100%;\n}\n.indexData .top_right[data-v-3c953d5b] {\n  width: 100%;\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n.indexData .top_right li[data-v-3c953d5b] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 6px;\n  width: 100%;\n  height: 100%;\n  background: rgba(155, 205, 255, 0.1);\n  border: 1px solid #007ca5;\n}\n.indexData .top_right li .icon[data-v-3c953d5b] {\n  width: 56px;\n  height: 56px;\n  padding: 3px 0;\n  background: linear-gradient(312deg, rgba(0, 101, 134, 0.64), rgba(0, 106, 158, 0.35) 95%);\n  border: 1px solid #007ca5;\n  text-align: center;\n}\n.indexData .top_right li .icon i[data-v-3c953d5b] {\n  font-size: 32px;\n  color: #3fd6f1;\n}\n.indexData .top_right li .right[data-v-3c953d5b] {\n  width: 0;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  padding: 0 10px;\n}\n.indexData .top_right li .right .title[data-v-3c953d5b] {\n  font-size: 12px;\n  font-family: Helvetica;\n  text-align: left;\n  color: #ffffff;\n  line-height: 12px;\n}\n.indexData .top_right li .right .common[data-v-3c953d5b] {\n  height: 80%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n}\n.indexData .top_right li .right .common span[data-v-3c953d5b] {\n  display: inline-block;\n  width: 50%;\n  height: 50%;\n  font-size: 12px;\n  font-family: Helvetica;\n  text-align: left;\n  color: #9bcdff;\n  line-height: 30px;\n}\n", ""]);
+
+// exports
 
 
 /***/ }),
@@ -5219,6 +6237,18 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 exports.push([module.i, "\n#electricLine {\n  overflow: hidden;\n}\n#electricLine .line {\n  position: relative;\n}\n#electricLine .line::before {\n  content: '';\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  left: 0;\n  right: 0;\n  background: repeating-linear-gradient(90deg, transparent 0, #022f4f 1px, #022f4f 0.1em, transparent calc(0.1em + 1px), transparent 0.25em);\n  /*no*/\n}\n", ""]);
 
 // exports
+
+
+/***/ }),
+
+/***/ "zgZH":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"indexData"},[_c('ul',{staticClass:"top_right"},[_c('li',{style:(_vm.backgroundStyle)},[_c('div',{staticClass:"imgBox",style:({ backgroundImage: 'url(' + _vm.iconImg + ')' })},[_c('i',{class:_vm.icon.class,style:(_vm.icon.style)})]),_vm._v(" "),_c('div',{staticClass:"title"},[_c('p',{style:(_vm.title.style)},[_vm._v(_vm._s(_vm.title.value))])]),_vm._v(" "),_c('div',{staticClass:"right"},_vm._l((_vm.info),function(item,index){return _c('p',{key:index},[_c('span',{style:(item.name.style)},[_vm._v(_vm._s(item.name.value))]),_vm._v(" "),_c('span',{style:(item.num.style)},[_vm._v(_vm._s(item.num.value))])])}),0)])])])}
+var staticRenderFns = []
 
 
 /***/ })

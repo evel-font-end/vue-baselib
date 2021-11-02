@@ -16,22 +16,6 @@ var update = add("32509f87", content, true, {});
 
 /***/ }),
 
-/***/ "0HmS":
-/***/ (function(module, exports, __webpack_require__) {
-
-var escape = __webpack_require__("kxFB");
-exports = module.exports = __webpack_require__("FZ+f")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n#suspension2.suspension2[data-v-afaedc68] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\n#suspension2.suspension2 .box[data-v-afaedc68] {\n    width: 253px;\n    height: 251px;\n    background: url(" + escape(__webpack_require__("TsrJ")) + ") no-repeat;\n    padding: 12px;\n    padding-bottom: 22px;\n}\n#suspension2.suspension2 .box .title[data-v-afaedc68] {\n      text-align: center;\n      font-size: 20px;\n      font-family: PingFangSC, PingFangSC-Semibold;\n      font-weight: 600;\n      text-align: center;\n      color: #a0fbff;\n      border: 1px solid #1b5b99;\n      background: -webkit-gradient(linear, right top, left top, color-stop(1%, rgba(1, 38, 62, 0)), color-stop(49%, rgba(2, 78, 113, 0.86)), to(rgba(2, 78, 113, 0)));\n      background: linear-gradient(270deg, rgba(1, 38, 62, 0) 1%, rgba(2, 78, 113, 0.86) 49%, rgba(2, 78, 113, 0));\n}\n#suspension2.suspension2 .box .content[data-v-afaedc68] {\n      padding: 0;\n}\n#suspension2.suspension2 .box .content .item[data-v-afaedc68] {\n        margin-top: 10px;\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-pack: justify;\n            -ms-flex-pack: justify;\n                justify-content: space-between;\n}\n#suspension2.suspension2 .box .content .item span[data-v-afaedc68] {\n          font-size: 18px;\n          font-family: PingFangSC, PingFangSC-Semibold;\n          font-weight: 600;\n          color: #ffffff;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
 /***/ "2KwT":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -157,34 +141,56 @@ exports.push([module.i, "\n#suspension4.suspension4[data-v-f483c926] {\n  displa
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     name: "SuspensionStyle2",
-    props: {},
-    data: function data() {
-        return {
-            dataList: {
-                title: "山西省",
-                list: [{
-                    name: "设备数量",
-                    num: "1045"
-                }, {
-                    name: "设备总容量G",
-                    num: "940"
-                }, {
-                    name: "设备占用容量G",
-                    num: "384"
-                }, {
-                    name: "设备容量占用率(%)",
-                    num: "74.5%"
-                }, {
-                    name: "设备端口数量",
-                    num: "8490"
-                }]
+    props: {
+        dataList: {
+            type: Object,
+            default: function _default() {
+                var data = {
+                    title: "山西省",
+                    list: [{
+                        name: "设备数量",
+                        num: "1045"
+                    }, {
+                        name: "设备总容量G",
+                        num: "940"
+                    }, {
+                        name: "设备占用容量G",
+                        num: "384"
+                    }, {
+                        name: "设备容量占用率(%)",
+                        num: "74.5%"
+                    }, {
+                        name: "设备端口数量",
+                        num: "8490"
+                    }]
+                };
+                return data;
             }
-        };
+        }
+    },
+    data: function data() {
+        return {};
     },
     mounted: function mounted() {},
 
     methods: {}
 });
+
+/***/ }),
+
+/***/ "5wJ/":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("HyN4");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("rjj0").default
+var update = add("2d1aaf47", content, true, {});
 
 /***/ }),
 
@@ -305,10 +311,10 @@ var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_index_js_ref_0_1_suspension_style_2_vue__ = __webpack_require__("4Ath");
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_afaedc68_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_suspension_style_2_vue__ = __webpack_require__("jRqG");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_b9dc93e4_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_suspension_style_2_vue__ = __webpack_require__("XQ+f");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__("XyMi");
 function injectStyle (context) {
-  __webpack_require__("josa")
+  __webpack_require__("5wJ/")
 }
 /* script */
 
@@ -320,14 +326,14 @@ var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-afaedc68"
+var __vue_scopeId__ = "data-v-b9dc93e4"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 
 var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_index_js_ref_0_1_suspension_style_2_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_afaedc68_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_suspension_style_2_vue__["a" /* render */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_afaedc68_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_suspension_style_2_vue__["b" /* staticRenderFns */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_b9dc93e4_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_suspension_style_2_vue__["a" /* render */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_b9dc93e4_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_suspension_style_2_vue__["b" /* staticRenderFns */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -465,19 +471,19 @@ var update = add("7b101a22", content, true, {});
 
 /***/ }),
 
-/***/ "LTbU":
+/***/ "HyN4":
 /***/ (function(module, exports, __webpack_require__) {
 
-// style-loader: Adds some css to the DOM by adding a <style> tag
+var escape = __webpack_require__("kxFB");
+exports = module.exports = __webpack_require__("FZ+f")(false);
+// imports
 
-// load the styles
-var content = __webpack_require__("RveJ");
-if(content.__esModule) content = content.default;
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("rjj0").default
-var update = add("4a6a7951", content, true, {});
+
+// module
+exports.push([module.i, "\n#suspension2.suspension2[data-v-b9dc93e4] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\n#suspension2.suspension2 .box[data-v-b9dc93e4] {\n    width: 253px;\n    height: 251px;\n    background: url(" + escape(__webpack_require__("TsrJ")) + ") no-repeat;\n    padding: 12px;\n    padding-bottom: 22px;\n}\n#suspension2.suspension2 .box .title[data-v-b9dc93e4] {\n      text-align: center;\n      font-size: 20px;\n      font-family: PingFangSC, PingFangSC-Semibold;\n      font-weight: 600;\n      text-align: center;\n      color: #a0fbff;\n      border: 1px solid #1b5b99;\n      background: -webkit-gradient(linear, right top, left top, color-stop(1%, rgba(1, 38, 62, 0)), color-stop(49%, rgba(2, 78, 113, 0.86)), to(rgba(2, 78, 113, 0)));\n      background: linear-gradient(270deg, rgba(1, 38, 62, 0) 1%, rgba(2, 78, 113, 0.86) 49%, rgba(2, 78, 113, 0));\n}\n#suspension2.suspension2 .box .content[data-v-b9dc93e4] {\n      padding: 0;\n}\n#suspension2.suspension2 .box .content .item[data-v-b9dc93e4] {\n        margin-top: 10px;\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-pack: justify;\n            -ms-flex-pack: justify;\n                justify-content: space-between;\n}\n#suspension2.suspension2 .box .content .item span[data-v-b9dc93e4] {\n          font-size: 18px;\n          font-family: PingFangSC, PingFangSC-Semibold;\n          font-weight: 600;\n          color: #ffffff;\n}\n", ""]);
+
+// exports
+
 
 /***/ }),
 
@@ -521,33 +527,6 @@ var update = add("4a6a7951", content, true, {});
 
     methods: {}
 });
-
-/***/ }),
-
-/***/ "RKYx":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"suspension1",attrs:{"id":"suspension1"}},[_c('div',{staticClass:"box"},[_c('div',{staticClass:"header"},[_c('i',{class:_vm.dataList.header.icon}),_vm._v(" "),_c('span',{staticClass:"header_information"},[_c('span',{staticClass:"title"},[_vm._v(_vm._s(_vm.dataList.header.title))]),_vm._v(" "),_c('span',{staticClass:"information"},[_vm._v(_vm._s(_vm.dataList.header.information))])])]),_vm._v(" "),_c('div',{staticClass:"content"},[_c('div',[_vm._v("编号："+_vm._s(_vm.dataList.content.id))]),_vm._v(" "),_c('div',{staticClass:"xy"},[_c('span',[_vm._v("经度："+_vm._s(_vm.dataList.content.x))]),_vm._v(" "),_c('span',[_vm._v("纬度："+_vm._s(_vm.dataList.content.y))])]),_vm._v(" "),_c('div',[_vm._v("设备状态："),_c('span',{staticClass:"status"},[_vm._v(_vm._s(_vm.dataList.content.status))])]),_vm._v(" "),_c('div',[_vm._v("音量："+_vm._s(_vm.dataList.content.volume))]),_vm._v(" "),_c('div',[_vm._v("最后上报时间："+_vm._s(_vm.dataList.content.time))])])])])}
-var staticRenderFns = []
-
-
-/***/ }),
-
-/***/ "RveJ":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("FZ+f")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n#suspension1.suspension1[data-v-2d2536b5] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\n#suspension1.suspension1 .box[data-v-2d2536b5] {\n    width: 316px;\n    height: 219px;\n    border: 1px solid;\n    -o-border-image: linear-gradient(316deg, rgba(27, 150, 219, 0.26), rgba(40, 222, 255, 0.8) 99%) 1 1;\n       border-image: linear-gradient(316deg, rgba(27, 150, 219, 0.26), rgba(40, 222, 255, 0.8) 99%) 1 1;\n    border-radius: 1px;\n    -webkit-box-shadow: 0px 5px 4px 0px rgba(0, 22, 43, 0.39);\n            box-shadow: 0px 5px 4px 0px rgba(0, 22, 43, 0.39);\n}\n#suspension1.suspension1 .box .header[data-v-2d2536b5] {\n      padding: 10px;\n      background: -webkit-gradient(linear, right top, left top, from(rgba(32, 45, 85, 0.2)), color-stop(85%, rgba(40, 222, 255, 0.47)), to(rgba(40, 222, 255, 0.25)));\n      background: linear-gradient(270deg, rgba(32, 45, 85, 0.2), rgba(40, 222, 255, 0.47) 85%, rgba(40, 222, 255, 0.25));\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n}\n#suspension1.suspension1 .box .header .header_information .title[data-v-2d2536b5] {\n        display: block;\n        font-size: 16px;\n        font-family: PangMenZhengDao;\n        text-align: left;\n        color: #ffffff;\n        line-height: 18px;\n}\n#suspension1.suspension1 .box .header .header_information .information[data-v-2d2536b5] {\n        display: block;\n        font-size: 12px;\n        font-family: PingFangSC, PingFangSC-Regular;\n        font-weight: 400;\n        text-align: left;\n        color: #f5f7ff;\n        line-height: 17px;\n        margin-top: 4px;\n}\n#suspension1.suspension1 .box .content[data-v-2d2536b5] {\n      padding: 20px;\n}\n#suspension1.suspension1 .box .content div[data-v-2d2536b5] {\n        height: 17px;\n        font-size: 12px;\n        font-family: PingFangSC, PingFangSC-Regular;\n        font-weight: 400;\n        text-align: left;\n        color: #ffffff;\n        line-height: 17px;\n        margin-top: 10px;\n}\n#suspension1.suspension1 .box .content div[data-v-2d2536b5]:first-child {\n          margin-top: 0;\n}\n#suspension1.suspension1 .box .content div .status[data-v-2d2536b5] {\n          padding: 0 6px;\n          background: #14c5a0;\n          border-radius: 4px;\n}\n#suspension1.suspension1 .box .content .xy[data-v-2d2536b5] {\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-pack: justify;\n            -ms-flex-pack: justify;\n                justify-content: space-between;\n}\n", ""]);
-
-// exports
-
 
 /***/ }),
 
@@ -673,6 +652,18 @@ var staticRenderFns = []
 
 /***/ }),
 
+/***/ "XQ+f":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"suspension2",attrs:{"id":"suspension2"}},[_c('div',{staticClass:"box"},[_c('div',{staticClass:"title"},[_vm._v(_vm._s(_vm.dataList.title))]),_vm._v(" "),_c('div',{staticClass:"content"},_vm._l((_vm.dataList.list),function(item,index){return _c('div',{key:index,staticClass:"item"},[_c('span',[_vm._v(_vm._s(item.name))]),_vm._v(" "),_c('span',[_vm._v(_vm._s(item.num))])])}),0)])])}
+var staticRenderFns = []
+
+
+/***/ }),
+
 /***/ "ZzTo":
 /***/ (function(module, exports) {
 
@@ -788,25 +779,31 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOgAAAD6CAYAAACr
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     name: "SuspensionStyle1",
-    props: {},
-    data: function data() {
-        return {
-            dataList: {
-                header: {
-                    icon: "icon-guangboqi",
-                    title: "智慧音柱-DF45",
-                    information: "海口市美兰区江东大道"
-                },
-                content: {
-                    id: "0972A873AAF211EA8A5A00163E02E0CA",
-                    x: "110.389148",
-                    y: "20.071856",
-                    status: "在线",
-                    volume: "0分贝",
-                    time: "2021-04-26 21:00:12"
-                }
+    props: {
+        dataList: {
+            type: Object,
+            default: function _default() {
+                var data = {
+                    header: {
+                        icon: "icon-guangboqi",
+                        title: "智慧音柱-DF45",
+                        information: "海口市美兰区江东大道"
+                    },
+                    content: {
+                        id: "0972A873AAF211EA8A5A00163E02E0CA",
+                        x: "110.389148",
+                        y: "20.071856",
+                        status: "在线",
+                        volume: "0分贝",
+                        time: "2021-04-26 21:00:12"
+                    }
+                };
+                return data;
             }
-        };
+        }
+    },
+    data: function data() {
+        return {};
     },
     mounted: function mounted() {},
 
@@ -828,6 +825,22 @@ if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
 var add = __webpack_require__("rjj0").default
 var update = add("9ea38a4a", content, true, {});
+
+/***/ }),
+
+/***/ "euud":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("zYdk");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("rjj0").default
+var update = add("52498f2b", content, true, {});
 
 /***/ }),
 
@@ -911,34 +924,6 @@ if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
 var add = __webpack_require__("rjj0").default
 var update = add("860d2108", content, true, {});
-
-/***/ }),
-
-/***/ "jRqG":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"suspension2",attrs:{"id":"suspension2"}},[_c('div',{staticClass:"box"},[_c('div',{staticClass:"title"},[_vm._v(_vm._s(_vm.dataList.title))]),_vm._v(" "),_c('div',{staticClass:"content"},_vm._l((_vm.dataList.list),function(item,index){return _c('div',{key:index,staticClass:"item"},[_c('span',[_vm._v(_vm._s(item.name))]),_vm._v(" "),_c('span',[_vm._v(_vm._s(item.num))])])}),0)])])}
-var staticRenderFns = []
-
-
-/***/ }),
-
-/***/ "josa":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("0HmS");
-if(content.__esModule) content = content.default;
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("rjj0").default
-var update = add("2b946f9c", content, true, {});
 
 /***/ }),
 
@@ -1084,6 +1069,18 @@ var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_
 )
 
 /* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+
+/***/ "qSsV":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"suspension1",attrs:{"id":"suspension1"}},[_c('div',{staticClass:"box"},[_c('div',{staticClass:"header"},[_c('i',{class:_vm.dataList.header.icon}),_vm._v(" "),_c('span',{staticClass:"header_information"},[_c('span',{staticClass:"title"},[_vm._v(_vm._s(_vm.dataList.header.title))]),_vm._v(" "),_c('span',{staticClass:"information"},[_vm._v(_vm._s(_vm.dataList.header.information))])])]),_vm._v(" "),_c('div',{staticClass:"content"},[_c('div',[_vm._v("编号："+_vm._s(_vm.dataList.content.id))]),_vm._v(" "),_c('div',{staticClass:"xy"},[_c('span',[_vm._v("经度："+_vm._s(_vm.dataList.content.x))]),_vm._v(" "),_c('span',[_vm._v("纬度："+_vm._s(_vm.dataList.content.y))])]),_vm._v(" "),_c('div',[_vm._v("设备状态："),_c('span',{staticClass:"status"},[_vm._v(_vm._s(_vm.dataList.content.status))])]),_vm._v(" "),_c('div',[_vm._v("音量："+_vm._s(_vm.dataList.content.volume))]),_vm._v(" "),_c('div',[_vm._v("最后上报时间："+_vm._s(_vm.dataList.content.time))])])])])}
+var staticRenderFns = []
 
 
 /***/ }),
@@ -1333,10 +1330,10 @@ var staticRenderFns = []
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_index_js_ref_0_1_suspension_style_1_vue__ = __webpack_require__("aVNF");
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2d2536b5_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_suspension_style_1_vue__ = __webpack_require__("RKYx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_aed3cd4e_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_suspension_style_1_vue__ = __webpack_require__("qSsV");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__("XyMi");
 function injectStyle (context) {
-  __webpack_require__("LTbU")
+  __webpack_require__("euud")
 }
 /* script */
 
@@ -1348,14 +1345,14 @@ var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-2d2536b5"
+var __vue_scopeId__ = "data-v-aed3cd4e"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 
 var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_index_js_ref_0_1_suspension_style_1_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2d2536b5_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_suspension_style_1_vue__["a" /* render */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2d2536b5_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_suspension_style_1_vue__["b" /* staticRenderFns */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_aed3cd4e_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_suspension_style_1_vue__["a" /* render */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_aed3cd4e_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_suspension_style_1_vue__["b" /* staticRenderFns */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -1363,6 +1360,21 @@ var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_
 )
 
 /* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+
+/***/ "zYdk":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("FZ+f")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n#suspension1.suspension1[data-v-aed3cd4e] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\n#suspension1.suspension1 .box[data-v-aed3cd4e] {\n    width: 316px;\n    height: 219px;\n    border: 1px solid;\n    -o-border-image: linear-gradient(316deg, rgba(27, 150, 219, 0.26), rgba(40, 222, 255, 0.8) 99%) 1 1;\n       border-image: linear-gradient(316deg, rgba(27, 150, 219, 0.26), rgba(40, 222, 255, 0.8) 99%) 1 1;\n    border-radius: 1px;\n    -webkit-box-shadow: 0px 5px 4px 0px rgba(0, 22, 43, 0.39);\n            box-shadow: 0px 5px 4px 0px rgba(0, 22, 43, 0.39);\n}\n#suspension1.suspension1 .box .header[data-v-aed3cd4e] {\n      padding: 10px;\n      background: -webkit-gradient(linear, right top, left top, from(rgba(32, 45, 85, 0.2)), color-stop(85%, rgba(40, 222, 255, 0.47)), to(rgba(40, 222, 255, 0.25)));\n      background: linear-gradient(270deg, rgba(32, 45, 85, 0.2), rgba(40, 222, 255, 0.47) 85%, rgba(40, 222, 255, 0.25));\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n}\n#suspension1.suspension1 .box .header .header_information .title[data-v-aed3cd4e] {\n        display: block;\n        font-size: 16px;\n        font-family: PangMenZhengDao;\n        text-align: left;\n        color: #ffffff;\n        line-height: 18px;\n}\n#suspension1.suspension1 .box .header .header_information .information[data-v-aed3cd4e] {\n        display: block;\n        font-size: 12px;\n        font-family: PingFangSC, PingFangSC-Regular;\n        font-weight: 400;\n        text-align: left;\n        color: #f5f7ff;\n        line-height: 17px;\n        margin-top: 4px;\n}\n#suspension1.suspension1 .box .content[data-v-aed3cd4e] {\n      padding: 20px;\n}\n#suspension1.suspension1 .box .content div[data-v-aed3cd4e] {\n        height: 17px;\n        font-size: 12px;\n        font-family: PingFangSC, PingFangSC-Regular;\n        font-weight: 400;\n        text-align: left;\n        color: #ffffff;\n        line-height: 17px;\n        margin-top: 10px;\n}\n#suspension1.suspension1 .box .content div[data-v-aed3cd4e]:first-child {\n          margin-top: 0;\n}\n#suspension1.suspension1 .box .content div .status[data-v-aed3cd4e] {\n          padding: 0 6px;\n          background: #14c5a0;\n          border-radius: 4px;\n}\n#suspension1.suspension1 .box .content .xy[data-v-aed3cd4e] {\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-pack: justify;\n            -ms-flex-pack: justify;\n                justify-content: space-between;\n}\n", ""]);
+
+// exports
 
 
 /***/ })
