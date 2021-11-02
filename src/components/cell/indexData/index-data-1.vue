@@ -1,10 +1,7 @@
 <template>
   <div class="indexData">
-    <div class="tooltipBox">
-      <div
-        class="tooltipBg"
-        :style="{ backgroundImg: bgImg ? 'url(' + bgImg + ')' : '' }"
-      >
+    <div class="tooltipBox" :style="{ backgroundImage: 'url(' + gifImg + ')' }">
+      <div class="tooltipBg" :style="{ backgroundImage: 'url(' + bgImg + ')' }">
         <div class="tooltipImg">
           <img :src="iconImg" alt="" />
         </div>
@@ -25,7 +22,13 @@ export default {
   props: {
     num: {
       type: Object,
-      default: {}
+      default: () => {
+        return {};
+      }
+    },
+    gifImg: {
+      type: String,
+      default: ""
     },
     iconImg: {
       type: String,
@@ -50,7 +53,9 @@ export default {
   .tooltipBox {
     width: 100%;
     height: 100%;
-    background: url("./images/tooltip.gif") center center no-repeat;
+    // background: url("./images/tooltip.gif") center center no-repeat;
+    background-position: center center;
+    background-repeat: no-repeat;
     background-size: 100% 100%;
     .tooltipBg {
       display: flex;
@@ -59,7 +64,9 @@ export default {
       width: 100%;
       height: 100%;
       padding-left: 30px;
-      background: url("./images/gray_bg.png") center center no-repeat;
+      // background: url("./images/gray_bg.png") center center no-repeat;
+      background-position: center center;
+      background-repeat: no-repeat;
       background-size: 100% 100%;
       .tooltipImg {
         width: 80px;
