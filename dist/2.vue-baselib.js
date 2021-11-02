@@ -691,21 +691,6 @@ exports.push([module.i, "\n.city_container[data-v-53758e92] {\n  padding: 0 10px
 
 /***/ }),
 
-/***/ "J1uH":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("FZ+f")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.show-item[data-v-d375566e] {\n  width: calc(33.3% - 13.3px);\n  height: 420px;\n  margin-right: 15px;\n  margin-bottom: 15px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  border-radius: 16px;\n  background-color: #132845;\n  padding: 20px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  position: relative;\n  overflow: hidden;\n}\n.show-item[data-v-d375566e]:nth-of-type(3n) {\n    margin-right: 0;\n}\n.show-item .title[data-v-d375566e] {\n    font-size: 16px;\n    font-family: PingFangSC, PingFangSC-Semibold;\n    font-weight: 600;\n    text-align: left;\n    color: #ffffff;\n    line-height: 22px;\n    margin-bottom: 35px;\n}\n.show-item .contentMain[data-v-d375566e] {\n    width: 100%;\n    height: calc(100% - 60px);\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n}\n.show-item.bg-grey[data-v-d375566e] {\n    /* background-color: rgba(0, 0, 0, .6); */\n}\n.show-item .tools-cont[data-v-d375566e] {\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    height: 40px;\n    line-height: 40px;\n    padding: 0 15px;\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n    text-align: right;\n    background-color: rgba(0, 0, 0, 0.4);\n    border-radius: 0 0 10px 10px;\n    -webkit-transform: translateY(100%);\n            transform: translateY(100%);\n    -webkit-transition: all 0.3s ease-in;\n    transition: all 0.3s ease-in;\n}\n.show-item .tools-cont.active[data-v-d375566e] {\n      -webkit-transform: translateY(0);\n              transform: translateY(0);\n}\n.tools-btn[data-v-d375566e] {\n  color: #fff;\n}\n.tools-btn[data-v-d375566e]:hover {\n    color: #57a3f3;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
 /***/ "K2D0":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -842,13 +827,13 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADkAAAAZCAYAAACL
     title: {
       type: String,
       default: '组件'
-    }
-    /* showOptionHandler: {
+    },
+    showOptionHandler: {
       type: Function,
-      default: () => {
+      default: function _default() {
         console.log("当前组件无配置项");
       }
-    } */
+    }
   },
   data: function data() {
     return {
@@ -858,8 +843,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADkAAAAZCAYAAACL
 
   methods: {
     clickHandler: function clickHandler() {
-      console.log('5555');
-      this.$emit("showOptionHandler");
+      this.$emit("showOptionHandler", {});
     }
   }
 });
@@ -918,6 +902,22 @@ var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_
 
 /***/ }),
 
+/***/ "Uo08":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("zOt/");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("rjj0").default
+var update = add("9c73441c", content, true, {});
+
+/***/ }),
+
 /***/ "WzX3":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -952,6 +952,18 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 exports.push([module.i, "\n.customize-table-head[data-v-4be324d3] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  font-size: 20px;\n  font-family: PingFangSC, PingFangSC-Semibold;\n  color: #88d7fd;\n}\n.customize-table-body[data-v-4be324d3] {\n  margin-top: 11px;\n  overflow: auto;\n  height: 280px;\n  /*padding-right: 6px;*/\n}\n.customize-table-body .row[data-v-4be324d3] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    height: 25px;\n    background: rgba(49, 101, 129, 0.45);\n}\n.customize-table-body .row[data-v-4be324d3]:last-child {\n      margin-bottom: 0;\n}\n.customize-table-body .column[data-v-4be324d3] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    font-size: 18px;\n    font-family: PingFangSC, PingFangSC-Semibold;\n    color: #fff;\n    height: 100%;\n}\n[data-v-4be324d3]::-webkit-scrollbar {\n  height: 10px;\n  width: 8px;\n  border: none;\n}\n[data-v-4be324d3]::-webkit-scrollbar-thumb {\n  border-radius: 8px;\n  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);\n  background: transparent;\n}\n[data-v-4be324d3]::-webkit-scrollbar-track {\n  -webkit-box-shadow: none;\n  border-radius: 4px;\n  background: transparent;\n}\n[data-v-4be324d3]::-webkit-scrollbar-corner {\n  background-color: transparent;\n}\n.ranking-container[data-v-4be324d3] {\n  width: 100%;\n  height: 100%;\n}\n.ranking-container[data-v-4be324d3] .dv-scroll-board {\n    font-size: 16px;\n}\n.ranking-container[data-v-4be324d3] .dv-scroll-board .header {\n      color: #76f9fcff;\n      border-top: 1px solid #47abceff;\n      border-bottom: 1px solid #47abceff;\n}\n.ranking-container[data-v-4be324d3] .dv-scroll-board .iconfont {\n      position: relative;\n      font-size: 18px;\n}\n.ranking-container[data-v-4be324d3] .dv-scroll-board .iconfont span {\n        color: white;\n        left: 7px;\n        bottom: -13px;\n        font-size: 14px;\n        position: absolute;\n}\n.ranking-container[data-v-4be324d3] .dv-scroll-board .rank {\n      text-align: center;\n      width: 20px;\n      display: inline-block;\n}\n", ""]);
 
 // exports
+
+
+/***/ }),
+
+/***/ "ZZpc":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"show-item",on:{"mouseenter":function($event){_vm.isActive = true},"mouseleave":function($event){_vm.isActive = false}}},[_c('div',{staticClass:"title"},[_vm._v(_vm._s(_vm.title))]),_vm._v(" "),_c('div',{staticClass:"contentMain"},[_vm._t("default")],2),_vm._v(" "),(_vm.spinShow)?_c('Spin',{attrs:{"size":"large","fix":""}}):_vm._e(),_vm._v(" "),(_vm.toolsShow)?_c('div',{class:["tools-cont", _vm.isActive ? "active" : ""]},[_c('Button',{staticClass:"tools-btn",attrs:{"type":"primary","icon":"code-working","size":"small"},on:{"click":_vm.clickHandler}},[_vm._v("查看option")])],1):_vm._e()],1)}
+var staticRenderFns = []
 
 
 /***/ }),
@@ -1358,22 +1370,6 @@ var update = add("4d48e9d2", content, true, {});
 
 /***/ }),
 
-/***/ "jwML":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("J1uH");
-if(content.__esModule) content = content.default;
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("rjj0").default
-var update = add("471b45ae", content, true, {});
-
-/***/ }),
-
 /***/ "kH8/":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1698,18 +1694,6 @@ var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_
 
 /***/ }),
 
-/***/ "xRhZ":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"show-item",on:{"mouseenter":function($event){_vm.isActive = true},"mouseleave":function($event){_vm.isActive = false}}},[_c('div',{staticClass:"title"},[_vm._v(_vm._s(_vm.title))]),_vm._v(" "),_c('div',{staticClass:"contentMain"},[_vm._t("default")],2),_vm._v(" "),(_vm.spinShow)?_c('Spin',{attrs:{"size":"large","fix":""}}):_vm._e(),_vm._v(" "),(_vm.toolsShow)?_c('div',{class:["tools-cont", _vm.isActive ? "active" : ""]},[_c('Button',{staticClass:"tools-btn",attrs:{"type":"primary","icon":"code-working","size":"small"},on:{"click":_vm.clickHandler}},[_vm._v("查看option")])],1):_vm._e()],1)}
-var staticRenderFns = []
-
-
-/***/ }),
-
 /***/ "xWjQ":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1756,10 +1740,10 @@ var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_index_js_ref_0_1_box_container_vue__ = __webpack_require__("RVal");
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_d375566e_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_box_container_vue__ = __webpack_require__("xRhZ");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7c384bc8_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_box_container_vue__ = __webpack_require__("ZZpc");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__("XyMi");
 function injectStyle (context) {
-  __webpack_require__("jwML")
+  __webpack_require__("Uo08")
 }
 /* script */
 
@@ -1771,14 +1755,14 @@ var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-d375566e"
+var __vue_scopeId__ = "data-v-7c384bc8"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 
 var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_iview_loader_index_js_ref_0_1_box_container_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_d375566e_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_box_container_vue__["a" /* render */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_d375566e_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_box_container_vue__["b" /* staticRenderFns */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7c384bc8_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_box_container_vue__["a" /* render */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7c384bc8_hasScoped_true_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_iview_loader_index_js_ref_0_1_box_container_vue__["b" /* staticRenderFns */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -1786,6 +1770,21 @@ var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_
 )
 
 /* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+
+/***/ "zOt/":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("FZ+f")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.show-item[data-v-7c384bc8] {\n  width: calc(33.3% - 13.3px);\n  height: 420px;\n  margin-right: 15px;\n  margin-bottom: 15px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  border-radius: 16px;\n  background-color: #132845;\n  padding: 20px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  position: relative;\n  overflow: hidden;\n}\n.show-item[data-v-7c384bc8]:nth-of-type(3n) {\n    margin-right: 0;\n}\n.show-item .title[data-v-7c384bc8] {\n    font-size: 16px;\n    font-family: PingFangSC, PingFangSC-Semibold;\n    font-weight: 600;\n    text-align: left;\n    color: #ffffff;\n    line-height: 22px;\n    margin-bottom: 35px;\n}\n.show-item .contentMain[data-v-7c384bc8] {\n    width: 100%;\n    height: calc(100% - 60px);\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n}\n.show-item.bg-grey[data-v-7c384bc8] {\n    /* background-color: rgba(0, 0, 0, .6); */\n}\n.show-item .tools-cont[data-v-7c384bc8] {\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    height: 40px;\n    line-height: 40px;\n    padding: 0 15px;\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n    text-align: right;\n    background-color: rgba(0, 0, 0, 0.4);\n    border-radius: 0 0 10px 10px;\n    -webkit-transform: translateY(100%);\n            transform: translateY(100%);\n    -webkit-transition: all 0.3s ease-in;\n    transition: all 0.3s ease-in;\n}\n.show-item .tools-cont.active[data-v-7c384bc8] {\n      -webkit-transform: translateY(0);\n              transform: translateY(0);\n}\n.tools-btn[data-v-7c384bc8] {\n  color: #fff;\n}\n.tools-btn[data-v-7c384bc8]:hover {\n    color: #57a3f3;\n}\n", ""]);
+
+// exports
 
 
 /***/ }),
