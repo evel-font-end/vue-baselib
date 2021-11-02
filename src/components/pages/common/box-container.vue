@@ -128,7 +128,7 @@ $showBoxHeight: 420px;
   color: #fff;
 
   &:hover {
-    color: #57a3f3;
+    color: #fff;
   }
 }
 </style>

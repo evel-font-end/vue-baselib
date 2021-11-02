@@ -11,6 +11,7 @@ import ElementUI from 'element-ui'
 import dataV from '@jiaminghi/data-view'
 import TFetch from 'tfetch'
 import mavonEditor from 'mavon-editor'
+import '@/assets/lib/hljs';
 import 'mavon-editor/dist/css/index.css'
 import 'iview/dist/styles/iview.css'
 import 'element-ui/lib/theme-chalk/index.css'
@@ -53,7 +54,6 @@ export const fetchMock = url => {
       })
   })
 }
-
 Vue.prototype.$http = http
 Vue.prototype.$fetchMock = fetchMock
 

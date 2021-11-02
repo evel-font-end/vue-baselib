@@ -9,21 +9,40 @@ export default {
       type: String,
       default: () => 'board2',
     },
-    percentage: {
+    source: {
       type: String,
       default() {
         return '80';
       },
+    },
+    options: {
+      type: Object,
+      default() {
+        return {
+        }
+      }
     },
   },
   data() {
     return {
       chart: null,
       option: {},
+      echartOptions: {
+        subtext: '稽核准确率',
+        subtextStyle: {
+          color: '#99CBFC',
+          fontSize: 14,
+          top: 'center',
+          fontFamily: 'DINAlternateBold',
+        },
+        centerColor: '#004C8E',
+        pointerColor: '#00FFD6',
+        splitColor: '#129FF6'
+      }
     }
   },
   watch: {
-    percentage(newVal) {
+    source(newVal) {
       if (this.chart === null) {
         this.initChart()
       }
@@ -34,7 +53,8 @@ export default {
   },
   mounted() {
     this.chart = this.initChart()
-    this.updateChart(this.percentage)
+    this.echartOptions = Object.assign(this.echartOptions, this.options)
+    this.updateChart(this.source)
   },
   methods: {
     initChart() {
@@ -61,13 +81,8 @@ export default {
             color: '#fff',
             fontFamily: 'DINAlternateBold',
           },
-          subtext: '稽核准确率',
-          subtextStyle: {
-            color: '#99CBFC',
-            fontSize: 14,
-            top: 'center',
-            fontFamily: 'DINAlternateBold',
-          },
+          subtext: this.echartOptions.subtext,
+          subtextStyle: this.echartOptions.subtextStyle,
         },
         series: [
           // 外侧光线
@@ -86,7 +101,7 @@ export default {
                 width: 2,
                 color: [
                   [0, '#25D9FF'],
-                  [1, '#00AEFF'],
+                  [1, this.echartOptions.splitColor],
                 ],
               },
             },
@@ -130,7 +145,7 @@ export default {
                 value: 10,
                 itemStyle: {
                   normal: {
-                    color: '#004C8E',
+                    color: this.echartOptions.centerColor,
                   },
                 },
               },
@@ -236,7 +251,7 @@ export default {
             },
             itemStyle: {
               normal: {
-                color: '#00FFD6', //长条指针样式
+                color: this.echartOptions.pointerColor, //长条指针样式
               },
             },
             pointer: {
@@ -272,12 +287,12 @@ export default {
               splitNumber: 10, // 每份split细分多少段
               length: 6, // 属性length控制线长
               lineStyle: { // 属性lineStyle控制线条样式
-                color: '#129FF6',
+                color: this.echartOptions.splitColor,
                 width: 1,
               },
             },
             axisLabel: {
-              color: '#129FF6',
+              color: this.echartOptions.splitColor,
               fontSize: 12,
             }, //刻度节点文字颜色
             //刻度样式
@@ -286,7 +301,7 @@ export default {
               length: 12,
               lineStyle: {
                 width: 1,
-                color: '#129FF6',
+                color: this.echartOptions.splitColor,
               },
             },
             pointer: {

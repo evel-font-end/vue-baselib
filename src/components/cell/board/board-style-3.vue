@@ -86,8 +86,10 @@ export default {
   created() {
   },
   mounted() {
-    this.chart = this.initChart()
-    this.updateChart(this.percentage)
+    this.$nextTick(() => {
+      this.chart = this.initChart()
+      this.updateChart(this.percentage)
+    })
   },
   methods: {
     initChart() {

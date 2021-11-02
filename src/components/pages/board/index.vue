@@ -6,7 +6,7 @@
     @showOptionHandler='showOption("board2")'>
       <board-style-2
         sid='board2'
-        percentage='80'
+        source='80'
         ref='board2' />
     </box-container>
     <box-container
@@ -46,7 +46,6 @@ export default {
   },
   methods: {
     showOption(ref) {
-      console.log('this.$refs[ref]', this.$refs[ref]);
       this.$store.commit('UPDATE_DIALOG_SHOW', this.$refs[ref].$options._componentTag);
     },
   },

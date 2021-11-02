@@ -51,7 +51,8 @@
   </div>
 </template>
 <script>
-// import { TweenMax, TimelineLite, TweenLite } from 'gsap'
+import { highlightCode } from '@/assets/lib/hljs'
+import { addCodeBtn } from '@/assets/lib/mavon'
 export default {
   data() {
     return {
@@ -70,7 +71,6 @@ export default {
       return (!!this.$store.state.Home.dialogShow) || false;
     },
     htmlValue() {
-      console.log(this.$store.state.Home)
       return this.$store.state.Home.dialogMd || '';
     },
   },
@@ -87,6 +87,8 @@ export default {
     },
     handleClose(show) {
       this.$store.commit('UPDATE_DIALOG_SHOW', show);
+      highlightCode()
+      addCodeBtn()
     }
   }
 };
