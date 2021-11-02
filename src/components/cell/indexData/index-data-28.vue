@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-11-01 10:23:20
- * @LastEditTime: 2021-11-01 14:58:28
+ * @LastEditTime: 2021-11-02 17:27:43
  * @LastEditors: Please set LastEditors
  * @Description: 富力盈通大厦(无业务)组件
  * @FilePath: \task_broad_webd:\project\GIT\vue-baselib\src\components\cell\indexData\index-data-28.vue
@@ -26,7 +26,7 @@
 
 <script>
 export default {
-  name: "index-data-28",
+  name: "indexData28",
   data() {
     return {};
   },

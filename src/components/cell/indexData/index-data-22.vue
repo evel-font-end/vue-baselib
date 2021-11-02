@@ -16,6 +16,7 @@
 
 <script>
 export default {
+  name: "indexData22",
   data() {
     return {};
   },
