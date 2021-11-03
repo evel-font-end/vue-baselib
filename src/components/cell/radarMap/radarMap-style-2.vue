@@ -11,19 +11,37 @@ export default {
     },
     source: {
       type: [Array, Object],
-      default: () => [
-        { text: '库水位', value: 100, max: 300 },
-        { text: '内部位移', value: 100, max: 300 },
-        { text: '内部位移', value: 100, max: 300 },
-        { text: '浸润线', value: 100, max: 300 },
-        { text: '干滩监测', value: 100, max: 300 },
-      ],
+      default: () => [{
+        name: '当前男厕环境情况',
+        value: [
+          { name: '库水位', value: 100, max: 300 },
+          { name: '内部位移', value: 100, max: 300 },
+          { name: '内部位移', value: 100, max: 300 },
+          { name: '浸润线', value: 100, max: 300 },
+          { name: '干滩监测', value: 100, max: 300 },
+        ]
+      }],
+    },
+    options: {
+      type: Object,
+      default() {
+        return {
+        }
+      }
     },
   },
   data() {
     return {
       chart: null,
       option: {},
+      echartOptions: {
+        name: {
+          textStyle: {
+            color: '#F1FFFF',
+            fontSize: 16,
+          },
+        }
+      }
     }
   },
   watch: {
@@ -38,6 +56,7 @@ export default {
   },
   mounted() {
     this.chart = this.initChart()
+    this.echartOptions = Object.assign(this.echartOptions, this.options)
     this.updateChart(this.source)
   },
   methods: {
@@ -50,43 +69,12 @@ export default {
       return _chart
     },
     updateChart(source) {
-      this.option = {
-        title: {
-          text: '',
-        },
-        tooltip: {},
-        radar: {
-          radius: '85%',
-          center: ['50%', '55%'],
-          // shape: 'circle',
-          name: {
-            textStyle: {
-              color: '#F1FFFF',
-              fontSize: 16,
-            },
-          },
-          indicator: source,
-        },
-        series: [
-          {
-            name: '当前男厕环境情况',
-            type: 'radar',
-            areaStyle: {
-              normal: {
-                color: this.$echarts.graphic.LinearGradient(0, 1, 0, 0, [
-                  {
-                    offset: 1,
-                    color: '#FFED58',
-                  },
-                  {
-                    offset: 0,
-                    color: '#FF5B2C',
-                  },
-                ]),
-              },
-            },
-            lineStyle: {
-              width: 3,
+      const series = source.map(sourceItem => {
+        return {
+          name: sourceItem.name,
+          type: 'radar',
+          areaStyle: sourceItem.areaStyle ? sourceItem.areaStyle : {
+            normal: {
               color: this.$echarts.graphic.LinearGradient(0, 1, 0, 0, [
                 {
                   offset: 1,
@@ -98,14 +86,46 @@ export default {
                 },
               ]),
             },
-            // areaStyle: {normal: {}},
-            data: [
-              {
-                value: source.map(sourceItem => sourceItem.value),
-              },
-            ],
           },
-        ],
+          lineStyle: sourceItem.lineStyle ? sourceItem.lineStyle : {
+            width: 3,
+            color: this.$echarts.graphic.LinearGradient(0, 1, 0, 0, [
+              {
+                offset: 1,
+                color: '#FFED58',
+              },
+              {
+                offset: 0,
+                color: '#FF5B2C',
+              },
+            ]),
+          },
+          data: [
+            {
+              value: sourceItem.value.map(sourceSubItem => sourceSubItem.value),
+            },
+          ],
+        }
+      })
+      const indicator = [];
+      source.flat().map(sourceItem => {
+        sourceItem.value.map(sourceSub => {
+          indicator.push(sourceSub)
+        });
+      });
+      this.option = {
+        title: {
+          text: '',
+        },
+        tooltip: {},
+        radar: {
+          radius: '85%',
+          center: ['50%', '55%'],
+          // shape: 'circle',
+          name: this.echartOptions.name,
+          indicator: indicator,
+        },
+        series: series,
       };
       this.chart.setOption(this.option)
     },
