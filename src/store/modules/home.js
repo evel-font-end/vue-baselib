@@ -27,7 +27,7 @@ const mutations = {
     if (payload) {
       const md = capitalize(payload);
       const mdArray = md.split('-');
-      axios.get(`/static/md/${mdArray[0]}/${payload}.md`).then((response) => {
+      axios.get(`${process.env.NODE_ENV === 'production' ? '/vue-baselib/dist' : ''}/static/md/${mdArray[0]}/${payload}.md`).then((response) => {
         localStorage.setItem('dialogMd', response.data)
         state.dialogMd = response.data
       })

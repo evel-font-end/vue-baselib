@@ -36,6 +36,7 @@
       title="提示"
       :visible.sync="dialogVisible"
       class="dialogMd"
+      @opened="handleOpenedDialog"
       :before-close="() => handleClose(false)">
       <span>
         <mavon-editor
@@ -74,7 +75,6 @@ export default {
       return this.$store.state.Home.dialogMd || '';
     },
   },
-  created() {},
   mounted() {
     this.$nextTick(() => {
       let menusList = this.$router.options.routes[0].children;
@@ -85,10 +85,12 @@ export default {
     changeMenuHandler(name) {
       this.$store.commit('UPDATE_ACTIVE_MENU', name);
     },
-    handleClose(show) {
-      this.$store.commit('UPDATE_DIALOG_SHOW', show);
+    handleOpenedDialog() {
       highlightCode()
       addCodeBtn()
+    },
+    handleClose(show) {
+      this.$store.commit('UPDATE_DIALOG_SHOW', show);
     }
   }
 };
