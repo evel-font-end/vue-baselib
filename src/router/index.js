@@ -9,18 +9,27 @@ export default new Router({
     {
       path: '/',
       name: 'home',
+      meta:{
+        title: 'home'
+      },
       component: res => require(['@/components/pages/home'], res),
       children: [{
         path: '/bar',
         name: 'bar',
         title: '混合图表',
         icon: 'ios-repeat',
+        meta:{
+          title: '混合图表'
+        },
         component: res => require(['@/components/pages/bar'], res),
       }, {
         path: '/line',
         name: 'line',
         title: '折线图',
         icon: 'arrow-graph-up-right',
+        meta:{
+          title: '折线图'
+        },
         component: res => require(['@/components/pages/line'], res),
       },
       {
@@ -28,6 +37,9 @@ export default new Router({
         name: 'barChart',
         title: '柱状图',
         icon: 'md-stats',
+        meta:{
+          title: '柱状图'
+        },
         component: res => require(['@/components/pages/barChart'], res),
       },
       {
@@ -35,6 +47,9 @@ export default new Router({
         name: 'indexData',
         title: '指标数据',
         icon: 'md-stats',
+        meta:{
+          title: '指标数据'
+        },
         component: res => require(['@/components/pages/indexData'], res),
       },
       {
@@ -42,6 +57,9 @@ export default new Router({
         name: 'pie',
         title: '饼状图',
         icon: 'ios-pie-outline',
+        meta:{
+          title: '饼状图'
+        },
         component: res => require(['@/components/pages/pie'], res),
       },
       {
@@ -49,6 +67,9 @@ export default new Router({
         name: 'board',
         title: '仪表盘',
         icon: 'ios-pie-outline',
+        meta:{
+          title: '仪表盘'
+        },
         component: res => require(['@/components/pages/board'], res),
       },
       {
@@ -106,6 +127,9 @@ export default new Router({
         name: 'radarMap',
         title: '雷达图',
         icon: 'ios-pie-outline',
+        meta:{
+          title: '雷达图'
+        },
         component: res => require(['@/components/pages/radarMap'], res),
       },
       {
@@ -113,6 +137,9 @@ export default new Router({
         name: 'opRings',
         title: '环形图',
         icon: 'ios-pie-outline',
+        meta:{
+          title: '环形图'
+        },
         component: res => require(['@/components/pages/opRings'], res),
       },
       {
@@ -120,6 +147,9 @@ export default new Router({
         name: 'ranking',
         title: '排名',
         icon: 'ios-pie-outline',
+        meta:{
+          title: '排名'
+        },
         component: res => require(['@/components/pages/ranking'], res),
       },
         /* {

@@ -1,25 +1,25 @@
 <template>
     <div class='content'>
-        <box-container :spinShow='spinShow1' :title="'拓补图1'" :toolsShow='false' class='bg-grey' :width="'48%'">
-            <topology-style-1 />
+        <box-container :spinShow='spinShow1' :title="'拓补图1'" class='bg-grey' :width="'48%'" @showOptionHandler='showOption("topology1")'>
+            <topology-style-1 :buildingData="buildingData" :buildingList="buildingList" ref="topology1" />
         </box-container>
-        <box-container :spinShow='spinShow1' :title="'拓补图2'" :toolsShow='false' class='bg-grey' :width="'48%'">
-            <topology-style-2 />
+        <box-container :spinShow='spinShow1' :title="'拓补图2'" class='bg-grey' :width="'48%'" @showOptionHandler='showOption("topology2")'>
+            <topology-style-2 ref="topology2" />
         </box-container>
-        <box-container :spinShow='spinShow1' :title="'拓补图3'" :toolsShow='false' class='bg-grey' :width="'48%'">
-            <topology-style-3 />
+        <box-container :spinShow='spinShow1' :title="'拓补图3'" class='bg-grey' :width="'48%'" @showOptionHandler='showOption("topology3")'>
+            <topology-style-3 ref="topology3" />
         </box-container>
-        <box-container :spinShow='spinShow1' :title="'拓补图4'" :toolsShow='false' class='bg-grey' :width="'48%'">
-            <topology-style-4 />
+        <box-container :spinShow='spinShow1' :title="'拓补图4'" class='bg-grey' :width="'48%'" @showOptionHandler='showOption("topology4")'>
+            <topology-style-4 ref="topology4" />
         </box-container>
-        <box-container :spinShow='spinShow1' :title="'拓补图5'" :toolsShow='false' class='bg-grey' :width="'48%'">
-            <topology-style-5 />
+        <box-container :spinShow='spinShow1' :title="'拓补图5'" class='bg-grey' :width="'48%'" @showOptionHandler='showOption("topology5")'>
+            <topology-style-5 ref="topology5" />
         </box-container>
-        <box-container :spinShow='spinShow1' :title="'拓补图6'" :toolsShow='false' class='bg-grey' :width="'48%'">
-            <topology-style-6 />
+        <box-container :spinShow='spinShow1' :title="'拓补图6'" class='bg-grey' :width="'48%'" @showOptionHandler='showOption("topology6")'>
+            <topology-style-6 ref="topology6" />
         </box-container>
-        <box-container :spinShow='spinShow1' :title="'拓补图7'" :toolsShow='false' class='bg-grey' :width="'100%'">
-            <topology-style-7 />
+        <box-container :spinShow='spinShow1' :title="'拓补图7'" class='bg-grey' :width="'100%'" @showOptionHandler='showOption("topology7")'>
+            <topology-style-7 ref="topology7" />
         </box-container>
     </div>
 </template>
@@ -49,27 +49,50 @@ export default {
         return {
             eventListFetchData: [],
             spinShow1: false,
+            buildingData: {
+                buildingTotal: 84990,
+                buildingTitle: "全国楼宇总数(栋)"
+            },
+            buildingList: [
+                {
+                    title: 'A类楼宇',
+                    number: 9600,
+                    riTong: '1日通',
+                    icon: 'icon-Alei'
+                },
+                {
+                    title: 'B类楼宇',
+                    number: 8493,
+                    riTong: '3日通',
+                    icon: 'icon-Blei'
+                },
+                {
+                    title: 'C类楼宇',
+                    number: 749,
+                    riTong: '6日通',
+                    icon: 'icon-Clei'
+                },
+                {
+                    title: 'D类楼宇',
+                    number: 490,
+                    riTong: '10日通',
+                    icon: 'icon-Dlei'
+                },
+                {
+                    title: 'N类楼宇',
+                    number: 30,
+                    riTong: '15日通',
+                    icon: 'icon-Nlei'
+                },
+            ],
         }
     },
     created() {
-        // this.$http.get('/table/eventListSource')
-        // .then(res => {
-        //     if (res.state && res.data) {
-        //     this.eventListFetchData = res.data
-        //     this.spinShow1 = false
-        //     }
-        // })
-        // .catch(err => {
-        //     console.log(err)
-        //     this.$fetchMock('/static/mock/table/eventListSource.json')
-        //     .then(res => {
-        //         this.eventListFetchData = res
-        //         this.spinShow1 = false
-        //     })
-        // })
     },
     methods:{
-        
+        showOption(ref) {
+            this.$store.commit('UPDATE_DIALOG_SHOW', this.$refs[ref].$options._componentTag);
+        },
     }
 }
 </script>

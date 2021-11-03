@@ -1,13 +1,15 @@
 <template>
     <div class='content'>
-        <box-container :spinShow='spinShow1' :title="'展示类表格'" :toolsShow='false' class='bg-grey' :width="'100%'">
+        <box-container :spinShow='spinShow1' :title="'展示类表格'" class='bg-grey' :width="'100%'" @showOptionHandler='showOption("table1")'>
             <div class="tabletitle">单层级表格</div>
-            <table-style-1 :orderTableDataList="orderTableDataList1" />
-            <div class="tabletitle">多层级表格</div>
-            <table-style-2 :orderTableDataList="orderTableDataList2" />
+            <table-style-1 :orderTableDataList="orderTableDataList1" ref="table1" />
         </box-container>
-        <box-container :spinShow='spinShow1' :title="'操作类表格'" :toolsShow='false' class='bg-grey' :width="'100%'">
-            <table-style-3 :orderTableDataList="orderTableDataList3" />
+        <box-container :spinShow='spinShow1' :title="'展示类表格'" class='bg-grey' :width="'100%'" @showOptionHandler='showOption("table2")'>
+            <div class="tabletitle">多层级表格</div>
+            <table-style-2 :orderTableDataList="orderTableDataList2" ref="table2" />
+        </box-container>
+        <box-container :spinShow='spinShow1' :title="'操作类表格'" class='bg-grey' :width="'100%'" @showOptionHandler='showOption("table3")'>
+            <table-style-3 :orderTableDataList="orderTableDataList3" ref="table3" />
         </box-container>
     </div>
 </template>
@@ -279,23 +281,11 @@ export default {
         }
     },
     created() {
-        // this.$http.get('/table/eventListSource')
-        // .then(res => {
-        //     if (res.state && res.data) {
-        //     this.eventListFetchData = res.data
-        //     this.spinShow1 = false
-        //     }
-        // })
-        // .catch(err => {
-        //     console.log(err)
-        //     this.$fetchMock('/static/mock/table/eventListSource.json')
-        //     .then(res => {
-        //         this.eventListFetchData = res
-        //         this.spinShow1 = false
-        //     })
-        // })
     },
     methods:{
+        showOption(ref) {
+            this.$store.commit('UPDATE_DIALOG_SHOW', this.$refs[ref].$options._componentTag);
+        },
     }
 }
 </script>

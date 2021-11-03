@@ -5,7 +5,7 @@
             </el-table-column>
             <template  v-for="(item) in orderTableDataList.titleList" >
                 <el-table-column :prop="item.field"  :label="item.title" :show-overflow-tooltip="showOverflowTooltip" :width="item.width" :key="item.field" >
-                    <!-- 这里通过插槽实现自定义列 (上下箭头) -->
+                    <!-- 这里通过插槽实现自定义列 -->
                     <template slot-scope="scope">
                         <slot v-if="scope.column.property=='text6'" :name="scope.column.property" :$index="scope.$index">
                             <span :class="[scope.row[scope.column.property]=='新增'?'xinzengclass':'biangengclass']">{{ scope.row[scope.column.property] }}</span>
