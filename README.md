@@ -17,15 +17,11 @@
   - ```formatLabel``` 对label进行格式化
 
 ## 文档
-  各类别组件编写规范，请见src/components/pages下各组件类文件夹下README.md
+  各类别组件编写规范，请见static/md下各组件类文件夹下README.md
 
 ## 预览
 https://evel-font-end.github.io/vue-baselib/dist/
 
-## Version Info
-
-iview -> v2.8.0
-vue -> v2.5.2
 
 ## Build Setup
 

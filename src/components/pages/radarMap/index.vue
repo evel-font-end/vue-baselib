@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     showOption(ref) {
-      console.log(JSON.parse(JSON.stringify(this.$refs[ref].option)))
+      this.$store.commit('UPDATE_DIALOG_SHOW', this.$refs[ref].$options._componentTag);
     },
   },
 }

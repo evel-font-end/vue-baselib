@@ -15,7 +15,7 @@
     @showOptionHandler='showOption("board3")'>
       <board-style-3
         sid='board3'
-        percentage='80'
+        source='80'
         ref='board3' />
     </box-container>
   </div>
