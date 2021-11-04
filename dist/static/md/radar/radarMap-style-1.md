@@ -1,7 +1,7 @@
 ## RadarMapStyle1
 
 > Use
-```
+```javascript
 <radarMap-style-1
   sid='radarMap1'
   :source="source"
@@ -31,7 +31,7 @@ options|配置项|object|-|options
 
 参数|说明|类型|可选值|默认值
 -|-|-|-|-|
-name|系列名字|string|-|'安全系数'
+name|系列名称|string|-|'安全系数'
 value|雷达图的数据|array|-|value
 areaStyle|单项区域填充样式|object|-|-
 itemStyle|单个拐点标志的样式|object|-|-

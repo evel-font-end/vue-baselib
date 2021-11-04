@@ -1,15 +1,16 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+// import Vue from 'vue'
+// import Router from 'vue-router'
 
-Vue.use(Router)
+Vue.use(VueRouter)
 
-export default new Router({
+export default new VueRouter({
   // mode: 'history',
   routes: [
     {
       path: '/',
       name: 'home',
       component: res => require(['@/components/pages/home'], res),
+      redirect: '/bar',
       children: [{
         path: '/bar',
         name: 'bar',

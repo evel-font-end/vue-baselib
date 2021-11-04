@@ -49,12 +49,12 @@ export default {
   box-shadow: inset 0 0 6px rgba(0,0,0,.3);
   background-color: #2d8cf0;
 }
-pre.code {
+pre .code {
   position: relative;
   border-radius: 3px;
   border: 1px solid #C3CCD0;
   overflow: hidden;
-  padding-left: 60px!important;
+  // padding-left: 60px!important;
   code {
       line-height: 30px !important;
   }
@@ -86,7 +86,7 @@ pre.code {
       background-color: #464d5e;
       padding: 3px;
       margin: 3px 3px 0 0;
-      font-size: 11px;
+      font-size: 16px;
       border-radius: inherit;
       color: #f1f1f1;
       cursor: pointer;

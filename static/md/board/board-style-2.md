@@ -1,7 +1,7 @@
 ## BoardStyle2
 
 > Use
-```
+```javascript
 <board-style-2
   sid='board2'
   source='80'

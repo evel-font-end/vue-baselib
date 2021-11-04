@@ -51,11 +51,11 @@ export default {
       const lineGradient = [
         {
           offset: 0,
-          color: '#0dadee',
+          color: '#05F4FE',
         },
         {
           offset: 1,
-          color: '#05edfc',
+          color: '#0DAEEE',
         },
       ]
       this.option = {
@@ -115,7 +115,7 @@ export default {
             barWidth: 20,
             showBackground: true,
             backgroundStyle: {
-              color: '#2e2856',
+              color: '#003A4E',
             },
             data: [value],
             coordinateSystem: 'polar',
