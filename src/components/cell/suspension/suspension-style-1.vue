@@ -24,26 +24,33 @@
 
 <script>
 export default {
-    name: "suspension1",
+    name: "SuspensionStyle1",
     props: {
+        dataList:{
+            type: Object,
+            default: function(){
+                let data = 
+                {
+                    header:{
+                        icon:"icon-guangboqi",
+                        title:"智慧音柱-DF45",
+                        information:"海口市美兰区江东大道"
+                    },
+                    content:{
+                        id:"0972A873AAF211EA8A5A00163E02E0CA",
+                        x:"110.389148",
+                        y:"20.071856",
+                        status:"在线",
+                        volume:"0分贝",
+                        time:"2021-04-26 21:00:12"
+                    }
+                }
+                return data
+            }
+        }
     },
     data(){
         return{
-            dataList:{
-                header:{
-                    icon:"icon-guangboqi",
-                    title:"智慧音柱-DF45",
-                    information:"海口市美兰区江东大道"
-                },
-                content:{
-                    id:"0972A873AAF211EA8A5A00163E02E0CA",
-                    x:"110.389148",
-                    y:"20.071856",
-                    status:"在线",
-                    volume:"0分贝",
-                    time:"2021-04-26 21:00:12"
-                }
-            }
         }
     },
     mounted(){
@@ -69,6 +76,7 @@ export default {
         .header{
             padding: 10px;
             background: linear-gradient(270deg,rgba(32,45,85,0.20), rgba(40,222,255,0.47) 85%, rgba(40,222,255,0.25));
+            display: flex;
             .header_information{
                 .title{
                     display: block;

@@ -9,21 +9,40 @@ export default {
       type: String,
       default: () => 'opRings1',
     },
-    percentage: {
-      type: String,
+    source: {
+      type: [Array, Object],
       default() {
-        return '80';
+        return [
+          { name: '自动核配数', value: 84 },
+          { name: '互联网专线总数', value: 16 },
+        ];
       },
+    },
+    options: {
+      type: Object,
+      default() {
+        return {
+        }
+      }
     },
   },
   data() {
     return {
       chart: null,
       option: {},
+      echartOptions: {
+        liquidFillBgStyle: {
+          borderWidth: 1,
+          color: 'rgb(255,0,255,0.1)'
+        },
+        liquidFillLabel: {
+          show: false
+        }
+      }
     }
   },
   watch: {
-    percentage(newVal) {
+    source(newVal) {
       if (this.chart === null) {
         this.initChart()
       }
@@ -34,7 +53,8 @@ export default {
   },
   mounted() {
     this.chart = this.initChart()
-    this.updateChart(this.percentage)
+    this.echartOptions = Object.assign(this.echartOptions, this.options)
+    this.updateChart(this.source)
   },
   methods: {
     initChart() {
@@ -45,258 +65,138 @@ export default {
       })
       return _chart
     },
-    updateChart(percentage) {
-      const demoData = {
-        name: '时钟',
-        value: percentage,
-        pos: ['50%', '60%'],
-      };
+    async updateChart(source) {
+      const colors = [[
+        {
+          offset: 0,
+          color: '#2CECFF',
+        },
+        {
+          offset: 1,
+          color: '#12F0A0',
+        },
+      ], [
+        {
+          offset: 0,
+          color: '#637EFF',
+        },
+        {
+          offset: 1,
+          color: '#5489FF',
+        },
+      ]];
+      const data = source.map((sourceItem, sourceIndex) => {
+        const LinearGradient = sourceItem.LinearGradient ? sourceItem.LinearGradient : colors[sourceIndex >= colors.length ? (sourceIndex % colors.length) : sourceIndex]
+        return {
+          "value": sourceItem.value,
+          "name": sourceItem.name,
+          "itemStyle": {
+            "normal": {
+              color: new this.$echarts.graphic.LinearGradient(0, 1, 0, 0, LinearGradient),
+            }
+          }
+        }
+      });
       this.option = {
-        title: {
-          text: `${percentage}%`,
-          bottom: '6%',
-          left: 'center',
+        legend: {
+          type: 'plain',
+          bottom: '1%',
+          left: 'auto',
+          orient: 'horizontal', //横向
+          itemWidth: 10, // 设置宽度
+          itemHeight: 10, // 设置高度
+          itemGap: 12, // 设置间距
+          formatter: ['{name}'].join('\n'),
           textStyle: {
-            fontSize: 28,
-            color: '#fff',
-            fontFamily: 'DINAlternateBold',
-          },
-          subtext: '稽核准确率',
-          subtextStyle: {
-            color: '#99CBFC',
             fontSize: 14,
-            top: 'center',
-            fontFamily: 'DINAlternateBold',
+            color: '#FFF',
+            fontFamily: 'PingFangSC',
+            fontWeight: 400,
+            lineHeight: 15
           },
         },
-        series: [
-          // 外侧光线
-          {
-            name: demoData.name,
-            type: 'gauge',
-            center: demoData.pos,
-            radius: '96%',
-            startAngle: 225,
-            endAngle: -45,
-            min: 0,
-            max: 100,
-            axisLine: {
-              show: true,
-              lineStyle: {
-                width: 2,
-                color: [
-                  [0, '#25D9FF'],
-                  [1, '#00AEFF'],
-                ],
-              },
-            },
-            axisTick: {
-              show: 0,
-            },
-            splitLine: {
-              show: 0,
-            },
-            axisLabel: {
-              show: 0,
-            },
-            pointer: {
-              show: 0,
-            },
-            detail: {
-              show: 0,
-            },
-            data: [
-              {
-                value: demoData.value,
-              },
-            ],
+        polar: {
+          radius: ['100%', '80%'],
+          center: ['50%', '50%'],
+        },
+        angleAxis: {
+          max: 100,
+          show: false,
+          startAngle: 90,
+        },
+        radiusAxis: {
+          type: 'category',
+          // 隐藏刻度线
+          axisLine: {
+            show: false,
           },
-          // 圆环
-          {
-            name: '小圆形border',
-            type: 'pie',
-            hoverAnimation: false,
-            legendHoverLink: false,
-            radius: ['0%', '11%'],
-            z: 0,
-            center: demoData.pos,
-            labelLine: {
-              normal: {
-                show: false,
-              },
-            },
-            data: [
-              {
-                value: 10,
-                itemStyle: {
-                  normal: {
-                    color: '#004C8E',
-                  },
+          axisTick: {
+            show: false,
+          },
+          axisLabel: {
+            show: false,
+          },
+          splitLine: {
+            show: false,
+          },
+        },
+        series: [{
+          type: 'liquidFill',
+          radius: '80%',
+          center: ['50%', '45%'],
+          data: [0.3, 0.4, 0.3], // data个数代表波浪数
+          backgroundStyle: this.echartOptions.liquidFillBgStyle,
+          label: this.echartOptions.liquidFillLabel,
+          outline: {
+            show: false,
+          }
+        },
+        {
+          type: 'pie', // 饼图
+          clockWise: false,
+          "center": ["50%", "45%"],
+          "radius": ["80%", "67%"],
+          hoverAnimation: false,
+          itemStyle: {
+            borderRadius: 0,
+            normal: {
+              label: {
+                position: 'outside',
+                formatter: function (params) {
+                  if (params.name !== '') {
+                    return `{value|${params.value}%}`;
+                  } else {
+                    return '';
+                  }
+                },
+                align: 'left',
+                rich: {
+                  value: {
+                    fontSize: 14,
+                    fontFamily: 'D-DIN',
+                    fontWeight: 400,
+                    color: '#fff'
+                  }
                 },
               },
-            ],
+              labelLine: {
+                width: 4,
+                show: true,
+                length: 20,
+                length2: 30,
+                lineStyle: {
+                  color: '#63AEE5'
+                }
+              },
+            }
           },
-          // {
-          //   name: "小圆形透明层",
-          //   type: "pie",
-          //   hoverAnimation: false,
-          //   legendHoverLink: false,
-          //   radius: ["0%", "10%"],
-          //   z: 0,
-          //   center: demoData.pos,
-          //   labelLine: {
-          //     normal: {
-          //       show: false
-          //     }
-          //   },
-          //   data: [
-          //     {
-          //       value: 0
-          //     },
-          //     {
-          //       value: 10,
-          //       itemStyle: {
-          //         normal: {
-          //           color: "#fff5f5"
-          //         }
-          //       }
-          //     }
-          //   ]
-          // },
-          // 内侧指针、数值显示
-          {
-            name: demoData.name,
-            type: 'gauge',
-            center: demoData.pos,
-            radius: '90%',
-            startAngle: 226,
-            endAngle: -46,
-            min: 0,
-            max: 100,
-            axisLine: {
-              show: true,
-              lineStyle: {
-                width: 16,
-                color: [
-                  [
-                    1,
-                    this.$echarts.graphic.LinearGradient(0, 0, 1, 0, [
-                      {
-                        offset: 0,
-                        color: '#25D9FF',
-                      },
-                      {
-                        offset: 0.5,
-                        color: '#00AEFF',
-                      },
-                      {
-                        offset: 1,
-                        color: '#25D9FF',
-                      },
-                    ]),
-                  ],
-                ],
-              },
-            },
-            axisTick: {
-              show: 0,
-            },
-            splitLine: {
-              show: 0,
-            },
-            axisLabel: {
-              show: 0,
-            },
-            title: {
-              show: false,
-              offsetCenter: [0, '65%'],
-              color: 'white',
-              fontSize: 20,
-              // backgroundColor: "#D8d8d8",
-              borderRadius: 30,
-              padding: 5,
-            },
-            detail: {
-              show: false,
-              offsetCenter: [0, 60],
-              textStyle: {
-                fontSize: 25,
-                color: '#fff',
-              },
-              formatter: ['{value}'].join('\n'),
-
-              rich: {
-                name: {
-                  fontSize: 20,
-                  lineHeight: 10,
-                  color: '#ddd',
-                  padding: [30, 0, 0, 0],
-                },
-              },
-            },
-            itemStyle: {
-              normal: {
-                color: '#00FFD6', //长条指针样式
-              },
-            },
-            pointer: {
-              show: true,
-              length: '66%',
-              width: 6,
-            },
-            data: [
-              {
-                value: demoData.value,
-                name: demoData.name,
-              },
-            ],
+          roundCap: 1,
+          tooltip: {
+            show: true
           },
-          // 外围刻度
-          {
-            type: 'gauge',
-            center: demoData.pos,
-            radius: '79%',
-            splitNumber: 10,
-            min: 0,
-            max: 100,
-            startAngle: 225,
-            endAngle: -45,
-            axisLine: {
-              show: true,
-              lineStyle: {
-                width: 1,
-                color: [[1, 'rgba(0,0,0,0)']],
-              },
-            }, //仪表盘轴线
-            axisTick: { // 坐标轴小标记
-              splitNumber: 10, // 每份split细分多少段
-              length: 6, // 属性length控制线长
-              lineStyle: { // 属性lineStyle控制线条样式
-                color: '#129FF6',
-                width: 1,
-              },
-            },
-            axisLabel: {
-              color: '#129FF6',
-              fontSize: 12,
-            }, //刻度节点文字颜色
-            //刻度样式
-            splitLine: {
-              show: true,
-              length: 12,
-              lineStyle: {
-                width: 1,
-                color: '#129FF6',
-              },
-            },
-            pointer: {
-              show: 0,
-            },
-            detail: {
-              show: 0,
-            },
-          },
-        ],
+          data: data
+        }
+        ]
       }
       this.chart.setOption(this.option)
     },

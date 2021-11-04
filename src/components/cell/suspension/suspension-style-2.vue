@@ -14,36 +14,43 @@
 
 <script>
 export default {
-    name: "suspension2",
+    name: "SuspensionStyle2",
     props: {
+        dataList:{
+            type: Object,
+            default: function(){
+                let data = 
+                {
+                    title: "山西省",
+                    list:[
+                        {
+                            name:"设备数量",
+                            num:"1045",
+                        },
+                        {
+                            name:"设备总容量G",
+                            num:"940",
+                        },
+                        {
+                            name:"设备占用容量G",
+                            num:"384",
+                        },
+                        {
+                            name:"设备容量占用率(%)",
+                            num:"74.5%",
+                        },
+                        {
+                            name:"设备端口数量",
+                            num:"8490",
+                        },
+                    ]
+                }
+                return data
+            }
+        }
     },
     data(){
         return{
-            dataList:{
-                title: "山西省",
-                list:[
-                    {
-                        name:"设备数量",
-                        num:"1045",
-                    },
-                    {
-                        name:"设备总容量G",
-                        num:"940",
-                    },
-                    {
-                        name:"设备占用容量G",
-                        num:"384",
-                    },
-                    {
-                        name:"设备容量占用率(%)",
-                        num:"74.5%",
-                    },
-                    {
-                        name:"设备端口数量",
-                        num:"8490",
-                    },
-                ]
-            }
         }
     },
     mounted(){
@@ -75,6 +82,7 @@ export default {
             background: linear-gradient(270deg,rgba(1,38,62,0.00) 1%, rgba(2,78,113,0.86) 49%, rgba(2,78,113,0.00));
         }
         .content{
+            padding: 0;
             .item{
                 margin-top: 10px;
                 display: flex;

@@ -12,7 +12,7 @@
       v-if='toolsShow'
       :class='["tools-cont", isActive ? "active" : ""]'>
       <Button
-        type='ghost'
+        type='primary'
         icon='code-working'
         size='small'
         class='tools-btn'
@@ -28,10 +28,6 @@ export default {
       type: Boolean,
       default: () => false
     },
-    title: {
-      type: String,
-      default: ''
-    },
     toolsShow: {
       type: Boolean,
       default: () => true
@@ -40,12 +36,12 @@ export default {
       type: String,
       default: '组件'
     },
-    /* showOptionHandler: {
+    showOptionHandler: {
       type: Function,
       default: () => {
         console.log("当前组件无配置项");
       }
-    } */
+    }
   },
   data() {
     return {
@@ -54,8 +50,7 @@ export default {
   },
   methods: {
     clickHandler() {
-      console.log('5555')
-      this.$emit("showOptionHandler");
+      this.$emit("showOptionHandler", {});
     }
   }
 };
@@ -133,7 +128,7 @@ $showBoxHeight: 420px;
   color: #fff;
 
   &:hover {
-    color: #57a3f3;
+    color: #fff;
   }
 }
 </style>

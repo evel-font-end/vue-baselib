@@ -65,7 +65,7 @@
 
 <script>
 export default {
-    name: "topology1",
+    name: "TopologyStyle1",
     props: {
     },
     data(){
@@ -426,6 +426,7 @@ export default {
                 top: 9px;
                 background: linear-gradient(146deg, #00d0e6 12%, #006f86 83%);
                 padding: 1px;
+                text-align: center;
                 &-icon {
                     background: linear-gradient(180deg,#31bfec, #00476e);
                     border-radius: 50%;

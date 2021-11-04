@@ -1,0 +1,60 @@
+.customize-table {
+
+  &-head {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-family: PingFangSC, PingFangSC-Semibold;
+    //font-weight: 600;
+    color: #88d7fd;
+  }
+  &-body {
+    margin-top: 11px;
+    overflow: auto;
+    height: 280px;
+    /*padding-right: 6px;*/
+    .row {
+      display: flex;
+      align-items: center;
+
+      height: 25px;
+      background: rgba(49,101,129,0.45);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    .column {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+      font-family: PingFangSC, PingFangSC-Semibold;
+      //font-weight: 600;
+      color: #fff;
+      height: 100%;
+    }
+  }
+
+}
+::-webkit-scrollbar {
+  //整体样式
+  height: 10px;
+  width: 8px;
+  border: none;
+}
+::-webkit-scrollbar-thumb {
+  //滑动滑块条样式
+  border-radius: 8px;
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+  // background: #00aaff;
+  background: transparent;
+}
+::-webkit-scrollbar-track {
+  //轨道的样式
+  -webkit-box-shadow: none;
+  border-radius: 4px;
+  background: transparent;
+}
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}

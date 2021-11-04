@@ -14,7 +14,7 @@
 
 <script>
 export default {
-    name: "suspension3",
+    name: "SuspensionStyle3",
     props: {
     },
     data(){
@@ -63,6 +63,7 @@ export default {
             background: linear-gradient(270deg,rgba(1,38,62,0.00) 1%, rgba(2,78,113,0.86) 49%, rgba(2,78,113,0.00));
         }
         .content{
+            padding: 0;
             margin-top: 20px;
             .item{
                 margin-bottom: 20px;

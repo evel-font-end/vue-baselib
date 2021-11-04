@@ -11,8 +11,8 @@
                     <div class="sp01-style-tile">
                     <div class="sp01-style-text">
                         <span>{{bureauStation.speciality}}</span>
-                        <span class="up-wrap" v-if="false">
-                            <img src="../../../assets/image/up_icon.png" alt="" /> {{ bureauStation.totalNum }}
+                        <span class="up-wrap">
+                            <img src="../../../assets/image/up_icon.png" alt="" /> {{ bureauStation.num }}
                         </span>
                     </div>
                     <div class="sp01-style-data">
@@ -28,8 +28,8 @@
                     <div class="sp1-style-tile">
                     <div class="sp1-style-text">
                         <span>{{opticalFiberPath.speciality}}</span>
-                        <span class="up-wrap" v-if="false">
-                        <img src="../../../assets/image/up_icon.png" alt="" /> {{ opticalFiberPath.totalNum }}
+                        <span class="up-wrap">
+                        <img src="../../../assets/image/up_icon.png" alt="" /> {{ opticalFiberPath.num }}
                         </span>
                     </div>
                     <div class="sp1-style-data">
@@ -45,8 +45,8 @@
                     <div class="sp2-style-tile">
                     <div class="sp2-style-text">
                         <span>{{standardAddress.speciality}}</span>
-                        <span class="up-wrap" v-if="false">
-                        <img src="../../../assets/image/up_icon.png" alt="" /> {{ standardAddress.totalNum }}
+                        <span class="up-wrap">
+                        <img src="../../../assets/image/up_icon.png" alt="" /> {{ standardAddress.num }}
                         </span>
                     </div>
                     <div class="sp2-style-data">
@@ -75,10 +75,10 @@
                 <div class="sp0-style">
                     <div class="sp0-style-img">
                     <img src="../../../assets/image/sp_0.png" alt="" />
-                    <div class="title">资源总数</div>
+                    <!-- <div class="title">资源总数</div>
                     <div class="num">
                         <countTo :startVal="Number(bureauStation.totalNum + opticalFiberPath.totalNum + standardAddress.totalNum + computerRoom.totalNum + buildingObj.totalNum + circuitObj.totalNum) || 0" :endVal="Number(bureauStation.totalNum + opticalFiberPath.totalNum + standardAddress.totalNum + computerRoom.totalNum + buildingObj.totalNum + circuitObj.totalNum) || 0" :duration="3000" separator=""></countTo>
-                    </div>
+                    </div> -->
                     </div>
                 </div>
             </div>
@@ -107,8 +107,8 @@
                     <div class="sp02-style-tile">
                         <div class="sp02-style-text">
                             <span>{{computerRoom.speciality}}</span>
-                            <span class="up-wrap" v-if="false">
-                            <img src="../../../assets/image/up_icon.png" alt="" /> {{ computerRoom.totalNum }}
+                            <span class="up-wrap">
+                            <img src="../../../assets/image/up_icon.png" alt="" /> {{ computerRoom.num }}
                             </span>
                         </div>
                         <div class="sp02-style-data">
@@ -124,8 +124,8 @@
                     <div class="sp6-style-tile">
                     <div class="sp6-style-text">
                         <span>{{buildingObj.speciality}}</span>
-                        <span class="up-wrap" v-if="false">
-                        <img src="../../../assets/image/up_icon.png" alt="" /> {{ buildingObj.totalNum }}
+                        <span class="up-wrap">
+                        <img src="../../../assets/image/up_icon.png" alt="" /> {{ buildingObj.num }}
                         </span>
                     </div>
                     <div class="sp6-style-data">
@@ -141,8 +141,8 @@
                     <div class="sp5-style-tile">
                         <div class="sp5-style-text">
                             <span>{{circuitObj.speciality}}</span>
-                            <span class="up-wrap" v-if="false">
-                            <img src="../../../assets/image/up_icon.png" alt="" /> {{ circuitObj.totalNum }}
+                            <span class="up-wrap">
+                            <img src="../../../assets/image/up_icon.png" alt="" /> {{ circuitObj.num }}
                             </span>
                         </div>
                         <div class="sp5-style-data">
@@ -159,7 +159,7 @@
 import countTo from "vue-count-to";
 
 export default {
-    name: "topology4",
+    name: "TopologyStyle4",
     components:{
         countTo,
     },
@@ -182,26 +182,32 @@ export default {
         return{
             bureauStation: {
                 speciality:'局站',
+                num:13459,
                 totalNum: 0,
             },
             opticalFiberPath: {
                 speciality:'楼宇',
+                num:139,
                 totalNum: 1000,
             },
             standardAddress: {
                 speciality:'光纤光路',
+                num:352,
                 totalNum: 20000,
             },
             computerRoom: {
                 speciality:'机房',
+                num:3452,
                 totalNum: 500,
             },
             buildingObj: {
                 speciality:'政企电路',
+                num:7865,
                 totalNum: 1500,
             },
             circuitObj: {
                 speciality:'标准地址',
+                num:139,
                 totalNum: 2600,
             }
         }
@@ -221,10 +227,10 @@ export default {
         align-items: center;
         justify-content: center;
         .networkResource-01 {
-            width: 100px;
+            min-width: 100px;
         }
         .networkResource-05 {
-            width: 100px;
+            min-width: 100px;
         }
         .networkResource-03{
             position: relative;

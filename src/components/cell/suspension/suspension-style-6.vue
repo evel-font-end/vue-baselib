@@ -26,7 +26,7 @@
 <script>
 
 export default {
-    name: "suspension6",
+    name: "SuspensionStyle6",
     props: {
     },
     data(){
@@ -139,6 +139,7 @@ export default {
                 }
             }
             .content{
+                padding: 0;
                 .contentitem{
                     margin-top: 10px;
                     display: flex;

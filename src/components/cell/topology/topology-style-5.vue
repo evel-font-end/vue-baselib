@@ -66,7 +66,7 @@
 
 <script>
 export default {
-    name: "topology5",
+    name: "TopologyStyle5",
     props: {
     },
     data(){

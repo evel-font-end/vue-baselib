@@ -20,7 +20,7 @@
 
 <script>
 export default {
-    name: "suspension5",
+    name: "SuspensionStyle5",
     props: {
     },
     data(){
@@ -125,6 +125,7 @@ export default {
                 }
             }
             .content{
+                padding: 0;
                 display: flex;
                 justify-content: space-between;
                 .contentItem{

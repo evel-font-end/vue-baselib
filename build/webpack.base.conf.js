@@ -22,9 +22,18 @@ const createLintingRule = () => ({
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    app: './src/main.js',
-    vendor: ['vue', 'vue-router', 'vuex', 'iview'],
-    echarts: ['echarts'],
+    app: ['babel-polyfill', './src/main.js'],
+    vendor: ['echarts', 'echarts-liquidfill', 'mavon-editor'],
+    // echarts: ['echarts'],
+  },
+  externals: {
+    "vue": 'Vue',
+    "vuex": "Vuex",
+    "vue-router": "VueRouter",
+    'element-ui': 'ELEMENT',
+    '@jiaminghi/data-view': 'dataV',
+    'axios': 'axios',
+    'iview': 'iview'
   },
   output: {
     path: config.build.assetsRoot,
@@ -60,6 +69,20 @@ module.exports = {
         ]
       },
       {
+        test: /\.md$/,
+        use: [
+          {
+            loader: 'vue-loader'
+          },
+          {
+            loader: 'vue-markdown-loader/lib/markdown-compiler',
+            options: {
+              raw: true
+            }
+          }
+        ]
+      },
+      {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test')]
@@ -87,6 +110,10 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
+      },
+      {
+        test: /\.scss$/,
+        loader: "style-loader!css-loader!sass-loader",
       }
     ]
   },

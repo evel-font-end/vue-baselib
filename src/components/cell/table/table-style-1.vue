@@ -15,28 +15,6 @@
                     :align="colAlign"
                     :key="'ordercolumn'+index"
                     >
-                    <!-- 这里通过插槽实现自定义列 (上下箭头) -->
-                    <!-- <template slot-scope="scope">
-                        <slot 
-                            v-if="scope.column.property=='accessAutoKaryogamy'"
-                            :name="scope.column.property"
-                            :$index="scope.$index"
-                        >
-                            <span>{{ scope.row[scope.column.property] }}</span>
-                            <span class="icon iconfont icon-shangsheng" v-if="scope.row.autoKaryogamyStatus=='1'"></span>
-                            <span class="icon iconfont icon-xiajiang" v-if="scope.row.autoKaryogamyStatus=='2'"></span>
-                        </slot>
-                        <slot 
-                            v-else-if="scope.column.property=='resourceIPAutoKaryogamy'"
-                            :name="scope.column.property"
-                            :$index="scope.$index"
-                        >
-                            <span>{{ scope.row[scope.column.property] }}</span>
-                            <span class="icon iconfont icon-shangsheng" v-if="scope.row.resourceIPStatus=='1'"></span>
-                            <span class="icon iconfont icon-xiajiang" v-if="scope.row.resourceIPStatus=='2'"></span>
-                        </slot>
-                        <span v-else>{{ scope.row[scope.column.property] }}</span>
-                    </template> -->
                 </el-table-column>
             </template>
             
@@ -46,7 +24,7 @@
 
 <script>
 export default {
-    name: "table1",
+    name: "TableStyle1",
     props: {
         orderTableDataList: { //表格数据
             type: Object,

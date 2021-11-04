@@ -66,7 +66,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: '/vue-baselib/dist/',
 
     /**
      * Source Maps
@@ -88,5 +88,12 @@ module.exports = {
     // `npm run build --report`
     // Set to `true` or `false` to always turn it on or off
     bundleAnalyzerReport: process.env.npm_config_report
+  },
+  publish: {
+    env: require('./publish.env'),
+    distRoot: path.resolve(__dirname, '../'),
+    assetsSubDirectory: 'static',
+    assetsPublicPath: '',
+    productionSourceMap: false
   }
 }

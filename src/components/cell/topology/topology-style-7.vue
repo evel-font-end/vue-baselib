@@ -18,7 +18,7 @@
 <script>
 
 export default {
-    name: "topology7",
+    name: "TopologyStyle7",
     components:{
     },
     props: {

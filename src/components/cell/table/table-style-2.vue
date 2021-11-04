@@ -21,7 +21,7 @@
 
 <script>
 export default {
-    name: "table2",
+    name: "TableStyle2",
     props: {
         orderTableDataList: { //表格数据
             type: Object,
@@ -94,11 +94,6 @@ export default {
                                 padding-left: 28px;
                                 font-size: 16px;
                                 color: #9bcdff;
-                                .el-table__expand-icon{
-                                    .el-icon-arrow-right{
-                                        color: #9BCDFF;
-                                    }
-                                }
                             }
                         }
                     }
@@ -118,6 +113,11 @@ export default {
                             font-weight: 400;
                             color: #9bcdff;
                             padding-left: 28px;
+                            .el-table__expand-icon{
+                                .el-icon-arrow-right:before{
+                                    color: #9BCDFF;
+                                }
+                            }
                         }
                     }
                     &:nth-child(2n) {

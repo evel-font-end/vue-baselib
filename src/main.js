@@ -1,25 +1,33 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import Vue from 'vue'
+// import Vue from 'vue'
 import App from './App'
 import router from './router'
-import iView from 'iview'
+// import iView from 'iview'
 import store from './store'
 import echarts from 'echarts'
 import liquidfill from 'echarts-liquidfill'
-import ElementUI from 'element-ui'
+// import ElementUI from 'element-ui'
+// import dataV from '@jiaminghi/data-view'
 import TFetch from 'tfetch'
-import 'iview/dist/styles/iview.css'
-import 'element-ui/lib/theme-chalk/index.css'
+import mavonEditor from 'mavon-editor'
+import '@/assets/lib/hljs';
+import 'mavon-editor/dist/css/index.css'
+// import 'iview/dist/styles/iview.css'
+// import 'element-ui/lib/theme-chalk/index.css'
+// import MyComponent from '../lib/vue-baselib.js'
 
 require('./common/fonts/PingFangSC-Regular/PingFang Regular.css')
 require('./common/fonts/DIN_Alternate_Bold.css')
 require('./common/fonts/YouSheBiaoTiHei-2.css')
 require('./common/fonts/PangMenZhengDaoBiaoTiTi-1.css')
 Vue.config.productionTip = false;
-Vue.use(iView)
+Vue.use(iview)
+// Vue.use(MyComponent)
 Vue.use(liquidfill)
-Vue.use(ElementUI)
+// Vue.use(dataV)
+// Vue.use(ElementUI)
+Vue.use(mavonEditor)
 
 Vue.prototype.$echarts = echarts
 
@@ -28,7 +36,7 @@ const http = new TFetch({
   timeout: 5000,
 })
 
-const fetchMock = url => {
+export const fetchMock = url => {
   return new Promise((resolve, reject) => {
     fetch(url, {
       method: 'GET',
@@ -46,7 +54,6 @@ const fetchMock = url => {
       })
   })
 }
-
 Vue.prototype.$http = http
 Vue.prototype.$fetchMock = fetchMock
 

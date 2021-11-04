@@ -12,7 +12,7 @@
 <script>
 
 export default {
-    name: "suspension7",
+    name: "SuspensionStyle7",
     components:{
     },
     props: {

@@ -21,6 +21,8 @@
     "comma-dangle":"off",
     "singleQuote": "off",//把双引号换成单引号
     "vue/html-quotes": "off",
+    "vue/html-closing-bracket-newline": "off",
+    "vue/mustache-interpolation-spacing": "off",
     "vue/no-parsing-error": [2, { "x-invalid-end-tag": false }]
   }
 }

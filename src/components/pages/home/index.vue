@@ -32,10 +32,29 @@
         </Content>
       </Layout>
     </Layout>
+    <el-dialog
+      title="提示"
+      :visible.sync="dialogVisible"
+      class="dialogMd"
+      @opened="handleOpenedDialog"
+      :before-close="() => handleClose(false)">
+      <span>
+        <mavon-editor
+          :value="htmlValue"
+          :ishljs="true"
+          :codeStyle="'atom-one-dark'"
+          :editable="false"
+          :toolbarsFlag="false"
+        />
+      </span>
+      <span slot="footer" class="dialog-footer">
+        <el-button type="primary" @click="() => handleClose(false)">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 <script>
-// import { TweenMax, TimelineLite, TweenLite } from 'gsap'
+import { addCodeBtn } from '@/assets/lib/mavon'
 export default {
   data() {
     return {
@@ -49,9 +68,14 @@ export default {
     },
     menuitemClasses() {
       return ['sider-bar', this.isCollapsed ? 'collapsed-menu' : ''];
-    }
+    },
+    dialogVisible() {
+      return (!!this.$store.state.Home.dialogShow) || false;
+    },
+    htmlValue() {
+      return this.$store.state.Home.dialogMd || '';
+    },
   },
-  created() {},
   mounted() {
     this.$nextTick(() => {
       let menusList = this.$router.options.routes[0].children;
@@ -61,6 +85,13 @@ export default {
   methods: {
     changeMenuHandler(name) {
       this.$store.commit('UPDATE_ACTIVE_MENU', name);
+    },
+    handleOpenedDialog() {
+      // highlightCode()
+      addCodeBtn()
+    },
+    handleClose(show) {
+      this.$store.commit('UPDATE_DIALOG_SHOW', show);
     }
   }
 };

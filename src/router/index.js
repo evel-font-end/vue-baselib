@@ -1,15 +1,16 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+// import Vue from 'vue'
+// import Router from 'vue-router'
 
-Vue.use(Router)
+Vue.use(VueRouter)
 
-export default new Router({
+export default new VueRouter({
   // mode: 'history',
   routes: [
     {
       path: '/',
       name: 'home',
       component: res => require(['@/components/pages/home'], res),
+      redirect: '/bar',
       children: [{
         path: '/bar',
         name: 'bar',
@@ -90,6 +91,16 @@ export default new Router({
           title: '悬浮框'
         },
         component: res => require(['@/components/pages/suspension'], res),
+      },
+      {
+        path: '/mapcharts',
+        name: 'mapcharts',
+        title: '地图',
+        icon: 'ios-pie-outline',
+        meta:{
+          title: '地图'
+        },
+        component: res => require(['@/components/pages/mapcharts'], res),
       },
       {
         path: '/radarMap',

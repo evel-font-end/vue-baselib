@@ -12,6 +12,7 @@ function getLinearColor(colorStart, colorEnd) {
   ]);
 }
 export default {
+  name: 'BarStyle1',
   props: {
     chartId: {
       type: String,

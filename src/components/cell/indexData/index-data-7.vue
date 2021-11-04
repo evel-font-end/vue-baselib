@@ -19,6 +19,7 @@
 
 <script>
 export default {
+  name: "indexData7",
   data() {
     return {};
   },
