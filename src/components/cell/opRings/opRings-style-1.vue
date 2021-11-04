@@ -31,6 +31,13 @@ export default {
       chart: null,
       option: {},
       echartOptions: {
+        liquidFillBgStyle: {
+          borderWidth: 1,
+          color: 'rgb(255,0,255,0.1)'
+        },
+        liquidFillLabel: {
+          show: false
+        }
       }
     }
   },
@@ -94,7 +101,7 @@ export default {
         legend: {
           type: 'plain',
           bottom: '1%',
-          left: 'center',
+          left: 'auto',
           orient: 'horizontal', //横向
           itemWidth: 10, // 设置宽度
           itemHeight: 10, // 设置高度
@@ -138,13 +145,8 @@ export default {
           radius: '80%',
           center: ['50%', '45%'],
           data: [0.3, 0.4, 0.3], // data个数代表波浪数
-          backgroundStyle: {
-            borderWidth: 1,
-            color: 'rgb(255,0,255,0.1)'
-          },
-          label: {
-            show: false
-          },
+          backgroundStyle: this.echartOptions.liquidFillBgStyle,
+          label: this.echartOptions.liquidFillLabel,
           outline: {
             show: false,
           }

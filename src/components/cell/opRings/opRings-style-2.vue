@@ -9,23 +9,50 @@ export default {
       type: String,
       default: 'opRings2',
     },
-    subText: {
-      type: String,
-      default: '端口占有率',
-    },
-    value: {
+    source: {
       type: Number,
       default: 30,
+    },
+    options: {
+      type: Object,
+      default() {
+        return {
+        }
+      }
     },
   },
   data() {
     return {
       chart: null,
       option: {},
+      echartOptions: {
+        textStyle: {
+          fontSize: 42,
+          fontWeight: '700',
+          color: '#fff',
+          textAlign: 'center',
+        },
+        subtext: '端口占有率',
+        subtextStyle: {
+          color: '#fff',
+          fontSize: 18,
+          fontFamily: 'PingFangSC, PingFangSC-Regular',
+        },
+        lineGradient: [
+          {
+            offset: 0,
+            color: '#05F4FE',
+          },
+          {
+            offset: 1,
+            color: '#0DAEEE',
+          },
+        ]
+      }
     }
   },
   watch: {
-    value(newVal) {
+    source(newVal) {
       if (this.chart === null) {
         this.initChart()
       }
@@ -36,7 +63,8 @@ export default {
   },
   mounted() {
     this.chart = this.initChart()
-    this.updateChart(this.value)
+    this.echartOptions = Object.assign(this.echartOptions, this.options)
+    this.updateChart(this.source)
   },
   methods: {
     initChart() {
@@ -48,16 +76,6 @@ export default {
       return _chart
     },
     updateChart(value) {
-      const lineGradient = [
-        {
-          offset: 0,
-          color: '#05F4FE',
-        },
-        {
-          offset: 1,
-          color: '#0DAEEE',
-        },
-      ]
       this.option = {
         title: [{
           left: '50%',
@@ -65,22 +83,13 @@ export default {
           text: `${value}%`,
           itemGap: 4,
           textAlign: 'center',
-          textStyle: {
-            fontSize: 42,
-            fontWeight: '700',
-            color: '#fff',
-            textAlign: 'center',
-          },
+          textStyle: this.echartOptions.textStyle,
         }, {
           left: '50%',
           top: '56%',
-          text: this.subText,
+          text: this.echartOptions.subtext,
           textAlign: 'center',
-          textStyle: {
-            color: '#fff',
-            fontSize: 18,
-            fontFamily: 'PingFangSC, PingFangSC-Regular',
-          },
+          textStyle: this.echartOptions.subtextStyle,
         }],
         polar: {
           radius: ['100%', '80%'],
@@ -121,7 +130,7 @@ export default {
             coordinateSystem: 'polar',
             itemStyle: {
               normal: {
-                color: new this.$echarts.graphic.LinearGradient(0, 1, 0, 0, lineGradient),
+                color: new this.$echarts.graphic.LinearGradient(0, 1, 0, 0, this.echartOptions.lineGradient),
               },
             },
           },
