@@ -10,39 +10,57 @@ export default {
       type: String,
       default: 'opRings4',
     },
-    value: {
-      type: Number,
-      default: 30,
+    source: {
+      type: [Array, Object],
+      default: () => {
+        return [
+          { name: '高', value: 333, color: ['#FFF2C9', '#FF4038'] },
+          { name: '中', value: 333, color: ['#69B5FF', '#38DDFF'] },
+          { name: '低', value: 333, color: ['#69FFFE', '#10AA7F'] },
+        ]
+      },
+    },
+    options: {
+      type: Object,
+      default() {
+        return {
+        }
+      }
     },
   },
   data() {
     return {
       chart: null,
       option: {},
-      pieItem: [],
+      echartOptions: {
+        layerStyle: {
+          image: layer,
+          width: 46,
+          height: 105,
+        },
+        legendStyle: {},
+        outlineColor: ['rgba(105,233,255,0.29)', 'rgba(56,207,255,0)'],
+        insideColor: ['rgba(105,233,255,0.29)', 'rgba(56,207,255,0)']
+      },
       allData: [],
     }
   },
   watch: {
-    value(newVal) {
+    source(newVal) {
       if (this.chart === null) {
         this.initChart()
       }
-      this.init()
+      this.updateChart(this.source)
     },
   },
   created() {
   },
   mounted() {
     this.chart = this.initChart()
-    this.init()
-
+    this.echartOptions = Object.assign(this.echartOptions, this.options)
+    this.updateChart(this.source)
   },
   methods: {
-    init() {
-      this.updateChart(this.value)
-      this.getData()
-    },
     initChart() {
       const el = document.getElementById(this.sid)
       const _chart = this.$echarts.init(el, 'chalk')
@@ -51,85 +69,12 @@ export default {
       })
       return _chart
     },
-    updateChart(value) {
-      const option = {
-        backgroundColor: 'transparent',
-        grid: {
-          bottom: '10%',
-        },
-        graphic: {
-          elements: [
-            {
-              type: 'image',
-              z: 3,
-              style: {
-                image: layer,
-                width: 46,
-                height: 105,
-              },
-              left: 'center',
-              top: 'center',
-              position: [100, 100],
-            },
-          ],
-        },
-        tooltip: {
-          show: true,
-        },
-        legend: {
-          icon: 'path://M6,0 C9.3137085,0 12,2.6862915 12,6 C12,9.3137085 9.3137085,12 6,12 C2.6862915,12 0,9.3137085 0,6 C0,2.6862915 2.6862915,0 6,0 Z M6,3 C4.34314575,3 3,4.34314575 3,6 C3,7.65685425 4.34314575,9 6,9 C7.65685425,9 9,7.65685425 9,6 C9,4.34314575 7.65685425,3 6,3 Z',
-          orient: 'horizontal',
-          // x: 'left',
-          data: ['高', '节能', '中'],
-          bottom: '0',
-          align: 'left',
-          textStyle: {
-            color: '#fff',
-          },
-          itemGap: 80,
-          // padding: [0, 5, 5, 5],
-        },
-        toolbox: {
-          show: false,
-        },
-      }
-      this.chart.setOption(option);
-    },
-    getData() {
-      const that = this;
-      this.pieItem = [
-        {
-          name: '高',
-          value: 20,
-        },
-        {
-          name: '节能',
-          value: 30,
-        },
-        {
-          name: '中',
-          value: 40,
-        },
-      ];
-      const color = [
-        {
-          c1: '#FFF2C9',
-          c2: '#FF4038',
-        },
-        {
-          c1: '#69B5FF',
-          c2: '#38DDFF',
-        },
-        {
-          c1: '#69FFFE',
-          c2: '#10AA7F',
-        },
-      ];
-      for (let i = 0; i < this.pieItem.length; i++) {
+    updateChart(source) {
+      for (let i = 0; i < source.length; i++) {
         this.allData.push(
           {
-            value: this.pieItem[i].value,
-            name: this.pieItem[i].name,
+            value: source[i].value,
+            name: source[i].name,
             itemStyle: {
               normal: {
                 borderWidth: 10,
@@ -143,11 +88,11 @@ export default {
                   colorStops: [
                     {
                       offset: 0,
-                      color: color[i]['c1'], // 0% 处的颜色
+                      color: source[i].color[0], // 0% 处的颜色
                     },
                     {
                       offset: 1,
-                      color: color[i]['c2'], // 100% 处的颜色
+                      color: source[i].color[1], // 100% 处的颜色
                     },
                   ],
                   global: false, // 缺省为 false
@@ -162,11 +107,11 @@ export default {
                   colorStops: [
                     {
                       offset: 0,
-                      color: color[i]['c1'], // 0% 处的颜色
+                      color: source[i].color[0], // 0% 处的颜色
                     },
                     {
                       offset: 1,
-                      color: color[i]['c2'], // 100% 处的颜色
+                      color: source[i].color[1], // 100% 处的颜色
                     },
                   ],
                   global: false, // 缺省为 false
@@ -193,22 +138,36 @@ export default {
           }
         );
       }
-      const pieItem = [...this.pieItem];
-      const dataOption = {
+      const option = {
+        backgroundColor: 'transparent',
+        grid: {
+          bottom: '10%',
+        },
+        graphic: {
+          elements: [
+            {
+              type: 'image',
+              z: 3,
+              style: this.echartOptions.layerStyle,
+              left: 'center',
+              top: 'center',
+              position: [100, 100],
+            },
+          ],
+        },
         legend: {
+          icon: 'path://M6,0 C9.3137085,0 12,2.6862915 12,6 C12,9.3137085 9.3137085,12 6,12 C2.6862915,12 0,9.3137085 0,6 C0,2.6862915 2.6862915,0 6,0 Z M6,3 C4.34314575,3 3,4.34314575 3,6 C3,7.65685425 4.34314575,9 6,9 C7.65685425,9 9,7.65685425 9,6 C9,4.34314575 7.65685425,3 6,3 Z',
+          orient: 'horizontal',
+          // x: 'left',
+          data: source.map(sourceItem => sourceItem.name),
+          bottom: '0',
+          align: 'left',
           formatter: function (name) {
-            // let res = that.pieItem.filter(v => v.name == name);
-            // return (
-            //   "{percent|" +
-            //   res.value +
-            //   "}{unit| %}\n" +
-            //   res.name
-            // );
             return (
               `{title|${
                 name
               }}\n{value|${
-                that.pieItem.find((item) => {
+                source.find((item) => {
                   return item.name == name;
                 }).value
               }}{value|%}`
@@ -228,7 +187,12 @@ export default {
                 lineHeight: 22,
               },
             },
+            ...this.echartOptions.legendStyle
           },
+          itemGap: 60,
+        },
+        toolbox: {
+          show: false,
         },
         series: [
           {
@@ -246,8 +210,8 @@ export default {
                   formatter: function (params) {
                     let percent = 0;
                     let total = 0;
-                    for (let i = 0; i < pieItem.length; i++) {
-                      total += pieItem[i].value;
+                    for (let i = 0; i < source.length; i++) {
+                      total += source[i].value;
                     }
                     percent = ((params.value / total) * 100).toFixed(0);
                     if (params.name !== '') {
@@ -297,11 +261,11 @@ export default {
                       colorStops: [
                         {
                           offset: 0,
-                          color: 'rgba(105,233,255,0.29)', // 0% 处的颜色
+                          color: this.echartOptions.insideColor[0], // 0% 处的颜色
                         },
                         {
                           offset: 0.7,
-                          color: 'rgba(56,207,255,0.00)', // 100% 处的颜色
+                          color: this.echartOptions.insideColor[1], // 100% 处的颜色
                         },
                       ],
                       global: false, // 缺省为 false
@@ -339,11 +303,11 @@ export default {
                       colorStops: [
                         {
                           offset: 0,
-                          color: 'rgba(105,233,255,0.29)', // 0% 处的颜色
+                          color: this.echartOptions.outlineColor[0], // 0% 处的颜色
                         },
                         {
                           offset: 0.5,
-                          color: 'rgba(56,207,255,0)', // 100% 处的颜色
+                          color: this.echartOptions.outlineColor[1], // 100% 处的颜色
                         },
                       ],
                       global: false, // 缺省为 false
@@ -354,9 +318,9 @@ export default {
             ],
           },
         ],
-      };
-      this.chart.setOption(dataOption);
-    },
+      }
+      this.chart.setOption(option);
+    }
   },
 }
 </script>

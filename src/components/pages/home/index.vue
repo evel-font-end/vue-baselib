@@ -41,6 +41,8 @@
       <span>
         <mavon-editor
           :value="htmlValue"
+          :ishljs="true"
+          :codeStyle="'atom-one-dark'"
           :editable="false"
           :toolbarsFlag="false"
         />
@@ -52,7 +54,6 @@
   </div>
 </template>
 <script>
-import { highlightCode } from '@/assets/lib/hljs'
 import { addCodeBtn } from '@/assets/lib/mavon'
 export default {
   data() {
@@ -86,7 +87,7 @@ export default {
       this.$store.commit('UPDATE_ACTIVE_MENU', name);
     },
     handleOpenedDialog() {
-      highlightCode()
+      // highlightCode()
       addCodeBtn()
     },
     handleClose(show) {

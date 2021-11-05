@@ -2,6 +2,7 @@
   <div :id='sid' class='opRings-container' />
 </template>
 <script>
+import { sum } from '@/assets/lib/utils';
 export default {
   name: 'OpRingsStyle3',
   props: {
@@ -9,19 +10,52 @@ export default {
       type: String,
       default: 'opRings3',
     },
-    value: {
-      type: Number,
-      default: 30,
+    source: {
+      type: [Array, Object],
+      default: () => {
+        return [
+          { name: '空闲', value: 333, color: ['#20FBAA', '#09EFF5'] },
+          { name: '部分占用', value: 444, color: ['#57B4FF', '#00B0FF'] },
+          { name: '置满', value: 222, color: ['#FB7320', '#FF726C'] },
+          { name: '占用', value: 555, color: ['#F0FF48', '#FFB151'] },
+          { name: '预留', value: 111, color: ['#EEFAFF', '#EEFAFF'] },
+          { name: '损坏', value: 666, color: ['#5385FE', '#AD99FF'] },
+        ]
+      },
+    },
+    options: {
+      type: Object,
+      default() {
+        return {
+        }
+      }
     },
   },
   data() {
     return {
       chart: null,
       option: {},
+      echartOptions: {
+        text: null,
+        textStyle: {
+          color: '#ABDBFF',
+          fontSize: 28,
+        },
+        subtext: '机架总数',
+        subtextStyle: {
+          color: '#fff',
+          fontSize: 14,
+        },
+        splitColor: '#09EFF5',
+        lineColor: ['#20EFFB', '#099EF5'],
+        pointColor: ['#45C3FF', '#45C3FF'],
+        label: {},
+        labelLineColor: '#DCDCDC'
+      }
     }
   },
   watch: {
-    value(newVal) {
+    source(newVal) {
       if (this.chart === null) {
         this.initChart()
       }
@@ -31,8 +65,9 @@ export default {
   created() {
   },
   mounted() {
-    this.chart = this.initChart()
-    this.updateChart(this.value)
+    this.chart = this.initChart();
+    this.echartOptions = Object.assign(this.echartOptions, this.options)
+    this.updateChart(this.source)
   },
   methods: {
     initChart() {
@@ -43,62 +78,28 @@ export default {
       })
       return _chart
     },
-    updateChart(value) {
+    updateChart(source) {
       const that = this;
-      const echartData = [
-        { name: '空闲', value: 333 },
-        { name: '部分占用', value: 444 },
-        { name: '置满', value: 222 },
-        { name: '占用', value: 555 },
-        { name: '预留', value: 111 },
-        { name: '损坏', value: 666 },
-      ];
-      const color = [
-        [
-          ['#20FBAA', '#09EFF5'],
-          ['#57B4FF', '#00B0FF'],
-          ['#FB7320', '#FF726C'],
-          ['#F0FF48', '#FFB151'],
-          ['#EEFAFF', '#EEFAFF'],
-          ['#5385FE', '#AD99FF'],
-        ],
-      ];
-      const lineColor = ['#20EFFB', '#099EF5'];
-      const pointColor = ['#45FFFA', '#45C3FF'];
+      const value = 30;
       this.option = {
         backgroundColor: 'transparent',
         title: {
-          text: 849083,
-          textStyle: {
-            color: '#ABDBFF',
-            fontSize: 28,
-          },
-          subtext: '机架总数',
-          subtextStyle: {
-            color: '#fff',
-            fontSize: 14,
-          },
+          text: this.echartOptions.text ? this.echartOptions.text : sum(source.map(sourceItem => sourceItem.value)),
+          textStyle: this.echartOptions.textStyle,
+          subtext: this.echartOptions.subtext,
+          subtextStyle: this.echartOptions.subtextStyle,
           itemGap: 15, // 主副标题距离
           left: 'center',
           top: '42%',
         },
         legend: {
-          data: [
-            '空闲',
-            '部分占用',
-            '',
-            '置满',
-            '占用',
-            '',
-            '预留',
-            '损坏',
-          ],
+          data: source.map(sourceItem => sourceItem.name),
           itemHeight: 10,
           itemWidth: 10,
           icon: 'roundRect',
           orient: 'horizontal',
-          bottom: 20,
-          right: 20,
+          bottom: '1%',
+          right: 'auto',
           textStyle: {
             color: '#fff',
           },
@@ -122,7 +123,7 @@ export default {
                 shadowBlur: 0,
                 color: [
                   [0, '#20FBAA'],
-                  [1, '#09EFF5'],
+                  [1, this.echartOptions.splitColor],
                 ],
               },
             },
@@ -164,20 +165,12 @@ export default {
                 shape: {
                   cx: api.getWidth() / 2,
                   cy: api.getHeight() * 0.5,
-                  r:
-                                        (Math.min(
-                                          api.getWidth(),
-                                          api.getHeight()
-                                        ) /
-                                            2) *
-                                        0.7,
-                  startAngle:
-                                        ((0 + value) * Math.PI) / 180,
-                  endAngle:
-                                        ((90 + value) * Math.PI) / 180,
+                  r: (Math.min(api.getWidth(), api.getHeight()) / 2) * 0.7,
+                  startAngle: ((0 + value) * Math.PI) / 180,
+                  endAngle: ((90 + value) * Math.PI) / 180,
                 },
                 style: {
-                  stroke: lineColor[0],
+                  stroke: that.echartOptions.lineColor[0],
                   fill: 'transparent',
                   lineWidth: 1,
                 },
@@ -196,20 +189,12 @@ export default {
                 shape: {
                   cx: api.getWidth() / 2,
                   cy: api.getHeight() * 0.5,
-                  r:
-                                        (Math.min(
-                                          api.getWidth(),
-                                          api.getHeight()
-                                        ) /
-                                            2) *
-                                        0.7,
-                  startAngle:
-                                        ((180 + value) * Math.PI) / 180,
-                  endAngle:
-                                        ((270 + value) * Math.PI) / 180,
+                  r: (Math.min(api.getWidth(), api.getHeight()) / 2) * 0.7,
+                  startAngle: ((180 + value) * Math.PI) / 180,
+                  endAngle: ((270 + value) * Math.PI) / 180,
                 },
                 style: {
-                  stroke: lineColor[0],
+                  stroke: that.echartOptions.lineColor[1],
                   fill: 'transparent',
                   lineWidth: 1,
                 },
@@ -225,9 +210,7 @@ export default {
             renderItem: function (params, api) {
               const x0 = api.getWidth() / 2;
               const y0 = api.getHeight() * 0.5;
-              const r = (Math.min(api.getWidth(), api.getHeight()) /
-                                    2) *
-                                0.7;
+              const r = (Math.min(api.getWidth(), api.getHeight()) / 2) * 0.7;
               const point = that.getCirlPoint(
                 x0,
                 y0,
@@ -242,8 +225,8 @@ export default {
                   r: 2,
                 },
                 style: {
-                  stroke: pointColor[0],
-                  fill: pointColor[0],
+                  stroke: that.echartOptions.pointColor[0],
+                  fill: that.echartOptions.pointColor[0],
                 },
                 silent: true,
               };
@@ -257,10 +240,7 @@ export default {
             renderItem: function (params, api) {
               const x0 = api.getWidth() / 2;
               const y0 = api.getHeight() * 0.5;
-              const r =
-                                (Math.min(api.getWidth(), api.getHeight()) /
-                                    2) *
-                                0.7;
+              const r = (Math.min(api.getWidth(), api.getHeight()) / 2) * 0.7;
               const point = that.getCirlPoint(
                 x0,
                 y0,
@@ -275,8 +255,8 @@ export default {
                   r: 2,
                 },
                 style: {
-                  stroke: pointColor[0],
-                  fill: pointColor[0],
+                  stroke: that.echartOptions.pointColor[0],
+                  fill: that.echartOptions.pointColor[0],
                 },
                 silent: true,
               };
@@ -290,10 +270,7 @@ export default {
             renderItem: function (params, api) {
               const x0 = api.getWidth() / 2;
               const y0 = api.getHeight() * 0.5;
-              const r =
-                                (Math.min(api.getWidth(), api.getHeight()) /
-                                    2) *
-                                0.7;
+              const r = (Math.min(api.getWidth(), api.getHeight()) / 2) * 0.7;
               const point = that.getCirlPoint(
                 x0,
                 y0,
@@ -308,8 +285,8 @@ export default {
                   r: 2,
                 },
                 style: {
-                  stroke: pointColor[0],
-                  fill: pointColor[0],
+                  stroke: that.echartOptions.pointColor[0],
+                  fill: that.echartOptions.pointColor[0],
                 },
                 silent: true,
               };
@@ -323,10 +300,7 @@ export default {
             renderItem: function (params, api) {
               const x0 = api.getWidth() / 2;
               const y0 = api.getHeight() * 0.5;
-              const r =
-                                (Math.min(api.getWidth(), api.getHeight()) /
-                                    2) *
-                                0.7;
+              const r = (Math.min(api.getWidth(), api.getHeight()) / 2) * 0.7;
               const point = that.getCirlPoint(
                 x0,
                 y0,
@@ -341,8 +315,8 @@ export default {
                   r: 2,
                 },
                 style: {
-                  stroke: pointColor[0],
-                  fill: pointColor[0],
+                  stroke: that.echartOptions.pointColor[0],
+                  fill: that.echartOptions.pointColor[0],
                 },
                 silent: true,
               };
@@ -356,7 +330,7 @@ export default {
             clockWise: false,
             center: ['50%', '50%'],
             radius: ['50%', '60%'],
-            data: echartData,
+            data: source,
             startAngle: -45,
             hoverAnimation: false,
             labelLine: {
@@ -364,7 +338,7 @@ export default {
                 length: 20,
                 length2: 20,
                 lineStyle: {
-                  color: '#DCDCDC',
+                  color: this.echartOptions.labelLineColor,
                 },
               },
             },
@@ -379,6 +353,7 @@ export default {
               borderRadius: 4,
               borderWidth: 1,
               borderColor: '#36B4FF',
+              ...this.echartOptions.label
             },
             itemStyle: {
               emphasis: {
@@ -397,17 +372,11 @@ export default {
                       {
                         //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
                         offset: 0,
-                        color:
-                                                    color[0][
-                                                      params.dataIndex
-                                                    ][0],
+                        color: params.data.color[0],
                       },
                       {
                         offset: 1,
-                        color:
-                                                    color[0][
-                                                      params.dataIndex
-                                                    ][1],
+                        color: params.data.color[1],
                       },
                     ]
                   );

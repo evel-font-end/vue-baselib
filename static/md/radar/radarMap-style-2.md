@@ -1,7 +1,7 @@
 ## RadarMapStyle2
 
 > Use
-```
+```javascript
 <radarMap-style-2
   sid='radarMap2'
   :source="source"
