@@ -123,6 +123,35 @@ export default new VueRouter({
         icon: 'ios-pie-outline',
         component: res => require(['@/components/pages/ranking'], res),
       },
+      {
+        path: '/tabs',
+        name: 'tabs',
+        title: 'tab标签',
+        icon: 'ios-pie-outline',
+        component: res => require(['@/components/pages/tabs'], res),
+      },
+      {
+        path: '/headline',
+        name: 'headline',
+        title: '标题',
+        icon: 'ios-pie-outline',
+        component: res => require(['@/components/pages/headline'], res),
+      },
+      {
+        path: '/date',
+        name: 'date',
+        title: '日期',
+        icon: 'ios-pie-outline',
+        component: res => require(['@/components/pages/date'], res),
+      },
+      {
+        path: '/pagination',
+        name: 'pagination',
+        title: '分页',
+        icon: 'ios-pie-outline',
+        component: res => require(['@/components/pages/pagination'], res),
+      },
+      
         /* {
           path: '/radar',
           name: 'radar',
