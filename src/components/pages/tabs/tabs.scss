@@ -1,45 +1,12 @@
-$showBoxWidth: calc(50% - 13.3px);
-$showBoxHeight: 350px;
-@function scaleHeight($realWidth, $realHeight) {
-  @return $showBoxWidth * $realHeight / $realWidth;
-}
-.content{
-  width: 100%;
-  height: 100%;
+
+.tabs-content{
+  // width: 100%;
+  // height: 100%;
   display: flex;
   flex-wrap: nowrap;
-}
-.show-item {
-  width: $showBoxWidth;
-  height: $showBoxHeight;
-  margin: 15px;
-  border-radius: 16px;
-  background-color: #fff;
-  padding: 15px;
-  box-sizing: border-box;
-  // position: relative;
-  &.bg-black {
-    background-color: #132845;
-    color: rgba(255, 255, 255, 0.8);
-  }
-  .title {
-    font-size: 16px;
-    font-family: PingFangSC;
-    font-weight: 600;
-    text-align: left;
-    color: #ffffff;
-  }
-  .item-content {
-    margin-top: 20px;
-    clear: both;
-    overflow: hidden;
-  }
-  .item-style {
-    display: flex;
-    z-index: -999;
-    align-items: center;
-  }
-  .style-coloum {
-    display: flex;
+  .flex-row {
+    /deep/ .content {
+      display: flex;
+    }
   }
 }

@@ -1,13 +1,15 @@
 <template>
-  <div class="tabs-style-content-1">tabs-style-content-1</div>
+  <div class="tabs-content">tabs-style-content-1</div>
 </template>
 
 <script>
 export default {
-
+  name: 'tabs-content-1',
 }
 </script>
 
 <style lang="scss" scoped>
-
+.tabs-content {
+  color: #fff;
+}
 </style>

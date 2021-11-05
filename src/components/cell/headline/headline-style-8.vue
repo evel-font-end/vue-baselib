@@ -24,8 +24,9 @@ export default {
 
 <style lang="scss" scoped>
 .headline-container {
-  width: 100%;
-  height: 100%;
+  // width: 100%;
+  // height: 100%;
+  margin-bottom: 20px;
   .headline-title {
     color: #fff;
     text-align: left;
@@ -62,51 +63,6 @@ export default {
       background-repeat: no-repeat;
       background-size: cover;
     }
-    // &::before {
-    //   position: absolute;
-    //   left: 0;
-    //   bottom: 0;
-    //   content: '';
-    //   height: 1px;
-    //   width: 409px;
-    //   background: linear-gradient(270deg,rgba(32,45,85,0.20), #108dff 98%);
-    // }
-
   }
 }
-// .box-title {
-//     color: #fff;
-//     text-align: left;
-//     height: pxrem(36px);
-//     padding-left: pxrem(10px);
-//     line-height: pxrem(36px);
-//     font-size: pxrem(16px);
-//     opacity: 1;
-//     background: linear-gradient(
-//       90deg,
-//       rgba(37, 125, 170, 0.32),
-//       rgba(39, 155, 178, 0)
-//     );
-//     border: 1px solid;
-//     border-right: none;
-//     border-image: linear-gradient(
-//         to right,
-//         rgba(34, 147, 214, 1),
-//         rgba(41, 234, 224, 0)
-//       )
-//       1 1;
-//     position: relative;
-//     .border-left {
-//       display: inline-block;
-//       width: 7px;
-//       height: 15px;
-//       position: absolute;
-//       top: 30%;
-//       left: -3px;
-
-//       background-image: url("~@/common/images/circuit/borderLeftDot.png");
-//       background-repeat: no-repeat;
-//       background-size: cover;
-//     }
-//   }
 </style>

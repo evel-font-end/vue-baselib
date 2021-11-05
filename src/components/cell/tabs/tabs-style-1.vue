@@ -55,6 +55,7 @@ export default {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  margin-bottom: 20px;
   .top_btns {
     display: inline-block;
     border-radius: 48px;

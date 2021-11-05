@@ -1,5 +1,4 @@
 <template>
-  <!-- 标题 -->
   <div class="outerBox">
     <div class="innerBox">
       <span>{{ title }}</span>
@@ -23,8 +22,9 @@ export default {
 
 <style>
 .outerBox {
-  width: 95%;
-  max-height: 63px;
+  /* width: 95%;
+  max-height: 63px; */
+  margin-bottom: 20px;
   background: linear-gradient(
     270deg,
     rgba(6,63,179,0),

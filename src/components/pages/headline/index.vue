@@ -1,47 +1,42 @@
 <template>
-  <div class="content">
-    <div class="show-item  bg-black">
-      <p class="title">一级标题</p>
-      <div class="item-content">
-        <headline1 :title="title1"></headline1>
-      </div>
-      <div class="item-content">
-        <headline2 :title="title2"></headline2>
-      </div>
-      <div class="item-content">
-        <headline3 :title="title3"></headline3>
-      </div>
-      <div class="item-content">
-        <headline4 :title="title4"></headline4>
-      </div>
-      <div class="item-content">
-        <headline5 :title="title5"></headline5>
-      </div>
-      <div class="item-content">
-        <headline6 :title="title6"></headline6>
-      </div>
-    </div>
-    <div class="show-item  bg-black">
-      <p class="title">二级标题</p>
-      <div class="item-content item-style">
-        <headline7 :title="title7"></headline7>
-        <headline8 :title="title8"></headline8>
-      </div>
-      <div class="item-content">
-        <headline-9 :title="title9"></headline-9>
-      </div>
-    </div>
-    <div class="show-item  bg-black">
-      <p class="title">三级标题</p>
-      <div class="item-content item-style">
-        <headline-10 :title="title10"></headline-10>
-        <headline-11></headline-11>
-      </div>
-    </div>
+  <div class="headline-content">
+    <box-container
+      class="bg-grey"
+      :spinShow="spinShow1"
+      title="一级标题"
+      :width="'calc(50% - 40px)'"
+      @showOptionHandler="showOption1('headline1')">
+      <headline1 :title="title1"></headline1>
+      <headline2 :title="title2"></headline2>
+      <headline3 :title="title3"></headline3>
+      <headline4 :title="title4"></headline4>
+      <headline5 :title="title5"></headline5>
+      <headline6 :title="title6"></headline6>
+    </box-container>
+    <box-container
+      class="bg-grey"
+      :spinShow="spinShow2"
+      title="二级标题"
+      :width="'calc(50% - 40px)'"
+      @showOptionHandler="showOption2('headline2')">
+      <headline7 :title="title7"></headline7>
+      <headline8 :title="title8"></headline8>
+      <headline-9 :title="title9"></headline-9>
+    </box-container>
+    <box-container
+      class="bg-grey flex-row"
+      :spinShow="spinShow3"
+      title="三级标题"
+      :width="'calc(50% - 20px)'"
+      @showOptionHandler="showOption3('headline3')">
+      <headline-10 :title="title10"></headline-10>
+      <headline-11 :title="title11"></headline-11>
+    </box-container>
   </div>
 </template>
 
 <script>
+import boxContainer from '../common/box-container-2';
 import headline1 from '../../cell/headline/headline-style-1.vue';
 import headline2 from '../../cell/headline/headline-style-2.vue';
 import headline3 from '../../cell/headline/headline-style-3.vue';
@@ -58,6 +53,9 @@ export default {
   name: 'headline',
   data() {
     return {
+      spinShow1: true,
+      spinShow2: true,
+      spinShow3: true,
       title1: '网络数据能力',
       title2: '设施详情',
       title3: '环境监测器本年度报警分析',
@@ -72,20 +70,34 @@ export default {
     }
   },
   components: {
-   headline1,
-   headline2,
-   headline3,
-   headline4,
-   headline5,
-   headline6,
-   headline7,
-   headline8,
-   headline9,
-   headline10,
-   headline11,
+    boxContainer,
+    headline1,
+    headline2,
+    headline3,
+    headline4,
+    headline5,
+    headline6,
+    headline7,
+    headline8,
+    headline9,
+    headline10,
+    headline11,
+  },
+   created() {
+    this.spinShow1 = false;
+    this.spinShow2 = false;
+    this.spinShow3 = false;
   },
   methods: {
-   
+    showOption1(ref) {
+      console.log(JSON.parse(JSON.stringify(this.$refs[ref].option)));
+    },
+    showOption2(ref) {
+      console.log(JSON.parse(JSON.stringify(this.$refs[ref].option)));
+    },
+    showOption3(ref) {
+      console.log(JSON.parse(JSON.stringify(this.$refs[ref].option)));
+    }
   }
 }
 </script>

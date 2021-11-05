@@ -1,7 +1,7 @@
 <template>
   <div class="headline-container">
     <div class="headline-title">
-     <span class="title">{{title}}</span>
+     <span>{{title}}</span>
     </div>
   </div>
 </template>
@@ -23,26 +23,24 @@ export default {
 
 <style lang="scss" scoped>
 .headline-container {
-  width: 100%;
-  height: 100%;
+  width: 70%;
+  // height: 100%;
+  margin-bottom: 20px;
   .headline-title {
     width: 100%;
-    height: 45px;
-    line-height: 45px;
-    text-align: center;
-    color: #ffffff;
-    background: url('./images/title-bg-2-1@2x.png') no-repeat;
+    padding: 12px 0 12px 0;
+    background-image: url('./images/title-bg-2-1@2x.png');
+    background-repeat: no-repeat;
     background-size: 100% 100%;
-    position: relative;
-    display: flex;
-    .title {
-      text-indent: 41px;
-      font-size: 30px;
+    box-sizing: border-box;
+     span {
+      font-size: 26px;
       font-family: YouSheBiaoTiHei;
       text-align: left;
       color: #ffffff;
       letter-spacing: 1px;
       text-shadow: 0px 2px 4px 0px #1c4696;
+      margin-left: 81px;
     }
   }
 }

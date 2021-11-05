@@ -67,9 +67,10 @@ export default {
 
 <style lang="scss" scoped>
 .tabs-container {
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
+  // width: 100%;
+  // height: 100%;
+  // box-sizing: border-box;
+  margin-bottom: 20px;
   .tabs-list {
     display: flex;
     li {
@@ -83,6 +84,7 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
+      color: #FFFFFF;
       .tabs-item-title {
         margin-left: 8px;
       }
@@ -94,12 +96,6 @@ export default {
           color: #fff !important;
         }
       }
-      //   &:hover {
-      //   background: none;
-      //   background: url('./images/tabs-2-1.png') no-repeat;
-      //   background-size: 100% 100%;
-      //   z-index: 9999;
-      // }
     }
   }
 }
