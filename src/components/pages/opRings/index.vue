@@ -46,7 +46,8 @@
       @showOptionHandler='showOption("opRings6")'>
       <opRings-style-6
         sid='opRings6'
-        ref='opRings6' />
+        ref='opRings6'
+      />
     </box-container>
   </div>
 </template>

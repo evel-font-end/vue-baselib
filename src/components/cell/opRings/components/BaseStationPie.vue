@@ -19,11 +19,11 @@ export default {
       default: () => [
         {
           offset: 0,
-          color: '#ffb057',
+          color: 'red',
         },
         {
           offset: 1,
-          color: '#ff8056',
+          color: 'red',
         },
       ],
     },

@@ -101,7 +101,7 @@ export default {
         legend: {
           type: 'plain',
           bottom: '1%',
-          left: 'auto',
+          left: 'center',
           orient: 'horizontal', //横向
           itemWidth: 10, // 设置宽度
           itemHeight: 10, // 设置高度

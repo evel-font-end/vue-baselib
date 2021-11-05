@@ -1,16 +1,18 @@
-## OpRingsStyle4
+## OpRingsStyle5
 
 > Use
 ```javascript
-<opRings-style-4
-  sid='opRings4'
+<opRings-style-5
+  sid='opRings5'
   :source="source"
-  ref='opRings4'
+  ref='opRings5'
 />
 const source = [
-  { name: '高', value: 333, color: ['#FFF2C9', '#FF4038']},
-  { name: '中', value: 333, color: ['#69B5FF', '#38DDFF']},
-  { name: '低', value: 333, color: ['#69FFFE', '#10AA7F']},
+  { value: 100, name: '空间资源', color: '#5647C9' },
+  { value: 100, name: '管线资源', color: '#5D51FF' },
+  { value: 100, name: '数据资源', color: '#5B8DF9' },
+  { value: 100, name: '接入资源', color: '#46BDFF' },
+  { value: 100, name: '核心资源', color: '#1EDFFF' },
 ]
 ```
 
@@ -18,7 +20,7 @@ const source = [
 
 参数|说明|类型|可选值|默认值
 -|-|-|-|-|
-sid|组件id|string|-|'opRings4'
+sid|组件id|string|-|'opRings5'
 source|数据源|array|-|source
 options|配置项|object|-|options
 
@@ -28,7 +30,7 @@ options|配置项|object|-|options
 -|-|-|-|-|
 name|名称|string|-|'空闲'
 value|名称|number|-|0
-color|颜色|array|-|['#20FBAA', '#09EFF5']
+color|颜色|string|-|'5647C9'
 
 > options
 

@@ -14,25 +14,40 @@ export default {
       type: String,
       default: '端口占有率',
     },
-    value: {
+    source: {
       type: [Array, Object],
       default: () => [
-        { value: 100, name: '空间资源' },
-        { value: 100, name: '管线资源' },
-        { value: 100, name: '数据资源' },
-        { value: 100, name: '接入资源' },
-        { value: 100, name: '核心资源' },
+        { value: 100, name: '空间资源', color: '#1EDFFF' },
+        { value: 100, name: '管线资源', color: '#84FFC9' },
+        { value: 100, name: '数据资源', color: '#5647C9' },
+        { value: 100, name: '接入资源', color: '#5B8DF9' },
+        { value: 100, name: '核心资源', color: '#46BDFF' },
       ],
+    },
+    options: {
+      type: Object,
+      default() {
+        return {
+        }
+      }
     },
   },
   data() {
     return {
       chart: null,
       option: {},
+      echartOptions: {
+        layerStyle: {
+          image: layer,
+          width: 102,
+          height: 91,
+        },
+        legendStyle: {}
+      }
     }
   },
   watch: {
-    value(newVal) {
+    source(newVal) {
       if (this.chart === null) {
         this.initChart()
       }
@@ -43,7 +58,8 @@ export default {
   },
   mounted() {
     this.chart = this.initChart()
-    this.updateChart(this.value)
+    this.echartOptions = Object.assign(this.echartOptions, this.options)
+    this.updateChart(this.source)
   },
   methods: {
     initChart() {
@@ -54,17 +70,7 @@ export default {
       })
       return _chart
     },
-    updateChart(value) {
-      const lineGradient = [
-        {
-          offset: 0,
-          color: '#0dadee',
-        },
-        {
-          offset: 1,
-          color: '#05edfc',
-        },
-      ]
+    updateChart(source) {
       this.option = {
         tooltip: {
           trigger: 'item',
@@ -79,11 +85,7 @@ export default {
             {
               type: 'image',
               z: 3,
-              style: {
-                image: layer,
-                width: 102,
-                height: 91,
-              },
+              style: this.echartOptions.layerStyle,
               left: 'center',
               top: '28%',
             },
@@ -98,7 +100,7 @@ export default {
           itemWidth: 8, // 设置宽度
           itemHeight: 8, // 设置高度
           itemGap: 12, // 设置间距
-          formatter: ['{a|{name}}'].join('\n'),
+          formatter: ['{name|{name}}'].join('\n'),
           textStyle: {
             fontSize: 12,
             color: '#4A8BBB',
@@ -107,11 +109,12 @@ export default {
             lineHeight: 12,
             rich: {
               //这里定义a的样式
-              a: {
+              name: {
                 width: 60,
                 color: '#4a8bbb',
               },
             },
+            ...this.echartOptions.legendStyle
           },
           // 修改翻页的样式
           // pageIconColor: "#fff", // 翻页下一页的三角按钮颜色
@@ -121,19 +124,6 @@ export default {
           //   color: "#fff"
           // }
         },
-        color: [
-          '#5647C9',
-          '#5D51FF',
-          '#5B8DF9',
-          '#46BDFF',
-          '#1EDFFF',
-          '#84FFC9',
-          '#ABEA7C',
-          '#DFFF84',
-          '#FFDE84',
-          '#FF9584',
-          '#CB84FF',
-        ],
         series: [
           {
             name: '饼图',
@@ -155,7 +145,14 @@ export default {
             labelLine: {
               show: true,
             },
-            data: value,
+            data: source.map(sourceItem => {
+              return {
+                ...sourceItem,
+                itemStyle: {
+                  color: sourceItem.color
+                }
+              }
+            }),
           },
         ],
       }
