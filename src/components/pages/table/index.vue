@@ -9,7 +9,7 @@
             <table-style-2 :orderTableDataList="orderTableDataList2" ref="table2" />
         </box-container>
         <box-container :spinShow='spinShow1' :title="'操作类表格'" class='bg-grey' :width="'100%'" @showOptionHandler='showOption("table3")'>
-            <table-style-3 :orderTableDataList="orderTableDataList3" ref="table3" />
+            <table-style-3 :orderTableDataList="orderTableDataList3" @operatorhandleEdit="operatorhandleEdit" @tablehangClick="tablehangClick" ref="table3" />
         </box-container>
     </div>
 </template>
@@ -285,6 +285,12 @@ export default {
     methods:{
         showOption(ref) {
             this.$store.commit('UPDATE_DIALOG_SHOW', this.$refs[ref].$options._componentTag);
+        },
+        tablehangClick(data){
+            console.log('点击勾选获取的勾选数据', data)
+        },
+        operatorhandleEdit(index, row, text){
+            console.log('点击操作', index, row, text)
         },
     }
 }

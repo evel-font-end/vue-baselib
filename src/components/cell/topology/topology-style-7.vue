@@ -2,8 +2,8 @@
     <div class="topology7" id="topology7">
         <div class="web_present">
             <el-row type="flex" justify="center" :gutter="50">
-                <el-col v-for="(listItem, listIndex) in (webPreentList)" :key="listItem.name" :span="spanOption[listIndex]">
-                    <div :class="classOption[listIndex]">
+                <el-col v-for="(listItem, listIndex) in (webPreentList)" :key="listIndex" :span="listItem.span">
+                    <div :class="listItem.classOption">
                         <div class="content-text">
                             <p class="p1">{{listItem.num}}</p>
                             <p class="p2">{{listItem.name}}</p>
@@ -22,19 +22,20 @@ export default {
     components:{
     },
     props: {
-        
+        webPreentList:{
+            type: Array,
+            default: [
+                {name: '任务平均执行时长', num: '9.75min', span: 3, classOption:"grid-net-content-side"},
+                {name: '已用空间', num: '69.92PiB', span: 4, classOption:"grid-net-content"},
+                {name: '总空间', num: '119.57PiB', span: 5, classOption:"grid-net-center"},
+                {name: '正在执行任务', num: '374个', span: 4, classOption:"grid-net-content"},
+                {name: '等待平均时延', num: '3.57s', span: 3, classOption:"grid-net-content-side"}
+            ]
+        }
     },
     data(){
         return{
-            webPreentList: [
-                {name: '任务平均执行时长', num: '9.75min'},
-                {name: '已用空间', num: '69.92PiB'},
-                {name: '总空间', num: '119.57PiB'},
-                {name: '正在执行任务', num: '374个'},
-                {name: '等待平均时延', num: '3.57s'}
-            ],
-            spanOption: [3, 4, 5, 4, 3],
-            classOption: ['grid-net-content-side', 'grid-net-content', 'grid-net-center', 'grid-net-content','grid-net-content-side'],
+            
         }
     },
     mounted(){

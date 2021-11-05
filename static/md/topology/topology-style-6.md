@@ -1,15 +1,59 @@
 ## CrumbsStyle2
 
 > Use
-```
-<crumbs-style-2 :breadcrumbList="breadcrumbListData2" :crumbsIcon="'el-icon-arrow-right'" ref="crumbs2"></crumbs-style-2>
+```JavaScript
+<topology-style-6 :choiceProvince="choiceProvince" :echartsDataList="echartsDataList" ref="topology6" />
+
+const choiceProvince: "全国"
+const echartsDataList:[
+    {
+        name: "北京",
+        numValue: "46161",
+        value: 1,
+    },
+    {
+        name: "北京",
+        numValue: "46161",
+        value: 1,
+    },
+    {
+        name: "北京",
+        numValue: "46161",
+        value: 1,
+    },
+    {
+        name: "北京",
+        numValue: "46161",
+        value: 1,
+    },
+    {
+        name: "北京",
+        numValue: "46161",
+        value: 1,
+    },
+    {
+        name: "北京",
+        numValue: "46161",
+        value: 1,
+    },
+    {
+        name: "北京",
+        numValue: "46161",
+        value: 1,
+    },
+    {
+        name: "北京",
+        numValue: "46161",
+        value: 1,
+    },
+], 
 ```
 
 > Props
 
 参数|说明|类型|可选值|默认值
--|-|-|-|-|
-breadcrumbList|面包屑数组|Array|-|[{ path: '/line', title: '折线图' }, { path: '/crumbs', title: '面包屑1' }]
-crumbsIcon|分隔符(字体图标)|string|-|'el-icon-arrow-right'
+-|-|-|-|-
+choiceProvince|中间文案|string|-|-
+echartsDataList|子节点数据|Array|-|-
 
 

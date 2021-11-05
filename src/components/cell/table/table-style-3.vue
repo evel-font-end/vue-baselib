@@ -1,7 +1,12 @@
 <template>
     <div class="work_order_table3" id="table3">
-        <el-table :data="orderTableDataList.dataList" :empty-text="emptyText" @selection-change="handleSelectionChange">
-            <el-table-column type="selection" width="55">
+        <el-table 
+            :data="orderTableDataList.dataList" 
+            :empty-text="emptyText" 
+            :element-loading-text="loadingText"
+            @selection-change="handleSelectionChange"
+            >
+            <el-table-column v-if="tableSelect" type="selection" width="55">
             </el-table-column>
             <template  v-for="(item) in orderTableDataList.titleList" >
                 <el-table-column :prop="item.field"  :label="item.title" :show-overflow-tooltip="showOverflowTooltip" :width="item.width" :key="item.field" >
@@ -48,11 +53,19 @@ export default {
             type: String,
             default: "暂无数据"
         },
+        loadingText: { // 数据加载时显示的文本内容
+            type: String,
+            default: "数据加载中...",
+        },
         showOverflowTooltip: { // 当内容过长被隐藏时显示 tooltip
             type: Boolean,
             default: true,
         },
         operator: { // 是否显示操作列
+            type: Boolean,
+            default: true,
+        },
+        tableSelect: { // 表格是否显示可勾选
             type: Boolean,
             default: true,
         },
@@ -74,14 +87,11 @@ export default {
     },
     methods:{
         handleSelectionChange(data){
-            console.log('单行选择：',data)
+            this.$emit('tablehangClick', data)
         },
         handleEdit(index, row, text) {
-            console.log(index, row, text);
+            this.$emit('operatorhandleEdit', index, row, text)
         },
-        handleDelete(index, row) {
-            console.log(index, row);
-        }
     }
 };
 </script>
