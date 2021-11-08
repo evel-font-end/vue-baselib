@@ -1,11 +1,16 @@
 <template>
-<div class="ranking-container">
-  <VueSeamlessScroll :class-option="scrollOptions" :data="value" class="seamless-box">
-    <div v-for='(item, index) in value' :key='index'>
+<div class="ranking-container" :class="echartOptions.class">
+  <VueSeamlessScroll :class-option="{ ...scrollOptions, ...echartOptions.scrollOptions}" :data="source" class="seamless-box">
+    <div v-for='(item, index) in source' :key='index'>
       <div class='item'>
         <div class='num'>{{index + 1}}</div>
         <!-- <div class="content"> -->
-          <CityBldNum class='content' :obj='item' />
+          <CityBldNum
+          class='content'
+          :class="echartOptions.childClass"
+          :isfill="echartOptions.isfill"
+          :obj='item'
+          />
         <!-- </div> -->
       </div>
     </div>
@@ -26,19 +31,26 @@ export default {
       type: String,
       default: () => 'ranking1',
     },
-    value: {
+    source: {
       type: [Array, Object],
       default: () => [
-        { text: '库水位', value: 100, score: '20', isfill: true },
-        { text: '内部位移', value: 100, score: '20', isfill: true },
-        { text: '内部位移', value: 100, score: '20', isfill: true },
-        { text: '浸润线', value: 100, score: '20', isfill: true },
-        { text: '干滩监测', value: 100, score: '20', isfill: true },
-        { text: '干滩监测', value: 100, score: '20', isfill: true },
-        { text: '干滩监测', value: 100, score: '20', isfill: true },
-        { text: '干滩监测', value: 100, score: '20', isfill: true },
-        { text: '干滩监测', value: 100, score: '20', isfill: true },
+        { name: '库水位', value: 100, score: '20' },
+        { name: '内部位移', value: 100, score: '20' },
+        { name: '内部位移', value: 100, score: '20' },
+        { name: '浸润线', value: 100, score: '20' },
+        { name: '干滩监测', value: 100, score: '20' },
+        { name: '干滩监测', value: 100, score: '20' },
+        { name: '干滩监测', value: 100, score: '20' },
+        { name: '干滩监测', value: 100, score: '20' },
+        { name: '干滩监测', value: 100, score: '20' },
       ],
+    },
+    options: {
+      type: Object,
+      default() {
+        return {
+        }
+      }
     },
   },
 
@@ -53,14 +65,21 @@ export default {
         singleHeight: 0, // 单步运动停止的高度(默认值0是无缝不停止的滚动) direction => 0/1
         singleWidth: 0, // 单步运动停止的宽度(默认值0是无缝不停止的滚动) direction => 2/3
         waitTime: 1000, // 单步运动停止的时间(默认值1000ms)
+      },
+      echartOptions: {
+        scrollOptions: {
+        },
+        isfill: true,
+        class: '',
+        childClass: ''
       }
     }
   },
-  watch: {
-    value(newVal) {
-      this.init(newVal)
-    },
-  },
+  // watch: {
+  // source(newVal) {
+  //   this.init(newVal)
+  // },
+  // },
   created() {
   },
   mounted() {
@@ -68,6 +87,7 @@ export default {
   },
   methods: {
     init() {
+      this.echartOptions = Object.assign(this.echartOptions, this.options)
     },
   },
 }

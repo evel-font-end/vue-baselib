@@ -4,7 +4,7 @@ import * as types from '../mutation-types'
 
 const state = {
   activeMenu: localStorage.getItem('VSC_active_menu') || 'pie',
-  dialogShow: localStorage.getItem('dialogShow') || false,
+  dialogShow: localStorage.getItem('dialogShow') || { name: false, time: Date.now() + (1000 * 60 * 60 * 24) },
   dialogMd: localStorage.getItem('dialogMd') || '',
 }
 
@@ -39,8 +39,9 @@ const mutations = {
       // localStorage.setItem('dialogMd', '')
       // state.dialogMd = ''
     }
-    localStorage.setItem('dialogShow', payload)
-    state.dialogShow = payload
+    const dialogShow = { name: payload, time: Date.now() + (1000 * 60 * 60 * 24) }
+    localStorage.setItem('dialogShow', dialogShow)
+    state.dialogShow = dialogShow
   },
 }
 

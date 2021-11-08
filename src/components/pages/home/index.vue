@@ -70,7 +70,8 @@ export default {
       return ['sider-bar', this.isCollapsed ? 'collapsed-menu' : ''];
     },
     dialogVisible() {
-      return (!!this.$store.state.Home.dialogShow) || false;
+      const dialogShow = this.$store.state.Home.dialogShow
+      return !!dialogShow && dialogShow.time >= Date.now() ? dialogShow.name : false;
     },
     htmlValue() {
       return this.$store.state.Home.dialogMd || '';
