@@ -2,8 +2,8 @@
     <div class="topology1" id="topology1">
         <div class="topology1_contain">
             <div class="earth">
-                <div class="building-total">{{buildingTotal}}</div>
-                <div class="building-total-title">全国楼宇总数(栋)</div>
+                <div class="building-total">{{buildingData.buildingTotal}}</div>
+                <div class="building-total-title">{{buildingData.buildingTitle}}</div>
             </div>
             <div class="cone">
                 <span class="circular1"></span>
@@ -67,42 +67,55 @@
 export default {
     name: "TopologyStyle1",
     props: {
+        buildingData:{
+            type: Object,
+            default: ()=>{
+                return {
+                    buildingTotal: 84990,
+                    buildingTitle: "全国楼宇总数(栋)"
+                }
+            }
+        },
+        buildingList:{
+            type: Array,
+            default: ()=>{
+                return [
+                    {
+                        title: 'A类楼宇',
+                        number: 9600,
+                        riTong: '1日通',
+                        icon: 'icon-Alei'
+                    },
+                    {
+                        title: 'B类楼宇',
+                        number: 8493,
+                        riTong: '3日通',
+                        icon: 'icon-Blei'
+                    },
+                    {
+                        title: 'C类楼宇',
+                        number: 749,
+                        riTong: '6日通',
+                        icon: 'icon-Clei'
+                    },
+                    {
+                        title: 'D类楼宇',
+                        number: 490,
+                        riTong: '10日通',
+                        icon: 'icon-Dlei'
+                    },
+                    {
+                        title: 'N类楼宇',
+                        number: 30,
+                        riTong: '15日通',
+                        icon: 'icon-Nlei'
+                    },
+                ]
+            }
+        }
     },
     data(){
         return{
-            buildingTotal: 84990,
-            buildingList:[
-                {
-                    title: 'A类楼宇',
-                    number: 9600,
-                    riTong: '1日通',
-                    icon: 'icon-Alei'
-                },
-                {
-                    title: 'B类楼宇',
-                    number: 8493,
-                    riTong: '3日通',
-                    icon: 'icon-Blei'
-                },
-                {
-                    title: 'C类楼宇',
-                    number: 749,
-                    riTong: '6日通',
-                    icon: 'icon-Clei'
-                },
-                {
-                    title: 'D类楼宇',
-                    number: 490,
-                    riTong: '10日通',
-                    icon: 'icon-Dlei'
-                },
-                {
-                    title: 'N类楼宇',
-                    number: 30,
-                    riTong: '15日通',
-                    icon: 'icon-Nlei'
-                },
-            ],
         }
     },
     mounted(){
@@ -135,6 +148,7 @@ export default {
                 color: #ffffff;
                 text-shadow: 0 2px 4px  #014253;
                 width: 117px;
+                text-align: center;
                 height: 43px;
                 opacity: 1;
                 background: linear-gradient(270deg,rgba(1,95,125,0.00), rgba(0,114,191,0.85) 49%, rgba(1,85,171,0.00));

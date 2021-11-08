@@ -16,17 +16,18 @@ export default {
 
 <style lang="scss" scoped>
 .headline-container {
-   header {
+  margin-bottom: 20px;
+  header {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+    color: #FFFFFF;
     .box-icon {
       display: inline-block;
       width: 26px;
       height: 26px;
       margin-right: 8px;
       font-size: 22px;
-      background: radial-gradient(rgba(0,255,255,0.43), rgba(62,181,255,0.14), rgba(77,163,255,0.00));
       border-radius: 50%;
       line-height: 26px;
       text-align: center;

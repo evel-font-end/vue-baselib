@@ -13,52 +13,17 @@ import echarts from "echarts"; //引入echarts
 export default {
     name: "TopologyStyle6",
     props: {
+        choiceProvince:{
+            type: String,
+            default: "全国"
+        },
+        echartsDataList:{
+            type: Array,
+        }
     },
     data(){
         return{
-            choiceProvince: "全国",
-            echartsDataList:[
-                {
-                    name: "北京",
-                    numValue: "46161",
-                    value: 1,
-                },
-                {
-                    name: "北京",
-                    numValue: "46161",
-                    value: 1,
-                },
-                {
-                    name: "北京",
-                    numValue: "46161",
-                    value: 1,
-                },
-                {
-                    name: "北京",
-                    numValue: "46161",
-                    value: 1,
-                },
-                {
-                    name: "北京",
-                    numValue: "46161",
-                    value: 1,
-                },
-                {
-                    name: "北京",
-                    numValue: "46161",
-                    value: 1,
-                },
-                {
-                    name: "北京",
-                    numValue: "46161",
-                    value: 1,
-                },
-                {
-                    name: "北京",
-                    numValue: "46161",
-                    value: 1,
-                },
-            ], 
+            
         }
     },
     mounted(){

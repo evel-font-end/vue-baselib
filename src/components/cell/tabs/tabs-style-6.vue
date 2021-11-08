@@ -43,7 +43,7 @@ export default {
         },
         {
           icon: 'iconfont icon-guanglan',
-          title: '光缆网络',
+          title: '光缆',
           style: {color: '#3fd6f1'}
         },
       ],
@@ -63,11 +63,13 @@ export default {
 <style lang="scss" scoped>
 .tabs-container {
   box-sizing: border-box;
+  margin-bottom: 20px;
   .tabs-list {
     li {
       list-style: none;
       width: 60px;
       height: 61px;
+      color: #fff;
       background: url('./images/tabs-6-2-normal.png') no-repeat;
       background-size: 100% 100%;
       margin: 0 5px;

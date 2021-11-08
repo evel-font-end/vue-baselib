@@ -46,122 +46,24 @@
 export default {
     name: "TopologyStyle2",
     props: {
+        activeIndex:{
+            type: Number,
+            default: 0
+        },
+        dataList:{
+            type: Array,
+        }
     },
     data(){
         return{
-            activeIndex:0,
-            dataList: {
-                "dataProcessing": {
-                    title: "数据加工",
-                    image: require('../../../assets/image/serve.png'),
-                    subData: [
-                        {
-                            image: require('../../../assets/image/hexinqu.png'),
-                            title: "核心区",
-                            count: 135,
-                            rightObj: {
-                                gaojin: 0,
-                                lianjie: 129,
-                                neicun: '256G',
-                                cpu: '8core*4',
-                                cunchu : '100G',
-                            },
-                        },
-                        {
-                            image: require('../../../assets/image/yonghuqu.png'),
-                            title: "用户区",
-                            count: 502,
-                            rightObj: {
-                                gaojin: 0,
-                                lianjie: 490,
-                                neicun: '64G',
-                                cpu: '16vCPU',
-                                cunchu : '100G',
-                            },
-                            
-                        },
-                        {
-                            image: require('../../../assets/image/dmz.png'),
-                            title: "DMZ",
-                            count: 14,
-                            rightObj: {
-                                gaojin: 0,
-                                lianjie: 9,
-                                neicun: '16G',
-                                cpu: '8vCPU',
-                                cunchu : '100G',
-                            },
-                            
-                        }
-                    ],
-                    listData:[
-                        {
-                            list:[
-                                {
-                                    text:"01",
-                                },
-                                {
-                                    text:"02",
-                                },
-                                {
-                                    text:"03",
-                                },
-                                {
-                                    text:"04",
-                                },
-                                {
-                                    text:"其他",
-                                },
-                            ]
-                        },
-                        {
-                            list:[
-                                {
-                                    text:"ss",
-                                },
-                                {
-                                    text:"0badb2",
-                                },
-                                {
-                                    text:"cca03",
-                                },
-                                {
-                                    text:"0dddadd4",
-                                },
-                                {
-                                    text:"其他dd1",
-                                },
-                            ]
-                        },
-                        {
-                            list:[
-                                {
-                                    text:"0aa",
-                                },
-                                {
-                                    text:"0bb2",
-                                },
-                                {
-                                    text:"cc03",
-                                },
-                                {
-                                    text:"0dd4",
-                                },
-                                {
-                                    text:"其他1",
-                                },
-                            ]
-                        }
-                    ]
-                },
-            },
+            
         }
     },
     mounted(){
     },
     methods:{
         subItemClickFn(index){
-            this.activeIndex = index
+            this.$emit('subItem2ClickFn', index)
         }
     }
 };
@@ -176,7 +78,8 @@ export default {
         justify-content: space-between;
     }
     li {
-        margin: 0 auto;
+        margin-left: 20%;
+        margin-top: 10%;
         display: flex;
         color: white;
         align-items: center;

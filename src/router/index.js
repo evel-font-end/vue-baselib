@@ -9,6 +9,9 @@ export default new VueRouter({
     {
       path: '/',
       name: 'home',
+      meta:{
+        title: 'home'
+      },
       component: res => require(['@/components/pages/home'], res),
       redirect: '/bar',
       children: [{
@@ -16,12 +19,18 @@ export default new VueRouter({
         name: 'bar',
         title: '混合图表',
         icon: 'ios-repeat',
+        meta:{
+          title: '混合图表'
+        },
         component: res => require(['@/components/pages/bar'], res),
       }, {
         path: '/line',
         name: 'line',
         title: '折线图',
         icon: 'arrow-graph-up-right',
+        meta:{
+          title: '折线图'
+        },
         component: res => require(['@/components/pages/line'], res),
       },
       {
@@ -29,6 +38,9 @@ export default new VueRouter({
         name: 'barChart',
         title: '柱状图',
         icon: 'md-stats',
+        meta:{
+          title: '柱状图'
+        },
         component: res => require(['@/components/pages/barChart'], res),
       },
       {
@@ -36,6 +48,9 @@ export default new VueRouter({
         name: 'indexData',
         title: '指标数据',
         icon: 'md-stats',
+        meta:{
+          title: '指标数据'
+        },
         component: res => require(['@/components/pages/indexData'], res),
       },
       {
@@ -43,6 +58,9 @@ export default new VueRouter({
         name: 'pie',
         title: '饼状图',
         icon: 'ios-pie-outline',
+        meta:{
+          title: '饼状图'
+        },
         component: res => require(['@/components/pages/pie'], res),
       },
       {
@@ -50,6 +68,9 @@ export default new VueRouter({
         name: 'board',
         title: '仪表盘',
         icon: 'ios-pie-outline',
+        meta:{
+          title: '仪表盘'
+        },
         component: res => require(['@/components/pages/board'], res),
       },
       {
@@ -107,6 +128,9 @@ export default new VueRouter({
         name: 'radarMap',
         title: '雷达图',
         icon: 'ios-pie-outline',
+        meta:{
+          title: '雷达图'
+        },
         component: res => require(['@/components/pages/radarMap'], res),
       },
       {
@@ -114,6 +138,9 @@ export default new VueRouter({
         name: 'opRings',
         title: '环形图',
         icon: 'ios-pie-outline',
+        meta:{
+          title: '环形图'
+        },
         component: res => require(['@/components/pages/opRings'], res),
       },
       {
@@ -121,6 +148,9 @@ export default new VueRouter({
         name: 'ranking',
         title: '排名',
         icon: 'ios-pie-outline',
+        meta:{
+          title: '排名'
+        },
         component: res => require(['@/components/pages/ranking'], res),
       },
       {

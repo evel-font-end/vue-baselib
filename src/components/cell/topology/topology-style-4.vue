@@ -10,13 +10,13 @@
                     </div>
                     <div class="sp01-style-tile">
                     <div class="sp01-style-text">
-                        <span>{{bureauStation.speciality}}</span>
+                        <span>{{data.bureauStation.speciality}}</span>
                         <span class="up-wrap">
-                            <img src="../../../assets/image/up_icon.png" alt="" /> {{ bureauStation.num }}
+                            <img src="../../../assets/image/up_icon.png" alt="" /> {{ data.bureauStation.num }}
                         </span>
                     </div>
                     <div class="sp01-style-data">
-                        <countTo :startVal="Number(bureauStation.totalNum) || 0" :endVal="Number(bureauStation.totalNum) || 0" :duration="3000" separator=""></countTo>
+                        <countTo :startVal="Number(data.bureauStation.totalNum) || 0" :endVal="Number(data.bureauStation.totalNum) || 0" :duration="3000" separator=""></countTo>
                     </div>
                     </div>
                 </div>
@@ -27,13 +27,13 @@
                     </div>
                     <div class="sp1-style-tile">
                     <div class="sp1-style-text">
-                        <span>{{opticalFiberPath.speciality}}</span>
+                        <span>{{data.opticalFiberPath.speciality}}</span>
                         <span class="up-wrap">
-                        <img src="../../../assets/image/up_icon.png" alt="" /> {{ opticalFiberPath.num }}
+                        <img src="../../../assets/image/up_icon.png" alt="" /> {{ data.opticalFiberPath.num }}
                         </span>
                     </div>
                     <div class="sp1-style-data">
-                        <countTo :startVal="Number(opticalFiberPath.totalNum) || 0" :endVal="Number(opticalFiberPath.totalNum) || 0" :duration="3000" separator=""></countTo>
+                        <countTo :startVal="Number(data.opticalFiberPath.totalNum) || 0" :endVal="Number(data.opticalFiberPath.totalNum) || 0" :duration="3000" separator=""></countTo>
                     </div>
                     </div>
                 </div>
@@ -44,13 +44,13 @@
                     </div>
                     <div class="sp2-style-tile">
                     <div class="sp2-style-text">
-                        <span>{{standardAddress.speciality}}</span>
+                        <span>{{data.standardAddress.speciality}}</span>
                         <span class="up-wrap">
-                        <img src="../../../assets/image/up_icon.png" alt="" /> {{ standardAddress.num }}
+                        <img src="../../../assets/image/up_icon.png" alt="" /> {{ data.standardAddress.num }}
                         </span>
                     </div>
                     <div class="sp2-style-data">
-                        <countTo :startVal="Number(standardAddress.totalNum) || 0" :endVal="Number(standardAddress.totalNum) || 0" :duration="3000" separator=""></countTo>
+                        <countTo :startVal="Number(data.standardAddress.totalNum) || 0" :endVal="Number(data.standardAddress.totalNum) || 0" :duration="3000" separator=""></countTo>
                     </div>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                     <img src="../../../assets/image/sp_0.png" alt="" />
                     <!-- <div class="title">资源总数</div>
                     <div class="num">
-                        <countTo :startVal="Number(bureauStation.totalNum + opticalFiberPath.totalNum + standardAddress.totalNum + computerRoom.totalNum + buildingObj.totalNum + circuitObj.totalNum) || 0" :endVal="Number(bureauStation.totalNum + opticalFiberPath.totalNum + standardAddress.totalNum + computerRoom.totalNum + buildingObj.totalNum + circuitObj.totalNum) || 0" :duration="3000" separator=""></countTo>
+                        <countTo :startVal="Number(data.bureauStation.totalNum + data.opticalFiberPath.totalNum + data.standardAddress.totalNum + data.computerRoom.totalNum + data.buildingObj.totalNum + data.circuitObj.totalNum) || 0" :endVal="Number(data.bureauStation.totalNum + data.opticalFiberPath.totalNum + data.standardAddress.totalNum + data.computerRoom.totalNum + data.buildingObj.totalNum + data.circuitObj.totalNum) || 0" :duration="3000" separator=""></countTo>
                     </div> -->
                     </div>
                 </div>
@@ -106,13 +106,13 @@
                     </div>
                     <div class="sp02-style-tile">
                         <div class="sp02-style-text">
-                            <span>{{computerRoom.speciality}}</span>
+                            <span>{{data.computerRoom.speciality}}</span>
                             <span class="up-wrap">
-                            <img src="../../../assets/image/up_icon.png" alt="" /> {{ computerRoom.num }}
+                            <img src="../../../assets/image/up_icon.png" alt="" /> {{ data.computerRoom.num }}
                             </span>
                         </div>
                         <div class="sp02-style-data">
-                            <countTo :startVal="Number(computerRoom.totalNum) || 0" :endVal="Number(computerRoom.totalNum) || 0" :duration="3000" separator=""></countTo>
+                            <countTo :startVal="Number(data.computerRoom.totalNum) || 0" :endVal="Number(data.computerRoom.totalNum) || 0" :duration="3000" separator=""></countTo>
                         </div>
                     </div>
                 </div>
@@ -123,13 +123,13 @@
                     </div>
                     <div class="sp6-style-tile">
                     <div class="sp6-style-text">
-                        <span>{{buildingObj.speciality}}</span>
+                        <span>{{data.buildingObj.speciality}}</span>
                         <span class="up-wrap">
-                        <img src="../../../assets/image/up_icon.png" alt="" /> {{ buildingObj.num }}
+                        <img src="../../../assets/image/up_icon.png" alt="" /> {{ data.buildingObj.num }}
                         </span>
                     </div>
                     <div class="sp6-style-data">
-                        <countTo :startVal="Number(buildingObj.totalNum) || 0" :endVal="Number(buildingObj.totalNum) || 0" :duration="3000" separator=""></countTo>
+                        <countTo :startVal="Number(data.buildingObj.totalNum) || 0" :endVal="Number(data.buildingObj.totalNum) || 0" :duration="3000" separator=""></countTo>
                     </div>
                     </div>
                 </div>
@@ -140,13 +140,13 @@
                     </div>
                     <div class="sp5-style-tile">
                         <div class="sp5-style-text">
-                            <span>{{circuitObj.speciality}}</span>
+                            <span>{{data.circuitObj.speciality}}</span>
                             <span class="up-wrap">
-                            <img src="../../../assets/image/up_icon.png" alt="" /> {{ circuitObj.num }}
+                            <img src="../../../assets/image/up_icon.png" alt="" /> {{ data.circuitObj.num }}
                             </span>
                         </div>
                         <div class="sp5-style-data">
-                            <countTo :startVal="Number(circuitObj.totalNum) || 0" :endVal="Number(circuitObj.totalNum) || 0" :duration="3000" separator=""></countTo>
+                            <countTo :startVal="Number(data.circuitObj.totalNum) || 0" :endVal="Number(data.circuitObj.totalNum) || 0" :duration="3000" separator=""></countTo>
                         </div>
                     </div>
                 </div>
@@ -164,52 +164,47 @@ export default {
         countTo,
     },
     props: {
-        list: {
+        data:{
             type: Object,
-            default: () => {
+            default:function(){
                 return {
-                    spaceResource: 0,
-                    tubeResource: 0,
-                    transmissionResource: 0,
-                    dataResource: 0,
-                    accessNetworkResource: 0,
-                    mobileResource: 0,
+                    bureauStation: {
+                        speciality:'局站',
+                        num:13459,
+                        totalNum: 0,
+                    },
+                    opticalFiberPath: {
+                        speciality:'楼宇',
+                        num:139,
+                        totalNum: 1000,
+                    },
+                    standardAddress: {
+                        speciality:'光纤光路',
+                        num:352,
+                        totalNum: 20000,
+                    },
+                    computerRoom: {
+                        speciality:'机房',
+                        num:3452,
+                        totalNum: 500,
+                    },
+                    buildingObj: {
+                        speciality:'政企电路',
+                        num:7865,
+                        totalNum: 1500,
+                    },
+                    circuitObj: {
+                        speciality:'标准地址',
+                        num:139,
+                        totalNum: 2600,
+                    }
                 }
             }
         }
     },
     data(){
         return{
-            bureauStation: {
-                speciality:'局站',
-                num:13459,
-                totalNum: 0,
-            },
-            opticalFiberPath: {
-                speciality:'楼宇',
-                num:139,
-                totalNum: 1000,
-            },
-            standardAddress: {
-                speciality:'光纤光路',
-                num:352,
-                totalNum: 20000,
-            },
-            computerRoom: {
-                speciality:'机房',
-                num:3452,
-                totalNum: 500,
-            },
-            buildingObj: {
-                speciality:'政企电路',
-                num:7865,
-                totalNum: 1500,
-            },
-            circuitObj: {
-                speciality:'标准地址',
-                num:139,
-                totalNum: 2600,
-            }
+            
         }
     },
     mounted(){

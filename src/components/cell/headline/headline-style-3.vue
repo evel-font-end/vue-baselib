@@ -23,8 +23,9 @@ export default {
 
 <style lang="scss" scoped>
 .headline-container {
-  width: 100%;
-  height: 100%;
+  // width: 100%;
+  // height: 100%;
+  margin-bottom: 20px;
   .headline-title {
     width: 409px;
     height: 42px;

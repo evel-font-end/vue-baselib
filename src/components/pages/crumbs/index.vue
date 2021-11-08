@@ -1,11 +1,10 @@
 <template>
     <div class='content'>
-        <box-container class='bg-grey' :title="'面包屑1'" :spinShow='crumbShow1' :width="'calc(32.3% - 13.3px)'" @showOptionHandler='showOption("board2")'>
-            <crumbs-style-1></crumbs-style-1>
+        <box-container class='bg-grey' :title="'面包屑1'" :spinShow='crumbShow1' :width="'33%'" @showOptionHandler='showOption("crumbs1")'>
+            <crumbs-style-1 :breadcrumbList="breadcrumbListData1" :crumbsIcon="'/'" ref="crumbs1"></crumbs-style-1>
         </box-container>
-        <box-container class='bg-grey' :title="'面包屑2'" :spinShow='crumbShow2' :width="'40%'" @showOptionHandler='showOption("board3")'>
-            <crumbs-style-2></crumbs-style-2>
-            
+        <box-container class='bg-grey' :title="'面包屑2'" :spinShow='crumbShow2' :width="'40%'" @showOptionHandler='showOption("crumbs2")'>
+            <crumbs-style-2 :breadcrumbList="breadcrumbListData2" :crumbsIcon="'el-icon-arrow-right'" ref="crumbs2"></crumbs-style-2>
         </box-container>
     </div>
 </template>
@@ -26,30 +25,23 @@ export default {
             getCrumb2Data: [],
             crumbShow1: false,
             crumbShow2: false,
+            breadcrumbListData1: [
+                { path: '/bar', title: '混合图表1' },
+                { path: '/crumbs', title: '面包屑1' },
+            ],
+            breadcrumbListData2: [
+                { path: '/line', title: '折线图' },
+                { path: '/crumbs', title: '面包屑' },
+            ],
         }
     },
-    created() {
-        // const _this = this
-        // pie-style-1 fetch data
-        // this.$http.get('/pie/eventTypeSource')
-        //   .then(res => {
-        //     if (res.state && res.data) {
-        //       this.eventTypeFetchData = res.data
-        //       this.spinShow1 = false
-        //     }
-        //   })
-        //   .catch(err => {
-        //     console.log(err)
-        //     this.$fetchMock('/static/mock/pie/eventTypeSource.json')
-        //       .then(res => {
-        //         this.eventTypeFetchData = res
-        //         this.spinShow1 = false
-        //       })
-        //   })
+    watch: {
+    },
+    mounted(){
     },
     methods: {
         showOption(ref) {
-            console.log(JSON.parse(JSON.stringify(this.$refs[ref].option)))
+            this.$store.commit('UPDATE_DIALOG_SHOW', this.$refs[ref].$options._componentTag);
         },
     },
 }

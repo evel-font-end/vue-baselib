@@ -58,9 +58,10 @@ export default {
 
 <style lang="scss" scoped>
 .tabs-container {
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
+  // width: 100%;
+  // height: 100%;
+  // box-sizing: border-box;
+  margin-bottom: 20px;
   .tabs-list {
     display: flex;
     li {

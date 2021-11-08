@@ -1,5 +1,4 @@
 <template>
-  <!-- 标题 -->
   <div class="publicTitle">
     <p class="c-title">{{title}}</p>
     <div class="c-img"></div>
@@ -22,7 +21,8 @@ export default {
 
 <style lang="scss" scoped>
 .publicTitle {
-  width: 442px;
+  // width: 442px;
+    margin-bottom: 20px;
   .c-title {
     font-size: 28px;
     font-family: YouSheBiaoTiHei;
