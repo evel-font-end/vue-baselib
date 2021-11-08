@@ -1,6 +1,7 @@
 <template>
-  <div class="customize-table ranking-container">
+  <div class="customize-table ranking-container" :class="echartOptions.class">
     <dv-scroll-board
+      :class="echartOptions.childClass"
       :config="tableConfig"
       style="width:100%;height:100%"
       ref="scrollBoard"
@@ -8,20 +9,14 @@
   </div>
 </template>
 <script>
-import VueSeamlessScroll from "vue-seamless-scroll";
-import ScrollItem from './components/scrollItem'
 export default {
   name: 'RankingStyle6',
-  components: {
-    VueSeamlessScroll,
-    ScrollItem
-  },
   props: {
     sid: {
       type: String,
       default: () => 'ranking6',
     },
-    value: {
+    source: {
       type: [Array, Object],
       default: () => [
         { text: '库水位', value: 100 },
@@ -35,6 +30,13 @@ export default {
         { text: '干滩监测', value: 100 },
       ],
     },
+    options: {
+      type: Object,
+      default() {
+        return {
+        }
+      }
+    },
   },
 
   data() {
@@ -42,8 +44,6 @@ export default {
       tableConfig: {
         hoverPause: true,
         headerHeight: 40,
-        columnWidth: [100, 136, 65],
-        header: ['排名', '省份', '数量'],
         headerBGC: 'transparent',
         evenRowBGC: 'transparent',
         oddRowBGC: 'transparent',
@@ -51,13 +51,21 @@ export default {
 
         waitTime: 3000,
         indexHeader: "排名",
-        align: ['left', 'left', 'right'],
         data: [],
       },
+      echartOptions: {
+        scrollOptions: {
+        },
+        columnWidth: [100, 136, 65],
+        header: ['排名', '省份', '数量'],
+        align: ['left', 'left', 'right'],
+        class: '',
+        childClass: ''
+      }
     }
   },
   watch: {
-    value: {
+    source: {
       deep: true,
       handler(val) {
         this.init(val)
@@ -66,14 +74,16 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
-      this.init(this.value)
+      this.init(this.source)
     })
   },
   methods: {
     async init(value) {
+      this.echartOptions = Object.assign(this.echartOptions, this.options)
+      this.tableConfig = Object.assign(this.echartOptions, this.tableConfig)
       const rows = await value.map((valueItem, valueIndex) => {
         return ([
-          `<div class='rank rank${valueIndex < 3 ? valueIndex : 3}'>TOP.${valueIndex + 1}<span>`,
+          valueItem.indexText ? valueItem.indexText : `<div class='rank rank${valueIndex < 3 ? valueIndex : 3}'>TOP.${valueIndex + 1}<span>`,
           ...Object.keys(valueItem).map(valItem => valueItem[valItem])
         ])
       });

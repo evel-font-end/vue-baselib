@@ -1,5 +1,5 @@
 <template>
-<div class="customize-table ranking-container">
+<div class="customize-table ranking-container" :class="echartOptions.class">
   <div class="customize-table-head">
     <div
       :class="['column',item.class]"
@@ -10,8 +10,11 @@
     </div>
   </div>
   <div class="customize-table-body">
-    <VueSeamlessScroll :class-option="scrollOptions" :data="value" class="seamless-box">
-      <div :class="['row']" v-for="(item, index) in value" :key="index">
+    <VueSeamlessScroll :class-option="scrollOptions" :data="source" class="seamless-box">
+      <div
+      :class="['row', echartOptions.childClass]"
+      v-for="(item, index) in source"
+      :key="index">
         <div class="column ranking">
           <span>{{index+1}}</span>
         </div>
@@ -28,19 +31,17 @@
 </template>
 <script>
 import VueSeamlessScroll from "vue-seamless-scroll";
-import ScrollItem from './components/scrollItem'
 export default {
   name: 'RankingStyle4',
   components: {
-    VueSeamlessScroll,
-    ScrollItem
+    VueSeamlessScroll
   },
   props: {
     sid: {
       type: String,
       default: () => 'ranking4',
     },
-    value: {
+    source: {
       type: [Array, Object],
       default: () => [
         { text: '库水位', value: 100, score: '20' },
@@ -53,6 +54,13 @@ export default {
         { text: '干滩监测', value: 100, score: '20' },
         { text: '干滩监测', value: 100, score: '20' },
       ],
+    },
+    options: {
+      type: Object,
+      default() {
+        return {
+        }
+      }
     },
   },
 
@@ -87,7 +95,12 @@ export default {
           class: 'number',
           iconfont: 'icon-shuliang'
         },
-      ]
+      ],
+      echartOptions: {
+        scrollOptions: {},
+        class: '',
+        childClass: ''
+      }
     }
   },
   watch: {
@@ -99,6 +112,7 @@ export default {
   },
   methods: {
     init() {
+      this.echartOptions = Object.assign(this.echartOptions, this.options)
     },
   },
 }

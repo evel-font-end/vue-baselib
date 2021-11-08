@@ -1,27 +1,22 @@
 <template>
-  <div class="customize-table ranking-container">
+  <div class="customize-table ranking-container" :class="echartOptions.class">
     <dv-scroll-board
       :config="tableConfig"
+      :class="echartOptions.childClass"
       style="width:100%;height:100%"
       ref="scrollBoard"
     />
   </div>
 </template>
 <script>
-import VueSeamlessScroll from "vue-seamless-scroll";
-import ScrollItem from './components/scrollItem'
 export default {
   name: 'RankingStyle5',
-  components: {
-    VueSeamlessScroll,
-    ScrollItem
-  },
   props: {
     sid: {
       type: String,
       default: () => 'ranking5',
     },
-    value: {
+    source: {
       type: [Array, Object],
       default: () => [
         { text: '库水位', value: 100, score: '20' },
@@ -35,6 +30,13 @@ export default {
         { text: '干滩监测', value: 100, score: '20' },
       ],
     },
+    options: {
+      type: Object,
+      default() {
+        return {
+        }
+      }
+    },
   },
 
   data() {
@@ -42,8 +44,6 @@ export default {
       tableConfig: {
         hoverPause: true,
         headerHeight: 40,
-        columnWidth: [125, 125, 125, 125],
-        header: ["排名", "API服务", "API服务数量", "文件服务"],
         headerBGC: "#31498173",
         evenRowBGC: "transparent",
         oddRowBGC: "#31498173",
@@ -52,10 +52,17 @@ export default {
         indexHeader: "排名",
         data: [],
       },
+      echartOptions: {
+        scrollOptions: {},
+        class: '',
+        childClass: '',
+        columnWidth: [125, 125, 125, 125],
+        header: ["排名", "API服务", "API服务数量", "文件服务"],
+      }
     }
   },
   watch: {
-    value: {
+    source: {
       deep: true,
       handler(val) {
         this.init(val)
@@ -64,20 +71,22 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
-      this.init(this.value)
+      this.init(this.source)
     })
   },
   methods: {
     async init(value) {
+      this.echartOptions = Object.assign(this.echartOptions, this.options)
+      this.tableConfig = Object.assign(this.echartOptions, this.tableConfig)
       const rows = await value.map((valueItem, valueIndex) => {
         // 图标颜色
         const iconColor = ["#EB3737FF", "#FF8D00FF", "#00DFC7FF"];
         // 皇冠图标
         const indexText =
-        valueIndex < 3 ?
+        valueItem.indexText ? valueItem.indexText : (valueIndex < 3 ?
           `<i class="iconfont icon-huangguan"
             style="color: ${iconColor[valueIndex]}"><span>${valueIndex + 1}</span></i>` :
-          `<span class='rank'>${valueIndex + 1}<span>`;
+          `<span class='rank'>${valueIndex + 1}<span>`);
         return ([
           indexText,
           ...Object.keys(valueItem).map(valItem => valueItem[valItem])

@@ -31,7 +31,7 @@ options|配置项|object|-|options
 
 参数|说明|类型|可选值|默认值
 -|-|-|-|-|
-name|数据名称|string|-|'稽核准确率'
+name|数据名称|string|-|'库水位'
 value|进度条数据|number|-|100
 score|进度条百分比|number/string|-|20
 

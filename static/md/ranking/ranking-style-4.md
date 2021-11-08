@@ -1,11 +1,11 @@
-## RankingStyle1
+## RankingStyle4
 
 > Use
 ```javascript
-<ranking-style-1
-  sid='ranking1'
+<ranking-style-4
+  sid='ranking4'
   :source="source"
-  ref='ranking1' />
+  ref='ranking4' />
 const source = [
   { name: '库水位', value: 100, score: '20'},
   { name: '内部位移', value: 100, score: '20'},
@@ -23,7 +23,7 @@ const source = [
 
 参数|说明|类型|可选值|默认值
 -|-|-|-|-|
-sid|组件id|string|-|'board2'
+sid|组件id|string|-|'ranking4'
 source|数据源|object|-|source
 options|配置项|object|-|options
 
@@ -42,4 +42,3 @@ score|进度条百分比|number/string|-|20
 class|样式名称|string|-|-
 childClass|进度条样式名称|string|-|-
 scrollOptions|滚动配置项|object|-|[vue-seamless-scroll](https://www.npmjs.com/package/seamless-scroll)
-isfill|进度条尖角|boolean|-|true
