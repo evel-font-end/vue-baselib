@@ -1,5 +1,5 @@
 <template>
-  <div class="headline-container">
+  <div class="headline-container" :class="headlineClass">
     <div class="headline-title">
      <span class="title">{{title}}</span>
     </div>
@@ -11,6 +11,10 @@ export default {
   name: 'headline-style-6',
   props: {
     title: {
+      type: String,
+      default: ''
+    },
+    headlineClass: {
       type: String,
       default: ''
     }

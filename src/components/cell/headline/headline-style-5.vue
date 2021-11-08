@@ -1,5 +1,5 @@
 <template>
-  <div class="publicTitle">
+  <div class="publicTitle" :class="headlineClass">
     <p class="c-title">{{title}}</p>
     <div class="c-img"></div>
   </div>
@@ -11,6 +11,10 @@ export default {
     title: {
       type: String,
       default: ""
+    },
+    headlineClass: {
+      type: String,
+      default: ''
     }
   },
   data() {
