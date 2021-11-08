@@ -56,15 +56,21 @@
       vertical-align: bottom;
       transition: width .2s ease .2s;
     }
+    .ivu-menu-item {
+      display: flex;
+      align-items: center;
+    }
 
     .ivu-menu-item i {
       transform: translateX(0px);
       transition: font-size .2s ease, transform .2s ease;
       vertical-align: middle;
-      font-size: 16px;
+      margin-right: 15px;
+      font-size: 20px;
     }
 
     &.collapsed-menu span {
+      font-size: 22px;
       width: 0px;
       transition: width .2s ease;
     }
@@ -99,6 +105,23 @@
       font-weight: 600;
       text-align: left;
       color: #ffffff;
+      padding: 15px 0;
+      display: flex;
+      flex-direction: row;
+      img{
+        width: 28px;
+        display: block;
+        height: auto;
+        margin-right: 12px;
+      }
+      span{
+        font-size: 20px;
+        font-family: PingFangSC, PingFangSC-Semibold;
+        font-weight: 600;
+        text-align: left;
+        color: #ffffff;
+        line-height: 28px;
+      }
     }
 
     .main-cont {
@@ -125,4 +148,11 @@
       }
     }
   }
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 20px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

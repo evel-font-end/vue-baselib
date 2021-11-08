@@ -1,10 +1,9 @@
 import * as types from '../mutation-types'
-import axios from 'axios';
-
+import { children } from '@/router/index.js';
 
 const state = {
   activeMenu: localStorage.getItem('VSC_active_menu') || 'pie',
-  dialogShow: localStorage.getItem('dialogShow') || false,
+  dialogShow: localStorage.getItem('dialogShow') || { name: false, time: Date.now() + (1000 * 60 * 60 * 24) },
   dialogMd: localStorage.getItem('dialogMd') || '',
 }
 
@@ -12,6 +11,11 @@ const actions = {}
 
 const getters = {
   getActiveMenu: state => () => state.activeMenu,
+  getActiveName: state => () => {
+    const routers = children.find(childrenItem => childrenItem.name === state.activeMenu)
+    console.log('routers', routers);
+    return routers.meta.title || '';
+  }
 }
 
 function capitalize(str) {
@@ -39,8 +43,9 @@ const mutations = {
       // localStorage.setItem('dialogMd', '')
       // state.dialogMd = ''
     }
-    localStorage.setItem('dialogShow', payload)
-    state.dialogShow = payload
+    const dialogShow = { name: payload, time: Date.now() + (1000 * 60 * 60 * 24) }
+    localStorage.setItem('dialogShow', dialogShow)
+    state.dialogShow = dialogShow
   },
 }
 

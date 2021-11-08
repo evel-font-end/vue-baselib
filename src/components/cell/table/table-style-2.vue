@@ -1,7 +1,8 @@
 <template>
     <div class="work_order_table2" id="table2">
         <el-table 
-            :data="orderTableDataList.dataList" 
+            :data="orderTableDataList.dataList"
+            :element-loading-text="loadingText"
             :empty-text="emptyText"
             row-key="id"
             :tree-props="{children: 'children', hasChildren: 'hasChildren'}"
@@ -11,6 +12,7 @@
                     :prop="item.field" 
                     :label="item.title"
                     :show-overflow-tooltip="showOverflowTooltip"
+                    :align="colAlign"
                     :key="'ordercolumn'+index"
                     >
                 </el-table-column>
@@ -37,21 +39,17 @@ export default {
             type: String,
             default: "暂无数据"
         },
+        loadingText: { // 数据加载时显示的文本内容
+            type: String,
+            default: "数据加载中...",
+        },
         showOverflowTooltip: { // 当内容过长被隐藏时显示 tooltip
             type: Boolean,
             default: true,
         },
-        operator: { // 是否显示操作列
-            type: Boolean,
-            default: false,
-        },
         colAlign: { // 每列文字的对齐方式
             type: String,
             default: "left",
-        },
-        operatorWidth: { // 操作列的宽度
-            type: [String, Number],
-            default: 80,
         },
     },
     data(){

@@ -104,43 +104,13 @@
 export default {
     name: "TopologyStyle3",
     props: {
+        dataList:{
+            type: Object,
+        }
     },
     data(){
         return{
-            dataList: {
-                dataProcessing: {
-                    title: "数据加工",
-                    image: require("../../../assets/image/machining.png"),
-                    subData:[
-                        {
-                            title:"算力规模",
-                            num:"10个",
-                        },
-                        {
-                            title:"已执行任务",
-                            num:"20个",
-                        },
-                        {
-                            title:"等待平均时延",
-                            num:"29个",
-                        },
-                        {
-                            title:"平均执行时长",
-                            num:"119.57PiB",
-                        },
-                    ]
-                },
-                // dataStorage: {
-                //     title: "数据存储",
-                //     image: require("../../../assets/image/storage.png"),
-                //     subData: ['子集群数','管理节点数','在线节点数','总空间']
-                // },
-                // dataServer: {
-                //     title: "数据服务",
-                //     image: require("../../../assets/image/service.png"),
-                //     subData: ['数据服务总量','API服务总量','文件服务总量']
-                // },
-            },
+            
         }
     },
     mounted(){

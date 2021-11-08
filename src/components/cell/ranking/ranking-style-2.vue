@@ -1,7 +1,11 @@
 <template>
-<div class="ranking-container">
-  <VueSeamlessScroll :class-option="scrollOptions" :data="value" class="seamless-box">
-    <div v-for="(item, itemIndex) in value" :key="itemIndex" class="rankingItem">
+<div class="ranking-container" :class="echartOptions.class">
+  <VueSeamlessScroll :class-option="{ ...scrollOptions, ...echartOptions.scrollOptions}" :data="source" class="seamless-box">
+    <div
+    v-for="(item, itemIndex) in source"
+    :key="itemIndex"
+    class="rankingItem"
+    :class="echartOptions.childClass">
       <i class="iconfont icon-huangguan"><span>{{itemIndex + 1}}</span></i>
       <span class="title" :title="item.text">
         {{item.text}}
@@ -28,7 +32,7 @@ export default {
       type: String,
       default: () => 'ranking2',
     },
-    value: {
+    source: {
       type: [Array, Object],
       default: () => [
         { text: '库水位', value: 100, score: '20' },
@@ -41,6 +45,13 @@ export default {
         { text: '干滩监测', value: 100, score: '20' },
         { text: '干滩监测', value: 100, score: '20' },
       ],
+    },
+    options: {
+      type: Object,
+      default() {
+        return {
+        }
+      }
     },
   },
 
@@ -55,10 +66,13 @@ export default {
         singleHeight: 0, // 单步运动停止的高度(默认值0是无缝不停止的滚动) direction => 0/1
         singleWidth: 0, // 单步运动停止的宽度(默认值0是无缝不停止的滚动) direction => 2/3
         waitTime: 1000, // 单步运动停止的时间(默认值1000ms)
+      },
+      echartOptions: {
+        scrollOptions: {},
+        class: '',
+        childClass: ''
       }
     }
-  },
-  watch: {
   },
   created() {
   },
@@ -67,6 +81,7 @@ export default {
   },
   methods: {
     init() {
+      this.echartOptions = Object.assign(this.echartOptions, this.options)
     },
   },
 }

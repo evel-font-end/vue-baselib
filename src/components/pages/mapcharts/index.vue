@@ -1,19 +1,19 @@
 <template>
     <div class='content'>
-        <box-container :spinShow='spinShow1' :title="'地图一'" :toolsShow='false' class='bg-grey' :width="'100%'">
-            <mapcharts-style-1 />
+        <box-container :spinShow='spinShow1' :title="'地图一'" class='bg-grey' :width="'100%'" @showOptionHandler='showOption("mapcharts1")'>
+            <mapcharts-style-1 :chinaDatas="chinaDatas1"  ref="mapcharts1"/>
         </box-container>
-        <box-container :spinShow='spinShow1' :title="'地图二'" :toolsShow='false' class='bg-grey' :width="'100%'">
-            <mapcharts-style-2 />
+        <box-container :spinShow='spinShow1' :title="'地图二'" class='bg-grey' :width="'100%'" @showOptionHandler='showOption("mapcharts2")'>
+            <mapcharts-style-2  ref="mapcharts2"/>
         </box-container>
-        <box-container :spinShow='spinShow1' :title="'地图三'" :toolsShow='false' class='bg-grey' :width="'100%'">
-            <mapcharts-style-3 />
+        <box-container :spinShow='spinShow1' :title="'地图三'" class='bg-grey' :width="'100%'" @showOptionHandler='showOption("mapcharts3")'>
+            <mapcharts-style-3  ref="mapcharts3"/>
         </box-container>
-        <box-container :spinShow='spinShow1' :title="'地图四'" :toolsShow='false' class='bg-grey' :width="'100%'">
-            <mapcharts-style-4 />
+        <box-container :spinShow='spinShow1' :title="'地图四'" class='bg-grey' :width="'100%'" @showOptionHandler='showOption("mapcharts4")'>
+            <mapcharts-style-4  ref="mapcharts4"/>
         </box-container>
-        <box-container :spinShow='spinShow1' :title="'地图五'" :toolsShow='false' class='bg-grey' :width="'100%'">
-            <mapcharts-style-5 />
+        <box-container :spinShow='spinShow1' :title="'地图五'" class='bg-grey' :width="'100%'" @showOptionHandler='showOption("mapcharts5")'>
+            <mapcharts-style-5  ref="mapcharts5"/>
         </box-container>
     </div>
 </template>
@@ -38,6 +38,46 @@ export default {
         return {
             eventListFetchData: [],
             spinShow1: false,
+            chinaDatas1: [
+                [{
+                    name: '辽宁',
+                    value: 16
+                }],	[{
+                    name: '河北',
+                    value: 1
+                }],	[{
+                    name: '山东',
+                    value: 1
+                }],	[{
+                    name: '山西',
+                    value: 1
+                }],	[{
+                    name: '陕西',
+                    value: 1
+                }],	[{
+                    name: '甘肃',
+                    value: 1
+                }],	[{
+                    name: '四川',
+                    value: 1
+                }],	[{
+                    name: '重庆',
+                    value: 1
+                }],	[{
+                    name: '河南',
+                    value: 1
+                }],[{
+                    name: '广东',
+                    value: 1
+                }],	[{
+                    name: '上海',
+                    value: 1
+                }],
+                [{
+                    name: '江西',
+                    value: 1
+                }],
+            ],
         }
     },
     created() {
@@ -58,6 +98,9 @@ export default {
         // })
     },
     methods:{
+        showOption(ref) {
+            this.$store.commit('UPDATE_DIALOG_SHOW', this.$refs[ref].$options._componentTag);
+        },
     }
 }
 </script>

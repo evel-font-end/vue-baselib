@@ -1,8 +1,8 @@
 <template>
     <div class='crumbs2-container'>
         <div class="breadcumb-item">
-            <el-breadcrumb separator-class="el-icon-arrow-right">
-                <el-breadcrumb-item v-for="(item,index) in breadcrumbList1" :to="item.path" :key="index" >
+            <el-breadcrumb :separator-class="crumbsIcon">
+                <el-breadcrumb-item v-for="(item,index) in breadcrumbList" :to="item.path" :key="index" >
                     {{ item.title }}
                 </el-breadcrumb-item>
             </el-breadcrumb>
@@ -14,7 +14,7 @@ export default {
     name:"CrumbsStyle2",
     props: {
         // 测试数据
-        breadcrumbList1: {
+        breadcrumbList: {
             type: Array,
             default: () => {
                 return [
@@ -24,50 +24,20 @@ export default {
                 ]
             },
         },
+        crumbsIcon:{
+            type: String,
+            default:"el-icon-arrow-right"
+        }
     },
     data() {
         return {
-            breadcrumbList: [],
         }
     },
     watch: {
-        $route: {
-            handler(val, oldval) {
-                this.breadcrumbList = this.getBreadcrumbList(val);
-            },
-            deep: true,
-            immediate: true,
-        },
     },
     mounted() {
     },
     methods: {
-        // watchBreadcrumb(matchedRoutes) {
-        //     console.log('matchedRoutes', matchedRoutes)
-        //     let matched = [];
-        //     if (matchedRoutes.length) {
-        //         matched = matchedRoutes.filter((item) => {
-        //             item.meta && item.meta.title && item.meta.breadcrumb !== false
-        //         })
-        //     }
-        //     return matched;
-        // },
-        getBreadcrumbList(routerInformation){
-            let crumbsList = []
-            let matchedRoutes = routerInformation.matched
-            if(matchedRoutes.length){
-                matchedRoutes.map((item)=>{
-                    console.log(item)
-                    crumbsList.push(
-                        {
-                            path: item.path,
-                            title: item.meta.title
-                        }
-                    )
-                })
-            }
-            return crumbsList;
-        }
     },
 }
 </script>

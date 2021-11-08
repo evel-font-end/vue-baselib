@@ -4,7 +4,6 @@
             :data="orderTableDataList.dataList" 
             :element-loading-text="loadingText"
             :empty-text="emptyText"
-            @row-click="rowClickFn"
             >
             <template  v-for="(item,index) in orderTableDataList.titleList" >
                 <el-table-column
@@ -23,6 +22,7 @@
 </template>
 
 <script>
+
 export default {
     name: "TableStyle1",
     props: {
@@ -46,14 +46,6 @@ export default {
             type: String,
             default: "left",
         },
-        operatorWidth: { // 操作列的宽度
-            type: [String, Number],
-            default: 80,
-        },
-        cityTableRowClickFn:{ // 表格行点击事件
-            type: Function
-        },
-        
     },
     data(){
         return{
@@ -62,12 +54,6 @@ export default {
     mounted(){
     },
     methods:{
-        // 行点击事件
-        rowClickFn(val){
-            if(this.cityTableRowClickFn){
-                this.cityTableRowClickFn(val)
-            }
-        },
     }
 };
 </script>

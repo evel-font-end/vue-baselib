@@ -4,12 +4,12 @@
         <!-- <i :class="'right ' + obj.icon" style="font-size:35px;color:#2e79c6"></i> -->
         <span class="lineBox">
                 <div class="itemText">
-                    <span class="left">{{obj.text}}</span>
+                    <span class="left">{{obj.name}}</span>
                     <span class="right">{{obj.value}}</span>
                 </div>
                 <div class="line">
                     <div class="lineInner" :style="'width:' + obj.score + '%' ">
-                        <div class="round" v-if="!obj.isfill" />
+                        <div class="round" v-if="obj.isfill" />
                     </div>
 
                 </div>
@@ -21,6 +21,10 @@
 <script>
 export default {
   props: {
+    isfill: {
+      type: Boolean,
+      default: false
+    },
     obj: {
       type: Object,
       required: true

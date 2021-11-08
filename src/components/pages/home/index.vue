@@ -19,14 +19,17 @@
             :title="menu.title"
           >
             <MenuItem :name="menu.name">
-              <Icon :type="menu.icon" />
+              <i class="iconfont" :class="menu.icon"></i>
               <span class="menu-item-span">{{ menu.title }}</span>
             </MenuItem>
           </router-link>
         </Menu>
       </Sider>
       <Layout class="right-cont">
-        <Header class="header-cont">Header</Header>
+        <div class="header-cont">
+          <img :src="note" />
+          <span>{{ getActiveName }}</span>
+        </div>
         <Content class="main-cont">
           <router-view />
         </Content>
@@ -41,6 +44,8 @@
       <span>
         <mavon-editor
           :value="htmlValue"
+          :ishljs="true"
+          :codeStyle="'atom-one-dark'"
           :editable="false"
           :toolbarsFlag="false"
         />
@@ -52,11 +57,12 @@
   </div>
 </template>
 <script>
-import { highlightCode } from '@/assets/lib/hljs'
 import { addCodeBtn } from '@/assets/lib/mavon'
+import note from './images/note.png';
 export default {
   data() {
     return {
+      note,
       menus: [],
       isCollapsed: false
     };
@@ -65,11 +71,15 @@ export default {
     getActiveMenu() {
       return this.$store.getters.getActiveMenu();
     },
+    getActiveName() {
+      return this.$store.getters.getActiveName();
+    },
     menuitemClasses() {
       return ['sider-bar', this.isCollapsed ? 'collapsed-menu' : ''];
     },
     dialogVisible() {
-      return (!!this.$store.state.Home.dialogShow) || false;
+      const dialogShow = this.$store.state.Home.dialogShow
+      return !!dialogShow && dialogShow.time >= Date.now() ? dialogShow.name : false;
     },
     htmlValue() {
       return this.$store.state.Home.dialogMd || '';
@@ -86,7 +96,7 @@ export default {
       this.$store.commit('UPDATE_ACTIVE_MENU', name);
     },
     handleOpenedDialog() {
-      highlightCode()
+      // highlightCode()
       addCodeBtn()
     },
     handleClose(show) {

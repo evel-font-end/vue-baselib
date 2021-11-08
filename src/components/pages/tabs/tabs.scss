@@ -1,0 +1,12 @@
+
+.tabs-content{
+  // width: 100%;
+  // height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  .flex-row {
+    /deep/ .content {
+      display: flex;
+    }
+  }
+}
