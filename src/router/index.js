@@ -145,6 +145,9 @@ export const children = [{
   name: 'tabs',
   title: 'tab标签',
   icon: 'icon-Tabbiaoqian',
+  meta: {
+    title: 'tab标签'
+  },
   component: res => require(['@/components/pages/tabs'], res),
 },
 {
@@ -152,6 +155,9 @@ export const children = [{
   name: 'headline',
   title: '标题',
   icon: 'icon-biaoti',
+  meta: {
+    title: '标题'
+  },
   component: res => require(['@/components/pages/headline'], res),
 },
 {
@@ -159,6 +165,9 @@ export const children = [{
   name: 'date',
   title: '日期',
   icon: 'icon-riqi',
+  meta: {
+    title: '日期'
+  },
   component: res => require(['@/components/pages/date'], res),
 },
 {
@@ -166,6 +175,9 @@ export const children = [{
   name: 'pagination',
   title: '分页',
   icon: 'icon-fenye',
+  meta: {
+    title: '分页'
+  },
   component: res => require(['@/components/pages/pagination'], res),
 },
   /* {
