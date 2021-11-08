@@ -105,6 +105,23 @@
       font-weight: 600;
       text-align: left;
       color: #ffffff;
+      padding: 15px 0;
+      display: flex;
+      flex-direction: row;
+      img{
+        width: 28px;
+        display: block;
+        height: auto;
+        margin-right: 12px;
+      }
+      span{
+        font-size: 20px;
+        font-family: PingFangSC, PingFangSC-Semibold;
+        font-weight: 600;
+        text-align: left;
+        color: #ffffff;
+        line-height: 28px;
+      }
     }
 
     .main-cont {

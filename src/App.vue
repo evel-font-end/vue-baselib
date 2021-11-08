@@ -5,7 +5,6 @@
 </template>
 
 <script>
-import hljs from 'highlight.js';
 export default {
   name: 'App',
   mounted() {

@@ -26,7 +26,10 @@
         </Menu>
       </Sider>
       <Layout class="right-cont">
-        <Header class="header-cont">Header</Header>
+        <div class="header-cont">
+          <img :src="note" />
+          <span>{{ getActiveName }}</span>
+        </div>
         <Content class="main-cont">
           <router-view />
         </Content>
@@ -55,9 +58,11 @@
 </template>
 <script>
 import { addCodeBtn } from '@/assets/lib/mavon'
+import note from './images/note.png';
 export default {
   data() {
     return {
+      note,
       menus: [],
       isCollapsed: false
     };
@@ -65,6 +70,9 @@ export default {
   computed: {
     getActiveMenu() {
       return this.$store.getters.getActiveMenu();
+    },
+    getActiveName() {
+      return this.$store.getters.getActiveName();
     },
     menuitemClasses() {
       return ['sider-bar', this.isCollapsed ? 'collapsed-menu' : ''];
