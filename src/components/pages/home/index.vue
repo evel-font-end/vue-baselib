@@ -19,7 +19,7 @@
             :title="menu.title"
           >
             <MenuItem :name="menu.name">
-              <Icon :type="menu.icon" />
+              <i class="iconfont" :class="menu.icon"></i>
               <span class="menu-item-span">{{ menu.title }}</span>
             </MenuItem>
           </router-link>

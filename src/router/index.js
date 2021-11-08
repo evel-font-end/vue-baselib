@@ -9,17 +9,26 @@ export default new VueRouter({
     {
       path: '/',
       name: 'home',
-      meta:{
+      meta: {
         title: 'home'
       },
       component: res => require(['@/components/pages/home'], res),
       redirect: '/bar',
       children: [{
+        path: '/mapcharts',
+        name: 'mapcharts',
+        title: '地图',
+        icon: 'icon-ditu',
+        meta: {
+          title: '地图'
+        },
+        component: res => require(['@/components/pages/mapcharts'], res),
+      }, {
         path: '/bar',
         name: 'bar',
         title: '混合图表',
-        icon: 'ios-repeat',
-        meta:{
+        icon: 'icon-hunhetubiao',
+        meta: {
           title: '混合图表'
         },
         component: res => require(['@/components/pages/bar'], res),
@@ -27,8 +36,8 @@ export default new VueRouter({
         path: '/line',
         name: 'line',
         title: '折线图',
-        icon: 'arrow-graph-up-right',
-        meta:{
+        icon: 'icon-zhexiantu',
+        meta: {
           title: '折线图'
         },
         component: res => require(['@/components/pages/line'], res),
@@ -37,8 +46,8 @@ export default new VueRouter({
         path: '/barChart',
         name: 'barChart',
         title: '柱状图',
-        icon: 'md-stats',
-        meta:{
+        icon: 'icon-zhuzhuangtu',
+        meta: {
           title: '柱状图'
         },
         component: res => require(['@/components/pages/barChart'], res),
@@ -47,8 +56,8 @@ export default new VueRouter({
         path: '/indexData',
         name: 'indexData',
         title: '指标数据',
-        icon: 'md-stats',
-        meta:{
+        icon: 'icon-zhibiaoshuju',
+        meta: {
           title: '指标数据'
         },
         component: res => require(['@/components/pages/indexData'], res),
@@ -57,8 +66,8 @@ export default new VueRouter({
         path: '/pie',
         name: 'pie',
         title: '饼状图',
-        icon: 'ios-pie-outline',
-        meta:{
+        icon: 'icon-bingzhuangtu',
+        meta: {
           title: '饼状图'
         },
         component: res => require(['@/components/pages/pie'], res),
@@ -67,8 +76,8 @@ export default new VueRouter({
         path: '/board',
         name: 'board',
         title: '仪表盘',
-        icon: 'ios-pie-outline',
-        meta:{
+        icon: 'icon-yibiaopan',
+        meta: {
           title: '仪表盘'
         },
         component: res => require(['@/components/pages/board'], res),
@@ -77,8 +86,8 @@ export default new VueRouter({
         path: '/crumbs',
         name: 'crumbs',
         title: '面包屑',
-        icon: 'ios-pie-outline',
-        meta:{
+        icon: 'icon-mianbaoxiedaohang',
+        meta: {
           title: '面包屑'
         },
         component: res => require(['@/components/pages/crumbs'], res),
@@ -87,8 +96,8 @@ export default new VueRouter({
         path: '/topology',
         name: 'topology',
         title: '拓补图',
-        icon: 'ios-pie-outline',
-        meta:{
+        icon: 'icon-tuoputu',
+        meta: {
           title: '拓补图'
         },
         component: res => require(['@/components/pages/topology'], res),
@@ -97,8 +106,8 @@ export default new VueRouter({
         path: '/table',
         name: 'table',
         title: '表格',
-        icon: 'ios-pie-outline',
-        meta:{
+        icon: 'icon-biaoge',
+        meta: {
           title: '表格'
         },
         component: res => require(['@/components/pages/table'], res),
@@ -107,28 +116,18 @@ export default new VueRouter({
         path: '/suspension',
         name: 'suspension',
         title: '悬浮框',
-        icon: 'ios-pie-outline',
-        meta:{
+        icon: 'icon-xuanfuchuang',
+        meta: {
           title: '悬浮框'
         },
         component: res => require(['@/components/pages/suspension'], res),
       },
       {
-        path: '/mapcharts',
-        name: 'mapcharts',
-        title: '地图',
-        icon: 'ios-pie-outline',
-        meta:{
-          title: '地图'
-        },
-        component: res => require(['@/components/pages/mapcharts'], res),
-      },
-      {
         path: '/radarMap',
         name: 'radarMap',
         title: '雷达图',
-        icon: 'ios-pie-outline',
-        meta:{
+        icon: 'icon-leidatu',
+        meta: {
           title: '雷达图'
         },
         component: res => require(['@/components/pages/radarMap'], res),
@@ -137,8 +136,8 @@ export default new VueRouter({
         path: '/opRings',
         name: 'opRings',
         title: '环形图',
-        icon: 'ios-pie-outline',
-        meta:{
+        icon: 'icon-huanxingtu',
+        meta: {
           title: '环形图'
         },
         component: res => require(['@/components/pages/opRings'], res),
@@ -147,8 +146,8 @@ export default new VueRouter({
         path: '/ranking',
         name: 'ranking',
         title: '排名',
-        icon: 'ios-pie-outline',
-        meta:{
+        icon: 'icon-paiming1',
+        meta: {
           title: '排名'
         },
         component: res => require(['@/components/pages/ranking'], res),
@@ -157,31 +156,30 @@ export default new VueRouter({
         path: '/tabs',
         name: 'tabs',
         title: 'tab标签',
-        icon: 'ios-pie-outline',
+        icon: 'icon-Tabbiaoqian',
         component: res => require(['@/components/pages/tabs'], res),
       },
       {
         path: '/headline',
         name: 'headline',
         title: '标题',
-        icon: 'ios-pie-outline',
+        icon: 'icon-biaoti',
         component: res => require(['@/components/pages/headline'], res),
       },
       {
         path: '/date',
         name: 'date',
         title: '日期',
-        icon: 'ios-pie-outline',
+        icon: 'icon-riqi',
         component: res => require(['@/components/pages/date'], res),
       },
       {
         path: '/pagination',
         name: 'pagination',
         title: '分页',
-        icon: 'ios-pie-outline',
+        icon: 'icon-fenye',
         component: res => require(['@/components/pages/pagination'], res),
       },
-      
         /* {
           path: '/radar',
           name: 'radar',
