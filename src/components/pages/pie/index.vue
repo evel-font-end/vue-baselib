@@ -3,110 +3,208 @@
     <box-container
       class="bg-grey"
       :spinShow="spinShow1"
+      :title="'立体饼图1'"
       @showOptionHandler="showOption('pie1')"
     >
-      <pie1
-        sid="pie1"
-        :source="eventTypeFetchData"
-        :radiusDic="pieRadius1"
-        ref="pie1"
-      />
+      <pie-style-1 :sid="'pie1'" ref="pie1" :data="pie1.data" />
     </box-container>
     <box-container
       class="bg-grey"
-      :spinShow="spinShow2"
+      :spinShow="spinShow1"
+      :title="'立体饼图2'"
       @showOptionHandler="showOption('pie2')"
     >
-      <pie2 sid="pie2" :source="caringObjectFetchData" ref="pie2" />
+      <pie-style-2 :sid="'pie2'" ref="pie2" :data="pie2.data" />
     </box-container>
     <box-container
       class="bg-grey"
-      :spinShow="spinShow3"
+      :spinShow="spinShow1"
+      :title="'基础饼图'"
       @showOptionHandler="showOption('pie3')"
     >
-      <pie3 sid="pie3" :source="eventHandlingData" ref="pie3" />
+      <pie-style-3 :sid="'pie3'" ref="pie3" :data="pie3.data" />
+    </box-container>
+    <box-container
+      class="bg-grey"
+      :spinShow="spinShow1"
+      :title="'南丁格尔玫瑰图'"
+      @showOptionHandler="showOption('pie4')"
+    >
+      <pie-style-4 :sid="'pie4'" ref="pie4" :data="pie4.data" :iconImg="pie4.iconImg" />
     </box-container>
   </div>
 </template>
 <script>
 import boxContainer from "../common/box-container";
-import pie1 from "../../cell/pie/pie-style-1";
-import pie2 from "../../cell/pie/pie-style-2";
-import pie3 from "../../cell/pie/pie-style-3";
+import PieStyle1 from "../../cell/pie/pie-style-1";
+import pieStyle2 from "../../cell/pie/pie-style-2";
+import pieStyle3 from "../../cell/pie/pie-style-3";
+import pieStyle4 from "../../cell/pie/pie-style-4";
 export default {
   components: {
     "box-container": boxContainer,
-    pie1,
-    pie2,
-    pie3
+    PieStyle1,
+    pieStyle2,
+    pieStyle3,
+    pieStyle4
   },
   data() {
     return {
-      pieRadius1: {
-        outside: ["25%", "45%"],
-        center: ["15%", "25%"],
-        inner: ["0%", "16%"]
+      pie1: {
+        id: "pie1",
+        data: [
+          {
+            name: "空间资源",
+            y: 330,
+            sliced: false,
+            selected: false
+          },
+          {
+            name: "管线资源",
+            y: 340,
+            sliced: false,
+            selected: false
+          },
+          {
+            name: "数据资源",
+            y: 350,
+            sliced: false,
+            selected: false
+          },
+          {
+            name: "无线资源",
+            y: 360,
+            sliced: false,
+            selected: false
+          },
+          {
+            name: "传输资源",
+            y: 370,
+            sliced: false,
+            selected: false
+          },
+          {
+            name: "接入资源",
+            y: 380,
+            sliced: false,
+            selected: false
+          }
+        ],
+        tooltipStyle: {}
       },
-      eventTypeFetchData: [
-        {
-          name: "支持五种业务类型",
-          y: 330,
-          h: 30,
-          sliced: false,
-          selected: false
-        },
-        {
-          name: "支持四种业务类型",
-          y: 340,
-          h: 40,
-          sliced: false,
-          selected: false
-        },
-        {
-          name: "支持三种业务类型",
-          y: 350,
-          h: 50,
-          sliced: false,
-          selected: false
-        },
-        {
-          name: "支持二种业务类型",
-          y: 360,
-          h: 60,
-          sliced: false,
-          selected: false
-        },
-        {
-          name: "支持一种业务类型",
-          y: 370,
-          h: 70,
-          sliced: false,
-          selected: false
-        },
-        {
-          name: "不支持",
-          y: 380,
-          h: 80,
-          sliced: false,
-          selected: false
-        }
-      ],
-      caringObjectFetchData: [],
-      eventHandlingData: [],
-      spinShow1: true,
-      spinShow2: true,
-      spinShow3: true,
-      activeRef: ""
+      pie2: {
+        id: "pie2",
+        data: [
+          {
+            name: "空间资源",
+            y: 330,
+            sliced: false,
+            selected: false
+          },
+          {
+            name: "管线资源",
+            y: 340,
+            sliced: false,
+            selected: false
+          },
+          {
+            name: "数据资源",
+            y: 350,
+            sliced: false,
+            selected: false
+          },
+          {
+            name: "无线资源",
+            y: 360,
+            sliced: false,
+            selected: false
+          },
+          {
+            name: "传输资源",
+            y: 370,
+            sliced: false,
+            selected: false
+          },
+          {
+            name: "接入资源",
+            y: 380,
+            sliced: false,
+            selected: false
+          }
+        ]
+      },
+      pie3: {
+        id: "pie3",
+        data: [
+          {
+            name: "空间资源",
+            value: 330
+          },
+          {
+            name: "管线资源",
+            value: 340
+          },
+          {
+            name: "数据资源",
+            value: 350
+          },
+          {
+            name: "无线资源",
+            value: 360
+          },
+          {
+            name: "传输资源",
+            value: 370
+          },
+          {
+            name: "接入资源",
+            value: 380
+          }
+        ]
+      },
+      pie4: {
+        id: "pie4",
+        iconImg: require("../../cell/pie/images/circle.png"),
+        data: [
+          {
+            name: "空间资源",
+            value: 330
+          },
+          {
+            name: "管线资源",
+            value: 340
+          },
+          {
+            name: "数据资源",
+            value: 350
+          },
+          {
+            name: "无线资源",
+            value: 360
+          },
+          {
+            name: "传输资源",
+            value: 370
+          },
+          {
+            name: "接入资源",
+            value: 80
+          }
+        ]
+      },
+      spinShow1: true
     };
   },
   created() {
     this.spinShow1 = false;
-    this.spinShow2 = false;
-    this.spinShow3 = false;
   },
   methods: {
     showOption(ref) {
-      console.log(JSON.parse(JSON.stringify(this.$refs[ref].option)));
+      console.log(this.$refs[ref]);
+      this.$store.commit(
+        "UPDATE_DIALOG_SHOW",
+        this.$refs[ref].$options._componentTag
+      );
     }
   }
 };

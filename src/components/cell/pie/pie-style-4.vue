@@ -1,25 +1,18 @@
 <template>
-  <div class="pie-container" :id="sid" />
+  <div class="pie">
+    <div class="pie-container" :id="sid"></div>
+    <div class="iconImg">
+      <img :src="iconImg" alt="" />
+    </div>
+  </div>
 </template>
 <script>
-function getMaxIndex(data, value) {
-  return data.findIndex(
-    item =>
-      item[value] ===
-      Math.max.apply(
-        Math,
-        data.map(item => {
-          return item[value];
-        })
-      )
-  );
-}
 export default {
-  name: "PieStyle3",
+  name: "PieStyle4",
   props: {
     sid: {
       type: String,
-      default: () => "pie3"
+      default: () => "pie4"
     },
     color: {
       type: [Array, Object],
@@ -32,9 +25,9 @@ export default {
         "#1B7FF5"
       ]
     },
-    isShowLabelLine: {
-      type: Boolean,
-      default: true
+    data: {
+      type: Array,
+      default: () => []
     },
     legendStyle: {
       type: Object,
@@ -42,15 +35,15 @@ export default {
         return {};
       }
     },
+    iconImg: {
+      type: String,
+      default: ""
+    },
     labelStyle: {
       type: Object,
       default: () => {
         return {};
       }
-    },
-    data: {
-      type: Array,
-      default: () => []
     }
   },
   data() {
@@ -72,20 +65,11 @@ export default {
         document.getElementById(this.sid),
         "chalk"
       );
-      // let { lineTitle1, lineTitle2, xdata, ydata1, ydata2 } = this.chartData;
-      const data = this.data;
-      const maxIndex = getMaxIndex(data, "value");
       let legendStyle = Object.assign({}, this.legendStyle);
       let labelStyle = Object.assign({}, this.labelStyle);
       let option = {
-        backgroundColor: "transparent",
-        tooltip: {
-          show: true,
-          trigger: "axis",
-          formatter: "{a} <br/>{b} :{d}%" // formatter: "{a} <br/>{b} : {c} ({d}%)"
-        },
         legend: {
-          orient: "horizontal",
+          // orient: "horizontal",
           icon: "rect",
           itemWidth: 10,
           itemHeight: 7,
@@ -99,23 +83,15 @@ export default {
           left: "center"
         },
         color: this.color,
-        grid: {
-          bottom: "8%",
-          right: 0,
-          left: 0
-        },
         series: [
           {
-            name: "",
+            name: "Area Mode",
             type: "pie",
-            radius: "56%",
-            center: ["50%", "50%"],
-            // roseType: "radius",
+            radius: [20, 120],
+            center: ["50%", "40%"],
+            roseType: "area",
             itemStyle: {
-              normal: {
-                shadowColor: "rgba(166,185,200,0.42)",
-                shadowBlur: 8
-              }
+              borderRadius: 10
             },
             labelLine: {
               normal: {
@@ -125,7 +101,7 @@ export default {
               }
             },
             label: {
-              show: this.isShowLabelLine,
+              show: true,
               formatter: "{d}%",
               textStyle: {
                 color: "#FFFFFF",
@@ -134,7 +110,7 @@ export default {
                 fontSize: 14
               }
             },
-            data: data
+            data: this.data
           }
         ]
       };
@@ -150,65 +126,36 @@ export default {
       }
       this.chart.setOption(option);
       window.addEventListener("resize", () => this.chart.resize(), false);
-      this.chart.dispatchAction({
-        type: "highlight",
-        seriesIndex: 0,
-        dataIndex: maxIndex
-      });
-      let index = maxIndex;
-      this.chart.on("mouseover", e => {
-        this.chart.dispatchAction({
-          type: "downplay",
-          seriesIndex: 0,
-          dataIndex: index
-        });
-        if (e.dataIndex != index) {
-          this.chart.dispatchAction({
-            type: "downplay",
-            seriesIndex: 0,
-            dataIndex: index
-          });
-        }
-        if (e.dataIndex == index) {
-          this.chart.dispatchAction({
-            type: "highlight",
-            seriesIndex: 0,
-            dataIndex: e.dataIndex
-          });
-        }
-      });
-      this.chart.on("mouseout", e => {
-        index = e.dataIndex;
-        this.chart.dispatchAction({
-          type: "highlight",
-          seriesIndex: 0,
-          dataIndex: e.dataIndex
-        });
-      });
     }
   }
 };
 </script>
 <style lang="scss" scoped>
-.pie-container {
+@keyframes turn {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+.pie {
+  position: relative;
   width: 100%;
   height: 100%;
-  position: relative;
-  .chart-container {
+  .pie-container {
     width: 100%;
     height: 100%;
   }
-  .label-container {
-    width: 100%;
-    height: 30px;
-    bottom: 15%;
+  .iconImg {
     position: absolute;
-    display: flex;
-    & > span {
-      flex: 1;
-      text-align: center;
-      font-size: 14px;
-      color: #00deff;
+    top: 113px;
+    left: 231px;
+    width: 30px;
+    height: 30px;
+    animation: turn 6s linear infinite;
+    img {
+      max-width: 100%;
     }
   }
 }

@@ -11,6 +11,8 @@ import ElementUI from 'element-ui'
 import dataV from '@jiaminghi/data-view'
 import TFetch from 'tfetch'
 import mavonEditor from 'mavon-editor'
+import highcharts from 'highcharts'
+import highcharts3d from 'highcharts/highcharts-3d'
 import '@/assets/lib/hljs';
 import 'mavon-editor/dist/css/index.css'
 import 'iview/dist/styles/iview.css'
@@ -28,6 +30,7 @@ Vue.use(liquidfill)
 Vue.use(dataV)
 Vue.use(ElementUI)
 Vue.use(mavonEditor)
+highcharts3d(highcharts)
 
 Vue.prototype.$echarts = echarts
 
