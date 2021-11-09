@@ -332,7 +332,7 @@ export default {
             // console.log('IPwanglinesData', IPwanglinesData)
             // console.log('chuanshulinesData', chuanshulinesData)
             // console.log('jiakuanlinesData', jiakuanlinesData)
-            let dataAllList={
+            let dataAllList = {
                 "移动网": yidongwanglinesData,
                 "传输网": chuanshuwanglinesData,
                 "IP网": IPwanglinesData,
@@ -342,7 +342,7 @@ export default {
                 "大区": daqustockData,
                 "默认": morenstockData,
             }
-            let textList= 
+            let textList = 
             {
                 linesList:[ 
                     {

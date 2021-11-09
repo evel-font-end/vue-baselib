@@ -16,22 +16,30 @@
 export default {
     name: "SuspensionStyle3",
     props: {
+        dataList:{
+            type: Object,
+            default: function(){
+                let data = 
+                {
+                    title: "上海市",
+                    list:[
+                        {
+                            name:"发送峰值(Gbit/s)",
+                            num:"330.47",
+                        },
+                        {
+                            name:"接受峰值(Gbit/s)",
+                            num:"7485.47",
+                        },
+                    ]
+                }
+                return data
+            }
+        }
     },
     data(){
         return{
-            dataList:{
-                title: "上海市",
-                list:[
-                    {
-                        name:"发送峰值(Gbit/s)",
-                        num:"330.47",
-                    },
-                    {
-                        name:"接受峰值(Gbit/s)",
-                        num:"7485.47",
-                    },
-                ]
-            }
+
         }
     },
     mounted(){

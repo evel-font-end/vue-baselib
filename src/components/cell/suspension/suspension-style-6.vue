@@ -28,10 +28,9 @@
 export default {
     name: "SuspensionStyle6",
     props: {
-    },
-    data(){
-        return{
-            dataList:[
+        dataList:{
+            type: Array,
+            default: [
                 {
                     icon:"",
                     title:"阿里巴巴",
@@ -74,7 +73,11 @@ export default {
                         },
                     ]
                 },
-            ],
+            ]
+        }
+    },
+    data(){
+        return{
         }
     },
     mounted(){

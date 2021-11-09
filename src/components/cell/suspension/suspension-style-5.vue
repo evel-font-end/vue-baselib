@@ -22,12 +22,11 @@
 export default {
     name: "SuspensionStyle5",
     props: {
-    },
-    data(){
-        return{
-            dataList:[
+        dataList:{
+            type: Array,
+            default: [
                 {
-                    icon:"icon-jizhan1",
+                    icon:"icon-jizhan1 iconfont",
                     title:"2G",
                     list:[
                         {
@@ -49,7 +48,7 @@ export default {
                     ]
                 },
                 {
-                    icon:"icon-jizhan1",
+                    icon:"icon-jizhan1 iconfont",
                     title:"3G",
                     list:[
                         {
@@ -71,7 +70,7 @@ export default {
                     ]
                 },
                 {
-                    icon:"icon-jizhan1",
+                    icon:"icon-jizhan1 iconfont",
                     title:"4G",
                     list:[
                         {
@@ -93,6 +92,10 @@ export default {
                     ]
                 },
             ]
+        }
+    },
+    data(){
+        return{
         }
     },
     mounted(){
@@ -122,6 +125,9 @@ export default {
                     font-weight: 600;
                     color: #ffffff;
                     line-height: 22px;
+                }
+                .iconfont{
+                    color: #08EEF6;
                 }
             }
             .content{

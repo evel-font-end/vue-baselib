@@ -9,14 +9,14 @@
                 </span>
             </div>
             <div class="content">
-                <div>编号：{{dataList.content.id}}</div>
+                <div>{{dataList.content.id}}</div>
                 <div class="xy">
-                    <span>经度：{{dataList.content.x}}</span>
-                    <span>纬度：{{dataList.content.y}}</span>
+                    <span>{{dataList.content.x}}</span>
+                    <span>{{dataList.content.y}}</span>
                 </div>
-                <div>设备状态：<span class="status">{{dataList.content.status}}</span></div>
-                <div>音量：{{dataList.content.volume}}</div>
-                <div>最后上报时间：{{dataList.content.time}}</div>
+                <div>{{dataList.content.statustext}}<span class="status">{{dataList.content.status}}</span></div>
+                <div>{{dataList.content.volume}}</div>
+                <div>{{dataList.content.time}}</div>
             </div>
         </div>
     </div>
@@ -32,17 +32,18 @@ export default {
                 let data = 
                 {
                     header:{
-                        icon:"icon-guangboqi",
+                        icon:"icon-guangboqi iconfont",
                         title:"智慧音柱-DF45",
                         information:"海口市美兰区江东大道"
                     },
                     content:{
-                        id:"0972A873AAF211EA8A5A00163E02E0CA",
-                        x:"110.389148",
-                        y:"20.071856",
+                        id:"编号：0972A873AAF211EA8A5A00163E02E0CA",
+                        x:"经度：110.389148",
+                        y:"纬度：20.071856",
+                        statustext:"设备状态：",
                         status:"在线",
-                        volume:"0分贝",
-                        time:"2021-04-26 21:00:12"
+                        volume:"音量：0分贝",
+                        time:"最后上报时间：2021-04-26 21:00:12"
                     }
                 }
                 return data
@@ -77,6 +78,18 @@ export default {
             padding: 10px;
             background: linear-gradient(270deg,rgba(32,45,85,0.20), rgba(40,222,255,0.47) 85%, rgba(40,222,255,0.25));
             display: flex;
+            .iconfont{
+                width: 34px;
+                height: 34px;
+                line-height: 32px;
+                color: #ffffff;
+                text-align: center;
+                background: rgba(1,139,168,0.87);
+                margin-right: 7px;
+                margin-top: 2px;
+                border-radius: 17px;
+                border: 1px solid #4afff6;
+            }
             .header_information{
                 .title{
                     display: block;

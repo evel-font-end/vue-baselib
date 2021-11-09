@@ -16,34 +16,41 @@
 export default {
     name: "SuspensionStyle4",
     props: {
+        dataList:{
+            type: Object,
+            default: function(){
+                let data = 
+                {
+                    title: "广播器",
+                    list:[
+                        {
+                            name:"设备总数",
+                            num:"65",
+                        },
+                        {
+                            name:"在线设备数",
+                            num:"23",
+                        },
+                        {
+                            name:"离线设备数",
+                            num:"42",
+                        },
+                        {
+                            name:"正在播放设备数",
+                            num:"21",
+                        },
+                        {
+                            name:"播放总次数",
+                            num:"153",
+                        },
+                    ]
+                }
+                return data
+            }
+        }
     },
     data(){
         return{
-            dataList:{
-                title: "广播器",
-                list:[
-                    {
-                        name:"设备总数",
-                        num:"65",
-                    },
-                    {
-                        name:"在线设备数",
-                        num:"23",
-                    },
-                    {
-                        name:"离线设备数",
-                        num:"42",
-                    },
-                    {
-                        name:"正在播放设备数",
-                        num:"21",
-                    },
-                    {
-                        name:"播放总次数",
-                        num:"153",
-                    },
-                ]
-            }
         }
     },
     mounted(){

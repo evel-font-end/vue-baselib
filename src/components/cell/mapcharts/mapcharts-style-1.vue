@@ -49,6 +49,140 @@ export default {
                     value: 1
                 }],
             ]
+        },
+        options:{
+            type: Object,
+            default: function (){
+                return {
+                    fromCity:{
+                        city:"北京市",
+                        toCoord:[116.4551,40.2539],
+                        
+                    },
+                    upperMapItemStyle: { //上层地图ItemStyle配置项
+                        normal: {
+                            areaColor:"rgba(8,164,230)", //上层地图省份背景颜色
+                            borderColor: '#79e1ff', //省市边界线00fcff 516a89
+                            borderWidth: 1, //上层地图省份边框宽度
+                            globalCoord: true, // 缺省为 false
+                        },
+                        emphasis: {
+                            areaColor:"#1ACFFF", //上层地图省份悬浮背景颜色
+                        },
+                    },
+                    linesEffect: {  //线effect配置项
+                        show: true,
+                        period: 1.6, //箭头指向速度，值越小速度越快
+                        trailLength: 0.1, //特效尾迹长度[0,1]值越大，尾迹越长重
+                        symbol: 'circle', //动画图标（可设置成图片）
+                        symbolSize: 8, //图标大小
+                        color:"#ffffff",
+                    },
+                    lineStyle: {
+                        normal: {
+                            width: 3, //尾迹线条宽度
+                            opacity: 0.2, //尾迹线条透明度
+                            curveness: -0.3, //尾迹线条曲直度
+                            color: "#FFEE71",
+                        }
+                    },
+                    dadianRippleEffect: { //涟漪特效
+                        period: 4, //动画时间，值越小速度越快
+                        brushType: 'stroke', //波纹绘制方式 stroke, fill
+                        scale: 5 //波纹圆环最大限制，值越大波纹越大
+                    },
+                    dadianLabel: {
+                        normal: {
+                            show: true,
+                            position: 'bottom', //显示位置
+                            offset: [0, 10], //偏移设置
+                            formatter: function(params){ //圆环显示文字
+                                return '';
+                            },
+                            fontSize: 13,
+                            color: "#ffffff", //省份文字颜色
+                        },
+                        emphasis: {
+                            show: true
+                        }
+                    },
+                    dadianSymbol: 'circle',
+                    dadianSymbolSize: function(val){
+                        return 8
+                    },
+                    dadianItemStyle: {
+                        normal: {
+                            color: '#FFEE71',
+                        }
+                    },
+                    startdRippleEffect: { //涟漪特效
+                        period: 4, //动画时间，值越小速度越快
+                        brushType: 'stroke', //波纹绘制方式 stroke, fill
+                        scale: 6 //波纹圆环最大限制，值越大波纹越大
+                    },
+                    startdLabel: {
+                        normal: {
+                            show: false,
+                            position: 'bottom', //显示位置
+                            offset: [0, 10], //偏移设置
+                            formatter: function(params){ //圆环显示文字
+                                return params.data.name;
+                            },
+                            fontSize: 13,
+                            color: "#ffffff", //省份文字颜色
+                        },
+                        emphasis: {
+                            show: true
+                        }
+                    },
+                    startdItemStyle: {
+                        normal: {
+                            show: false,
+                            color: '#FFEE71',
+                        }
+                    },
+                    backgroundColor:"#132845", //地图画布背景色
+                    geoLabel: {
+                        normal: {
+                            show: true,
+                            color: '#fff',
+                        },
+                        emphasis: {
+                            show: true,
+                            color: '#fff',
+                        }
+                    },
+                    geoItemStyle: {
+                        normal: {
+                            color: 'rgba(8,164,230)', //地图背景色
+                            borderColor: '#79e1ff', //省市边界线00fcff 516a89
+                            borderWidth: 1,
+                            shadowColor:'#0073B2', //地图阴影设置
+                            shadowOffsetX: 0,
+                            shadowOffsetY: 23,
+                        },
+                        emphasis: {
+                            color: '#1ACFFF', //悬浮背景
+                        },
+                    },
+                    geoRegions:[
+                        {
+                            name: '南海诸岛',
+                            itemStyle: {
+                                areaColor: 'rgba(0, 10, 52, 1)',
+                                borderColor: 'rgba(0, 10, 52, 1)',
+                                normal: {
+                                    opacity: 0,
+                                    label: {
+                                        show: false,
+                                        color: "#009cc9",
+                                    }
+                                }
+                            },
+                        }
+                    ]
+                }
+            }
         }
     },
     data(){
@@ -95,12 +229,13 @@ export default {
                 "海南": [110.3893, 19.8516],
                 '上海': [121.4648, 31.2891]
             };
+            let optionData = this.options
             let convertData = function(data) {
                 let res = [];
                 for(let i = 0; i < data.length; i++) {
                     let dataItem = data[i];
                     let fromCoord = chinaGeoCoordMap[dataItem[0].name];
-                    let toCoord = [116.4551,40.2539];
+                    let toCoord = optionData.fromCity.toCoord;
                     if(fromCoord && toCoord) {
                         // toCoord为被攻击点，索引为0时，各城市为被攻击点。索引为1时，toCoord坐标为被攻击点。
                         res.push([{
@@ -115,7 +250,7 @@ export default {
                 return res;
             };
             let seriesData = [];
-            [["北京市", this.chinaDatas]].forEach(function(item, i) {
+            [[optionData.fromCity.city, this.chinaDatas]].forEach(function(item, i) {
                 seriesData.push(
                     {
                         type: 'map',
@@ -134,39 +269,13 @@ export default {
                             }
                         },
                         roam: false, //是否允许缩放
-                        itemStyle: {
-                            normal: {
-                                areaColor:"rgba(8,164,230)",
-                                borderColor: '#79e1ff', //省市边界线00fcff 516a89
-                                borderWidth: 1,
-                                globalCoord: true, // 缺省为 false
-                            },
-                            emphasis: {
-                                areaColor:"#1ACFFF",
-                                // color: '#1ACFFF', //悬浮背景
-                            },
-                        },
-                        
+                        itemStyle: optionData.upperMapItemStyle
                     },
                     {
                         type: 'lines',
                         zlevel: 2,
-                        effect: {
-                            show: true,
-                            period: 1.6, //箭头指向速度，值越小速度越快
-                            trailLength: 0.1, //特效尾迹长度[0,1]值越大，尾迹越长重
-                            symbol: 'circle', //动画图标（可设置成图片）
-                            symbolSize: 8, //图标大小
-                            color:"#ffffff",
-                        },
-                        lineStyle: {
-                            normal: {
-                                width: 3, //尾迹线条宽度
-                                opacity: 0.2, //尾迹线条透明度
-                                curveness: -0.3, //尾迹线条曲直度
-                                color: "#FFEE71",
-                            }
-                        },
+                        effect: optionData.linesEffect,
+                        lineStyle: optionData.lineStyle,
                         data: convertData(item[1])
                     }, 
                     {
@@ -174,36 +283,11 @@ export default {
                         type: 'effectScatter',
                         coordinateSystem: 'geo',
                         zlevel: 2,
-                        rippleEffect: { //涟漪特效
-                            period: 4, //动画时间，值越小速度越快
-                            brushType: 'stroke', //波纹绘制方式 stroke, fill
-                            scale: 5 //波纹圆环最大限制，值越大波纹越大
-                        },
-                        label: {
-                            normal: {
-                                show: true,
-                                position: 'bottom', //显示位置
-                                offset: [0, 10], //偏移设置
-                                formatter: function(params){ //圆环显示文字
-                                    return '';
-                                },
-                                fontSize: 13,
-                                color: "#ffffff", //省份文字颜色
-                            },
-                            emphasis: {
-                                show: true
-                            }
-                        },
-                        symbol: 'circle',
-                        symbolSize: function(val) {
-                            return  8; //圆环大小
-                        },
-                        itemStyle: {
-                            normal: {
-                                color: '#FFEE71',
-                                
-                            }
-                        },
+                        rippleEffect: optionData.dadianRippleEffect,
+                        label: optionData.dadianLabel,
+                        symbol: optionData.dadianSymbol,
+                        symbolSize: optionData.dadianSymbolSize,
+                        itemStyle: optionData.dadianItemStyle,
                         data: item[1].map(function(dataItem) {
                             return {
                                 name: dataItem[0].name,
@@ -211,90 +295,31 @@ export default {
                             };
                         }),
                     },
-                    // 初始出发点
-                    {
-                        type: 'effectScatter',
+                    { // 初始出发点
+                        type: 'effectScatter', 
                         coordinateSystem: 'geo',
                         zlevel: 2,
-                        rippleEffect: { //涟漪特效
-                            period: 4, //动画时间，值越小速度越快
-                            brushType: 'stroke', //波纹绘制方式 stroke, fill
-                            scale: 6 //波纹圆环最大限制，值越大波纹越大
-                        },
-                        label: {
-                            normal: {
-                                show: false,
-                                position: 'bottom', //显示位置
-                                offset: [0, 10], //偏移设置
-                                formatter: function(params){ //圆环显示文字
-                                    return params.data.name;
-                                },
-                                fontSize: 13,
-                                color: "#ffffff", //省份文字颜色
-                            },
-                            emphasis: {
-                                show: true
-                            }
-                        },
-                        itemStyle: {
-                            normal: {
-                                show: false,
-                                color: '#FFEE71',
-                            }
-                        },
+                        rippleEffect: optionData.startdRippleEffect,
+                        label: optionData.startdLabel,
+                        itemStyle: optionData.startdItemStyle,
                         data: [{
                             name: item[0],
                             value: chinaGeoCoordMap[item[0]].concat([10]),
                         }],
                     }
                 );
-                
             })
             let option = {
-                backgroundColor:"#132845", //地图画布背景色
+                backgroundColor: optionData.backgroundColor, //地图画布背景色
                 geo: [
                     {
                         map: 'china',
                         zoom: 1.2,
                         aspectScale: 1, //长宽比
-                        label: {
-                            normal: {
-                                show: true,
-                                color: '#fff',
-                            },
-                            emphasis: {
-                                show: true,
-                                color: '#fff',
-                            }
-                        },
+                        label: optionData.geoLabel,
                         roam: false, //是否允许缩放
-                        itemStyle: {
-                            normal: {
-                                color: 'rgba(8,164,230)', //地图背景色
-                                borderColor: '#79e1ff', //省市边界线00fcff 516a89
-                                borderWidth: 1,
-                                shadowColor:'#0073B2', //地图阴影设置
-                                shadowOffsetX: 0,
-                                shadowOffsetY: 23,
-                            },
-                            emphasis: {
-                                color: '#1ACFFF', //悬浮背景
-                            },
-                        },
-                        regions:[{
-                            name: '南海诸岛',
-                            itemStyle: {
-                                areaColor: 'rgba(0, 10, 52, 1)',
-                                borderColor: 'rgba(0, 10, 52, 1)',
-                                normal: {
-                                    opacity: 0,
-                                    label: {
-                                        show: false,
-                                        color: "#009cc9",
-                                    }
-                                }
-                            },
-                        }],
+                        itemStyle: optionData.geoItemStyle,
+                        regions: optionData.geoRegions,
                     },
                 ],
                 series: seriesData

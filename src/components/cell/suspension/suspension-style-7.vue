@@ -16,11 +16,9 @@ export default {
     components:{
     },
     props: {
-        
-    },
-    data(){
-        return{
-            dataList:[
+        dataList:{
+            type: Array,
+            default: [
                 {
                     class: 1,
                     text: "A端机房：阆中七里大道七里香榭小区地下室车库",
@@ -38,6 +36,11 @@ export default {
                     text: "Z端机房：阆中思依卫生院",
                 },
             ]
+        }
+        
+    },
+    data(){
+        return{
         }
     },
     mounted(){
