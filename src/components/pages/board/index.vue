@@ -1,5 +1,14 @@
 <template>
   <div class='content'>
+  <box-container
+    class='bg-grey'
+    title='仪表盘1'
+    @showOptionHandler='showOption("board1")'>
+      <board-style-1
+        sid='board1'
+        source='80'
+        ref='board1' />
+    </box-container>
     <box-container
     class='bg-grey'
     title='仪表盘2'
@@ -22,12 +31,14 @@
 </template>
 <script>
 import boxContainer from '../common/box-container'
+import Board1 from '../../cell/board/board-style-1'
 import Board2 from '../../cell/board/board-style-2'
 import Board3 from '../../cell/board/board-style-3'
 export default {
   name: 'Board',
   components: {
     'box-container': boxContainer,
+    'board-style-1': Board1,
     'board-style-2': Board2,
     'board-style-3': Board3,
   },

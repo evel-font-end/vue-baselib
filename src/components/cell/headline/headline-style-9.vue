@@ -1,8 +1,8 @@
 <template>
-  <div class="headline-container">
+  <div class="headline-container" :class="headlineClass">
     <header>
          <i class="iconfont  icon-biaoge box-icon"></i>
-         <span class="box-title">巡检排查</span>
+         <span class="box-title">{{title}}</span>
          <span class="box-line"></span>
     </header>
   </div>
@@ -10,7 +10,17 @@
 
 <script>
 export default {
-  name: 'headline-style-9'
+  name: 'headline-style-9',
+  props: {
+    title: {
+      type: String,
+      default: ''
+    },
+    headlineClass: {
+      type: String,
+      default: ''
+    }
+  }
 }
 </script>
 

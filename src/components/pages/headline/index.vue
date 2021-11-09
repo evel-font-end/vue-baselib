@@ -5,9 +5,9 @@
       :spinShow="spinShow1"
       title="一级标题"
       :width="'calc(50% - 40px)'"
-      @showOptionHandler="showOption1('headline1')">
-      <headline1 :title="title1"></headline1>
-      <headline2 :title="title2"></headline2>
+      @showOptionHandler="showOption('headline1')">
+      <headline-style-1 :title="title1" :headlineStyle="headlineStyle1" ref="headline1"></headline-style-1>
+      <headline-style-2 :title="title2" ref="headline2"></headline-style-2>
       <headline3 :title="title3"></headline3>
       <headline4 :title="title4"></headline4>
       <headline5 :title="title5"></headline5>
@@ -18,8 +18,8 @@
       :spinShow="spinShow2"
       title="二级标题"
       :width="'calc(50% - 40px)'"
-      @showOptionHandler="showOption2('headline2')">
-      <headline7 :title="title7"></headline7>
+      @showOptionHandler="showOption('headline7')">
+      <headline-style-7 :title="title7" ref="headline7"></headline-style-7>
       <headline8 :title="title8"></headline8>
       <headline-9 :title="title9"></headline-9>
     </box-container>
@@ -28,8 +28,8 @@
       :spinShow="spinShow3"
       title="三级标题"
       :width="'calc(50% - 20px)'"
-      @showOptionHandler="showOption3('headline3')">
-      <headline-10 :title="title10"></headline-10>
+      @showOptionHandler="showOption('headline10')">
+      <headline-style-10 :title="title10" ref="headline10"></headline-style-10>
       <headline-11 :title="title11"></headline-11>
     </box-container>
   </div>
@@ -67,20 +67,21 @@ export default {
       title9: '巡检排查',
       title10: 'AW异常情况汇总',
       title11: '设备实时概览',
+      headlineStyle1: 'headline-style1'
     }
   },
   components: {
     boxContainer,
-    headline1,
+    'headline-style-1': headline1,
     headline2,
     headline3,
     headline4,
     headline5,
     headline6,
-    headline7,
+    'headline-style-7': headline7,
     headline8,
     headline9,
-    headline10,
+    'headline-style-10': headline10,
     headline11,
   },
    created() {
@@ -89,15 +90,15 @@ export default {
     this.spinShow3 = false;
   },
   methods: {
-    showOption1(ref) {
-      console.log(JSON.parse(JSON.stringify(this.$refs[ref].option)));
+    showOption(ref) {
+       this.$store.commit('UPDATE_DIALOG_SHOW', this.$refs[ref].$options._componentTag);
     },
-    showOption2(ref) {
-      console.log(JSON.parse(JSON.stringify(this.$refs[ref].option)));
-    },
-    showOption3(ref) {
-      console.log(JSON.parse(JSON.stringify(this.$refs[ref].option)));
-    }
+    // showOption2(ref) {
+    //   console.log(JSON.parse(JSON.stringify(this.$refs[ref].option)));
+    // },
+    // showOption3(ref) {
+    //   console.log(JSON.parse(JSON.stringify(this.$refs[ref].option)));
+    // }
   }
 }
 </script>

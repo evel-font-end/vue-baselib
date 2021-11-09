@@ -1,6 +1,5 @@
 import * as types from '../mutation-types'
-// import axios from 'axios';
-
+import { children } from '@/router/index.js';
 
 const state = {
   activeMenu: localStorage.getItem('VSC_active_menu') || 'pie',
@@ -12,6 +11,11 @@ const actions = {}
 
 const getters = {
   getActiveMenu: state => () => state.activeMenu,
+  getActiveName: state => () => {
+    const routers = children.find(childrenItem => childrenItem.name === state.activeMenu)
+    console.log('routers', routers);
+    return routers.meta.title || '';
+  }
 }
 
 function capitalize(str) {

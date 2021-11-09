@@ -1,5 +1,5 @@
 <template>
-  <div class="outerBox">
+  <div class="outerBox" :class="headlineClass">
     <div class="innerBox">
       <span>{{ title }}</span>
     </div>
@@ -12,6 +12,10 @@ export default {
     title: {
       type: String,
       default: ""
+    },
+    headlineClass: {
+      type: String,
+      default: ''
     }
   },
   data() {
