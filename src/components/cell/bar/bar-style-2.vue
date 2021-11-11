@@ -5,13 +5,34 @@
 </template>
 <script>
 const echarts = require("echarts");
-function getLinearColor(colorStart, colorEnd) {
-  return new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-    { offset: 0, color: colorStart },
-    { offset: 1, color: colorEnd }
-  ]);
+function setBarLinearColor(colors) {
+  if (colors.length == 1) {
+    return colors[0];
+  } else if (colors.length == 2) {
+    return new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+      { offset: 0, color: colors[0] },
+      { offset: 1, color: colors[1] }
+    ]);
+  }
+}
+function setLinearColor(colors) {
+  if (colors.length == 1) {
+    return colors[0];
+  } else if (colors.length == 2) {
+    return new echarts.graphic.LinearGradient(0, 0, 1, 0, [
+      { offset: 0, color: colors[0] },
+      { offset: 1, color: colors[1] }
+    ]);
+  } else if (colors.length == 3) {
+    return new echarts.graphic.LinearGradient(0, 0, 1, 0, [
+      { offset: 0, color: colors[0] },
+      { offset: 0.5, color: colors[1] },
+      { offset: 1, color: colors[2] }
+    ]);
+  }
 }
 export default {
+  name: "BarStyle2",
   props: {
     chartId: {
       type: String,
@@ -21,6 +42,78 @@ export default {
       type: Object,
       default: function() {
         return {};
+      }
+    },
+    legendColor: {
+      // legend图例颜色
+      type: Array,
+      default: function() {
+        return ["#0FF1FC", "#07EE95"];
+      }
+    },
+    barBackgroundStyle: {
+      type: Object,
+      default: function() {
+        return {
+          color: "#3B9DE629",
+          shadowBlur: 0,
+          shadowColor: "#3B9DE629",
+          shadowOffsetX: 6
+        };
+      }
+    },
+    xAxisLabel: {
+      type: Object,
+      default: function() {
+        return {
+          fontSize: 14, // 字体
+          color: "#88D7FDFF"
+        };
+      }
+    },
+    yAxisLabel: {
+      type: Object,
+      default: function() {
+        return {
+          fontSize: 14, // 字体
+          color: "#88D7FDFF"
+        };
+      }
+    },
+    lineLegendStyle: {
+      type: Object,
+      default: function() {
+        return {
+          fontSize: 12,
+          fontFamily: "PingFangSC-Regular",
+          color: "#FFFFFF"
+        };
+      }
+    },
+    barLegendStyle: {
+      type: Object,
+      default: function() {
+        return {
+          fontSize: 12,
+          fontFamily: "PingFangSC-Regular",
+          color: "#FFFFFF"
+        };
+      }
+    },
+    barColor: {
+      type: Array,
+      default: function() {
+        return ["#07F096", "#07F0E2"];
+      }
+    },
+    lineColor: {
+      type: Array,
+      default: function() {
+        return [
+          "rgba(15,241,252,0.08)",
+          "rgba(15,241,252,1)",
+          "rgba(15,241,252,0.08)"
+        ];
       }
     }
   },
@@ -41,9 +134,9 @@ export default {
         document.getElementById(this.chartId),
         "chalk"
       );
-      let { lineTitle, barTitle, xdata, ydata, ydata2 } = this.chartData;
+      let { lineTitle, barTitle, xdata, barData, lineData } = this.chartData;
       let option = {
-        color:['#0FF1FC', '#07EE95'],
+        color: this.legendColor,
         legend: {
           itemWidth: 13,
           itemHeight: 4,
@@ -52,22 +145,14 @@ export default {
             {
               name: lineTitle,
               icon: "stack",
-              textStyle: {
-                fontSize: 12,
-                fontFamily: "PingFangSC-Regular",
-                color: "#FFFFFF"
-              }
+              textStyle: this.lineLegendStyle
             },
             {
               name: barTitle,
               icon: "stack",
               itemWidth: 10,
               itemHeight: 10,
-              textStyle: {
-                fontSize: 12,
-                fontFamily: "PingFangSC-Regular",
-                color: "#FFFFFF"
-              }
+              textStyle: this.barLegendStyle
             }
           ]
         },
@@ -117,10 +202,7 @@ export default {
           },
           axisLabel: {
             //调整x轴的lable
-            textStyle: {
-              fontSize: 14, // 字体
-              color: "#88D7FDFF"
-            },
+            textStyle: this.xAxisLabel,
             interval: 0,
             margin: 15
           }
@@ -138,10 +220,7 @@ export default {
             },
             axisLabel: {
               //调整y轴的lable
-              textStyle: {
-                color: "#88D7FD",
-                fontSize: 14 // 字体
-              },
+              textStyle: this.yAxisLabel,
               show: true
             },
             axisLine: {
@@ -176,32 +255,11 @@ export default {
             name: lineTitle,
             type: "line",
             // yAxisIndex: 1,
-            data: ydata2,
+            data: lineData,
             smooth: true,
             symbol: "none",
             lineStyle: {
-              color: {
-                type: "linear",
-                x: 0,
-                y: 0,
-                x2: 1,
-                y2: 0,
-                colorStops: [
-                  {
-                    offset: 0,
-                    color: "rgba(15,241,252,0.08)" // 0% 处的颜色
-                  },
-                  {
-                    offset: 0.5,
-                    color: "rgba(15,241,252,1)" // 50% 处的颜色
-                  },
-                  {
-                    offset: 1,
-                    color: "rgba(15,241,252,0.08)" // 100% 处的颜色
-                  }
-                ],
-                global: false // 缺省为 false
-              }
+              color: setLinearColor(this.lineColor)
             }
           },
           {
@@ -209,20 +267,15 @@ export default {
             type: "bar",
             yAxisIndex: 1,
             showBackground: true,
-            backgroundStyle: {
-              color: "#3B9DE629",
-              shadowBlur: 0,
-              shadowColor: "#3B9DE629",
-              shadowOffsetX: 6
-            },
+            backgroundStyle: this.barBackgroundStyle,
             showSymbol: false,
             hoverAnimation: false,
-            data: ydata,
+            data: barData,
             barWidth: 11, //柱图宽度
             itemStyle: {
               //左面
               normal: {
-                color: getLinearColor("#07F096", "#07F0E2"),
+                color: setBarLinearColor(this.barColor),
                 barBorderRadius: [0, 0, 0, 0]
               }
             }

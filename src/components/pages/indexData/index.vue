@@ -4,13 +4,15 @@
       <p class="title">单指标数据</p>
       <div class="item-content">
         <div class="module indexData1">
-          <indexData1
-            :iconImg="indexData1.iconImg"
-            :bgImg="indexData1.bgImg"
-            :gifImg="indexData1.gifImg"
-            :num="indexData1.num"
-            :text="indexData1.text"
-          />
+          <!-- <box-container :title="'立体饼图1'"> -->
+            <indexData1
+              :iconImg="indexData1.iconImg"
+              :bgImg="indexData1.bgImg"
+              :gifImg="indexData1.gifImg"
+              :num="indexData1.num"
+              :text="indexData1.text"
+            />
+          <!-- </box-container> -->
         </div>
         <div class="module indexData2">
           <indexData2
@@ -289,6 +291,7 @@
   </div>
 </template>
 <script>
+import boxContainer from "../common/box-container-2";
 import indexData1 from "../../cell/indexData/index-data-1";
 import indexData2 from "../../cell/indexData/index-data-2";
 import indexData3 from "../../cell/indexData/index-data-3";
@@ -323,6 +326,7 @@ import indexData31 from "../../cell/indexData/index-data-31";
 
 export default {
   components: {
+    boxContainer,
     indexData1,
     indexData2,
     indexData3,

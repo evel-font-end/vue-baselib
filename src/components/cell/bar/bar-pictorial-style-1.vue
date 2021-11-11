@@ -5,13 +5,40 @@
 </template>
 <script>
 const echarts = require("echarts");
-function getLinearColor(colorStart, colorEnd) {
-  return new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-    { offset: 0, color: colorStart },
-    { offset: 1, color: colorEnd }
-  ]);
+function setAreaColor(colors) {
+  if (colors.length == 1) {
+    return colors[0];
+  } else if (colors.length == 2) {
+    return new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+      { offset: 0, color: colors[0] },
+      { offset: 1, color: colors[1] }
+    ]);
+  } else if (colors.length == 3) {
+    return new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+      { offset: 0, color: colors[0] },
+      { offset: 0.5, color: colors[1] },
+      { offset: 1, color: colors[2] }
+    ]);
+  }
+}
+function setLinearColor(colors) {
+  if (colors.length == 1) {
+    return colors[0];
+  } else if (colors.length == 2) {
+    return new echarts.graphic.LinearGradient(0, 0, 1, 0, [
+      { offset: 0, color: colors[0] },
+      { offset: 1, color: colors[1] }
+    ]);
+  } else if (colors.length == 3) {
+    return new echarts.graphic.LinearGradient(0, 0, 1, 0, [
+      { offset: 0, color: colors[0] },
+      { offset: 0.5, color: colors[1] },
+      { offset: 1, color: colors[2] }
+    ]);
+  }
 }
 export default {
+  name: "BarStyle3",
   props: {
     chartId: {
       type: String,
@@ -21,6 +48,91 @@ export default {
       type: Object,
       default: function() {
         return {};
+      }
+    },
+    line1LegendStyle: {
+      type: Object,
+      default: function() {
+        return {
+          fontSize: 14,
+          fontFamily: "PingFangSC",
+          color: "#ffff"
+        };
+      }
+    },
+    line2LegendStyle: {
+      type: Object,
+      default: function() {
+        return {
+          fontSize: 14,
+          fontFamily: "PingFangSC",
+          color: "#ffff"
+        };
+      }
+    },
+    legendColor: {
+      // legend图例颜色
+      type: Array,
+      default: function() {
+        return ["#FFBA1E", "#21B791"];
+      }
+    },
+    xAxisLabel: {
+      type: Object,
+      default: function() {
+        return {
+          color: "#88D7FD",
+          fontSize: 14,
+          fontFamily: "PingFangSC"
+        };
+      }
+    },
+    yAxisLabel: {
+      type: Object,
+      default: function() {
+        return {
+          color: "#88D7FD",
+          fontSize: 14,
+          fontFamily: "PingFangSC"
+        };
+      }
+    },
+    xAxisLineStyle: {
+      type: Object,
+      default: function() {
+        return {
+          type: "solid",
+          color: "#325F76", //坐标轴的颜色
+          width: "1" //坐标轴的宽度
+        };
+      }
+    },
+    yAxisSplitLineStyle: {
+      type: Object,
+      default: function() {
+        return {
+          color: "#325F76",
+          width: 1,
+          type: "solid"
+        };
+      }
+    },
+    line1Color: {
+      type: Array,
+      default: function() {
+        return ["#FFBA1E"];
+      }
+    },
+    line2Color: {
+      type: Array,
+      default: function() {
+        return ["#21B791"];
+      }
+    },
+    line2Area: {
+      type: Array,
+      default: function() {
+        return ["rgba(18,186,149,0.38)", "rgba(18,186,149,0)"];
       }
     }
   },
@@ -46,7 +158,7 @@ export default {
         tooltip: {
           trigger: "axis"
         },
-        color: ["#FFBA1E", "#21B791"],
+        color: this.legendColor,
         legend: {
           itemWidth: 13,
           itemHeight: 4,
@@ -55,24 +167,17 @@ export default {
             {
               name: lineTitle1,
               icon: "stack",
-              textStyle: {
-                fontSize: 14,
-                fontFamily: "PingFangSC",
-                color: "#ffff"
-              }
+              textStyle: this.line1LegendStyle
             },
             {
               name: lineTitle2,
               icon: "stack",
-              textStyle: {
-                fontSize: 14,
-                fontFamily: "PingFangSC",
-                color: "#ffff"
-              }
+              textStyle: this.line2LegendStyle
             }
           ]
         },
         tooltip: {
+          show: false,
           trigger: "axis",
           backgroundColor: "transparent",
           padding: 0,
@@ -101,18 +206,10 @@ export default {
         xAxis: {
           type: "category",
           axisLine: {
-            lineStyle: {
-              type: "solid",
-              color: "#325F76", //坐标轴的颜色
-              width: "1" //坐标轴的宽度
-            }
+            lineStyle: this.xAxisLineStyle
           },
           axisLabel: {
-            textStyle: {
-              color: "#88D7FD",
-              fontSize: 14,
-              fontFamily: "PingFangSC"
-            }
+            textStyle: this.xAxisLabel
           },
           data: xdata
         },
@@ -128,18 +225,10 @@ export default {
             },
             splitLine: {
               show: true,
-              lineStyle: {
-                color: "#325F76",
-                width: 1,
-                type: "solid"
-              }
+              lineStyle: this.yAxisSplitLineStyle
             },
             axisLabel: {
-              textStyle: {
-                color: "#88D7FD",
-                fontSize: 14,
-                fontFamily: "PingFangSC"
-              }
+              textStyle: this.yAxisLabel
             }
           }
         ],
@@ -153,7 +242,7 @@ export default {
             itemStyle: {
               normal: {
                 lineStyle: {
-                  color: "#FFBA1E" //改变折线颜色
+                  color: setLinearColor(this.line1Color) //改变折线颜色
                 }
               }
             },
@@ -167,16 +256,13 @@ export default {
             symbol: "none",
             areaStyle: {
               normal: {
-                color: getLinearColor(
-                  "rgba(18,186,149,0.38)",
-                  "rgba(18,186,149,0)"
-                ) //改变区域颜色
+                color: setAreaColor(this.line2Area) //改变区域颜色
               }
             },
             itemStyle: {
               normal: {
                 lineStyle: {
-                  color: "#21B791" //改变折线颜色
+                  color: setLinearColor(this.line2Color) //改变折线颜色
                 }
               }
             },

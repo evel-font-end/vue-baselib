@@ -12,7 +12,7 @@ function getLinearColor(colorStart, colorEnd) {
   ]);
 }
 export default {
-  name: 'BarStyle1',
+  name: "BarStyle1",
   props: {
     chartId: {
       type: String,
@@ -20,23 +20,15 @@ export default {
     },
     chartData: {
       type: Object,
-      default: {}
-    },
-    source: {
-      type: Array,
       default: () => {
-        return [
-          { name: "淳化", value1: 250 },
-          { name: "横溪", value1: 350 },
-          { name: "湖熟", value1: 550 },
-          { name: "江宁", value1: 450 },
-          { name: "东山", value1: 650 },
-          { name: "禄口", value1: 350 },
-          { name: "汤山", value1: 750 },
-          { name: "麒麟", value1: 850 },
-          { name: "谷里", value1: 350 },
-          { name: "秣陵", value1: 650 }
-        ];
+        return {};
+      }
+    },
+    legendColor: {
+      // legend图例颜色
+      type: Array,
+      default: function() {
+        return ["#EFE438", "#015BCC"];
       }
     }
   },
@@ -45,11 +37,7 @@ export default {
       chart: null
     };
   },
-  watch: {
-    /* source: function (newSource) {
-      this.updateCharts(newSource)
-    }, */
-  },
+  watch: {},
   mounted() {
     this.$nextTick(() => {
       this.initChart();
@@ -61,9 +49,9 @@ export default {
         document.getElementById(this.chartId),
         "chalk"
       );
-      let { lineTitle, barTitle, xdata, ydata, ydata2 } = this.chartData;
+      let { lineTitle, barTitle, xdata, barData, lineData } = this.chartData;
       let option = {
-        color: ["#EFE438", "#015BCC"],
+        color: this.legendColor,
         legend: {
           itemWidth: 13,
           itemHeight: 4,
@@ -197,7 +185,7 @@ export default {
             name: lineTitle,
             type: "line",
             // yAxisIndex: 1,
-            data: ydata2,
+            data: lineData,
             smooth: true,
             symbol: "none",
             lineStyle: {
@@ -238,7 +226,7 @@ export default {
             },
             showSymbol: false,
             hoverAnimation: false,
-            data: ydata,
+            data: barData,
             barWidth: 8, //柱图宽度
             itemStyle: {
               //左面
@@ -270,7 +258,7 @@ export default {
                 barBorderRadius: [0, 0, 0, 0]
               }
             },
-            data: ydata,
+            data: barData,
             barGap: 0
           },
           {
@@ -293,7 +281,7 @@ export default {
             symbolSize: ["16", "3"],
             symbolOffset: [0, "-38%"],
             symbolPosition: "end",
-            data: ydata,
+            data: barData,
             z: 3
           }
         ]
