@@ -3,7 +3,7 @@
     <box-container
       class="bg-grey"
       :spinShow="spinShow1"
-      title="横向tab标签"
+      title="分页一"
       :width="'calc(50% - 20px)'"
       @showOptionHandler="showOption1('pagination1')">  
       <pagination1
@@ -23,7 +23,7 @@
     <box-container
       class="bg-grey"
       :spinShow="spinShow2"
-      title="竖向Tab标签"
+      title="分页二"
       :width="'calc(50% - 20px)'"
       @showOptionHandler="showOption2('pagination2')">  
       <pagination3

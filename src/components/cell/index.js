@@ -44,16 +44,14 @@ import Board from './board'
 import OpRings from './opRings'
 import Ranking from './ranking'
 import IndexData from './indexData'
-<<<<<<< HEAD
 import Pie from './pie'
-=======
 import Crumbs from './crumbs'
 import Suspension from './suspension'
 import Table from './table'
 import Topology from './topology'
 import MapCharts from './mapcharts'
 import headline from './headline'
->>>>>>> 1980ea78a5d1a01949c7feba40e1f9213057b8a8
+import date from './date'
 
 // 组件列表
 const components = [
@@ -62,16 +60,14 @@ const components = [
   ...OpRings.components,
   ...Ranking.components,
   ...IndexData.components,
-<<<<<<< HEAD
-  ...Pie.components
-=======
+  ...Pie.components,
   ...Crumbs.components,
   ...Suspension.components,
   ...Table.components,
   ...Topology.components,
   ...MapCharts.components,
   ...headline.components,
->>>>>>> 1980ea78a5d1a01949c7feba40e1f9213057b8a8
+  ...date.components
 ]
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，那么所有的组件都会被注册

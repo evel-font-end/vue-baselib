@@ -1,31 +1,81 @@
 <template>
   <div class="date-container">
      <div class="selectTime">
-        <span class="demonstration">选择时间：</span>
+        <span v-if="isShowTitle" class="demonstration">选择时间：</span>
         <el-date-picker
           type="date"
           v-model="time"
-          placeholder="选择日期"
           align="left"
-          value-format="yyyy-MM-dd"
-          format="yyyy-MM-dd"
-          @change="changedate"
+          :placeholder="tip"
+          :value-format="valueFormat"
+          :format="format"
+          :picker-options="pickerOptions"
+          @change="dateChange"
         ></el-date-picker>
       </div>
   </div>
 </template>
 
 <script>
+import { formatDate } from './date'
+
 export default {
   name: 'date-style-1',
+  props: {
+    value: {
+      required: true,
+    },
+    format: {
+      type: String,
+      default: 'yyyy-MM-dd',//日期显示的格式
+    },
+    valueFormat: {
+      type: String,
+      default: 'yyyy-MM-dd'// 值的格式化
+    },
+    tip: {
+      type: String,
+      default: '选择日期',
+    },
+    isShowTitle: {
+      type: Boolean,
+      default: true,// 是否显示日期标题
+    }
+  },
   data() {
     return {
       time: '',
     }
   },
+  watch: {
+    value(val) {
+      let _val = this.getformatDate(val);
+      if (_val !== this.time) {
+        this.time = _val;
+        this.$emit('input', this.time);
+      }
+    }
+  },
+  created() {
+    this.time = this.getformatDate(this.value);
+  },
   methods: {
-    changedate(change) {
-      console.log('change', change);
+    isString(obj) {// 判断是不是字符串
+      Object.prototype.toString.call(obj).slice(8, -1).toLowerCase() === 'string'
+    },
+    getformatDate(date) {
+      if (this.isString(date) && /^(\d{4})(\d{2})(\d{2})$/.test(date)) { // 修正来自移动端的'20220229'的数据
+        date = `${RegExp.$1}/${RegExp.$2}/${RegExp.$3}`;
+      }
+      if (date) {
+        date = date.replace(/ \+.+/, '');
+        return formatDate(date, 'yyyy-MM-dd');
+      }
+      return '';
+    },
+    dateChange(val) {
+      this.time = val;
+      this.$emit('input', val);
     }
   }
 }
@@ -101,7 +151,7 @@ $fontColor:#3F87B6;
           color: #fff;
         }
         .el-time-panel__footer{
-          border-top: 1px solid$fontColor;
+          border-top: 1px solid $fontColor;
         }
       }
 

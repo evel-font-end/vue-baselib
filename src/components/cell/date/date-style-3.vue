@@ -1,13 +1,13 @@
 <template>
   <div class="date-container">
     <div class="datePicker">
-        <span class="demonstration">选择时间：</span>
+        <span v-if="isShowTitle" class="demonstration">选择时间：</span>
         <el-date-picker
           v-model="year"
-          format="yyyy"
+          :format="format"
           type="year"
           @change="dateChange"
-          placeholder="选择年"
+          :placeholder="tip"
         >
         </el-date-picker>
       </div>
@@ -15,16 +15,60 @@
 </template>
 
 <script>
+import { formatDate } from './date'
+
 export default {
   name: 'date-style-3',
+  props: {
+    value: {
+      required: true,
+    },
+    format: {
+      type: String,
+      default: 'yyyy',// 年显示的格式
+    },
+    tip: {
+      type: String,
+      default: '选择年',
+    },
+    isShowTitle: {
+      type: Boolean,
+      default: true,// 是否显示日期标题
+    },
+  },
   data() {
     return {
       year: '',
     }
   },
+  watch: {
+    value(val) {
+      let _val = this.getformatDate(val);
+      if (_val !== this.year) {
+        this.year = _val;
+        this.$emit('input', this.year);
+      }
+    }
+  },
+  created() {
+    this.year = this.getformatDate(this.value);
+  },
   methods: {
-    dateChange(e) {
-      console.log('e', e);
+     isString(obj) {// 判断是不是字符串
+      Object.prototype.toString.call(obj).slice(8, -1).toLowerCase() === 'string'
+    },
+    getformatDate(date) {
+      if (this.isString(date) && /^(\d{4})$/.test(date)) { // 修正来自移动端的'20220229'的数据
+        date = `${RegExp.$1}`;
+      }
+      if (date) {
+        return formatDate(date, 'yyyy');
+      }
+      return '';
+    },
+    dateChange(val) {
+      this.year = val;
+      this.$emit('input', val);
     }
   }
 }

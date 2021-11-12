@@ -84,7 +84,7 @@ export default {
     'headline-style-10': headline10,
     headline11,
   },
-   created() {
+  created() {
     this.spinShow1 = false;
     this.spinShow2 = false;
     this.spinShow3 = false;

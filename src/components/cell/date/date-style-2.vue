@@ -1,29 +1,73 @@
 <template>
   <div class="date-container">
      <div class="selectTime">
-        <span class="demonstration">选择时间：</span>
+        <span v-if="isShowTitle" class="demonstration">选择时间：</span>
           <el-date-picker
             v-model="month"
             type="month"
+            :format="format"
             @change="dateChange"
-            placeholder="选择年月">
+            :placeholder="tip">
           </el-date-picker>
       </div>
   </div>
 </template>
 
 <script>
+import { formatDate } from './date'
+
 export default {
   name: 'date-style-2',
+  props: {
+    value: {
+      required: true,
+    },
+    format: {
+      type: String,
+      default: 'yyyy-MM',//日期显示的格式
+    },
+    tip: {
+      type: String,
+      default: '选择日期',
+    },
+    isShowTitle: {
+      type: Boolean,
+      default: true,// 是否显示日期标题
+    }
+  },
   data() {
     return {
       month: '',
     }
   },
+  watch: {
+    value(val) {
+      let _val = this.getformatDate(val);
+      if (_val !== this.month) {
+        this.month = _val;
+        this.$emit('input', this.month);
+      }
+    }
+  },
+  created() {
+    this.month = this.getformatDate(this.value);
+  },
   methods: {
-    dateChange(e) {
-      console.log('month e', e);
-      console.log('month', this.month);
+      isString(obj) {// 判断是不是字符串
+      Object.prototype.toString.call(obj).slice(8, -1).toLowerCase() === 'string'
+    },
+    getformatDate(date) {
+      if (this.isString(date) && /^(\d{4})(\d{2})$/.test(date)) { // 修正来自移动端的'20220229'的数据
+        date = `${RegExp.$1}/${RegExp.$2}`;
+      }
+      if (date) {
+        return formatDate(date, 'yyyy-MM');
+      }
+      return '';
+    },
+    dateChange(val) {
+      this.month = val;
+      this.$emit('input', val);
     }
   }
 }
