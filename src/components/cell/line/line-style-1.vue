@@ -5,23 +5,120 @@
 </template>
 <script>
 const echarts = require("echarts");
-function getLinearColor(colorStart, colorMiddle, colorEnd) {
-  return new echarts.graphic.LinearGradient(0, 0, 1, 0, [
-    { offset: 0, color: colorStart },
-    { offset: 0.5, color: colorMiddle },
-    { offset: 1, color: colorEnd }
-  ]);
+function getLinearColor(colors) {
+  if (colors.length == 1) {
+    return colors[0];
+  } else if (colors.length == 2) {
+    return new echarts.graphic.LinearGradient(0, 0, 1, 0, [
+      { offset: 0, color: colors[0] },
+      { offset: 1, color: colors[1] }
+    ]);
+  } else if (colors.length == 3) {
+    return new echarts.graphic.LinearGradient(0, 0, 1, 0, [
+      { offset: 0, color: colors[0] },
+      { offset: 0.5, color: colors[1] },
+      { offset: 1, color: colors[2] }
+    ]);
+  }
 }
 export default {
+  name: "lineStyle1",
   props: {
     chartId: {
       type: String,
-      default: ""
+      default: "lineChart"
     },
     chartData: {
       type: Object,
       default: function() {
         return {};
+      }
+    },
+    legendColor: {
+      // legend图例颜色
+      type: Array,
+      default: function() {
+        return ["#38DFEF", "#27DDA8"];
+      }
+    },
+    line1LegendStyle: {
+      type: Object,
+      default: function() {
+        return {
+          fontSize: 14,
+          fontFamily: "PingFangSC",
+          color: "#ffff"
+        };
+      }
+    },
+    line2LegendStyle: {
+      type: Object,
+      default: function() {
+        return {
+          fontSize: 14,
+          fontFamily: "PingFangSC",
+          color: "#ffff"
+        };
+      }
+    },
+    xAxisLabel: {
+      type: Object,
+      default: function() {
+        return {
+          color: "#88D7FD",
+          fontSize: 14,
+          fontFamily: "PingFangSC"
+        };
+      }
+    },
+    yAxisLabel: {
+      type: Object,
+      default: function() {
+        return {
+          color: "#88D7FD",
+          fontSize: 14,
+          fontFamily: "PingFangSC"
+        };
+      }
+    },
+    xAxisLineStyle: {
+      type: Object,
+      default: function() {
+        return {
+          type: "solid",
+          color: "rgba(41,153,234,0.2)", //坐标轴的颜色
+          width: "1" //坐标轴的宽度
+        };
+      }
+    },
+    yAxisSplitLineStyle: {
+      type: Object,
+      default: function() {
+        return {
+          color: "rgba(41,153,234,0.2)",
+          width: 1,
+          type: "solid"
+        };
+      }
+    },
+    line1Color: {
+      type: Array,
+      default: function() {
+        return [
+          "rgba(56,223,239,0.08)",
+          "rgba(56,223,239,1)",
+          "rgba(56,223,239,0.08)"
+        ];
+      }
+    },
+    line2Color: {
+      type: Array,
+      default: function() {
+        return [
+          "rgba(39,221,168,0.08)",
+          "rgba(39,221,168,1)",
+          "rgba(39,221,168,0.08)"
+        ];
       }
     }
   },
@@ -47,7 +144,7 @@ export default {
         tooltip: {
           trigger: "axis"
         },
-        color: ["#38DFEF", "#27DDA8"],
+        color: this.legendColor,
         legend: {
           itemWidth: 10,
           itemHeight: 4,
@@ -56,20 +153,12 @@ export default {
             {
               name: lineTitle1,
               icon: "stack",
-              textStyle: {
-                fontSize: 14,
-                fontFamily: "PingFangSC",
-                color: "#ffff"
-              }
+              textStyle: this.line1LegendStyle
             },
             {
               name: lineTitle2,
               icon: "stack",
-              textStyle: {
-                fontSize: 14,
-                fontFamily: "PingFangSC",
-                color: "#ffff"
-              }
+              textStyle: this.line2LegendStyle
             }
           ]
         },
@@ -102,18 +191,10 @@ export default {
         xAxis: {
           type: "category",
           axisLine: {
-            lineStyle: {
-              type: "solid",
-              color: "rgba(41,153,234,0.2)", //坐标轴的颜色
-              width: "1" //坐标轴的宽度
-            }
+            lineStyle: this.xAxisLineStyle
           },
           axisLabel: {
-            textStyle: {
-              color: "#88D7FD",
-              fontSize: 14,
-              fontFamily: "PingFangSC"
-            }
+            textStyle: this.xAxisLabel
           },
           data: xdata
         },
@@ -129,18 +210,10 @@ export default {
             },
             splitLine: {
               show: true,
-              lineStyle: {
-                color: "rgba(41,153,234,0.2)",
-                width: 1,
-                type: "solid"
-              }
+              lineStyle: this.yAxisSplitLineStyle
             },
             axisLabel: {
-              textStyle: {
-                color: "#88D7FD",
-                fontSize: 14,
-                fontFamily: "PingFangSC"
-              }
+              textStyle: this.yAxisLabel
             }
           }
         ],
@@ -155,11 +228,7 @@ export default {
               normal: {
                 lineStyle: {
                   width: 4,
-                  color: getLinearColor(
-                    "rgba(56,223,239,0.08)",
-                    "rgba(56,223,239,1)",
-                    "rgba(56,223,239,0.08)"
-                  ) //改变折线颜色
+                  color: getLinearColor(this.line1Color)
                 }
               }
             },
@@ -175,11 +244,7 @@ export default {
               normal: {
                 lineStyle: {
                   width: 4,
-                  color: getLinearColor(
-                    "rgba(39,221,168,0.08)",
-                    "rgba(39,221,168,1)",
-                    "rgba(39,221,168,0.08)"
-                  ) //改变折线颜色
+                  color: getLinearColor(this.line2Color)
                 }
               }
             },

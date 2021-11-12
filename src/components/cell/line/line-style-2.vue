@@ -23,7 +23,23 @@ export default {
       default: function() {
         return {};
       }
-    }
+    },
+    legendColor: {
+      type: Array,
+      default: function() {
+        return ["#21B791", "#FFBA1E"]
+      }
+    },
+    line1LegendStyle: {
+      type: Object,
+      default: function() {
+        return {
+          fontSize: 14,
+          fontFamily: "PingFangSC",
+          color: "#ffff"
+        };
+      }
+    },
   },
   data() {
     return {
@@ -47,7 +63,7 @@ export default {
         tooltip: {
           trigger: "axis"
         },
-        color: ["#21B791", "#FFBA1E"],
+        color: this.legendColor,
         legend: {
           itemWidth: 10,
           itemHeight: 4,

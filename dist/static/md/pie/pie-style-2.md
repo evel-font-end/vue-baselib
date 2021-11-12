@@ -2,7 +2,7 @@
 
 > Use
 
-```
+```js
 <pie-style-2 :sid="id" ref="pie2" :data="data" />
 const data = [
   {name: "空间资源",y: 330,sliced: false,selected: false},
@@ -38,7 +38,7 @@ const data = [
 
 **可添加配置：**
 
-```
+```css
 legendStyle: {
   fontSize: 12,
   fontWeight: 600,
@@ -52,7 +52,7 @@ legendStyle: {
 
 **可添加配置：**
 
-```
+```css
 tooltipStyle: {
   fontSize: 12,
   fontWeight: 600,

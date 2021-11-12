@@ -2,7 +2,7 @@
 
 > Use
 
-```
+```js
 <pie-style-3 :sid="id" ref="pie3" :data="data" />
 const data = [
           {name: "空间资源",value: 330},
@@ -37,8 +37,7 @@ const data = [
 
 **可添加配置：**
 
-```
-
+```css
 legendStyle: {
   fontSize: 12,
   fontWeight: 600,
@@ -52,7 +51,7 @@ legendStyle: {
 
 **可添加配置：**
 
-```
+```css
 labelStyle: {
   fontSize: 12,
   fontWeight: 600,
