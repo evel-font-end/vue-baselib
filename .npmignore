@@ -1,4 +1,7 @@
 /build/
-config
+/dist/
+/src/
+/static/
+/config/
 node_modules/
 package-lock.json*
