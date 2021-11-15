@@ -7,8 +7,8 @@ import router from './router'
 import store from './store'
 import echarts from 'echarts'
 import liquidfill from 'echarts-liquidfill'
-// import ElementUI from 'element-ui'
-// import dataV from '@jiaminghi/data-view'
+import ElementUI from 'element-ui'
+import dataV from '@jiaminghi/data-view'
 import TFetch from 'tfetch'
 import mavonEditor from 'mavon-editor'
 import highcharts from 'highcharts'
@@ -27,8 +27,8 @@ Vue.config.productionTip = false;
 Vue.use(iview)
 // Vue.use(MyComponent)
 Vue.use(liquidfill)
-// Vue.use(dataV)
-// Vue.use(ElementUI)
+Vue.use(dataV)
+Vue.use(ElementUI)
 Vue.use(mavonEditor)
 highcharts3d(highcharts)
 
