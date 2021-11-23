@@ -53,6 +53,7 @@ import MapCharts from './mapcharts'
 import headline from './headline'
 import date from './date'
 import pagination from './pagination'
+import tabs from './tabs'
 
 // 组件列表
 const components = [
@@ -69,7 +70,8 @@ const components = [
   ...MapCharts.components,
   ...headline.components,
   ...date.components,
-  ...pagination.components
+  ...pagination.components,
+  ...tabs.components,
 ]
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，那么所有的组件都会被注册

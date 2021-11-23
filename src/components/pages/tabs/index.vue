@@ -5,57 +5,57 @@
       :spinShow="spinShow1"
       title="横向tab标签"
       :width="'calc(50% - 20px)'"
-      @showOptionHandler="showOption1('tabs1')">
-        <tabs1 :tabsList="tabsList1" @tabsHandle="tabsHandle1">
+      @showOptionHandler="showOption1('tabsStyle1')">
+        <tabs-style-1 :tabsList="tabsList1" @tabsHandle="tabsHandle1">
            <!-- <tabsContent1 v-if="currIndex1==0"></tabsContent1>
            <tabsContent2 v-if="currIndex1==1"></tabsContent2>
            <tabsContent3 v-if="currIndex1==2"></tabsContent3>
            <tabsContent4 v-if="currIndex1==3"></tabsContent4> -->
-        </tabs1>
-        <tabs2 @tabsHandle="tabsHandle2">
+        </tabs-style-1>
+        <tabs-style-2 @tabsHandle="tabsHandle2">
           <!-- <tabsContent1 v-if="currIndex2==0"></tabsContent1>
           <tabsContent2 v-if="currIndex2==1"></tabsContent2>
           <tabsContent3 v-if="currIndex2==2"></tabsContent3>
           <tabsContent4 v-if="currIndex2==3"></tabsContent4>
           <tabsContent1 v-if="currIndex2==4"></tabsContent1> -->
-        </tabs2>
-        <tabs3 @tabsHandle="tabsHandle3">
+        </tabs-style-2>
+        <tabs-style-3 @tabsHandle="tabsHandle3">
           <!-- <tabsContent1 v-if="currIndex2==0"></tabsContent1>
           <tabsContent2 v-if="currIndex2==1"></tabsContent2>
           <tabsContent3 v-if="currIndex2==2"></tabsContent3>
           <tabsContent4 v-if="currIndex2==3"></tabsContent4>
           <tabsContent1 v-if="currIndex2==4"></tabsContent1> -->
-        </tabs3>
-        <tabs4 @tabsHandle="tabsHandle4">
+        </tabs-style-3>
+        <tabs-style-4 @tabsHandle="tabsHandle4">
           <!-- <tabsContent1 v-if="currIndex2==0"></tabsContent1>
           <tabsContent2 v-if="currIndex2==1"></tabsContent2>
           <tabsContent3 v-if="currIndex2==2"></tabsContent3>
           <tabsContent4 v-if="currIndex2==3"></tabsContent4>
           <tabsContent1 v-if="currIndex2==4"></tabsContent1> -->
-        </tabs4>
-        <tabs5></tabs5>
+        </tabs-style-4>
+        <tabs-style-5></tabs-style-5>
     </box-container>
     <box-container
       class="bg-grey flex-row"
       :spinShow="spinShow2"
       title="竖向Tab标签"
       :width="'calc(50% - 20px)'"
-      @showOptionHandler="showOption2('tabs2')">
-      <tabs6></tabs6>
-      <tabs7></tabs7>
+      @showOptionHandler="showOption2('tabsStyle2')">
+      <tabs-style-6></tabs-style-6>
+      <tabs-style-7></tabs-style-7>
     </box-container>
   </div>
 </template>
 
 <script>
 import boxContainer from '../common/box-container-2';
-import tabs1 from '../../cell/tabs/tabs-style-1.vue';
-import tabs2 from '../../cell/tabs/tabs-style-2.vue';
-import tabs3 from '../../cell/tabs/tabs-style-3.vue';
-import tabs4 from '../../cell/tabs/tabs-style-4.vue';
-import tabs5 from '../../cell/tabs/tabs-style-5.vue';
-import tabs6 from '../../cell/tabs/tabs-style-6.vue';
-import tabs7 from '../../cell/tabs/tabs-style-7.vue';
+import tabsStyle1 from '../../cell/tabs/tabs-style-1.vue';
+import tabsStyle2 from '../../cell/tabs/tabs-style-2.vue';
+import tabsStyle3 from '../../cell/tabs/tabs-style-3.vue';
+import tabsStyle4 from '../../cell/tabs/tabs-style-4.vue';
+import tabsStyle5 from '../../cell/tabs/tabs-style-5.vue';
+import tabsStyle6 from '../../cell/tabs/tabs-style-6.vue';
+import tabsStyle7 from '../../cell/tabs/tabs-style-7.vue';
 import tabsContent1 from '../../cell/tabs/components/tabs-content-1.vue';
 import tabsContent2 from '../../cell/tabs/components/tabs-content-2.vue';
 import tabsContent3 from '../../cell/tabs/components/tabs-content-3.vue';
@@ -82,13 +82,13 @@ export default {
   },
   components: {
     boxContainer,
-    tabs1,
-    tabs2,
-    tabs3,
-    tabs4,
-    tabs5,
-    tabs6,
-    tabs7,
+    tabsStyle1,
+    tabsStyle2,
+    tabsStyle3,
+    tabsStyle4,
+    tabsStyle5,
+    tabsStyle6,
+    tabsStyle7,
     tabsContent1,
     tabsContent2,
     tabsContent3,

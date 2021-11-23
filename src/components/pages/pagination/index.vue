@@ -90,10 +90,10 @@ export default {
   },
   components: {
     boxContainer,
-    'pagination-style-1': paginationStyle1,
-    'pagination-style-2': paginationStyle2,
-    'pagination-style-3': paginationStyle3,
-    'pagination-style-4': paginationStyle4,
+    paginationStyle1,
+    paginationStyle2,
+    paginationStyle3,
+    paginationStyle4,
   },
   methods: {
      // 分页切换页面

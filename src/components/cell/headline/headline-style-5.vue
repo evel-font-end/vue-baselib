@@ -7,6 +7,7 @@
 
 <script>
 export default {
+  name: 'headline-style-5',
   props: {
     title: {
       type: String,

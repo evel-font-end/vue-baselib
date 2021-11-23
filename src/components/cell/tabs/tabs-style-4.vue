@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: 'tabs-style-3',
+  name: 'tabs-style-4',
   data() {
     return {
       tabsList3: [
