@@ -5,7 +5,7 @@
       popper-class='select_pagination'
       background
       :layout="pageLayout"
-      :current-page="pageCurrent"
+      :current-page="currentPage"
       :page-size="pageSize"
       :page-sizes="pageSizes"
       :total="total"
@@ -24,7 +24,7 @@ export default {
       default: "sizes, prev, pager, next, jumper",
     },
     /** 当前分页页码 */
-    pageCurrent: {
+    currentPage: {
       type: Number,
       default: 6,
     },

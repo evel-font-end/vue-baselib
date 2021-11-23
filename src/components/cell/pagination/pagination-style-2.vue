@@ -5,15 +5,11 @@
       background
       :layout="pageLayout"
       :pager-count="pagerCount"
-      :current-page="pageCurrent"
+      :current-page="currentPage"
       :page-size="pageSize"
       :total="total"
       @current-change="onCurrentChange">
     </el-pagination>
-     <!-- <el-pagination
-    layout="prev, pager, next"
-    :total="50">
-  </el-pagination> -->
   </div>
 </template>
 
@@ -27,7 +23,7 @@ export default {
       default: "prev, pager, next",
     },
     /** 当前分页页码 */
-    pageCurrent: {
+    currentPage: {
       type: Number,
       default: 6,
     },
@@ -41,13 +37,6 @@ export default {
       default: 11 //设置最大页码按钮数
       // 取值范围 5~21之间的奇数
     },
-    // /** 可选的每页数量 */
-    // pageSizes: {
-    //   type: Array,
-    //   default() {
-    //     return [10, 20, 30, 40, 50, 100];
-    //   },
-    // },
     /** 数据总量 */
     total: {
       type: Number,
@@ -63,9 +52,6 @@ export default {
 
   },
   methods: {
-    //  const onCurrentChange = (val: any) => {
-    //   content.emit("current-change", val);
-    // };
     onCurrentChange(val) {// 当前页 改变时会触发
       this.$emit('current-change', val);
     },
@@ -82,35 +68,35 @@ export default {
   height: 100%;
   .pagination {
     /deep/.el-pagination.is-background .el-pager li:not(.disabled).active {
-  // background: #3f5cc5;
-  background: linear-gradient(217deg,rgba(6,210,236,0.65) 4%, rgba(30,138,210,0.57) 89%);
-  border-radius: 2px;
-  }
- /deep/.el-pagination.is-background .el-pager li {
-    font-size: 14px;
-    // font-family: Helvetica;
-    color: #ffffff;
-font-family: PingFangSC, PingFangSC-Semibold;
-font-weight: 600;
-   background: rgba(24,160,212,0.13);
-border-radius: 2px;
-  }
- /deep/.el-pagination.is-background .btn-prev {
-    // background: #f8fbff;
-    color: #ffffff;
-    font-family: PingFangSC, PingFangSC-Semibold;
-font-weight: 600;
-    background: rgba(24,160,212,0.18);
-  border: 1px solid rgba(94,191,255,0.30);
-  border-radius: 2px;
-  }
- /deep/.el-pagination.is-background .btn-next {
-    // background: #f8fbff;
-    color: #ffffff;
-    background: rgba(24,160,212,0.18);
-  border: 1px solid rgba(94,191,255,0.30);
-  border-radius: 2px;
-  }
+      // background: #3f5cc5;
+      background: linear-gradient(217deg,rgba(6,210,236,0.65) 4%, rgba(30,138,210,0.57) 89%);
+      border-radius: 2px;
+    }
+    /deep/.el-pagination.is-background .el-pager li {
+      font-size: 14px;
+      // font-family: Helvetica;
+      color: #ffffff;
+      font-family: PingFangSC, PingFangSC-Semibold;
+      font-weight: 600;
+      background: rgba(24,160,212,0.13);
+      border-radius: 2px;
+    }
+    /deep/.el-pagination.is-background .btn-prev {
+      // background: #f8fbff;
+      color: #ffffff;
+      font-family: PingFangSC, PingFangSC-Semibold;
+      font-weight: 600;
+      background: rgba(24,160,212,0.18);
+      border: 1px solid rgba(94,191,255,0.30);
+      border-radius: 2px;
+    }
+    /deep/.el-pagination.is-background .btn-next {
+      // background: #f8fbff;
+      color: #ffffff;
+      background: rgba(24,160,212,0.18);
+      border: 1px solid rgba(94,191,255,0.30);
+      border-radius: 2px;
+    }
   }
 }
 

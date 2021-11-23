@@ -5,52 +5,54 @@
       :spinShow="spinShow1"
       title="分页一"
       :width="'calc(50% - 20px)'"
-      @showOptionHandler="showOption1('pagination1')">  
-      <pagination1
+      @showOptionHandler="showOption('paginationStyle1')">  
+      <pagination-style-1
+        ref="paginationStyle1"
         @current-change="onCurrentChange"
         :pageSize="page.pageSize"
-        :pageCurrent="page.current"
+        :currentPage="page.current"
         :total="page.total">
-      </pagination1>
-      <pagination2
+      </pagination-style-1>
+      <pagination-style-2
         @current-change="onCurrentChange2"
         :pageSize="page2.pageSize"
         :pagerCount="page2.count"
-        :pageCurrent="page2.current"
+        :currentPage="page2.current"
         :total="page2.total">
-      </pagination2>
+      </pagination-style-2>
     </box-container>
     <box-container
       class="bg-grey"
       :spinShow="spinShow2"
       title="分页二"
       :width="'calc(50% - 20px)'"
-      @showOptionHandler="showOption2('pagination2')">  
-      <pagination3
+      @showOptionHandler="showOption('paginationStyle3')">  
+      <pagination-style-3
+        ref="paginationStyle3"
         @current-change="onCurrentChange3"
         @size-change="onPageSizeChange3"
         :pageSize="page3.pageSize"
         :pagerCount="page3.count"
-        :pageCurrent="page3.current"
+        :currentPage="page3.current"
         :total="page3.total">
-      </pagination3>
-      <pagination4
+      </pagination-style-3>
+      <pagination-style-4
         @current-change="onCurrentChange4"
         @size-change="onPageSizeChange4"
         :pageSize="page4.pageSize"
-        :pageCurrent="page4.current"
+        :currentPage="page4.current"
         :total="page4.total">
-      </pagination4>
+      </pagination-style-4>
     </box-container>
   </div>
 </template>
 
 <script>
 import boxContainer from '../common/box-container-2';
-import pagination1 from '../../cell/pagination/pagination-style-1.vue';
-import pagination2 from '../../cell/pagination/pagination-style-2.vue';
-import pagination3 from '../../cell/pagination/pagination-style-3.vue';
-import pagination4 from '../../cell/pagination/pagination-style-4.vue';
+import paginationStyle1 from '../../cell/pagination/pagination-style-1.vue';
+import paginationStyle2 from '../../cell/pagination/pagination-style-2.vue';
+import paginationStyle3 from '../../cell/pagination/pagination-style-3.vue';
+import paginationStyle4 from '../../cell/pagination/pagination-style-4.vue';
 
 export default {
   name: 'pagination',
@@ -86,45 +88,36 @@ export default {
     this.spinShow1 = false;
     this.spinShow2 = false;
   },
-  methods: {
-    showOption1(ref) {
-      console.log(JSON.parse(JSON.stringify(this.$refs[ref].option)));
-    },
-    showOption2(ref) {
-      console.log(JSON.parse(JSON.stringify(this.$refs[ref].option)));
-    },
-  },
   components: {
     boxContainer,
-    pagination1,
-    pagination2,
-    pagination3,
-    pagination4,
+    'pagination-style-1': paginationStyle1,
+    'pagination-style-2': paginationStyle2,
+    'pagination-style-3': paginationStyle3,
+    'pagination-style-4': paginationStyle4,
   },
   methods: {
      // 分页切换页面
       onCurrentChange(val) {
-        console.log('this.page', val);
         this.page.current = val;
       },
       onCurrentChange2(val) {
-        console.log('this.page', val);
         this.page2.current = val;
       },
       onCurrentChange3(val) {
-        console.log('this.page', val);
         this.page3.current = val;
       },
       onPageSizeChange3(val) {
         this.page3.pageSize = val;
       },
       onCurrentChange4(val) {
-        console.log('this.page', val);
         this.page4.current = val;
       },
       onPageSizeChange4(val) {
         this.page4.pageSize = val;
       },
+      showOption(ref) {
+       this.$store.commit('UPDATE_DIALOG_SHOW', this.$refs[ref].$options._componentTag);
+    },
   }
 }
 </script>
