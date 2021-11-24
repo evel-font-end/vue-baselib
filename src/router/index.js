@@ -1,6 +1,6 @@
 // import Vue from 'vue'
 // import Router from 'vue-router'
-
+import store from '@/store/index';
 Vue.use(VueRouter)
 export const children = [{
   path: '/mapcharts',
@@ -207,7 +207,7 @@ export const children = [{
     component: res => require(['@/components/pages/ball'], res),
   } */
 ]
-export default new VueRouter({
+const router = new VueRouter({
   // mode: 'history',
   routes: [
     {
@@ -217,8 +217,15 @@ export default new VueRouter({
         title: 'home'
       },
       component: res => require(['@/components/pages/home'], res),
-      redirect: '/bar',
+      redirect: '/mapcharts',
       children: children
     },
   ],
 })
+
+router.beforeEach((to, from, next) => {
+  store.commit('UPDATE_ACTIVE_MENU', to.name);
+  next();
+})
+
+export default router;

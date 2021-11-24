@@ -26,6 +26,8 @@ https://evel-font-end.github.io/vue-baselib/dist/
 ## Build Setup
 
 ``` bash
+node: 14.16.0
+npm: 8.1.1
 # install dependencies
 npm install
 

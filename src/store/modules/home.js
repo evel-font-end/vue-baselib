@@ -13,7 +13,6 @@ const getters = {
   getActiveMenu: state => () => state.activeMenu,
   getActiveName: state => () => {
     const routers = children.find(childrenItem => childrenItem.name === state.activeMenu)
-    console.log('routers', routers);
     return routers.meta.title || '';
   }
 }

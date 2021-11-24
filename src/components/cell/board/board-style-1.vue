@@ -3,11 +3,11 @@
 </template>
 <script>
 export default {
-  name: 'BoardStyle2',
+  name: 'BoardStyle1',
   props: {
     sid: {
       type: String,
-      default: () => 'board2',
+      default: () => 'board1',
     },
     source: {
       type: String,
@@ -71,7 +71,7 @@ export default {
     },
     updateChart(percentage) {
       this.angle = 0;//角度，用来做简单的动画效果的
-      const value = 30;
+      const value = 100;
       this.option = {
         backgroundColor: "transparent",
         title: {
@@ -84,7 +84,6 @@ export default {
                 fontSize: 48,
                 color: '#29EEF3'
               },
-
               c: {
                 fontSize: 20,
                 color: '#ffffff',
@@ -122,19 +121,32 @@ export default {
         series: [
           {
             type: "gauge",
-            radius: "135%", // 位置
-            center: ["50%", "80%"],
+            radius: "100%", // 位置
+            center: ["50%", "50%"],
             min: 0,
             max: 100,
-            startAngle: 180,
-            endAngle: 0,
+            startAngle: 210,
+            endAngle: -30,
             axisLine: {
               show: true,
               lineStyle: {
                 // 轴线样式
-                width: 4, // 宽度
+                width: 2, // 宽度
                 color: [
-                  [1, "rgba(229,229,229,0.3)"]
+                  [1, new this.$echarts.graphic.LinearGradient(
+                    0, 1, 0, 0, [{
+                      offset: 0,
+                      color: 'rgba(58,167,255,0)',
+                    }, {
+                      offset: 0.5,
+                      color: 'rgba(58,167,255,0.5)',
+                    },
+                    {
+                      offset: 1,
+                      color: 'rgba(244,248,255,1)',
+                    }
+                    ]
+                  )],
                 ] // 颜色
               }
             },
@@ -161,12 +173,12 @@ export default {
           }, {
             name: '吃猪肉频率',
             type: 'pie',
-            radius: ['120%', '90%'],
-            center: ['50%', '80%'],
+            radius: ['90%', '70%'],
+            center: ['50%', '50%'],
             min: 0, //最小刻度
             max: 100, //最大刻度
-            startAngle: 180,
-            endAngle: 100,
+            startAngle: 210,
+            endAngle: -30,
             z: 0,
             zlevel: 0,
             label: {
@@ -176,7 +188,7 @@ export default {
               }
             },
             data: [{
-              value: value,
+              value: (value + 40),
               name: "",
               itemStyle: {
                 normal: {
@@ -193,7 +205,7 @@ export default {
               }
             },
             {
-              value: 100 - 50 - value,
+              value: 140 - (value + 40),
               name: "",
               label: {
                 normal: {
@@ -207,7 +219,7 @@ export default {
               }
             },
             {
-              value: 50,
+              value: 70,
               name: "",
               label: {
                 normal: {
@@ -222,25 +234,24 @@ export default {
             }
             ]
           },
-
           {
             name: "",
             type: "gauge",
-            radius: "120%",
-            center: ['50%', '80%'],
+            radius: "90%",
+            center: ['50%', '50%'],
             min: 0, //最小刻度
             max: 100, //最大刻度
-            startAngle: 180,
-            endAngle: 0,
-            splitNumber: 8,
+            startAngle: 210,
+            endAngle: -30,
+            splitNumber: 6,
             hoverAnimation: true,
             axisTick: {
               show: false
             },
             splitLine: {
-              length: 60,
+              length: 30,
               lineStyle: {
-                width: 5,
+                width: 6,
                 color: "#132845"
               }
             },
@@ -263,7 +274,82 @@ export default {
               name: ""
             }]
           },
+          {
+            type: 'pie',
+            radius: ['0', '55%'],
+            center: ['50%', '50%'],
+            z: 0,
+            itemStyle: {
+              normal: {
+                color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                  offset: 0,
+                  color: 'rgba(27,110,255,0.75)'
+                },
+                {
+                  offset: 0.5,
+                  color: 'rgba(27,110,255,0.3)'
+                },
+                {
+                  offset: 1,
+                  color: 'rgba(27,110,255,0)'
+                }
+                ]),
+                label: {
+                  show: false
+                },
+                labelLine: {
+                  show: false
+                }
+              },
+            },
+            label: {
+              normal: {
+                position: "center",
 
+              }
+            },
+            data: [100],
+          },
+          {
+            // name: "白色圈刻度",
+            type: "gauge",
+            radius: "67%",
+            startAngle: 225, //刻度起始
+            endAngle: -134.8, //刻度结束
+            z: 4,
+            axisTick: {
+              show: true,
+              lineStyle: {
+                width: 2,
+                color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                  { offset: 0, color: "rgba(37,121,255,1)" },
+                  { offset: 1, color: "rgba(76,177,255,0)" }
+                ]),
+              }
+            },
+            splitLine: {
+              show: false
+            },
+            axisLabel: {
+              color: 'rgba(255,255,255,0)',
+              fontSize: 12,
+            }, //刻度节点文字颜色
+            pointer: {
+              show: false
+            },
+            axisLine: {
+              lineStyle: {
+                opacity: 0
+              }
+            },
+            detail: {
+              show: false
+            },
+            data: [{
+              value: 0,
+              name: ""
+            }]
+          },
         ]
       };
       this.timer = setInterval(() => {
