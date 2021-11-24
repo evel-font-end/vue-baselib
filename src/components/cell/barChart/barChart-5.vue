@@ -139,12 +139,12 @@ export default {
         series: [
           {
             z: 1,
-            name: "上部1",
+            name: barTitle1,
             type: "pictorialBar",
             symbolPosition: "end",
             data: ydata1,
             symbol: "diamond",
-            symbolOffset: ["-70%", "-50%"],
+             symbolOffset: ["-70%", "-50%"],
             symbolSize: [15, 10],
             itemStyle: {
               borderColor: "#07F096",
@@ -176,7 +176,7 @@ export default {
           },
           {
             z: 2,
-            name: "上部1",
+            name:  barTitle2,
             type: "pictorialBar",
             symbolPosition: "end",
             data: ydata2,
@@ -215,6 +215,19 @@ export default {
       };
 
       this.chart.setOption(option);
+      this.chart.on('legendselectchanged', (e) => {
+        if (e.selected['指标一'] == false) {
+          option.series[2].symbolOffset = ['0', '-50%']
+        } else {
+          option.series[2].symbolOffset = ["65%", "-50%"]
+        }
+        if (e.selected['指标二'] == false) {
+          option.series[0].symbolOffset = ['0', '-50%']
+        } else {
+          option.series[0].symbolOffset = ["-70%", "-50%"]
+        }
+        this.chart.setOption(option);
+      })
       window.addEventListener("resize", () => this.chart.resize(), false);
     }
   }
