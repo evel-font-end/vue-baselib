@@ -1,7 +1,7 @@
 <template>
   <div class="tabs-container">
     <ul class="tabs-list">
-      <li v-for="(item, index) in tabsList3"
+      <li v-for="(item, index) in tabsList"
       :key="index"
       :class="{active: currIndex === index}"
       @click="changeIndex(index)"
@@ -19,34 +19,40 @@
 <script>
 export default {
   name: 'tabs-style-6',
+  props: {
+    tabsList:{
+      type: Array,
+      default: []
+    }
+  },
   data() {
     return {
-      tabsList3: [
-        {
-          icon: 'iconfont icon-dianlu',
-          title: '电路',
-          style: {
-            color: '#3fd6f1'
-          }
-        },
-        {
-          icon: 'iconfont icon-louyu',
-          title: '楼宇',
-          style: {
-            color: '#3fd6f1'
-          }
-        },
-        {
-          icon: 'iconfont icon-jifang',
-          title: '机房',
-          style: {color: '#3fd6f1'}
-        },
-        {
-          icon: 'iconfont icon-guanglan',
-          title: '光缆',
-          style: {color: '#3fd6f1'}
-        },
-      ],
+      // tabsList6: [
+      //   {
+      //     icon: 'iconfont icon-dianlu',
+      //     title: '电路',
+      //     style: {
+      //       color: '#3fd6f1'
+      //     }
+      //   },
+      //   {
+      //     icon: 'iconfont icon-louyu',
+      //     title: '楼宇',
+      //     style: {
+      //       color: '#3fd6f1'
+      //     }
+      //   },
+      //   {
+      //     icon: 'iconfont icon-jifang',
+      //     title: '机房',
+      //     style: {color: '#3fd6f1'}
+      //   },
+      //   {
+      //     icon: 'iconfont icon-guanglan',
+      //     title: '光缆',
+      //     style: {color: '#3fd6f1'}
+      //   },
+      // ],
       currIndex: 0,
     }
   },
