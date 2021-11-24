@@ -1,7 +1,7 @@
 <template>
   <div class="tabs-container">
     <ul class="tabs-list">
-      <li v-for="(item, index) in tabsList3"
+      <li v-for="(item, index) in tabsList"
       :key="index"
       :class="{active: currIndex === index}"
       @click="changeIndex(index)"
@@ -19,30 +19,37 @@
 <script>
 export default {
   name: 'tabs-style-3',
+  props: {
+    tabsList:{
+      type: Array,
+      default: []
+    }
+  },
   data() {
     return {
-      tabsList3: [
-        {
-          icon: 'iconfont icon-dianlu',
-          title: '总览',
-          style: {}
-        },
-        {
-          icon: 'iconfont icon-louyu',
-          title: '一千调度',
-          style: {}
-        },
-        {
-          icon: 'iconfont icon-jifang',
-          title: '二千调度',
-          style: {}
-        },
-        {
-          icon: 'iconfont icon-guanglan',
-          title: '本地网调度',
-          style: {}
-        },
-      ],
+
+      // tabsList3: [
+      //   {
+      //     icon: 'iconfont icon-dianlu',
+      //     title: '总览',
+      //     style: {}
+      //   },
+      //   {
+      //     icon: 'iconfont icon-louyu',
+      //     title: '一千调度',
+      //     style: {}
+      //   },
+      //   {
+      //     icon: 'iconfont icon-jifang',
+      //     title: '二千调度',
+      //     style: {}
+      //   },
+      //   {
+      //     icon: 'iconfont icon-guanglan',
+      //     title: '本地网调度',
+      //     style: {}
+      //   },
+      // ],
       currIndex: 0,
     }
   },

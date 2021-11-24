@@ -43,6 +43,6 @@ total|总条目数|Number|-|
 
 > methods
 
-事件名称|说明|类型|可选值|默认值
+事件名称|说明|类型|可选值|回调参数
 -|-|-|-|-
-current-change|currentPage改变时会触发|Function|-| -
+current-change|currentPage改变时会触发|Function|-| 当前页

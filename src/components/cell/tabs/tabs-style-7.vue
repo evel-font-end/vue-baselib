@@ -1,19 +1,18 @@
 <template>
-<div class="headline-container">
- <div class="tab-header">
-              <div
-                v-for="(tab, i) in menuTab"
-                :key="i"
-                class="tab-item"
-                :class="{ active: menuTabIndex2 == i }"
-                @click.stop="changeTab(i, tab)"
-              >
-                <!-- :class="{ active: menuTabIndex == i }" -->
-                <i v-html="tab.name"> </i>
-              </div>
-              <br />
-            </div>
-</div>
+  <div class="headline-container">
+   <div class="tab-header">
+      <div
+        v-for="(tab, i) in tabsList"
+        :key="i"
+        class="tab-item"
+        :class="{ active: currIndex == i }"
+        @click.stop="changeIndex(i)">
+        <!-- :class="{ active: menuTabIndex == i }" -->
+        <i v-html="tab.name"> </i>
+      </div>
+      <br />
+    </div>
+  </div>
  
 </template>
 
@@ -21,29 +20,31 @@
 
 export default {
   name: 'tabs-style-7',
+  props: {
+    tabsList:{
+      type: Array,
+      default: []
+    }
+  },
   data () {
     return {
-      menuTab: [
-        {
-          name: '机房'
-        },
-        {
-          name: '局站'
-        }
-      ],
-      menuTabIndex2: 0,
+      // menuTab: [
+      //   {
+      //     name: '机房'
+      //   },
+      //   {
+      //     name: '局站'
+      //   }
+      // ],
+      currIndex: 0,
     };
   },
   methods: {
-     changeTab(i) {
-      console.log(i);
-      this.menuTabIndex2 = i;
-      // this.$emit('changeCircuitStatus',i)
+     changeIndex(itemIndex) {
+      this.currIndex = itemIndex;
+      this.$emit('tabsHandle', itemIndex);
     },
   },
-  props: {
-    title: String
-  }
 };
 </script>
 

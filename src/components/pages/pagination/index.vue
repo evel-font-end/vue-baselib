@@ -97,26 +97,26 @@ export default {
   },
   methods: {
      // 分页切换页面
-      onCurrentChange(val) {
-        this.page.current = val;
-      },
-      onCurrentChange2(val) {
-        this.page2.current = val;
-      },
-      onCurrentChange3(val) {
-        this.page3.current = val;
-      },
-      onPageSizeChange3(val) {
-        this.page3.pageSize = val;
-      },
-      onCurrentChange4(val) {
-        this.page4.current = val;
-      },
-      onPageSizeChange4(val) {
-        this.page4.pageSize = val;
-      },
-      showOption(ref) {
-       this.$store.commit('UPDATE_DIALOG_SHOW', this.$refs[ref].$options._componentTag);
+    onCurrentChange(val) {
+      this.page.current = val;
+    },
+    onCurrentChange2(val) {
+      this.page2.current = val;
+    },
+    onCurrentChange3(val) {
+      this.page3.current = val;
+    },
+    onPageSizeChange3(val) {
+      this.page3.pageSize = val;
+    },
+    onCurrentChange4(val) {
+      this.page4.current = val;
+    },
+    onPageSizeChange4(val) {
+      this.page4.pageSize = val;
+    },
+    showOption(ref) {
+     this.$store.commit('UPDATE_DIALOG_SHOW', this.$refs[ref].$options._componentTag);
     },
   }
 }
