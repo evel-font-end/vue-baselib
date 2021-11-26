@@ -5,10 +5,10 @@
 
 <headline1 :title="title1" ref="headline1" :headlineClass="headlineClass"></headline1>
 <headline2 :title="title2" ref="headline2"></headline2>
-<headline2 :title="title3" ref="headline3"></headline2>
-<headline2 :title="title4" ref="headline4"></headline2>
-<headline2 :title="title5" ref="headline5"></headline2>
-<headline2 :title="title6" ref="headline6"></headline2>
+<headline3 :title="title3" ref="headline3"></headline3>
+<headline4 :title="title4" ref="headline4"></headline4>
+<headline5 :title="title5" ref="headline5"></headline5>
+<headline6 :title="title6" ref="headline6"></headline6>
 
 const title1 = "网络数据能力";
 const title2 = "设施详情";
