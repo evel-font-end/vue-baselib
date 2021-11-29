@@ -6,8 +6,8 @@
       :class="{active: currIndex === index}"
       @click="changeIndex(index)"
       >
-        <!-- <i :class="item.icon" :style="item.style"></i> -->
-        <span class="tabs-item-title">{{item.title}}</span>
+        <!-- <i v-if="item.icon" :class="item.icon" :style="item.style"></i> -->
+        <span class="tabs-item-title">{{item}}</span>
       </li>
     </ul>
     <div class="tabs-content">
@@ -76,6 +76,7 @@ export default {
       width: 148px;
       height: 30px;
       color: #FFFFFF;
+      cursor: pointer;
       background:  linear-gradient(312deg,rgba(0,101,134,0.64), rgba(0,106,158,0.35) 95%);
       margin: 0 5px;
       display: flex;

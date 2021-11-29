@@ -8,7 +8,7 @@
         :class="{ active: currIndex == i }"
         @click.stop="changeIndex(i)">
         <!-- :class="{ active: menuTabIndex == i }" -->
-        <i v-html="tab.name"> </i>
+        <i v-html="tab"> </i>
       </div>
       <br />
     </div>
@@ -69,6 +69,7 @@ export default {
       height: 93px;
       min-width: 35px;
       min-height: 93px;
+      cursor: pointer;
       // display: flex;
     // flex-direction: column;
     // align-items: center;

@@ -114,62 +114,9 @@ export default {
           style: {color: '#3fd6f1'}
         }
       ],
-      tabsList3: [
-        {
-          icon: 'iconfont icon-dianlu',
-          title: '总览',
-          style: {}
-        },
-        {
-          icon: 'iconfont icon-louyu',
-          title: '一千调度',
-          style: {}
-        },
-        {
-          icon: 'iconfont icon-jifang',
-          title: '二千调度',
-          style: {}
-        },
-        {
-          icon: 'iconfont icon-guanglan',
-          title: '本地网调度',
-          style: {}
-        },
-      ],
-      tabsList4: [
-        {
-          icon: 'iconfont icon-dianlu',
-          title: '稽核统计汇总',
-          style: {color: '#3fd6f1'}
-        },
-        {
-          icon: 'iconfont icon-louyu',
-          title: '稽核详情',
-          style: {color: '#3fd6f1'}
-        },
-      ],
-      tabsList5: [
-        {
-          icon: 'iconfont icon-dianlu',
-          title: '楼宇',
-          style: {}
-        },
-        {
-          icon: 'iconfont icon-louyu',
-          title: '电路',
-          style: {}
-        },
-        {
-          icon: 'iconfont icon-jifang',
-          title: '机房',
-          style: {}
-        },
-        {
-          icon: 'iconfont icon-guanglan',
-          title: '光缆',
-          style: {}
-        },
-      ],
+      tabsList3: ['总览','一千调度','本地网调度', '二千调度','本地网调度'],
+      tabsList4: [ '稽核统计汇总','稽核详情'],
+      tabsList5: ['楼宇','电路','机房', '光缆'],
       tabsList6: [
         {
           icon: 'iconfont icon-dianlu',
@@ -196,14 +143,12 @@ export default {
           style: {color: '#3fd6f1'}
         },
       ],
-      tabsList7: [
-        {
-          name: '机房'
-        },
-        {
-          name: '局站'
-        }
-      ],
+      tabsList7:['机房', '局站'],
+     
+     
+
+
+
       currIndex1: 0,
       currIndex2: 0,
       currIndex3: 0,
