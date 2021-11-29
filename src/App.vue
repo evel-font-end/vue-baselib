@@ -48,6 +48,14 @@ export default {
   box-shadow: inset 0 0 6px rgba(0,0,0,.3);
   background-color: #2d8cf0;
 }
+.el-dialog{
+  user-select: auto;
+  -webkit-user-select: auto;
+}
+.hljs{
+  user-select: auto;
+  -webkit-user-select: auto;
+}
 pre{
   padding: 10px !important;
   .code {

@@ -68,7 +68,7 @@ npm who am i
 #  - 主版本号：做了不兼容修改或颠覆式的重写
 #  - 次版本号：向下兼容的功能性新增
 #  - 修订号：向下兼容的问题修正
-#  大版本为 1.0.0，小版本是0.1.0，小修复是0.0.2
+#  大版本为 1.0.0，小版本是0.1.0，小修复是0.0.1
 npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease [--preid=<prerelease-id>]
 
 # 发布@efont/vue-baselib
