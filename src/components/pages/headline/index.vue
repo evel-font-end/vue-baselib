@@ -7,11 +7,11 @@
       :width="'calc(50% - 40px)'"
       @showOptionHandler="showOption('headline1')">
       <headline-style-1 :title="title1" :headlineStyle="headlineStyle1" ref="headline1"></headline-style-1>
-      <headline2 :title="title2" ref="headline2"></headline2>
-      <headline3 :title="title3"></headline3>
-      <headline4 :title="title4"></headline4>
-      <headline5 :title="title5"></headline5>
-      <headline6 :title="title6"></headline6>
+      <headline-style-2 :title="title2" ref="headline2"></headline-style-2>
+      <headline-style-3 :title="title3"></headline-style-3>
+      <headline-style-4 :title="title4"></headline-style-4>
+      <headline-style-5 :title="title5"></headline-style-5>
+      <headline-style-6 :title="title6"></headline-style-6>
     </box-container>
     <box-container
       class="bg-grey"
@@ -20,8 +20,8 @@
       :width="'calc(50% - 40px)'"
       @showOptionHandler="showOption('headline7')">
       <headline-style-7 :title="title7" ref="headline7"></headline-style-7>
-      <headline8 :title="title8"></headline8>
-      <headline9 :title="title9"></headline9>
+      <headline-style-8 :title="title8"></headline-style-8>
+      <headline-style-9 :title="title9"></headline-style-9>
     </box-container>
     <box-container
       class="bg-grey flex-row"
@@ -30,24 +30,24 @@
       :width="'calc(50% - 20px)'"
       @showOptionHandler="showOption('headline10')">
       <headline-style-10 :title="title10" ref="headline10"></headline-style-10>
-      <headline-11 :title="title11"></headline-11>
+      <headline-style-11 :title="title11"></headline-style-11>
     </box-container>
   </div>
 </template>
 
 <script>
 import boxContainer from '../common/box-container-2';
-import headline1 from '../../cell/headline/headline-style-1.vue';
-import headline2 from '../../cell/headline/headline-style-2.vue';
-import headline3 from '../../cell/headline/headline-style-3.vue';
-import headline4 from '../../cell/headline/headline-style-4.vue';
-import headline5 from '../../cell/headline/headline-style-5.vue';
-import headline6 from '../../cell/headline/headline-style-6.vue';
-import headline7 from '../../cell/headline/headline-style-7.vue';
-import headline8 from '../../cell/headline/headline-style-8.vue';
-import headline9 from '../../cell/headline/headline-style-9.vue';
-import headline10 from '../../cell/headline/headline-style-10.vue';
-import headline11 from '../../cell/headline/headline-style-11.vue';
+import headlineStyle1 from '../../cell/headline/headline-style-1.vue';
+import headlineStyle2 from '../../cell/headline/headline-style-2.vue';
+import headlineStyle3 from '../../cell/headline/headline-style-3.vue';
+import headlineStyle4 from '../../cell/headline/headline-style-4.vue';
+import headlineStyle5 from '../../cell/headline/headline-style-5.vue';
+import headlineStyle6 from '../../cell/headline/headline-style-6.vue';
+import headlineStyle7 from '../../cell/headline/headline-style-7.vue';
+import headlineStyle8 from '../../cell/headline/headline-style-8.vue';
+import headlineStyle9 from '../../cell/headline/headline-style-9.vue';
+import headlineStyle10 from '../../cell/headline/headline-style-10.vue';
+import headlineStyle11 from '../../cell/headline/headline-style-11.vue';
 
 export default {
   name: 'headline',
@@ -72,17 +72,17 @@ export default {
   },
   components: {
     boxContainer,
-    'headline-style-1': headline1,
-    headline2,
-    headline3,
-    headline4,
-    headline5,
-    headline6,
-    'headline-style-7': headline7,
-    headline8,
-    headline9,
-    'headline-style-10': headline10,
-    headline11,
+    headlineStyle1,
+    headlineStyle2,
+    headlineStyle3,
+    headlineStyle4,
+    headlineStyle5,
+    headlineStyle6,
+    headlineStyle7,
+    headlineStyle8,
+    headlineStyle9,
+    headlineStyle10,
+    headlineStyle11,
   },
   created() {
     this.spinShow1 = false;
@@ -93,12 +93,6 @@ export default {
     showOption(ref) {
        this.$store.commit('UPDATE_DIALOG_SHOW', this.$refs[ref].$options._componentTag);
     },
-    // showOption2(ref) {
-    //   console.log(JSON.parse(JSON.stringify(this.$refs[ref].option)));
-    // },
-    // showOption3(ref) {
-    //   console.log(JSON.parse(JSON.stringify(this.$refs[ref].option)));
-    // }
   }
 }
 </script>
