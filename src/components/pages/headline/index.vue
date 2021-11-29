@@ -7,7 +7,7 @@
       :width="'calc(50% - 40px)'"
       @showOptionHandler="showOption('headline1')">
       <headline-style-1 :title="title1" :headlineStyle="headlineStyle1" ref="headline1"></headline-style-1>
-      <headline-style-2 :title="title2" ref="headline2"></headline-style-2>
+      <headline2 :title="title2" ref="headline2"></headline2>
       <headline3 :title="title3"></headline3>
       <headline4 :title="title4"></headline4>
       <headline5 :title="title5"></headline5>
@@ -21,7 +21,7 @@
       @showOptionHandler="showOption('headline7')">
       <headline-style-7 :title="title7" ref="headline7"></headline-style-7>
       <headline8 :title="title8"></headline8>
-      <headline-9 :title="title9"></headline-9>
+      <headline9 :title="title9"></headline9>
     </box-container>
     <box-container
       class="bg-grey flex-row"
