@@ -20,9 +20,9 @@ export default {
       default: ''
     }
   },
-  created() {
-    console.log('this.title', this.title);
-  }
+  // created() {
+  //   console.log('this.title', this.title);
+  // }
 }
 </script>
 

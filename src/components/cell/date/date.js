@@ -17,7 +17,7 @@ export function formatDate(date, fmt) {// 对传入的日期数据进行格式
         if (new RegExp(`(${k})`).test(fmt)) {
           let str = o[k] + '';
           fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? str : padLeftZero(str));
-      console.log('for fmt', fmt);
+      // console.log('for fmt', fmt);
         }
       }
 

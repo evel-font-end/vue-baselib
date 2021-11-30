@@ -3,8 +3,8 @@
 >Use
 ```javascript
 
-<headline10 :title="title10" ref="headline10" :headlineClass="headlineClass"></headline10>
-<headline11 :title="title11" ref="headline11"></headline11>
+<headline-style-10 :title="title10" :headlineClass="headlineClass"></headline-style-10>
+<headline-style-11 :title="title11"></headline-style-11>
 
 
 const title10 = "AW异常情况汇总";

@@ -2,7 +2,7 @@
 
 >Use
 ```javascript
-    <tabs-style-6 ref="tabsStyle6" :tabsList="tabsList6" @tabsHandle="tabsHandle6">
+    <tabs-style-6 :tabsList="tabsList6" @tabsHandle="tabsHandle6">
       <tabsContent1 v-if="currIndex6==0"></tabsContent1>
       <tabsContent2 v-if="currIndex6==1"></tabsContent2>
       <tabsContent3 v-if="currIndex6==2"></tabsContent3>

@@ -45,7 +45,7 @@ export default {
   methods: {
     changeIndex(itemIndex) {
       this.currIndex = itemIndex;
-      console.log('this.firsScreenRadio', this.currIndex);
+      // console.log('this.firsScreenRadio', this.currIndex);
       this.$emit('tabsHandle', itemIndex);
     }
   }
