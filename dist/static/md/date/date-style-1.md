@@ -2,7 +2,7 @@
 
 >Use
 ```javascript
-<dateStyle1 ref="dateStyle1" v-model="date1" :isShowTitle="isShowTitle" :format="format" :tip="tip"></dateStyle1>
+<date-style-1 v-model="date1" :isShowTitle="isShowTitle" :format="format" :tip="tip"></date-style-1>
 
 
 const date1 = "2022-12-12";
