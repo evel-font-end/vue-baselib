@@ -12,6 +12,7 @@ function getLinearColor(colorStart, colorEnd) {
   ]);
 }
 export default {
+  name: 'BarChart7',
   props: {
     chartId: {
       type: String,
@@ -39,9 +40,9 @@ export default {
         document.getElementById(this.chartId),
         "chalk"
       );
-      let { seriesData, xdata } = this.chartData;
+      const { seriesData, xdata } = this.chartData;
       // console.log(this.chartData, '413131')
-      let option = {
+      const option = {
         tooltip: {
           show: false,
           trigger: "axis",
