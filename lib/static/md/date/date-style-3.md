@@ -2,10 +2,10 @@
 
 >Use
 ```javascript
-<dateStyle3 ref="dateStyle3" v-model="year" :isShowTitle="isShowTitle" ></dateStyle3>
+<date-style-3 v-model="year" :isShowTitle="isShowTitle" ></date-style-3>
 
 
-const month = "2025";
+const year = "2025";
 const isShowTitle = "true";
 const tip = "请选择年份";
 const format = "yyyy年";

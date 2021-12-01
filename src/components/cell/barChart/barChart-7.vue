@@ -40,7 +40,7 @@ export default {
         document.getElementById(this.chartId),
         "chalk"
       );
-      const { seriesData, xdata } = this.chartData;
+      const { seriesData, xdata, tooltip, grid, axisLabel } = this.chartData;
       // console.log(this.chartData, '413131')
       const option = {
         tooltip: {
@@ -48,7 +48,8 @@ export default {
           trigger: "axis",
           axisPointer: {
             type: "shadow"
-          }
+          },
+          ...tooltip
         },
         legend: {
           itemWidth: 10,
@@ -60,7 +61,8 @@ export default {
           left: "3%",
           right: "0%",
           bottom: "0%",
-          containLabel: true
+          containLabel: true,
+          ...grid
         },
         xAxis: {
           type: "category",
@@ -86,7 +88,8 @@ export default {
             },
             interval: 0,
             margin: 15,
-            rotate: 30
+            rotate: 30,
+            ...axisLabel
           }
         },
         yAxis: {
@@ -130,7 +133,8 @@ export default {
             focus: "series"
           },
           barWidth: 10,
-          data: e.value
+          data: e.value,
+          itemStyle: e.itemStyle,
         };
       });
       const legendData = seriesData.map(ele => {
