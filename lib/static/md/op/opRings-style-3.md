@@ -51,6 +51,7 @@ label|label配置项|object|-|{}
 labelLine|label线条配置项|object|-|{}
 title|title配置项|object|-|{}
 gauge|gauge配置项|object|-|{}
+pie|pie配置项|object|-|{}
 tooltip|tooltip配置项|object|-|{}
 
 

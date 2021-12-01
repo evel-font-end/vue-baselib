@@ -3,3 +3,7 @@ export function sum(arr) {
     return prev + curr;
   });
 }
+
+export function isFunction(fn) {
+  return Object.prototype.toString.call(fn) === '[object Function]';
+}
