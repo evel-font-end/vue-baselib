@@ -43,9 +43,15 @@ subtext|副标题文本|string|-|'机架总数'
 subtextStyle|副标题样式|object|-|{color: '#fff',fontSize: 14}
 splitColor|刻度颜色|string|-|'#09EFF5'
 lineColor|线条颜色|array|-|['#20EFFB', '#099EF5']
+lineWidth|线条宽度|array|-|1
+line|线条配置|object|-|{}
 pointColor|端点颜色|array|-|['#45C3FF', '#45C3FF']
 labelLineColor|label线条颜色|string|-|'#DCDCDC'
 label|label配置项|object|-|{}
-
+labelLine|label线条配置项|object|-|{}
+title|title配置项|object|-|{}
+gauge|gauge配置项|object|-|{}
+pie|pie配置项|object|-|{}
+tooltip|tooltip配置项|object|-|{}
 
 
