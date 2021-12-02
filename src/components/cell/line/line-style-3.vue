@@ -19,6 +19,7 @@ function getAreaColor(colorStart, colorEnd) {
   ]);
 }
 export default {
+  name: "lineStyle3",
   props: {
     chartId: {
       type: String,

@@ -13,6 +13,7 @@ function getLinearColor(colorStart, colorMiddle, colorEnd) {
   ]);
 }
 export default {
+  name: "lineStyle2",
   props: {
     chartId: {
       type: String,
