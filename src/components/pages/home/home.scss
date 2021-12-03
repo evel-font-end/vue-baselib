@@ -54,6 +54,15 @@
           }
         }
       }
+      .router-link-active{
+        .ivu-menu-item {
+          background: #238AE6;
+          border-radius: 8px;
+          &::after{
+            display: none;
+          }
+        }
+      }
       &::after{
         display: none;
       }
