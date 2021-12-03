@@ -30,7 +30,7 @@ export default {
 }
 /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
 ::-webkit-scrollbar{
-  width: 3px;
+  width: 2px;
   height: 15px;
   background-color: #F5F5F5;
 }
@@ -46,7 +46,7 @@ export default {
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
   box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-  background-color: #2d8cf0;
+  background-color: rgba(19, 40, 69, 0.5);
 }
 .el-dialog{
   user-select: auto;
