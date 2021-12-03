@@ -72,7 +72,7 @@ export default {
   watch: {
     source(newVal) {
       if (this.chart === null) {
-        this.initChart()
+        this.chart = this.initChart()
       }
       this.updateChart(newVal)
     },
@@ -80,9 +80,11 @@ export default {
   created() {
   },
   mounted() {
-    this.chart = this.initChart()
-    this.echartOptions = Object.assign(this.echartOptions, this.options)
-    this.updateChart(this.source)
+    this.$nextTick(async () => {
+      this.chart = this.initChart()
+      this.echartOptions = Object.assign(this.echartOptions, this.options)
+      this.updateChart(this.source)
+    });
   },
   methods: {
     initChart() {

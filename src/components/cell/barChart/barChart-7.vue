@@ -28,19 +28,31 @@ export default {
       chart: null
     };
   },
-  watch: {},
+  watch: {
+    chartData(newVal) {
+      if (this.chart === null) {
+        this.chart = this.initChart()
+      }
+      this.updateChart(newVal)
+    }
+  },
   mounted() {
-    this.$nextTick(() => {
-      this.initChart();
+    this.$nextTick(async () => {
+      this.chart = await this.initChart()
+      this.updateChart(this.chartData)
     });
   },
   methods: {
     initChart() {
-      this.chart = this.$echarts.init(
-        document.getElementById(this.chartId),
-        "chalk"
-      );
-      const { seriesData, xdata, tooltip, grid, axisLabel } = this.chartData;
+      const el = document.getElementById(this.chartId)
+      const _chart = this.$echarts.init(el)
+      window.addEventListener('resize', () => {
+        _chart.resize();
+      })
+      return _chart;
+    },
+    updateChart(chartData) {
+      const { seriesData, xdata, tooltip, grid, axisLabel } = chartData;
       // console.log(this.chartData, '413131')
       const option = {
         tooltip: {
@@ -151,7 +163,6 @@ export default {
       this.$set(option, "series", series);
       this.$set(option.legend, "data", legendData);
       this.chart.setOption(option);
-      window.addEventListener("resize", () => this.chart.resize(), false);
     }
   }
 };
