@@ -142,7 +142,7 @@ export default {
           barMinWidth: 8,
         }
       })
-      this.option = {
+      const option = {
         title: {
           text: this.echartOptions.text,
           subtext: this.echartOptions.subtext,
@@ -241,6 +241,7 @@ export default {
           },
         ],
       }
+      this.option = this.$deepMerge(option, this.echartOptions)
       this.chart.setOption(this.option)
     }
   },

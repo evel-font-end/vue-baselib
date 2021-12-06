@@ -94,7 +94,7 @@ export default {
     updateChart(source) {
       const that = this;
       const value = 30;
-      this.option = {
+      const option = {
         backgroundColor: 'transparent',
         title: {
           text: this.echartOptions.text ? this.echartOptions.text : sum(source.map(sourceItem => sourceItem.value)),
@@ -407,6 +407,7 @@ export default {
           },
         ],
       };
+      this.option = this.$deepMerge(option, this.echartOptions)
       this.chart.setOption(this.option)
     },
     getCirlPoint(x0, y0, r, angle) {

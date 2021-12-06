@@ -126,7 +126,7 @@ export default {
           indicator.push(sourceSub)
         });
       });
-      this.option = {
+      const option = {
         backgroundColor: 'transparent',
         tooltip: {
           show: true, // 弹层数据去掉
@@ -143,6 +143,7 @@ export default {
         },
         series: series,
       };
+      this.option = this.$deepMerge(option, this.echartOptions)
       this.chart.setOption(this.option)
     },
   },

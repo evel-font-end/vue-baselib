@@ -21,10 +21,18 @@ export default {
     chartData: {
       type: Object,
       default: {}
-    }
+    },
+    options: {
+      type: Object,
+      default() {
+        return {
+        }
+      }
+    },
   },
   data() {
     return {
+      option: {},
       chart: null
     };
   },
@@ -40,8 +48,8 @@ export default {
         document.getElementById(this.chartId),
         "chalk"
       );
-      let { barTitle1, barTitle2, xdata, ydata1, ydata2 } = this.chartData;
-      let option = {
+      const { barTitle1, barTitle2, xdata, ydata1, ydata2 } = this.chartData;
+      const option = {
         // tooltip
         color: ["#07ED96", "#5C9CFC"],
         legend: {
@@ -214,8 +222,8 @@ export default {
           }
         ]
       };
-
-      this.chart.setOption(option);
+      this.option = this.$deepMerge(option, this.options)
+      this.chart.setOption(this.option);
       this.chart.on('legendselectchanged', (e) => {
         if (e.selected['指标一'] == false) {
           option.series[2].symbolOffset = ['0', '-50%']

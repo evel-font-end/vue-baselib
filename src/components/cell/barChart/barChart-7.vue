@@ -21,10 +21,18 @@ export default {
     chartData: {
       type: Object,
       default: {}
-    }
+    },
+    options: {
+      type: Object,
+      default() {
+        return {
+        }
+      }
+    },
   },
   data() {
     return {
+      option: {},
       chart: null
     };
   },
@@ -162,7 +170,8 @@ export default {
       });
       this.$set(option, "series", series);
       this.$set(option.legend, "data", legendData);
-      this.chart.setOption(option);
+      this.option = this.$deepMerge(option, this.options)
+      this.chart.setOption(this.option);
     }
   }
 };

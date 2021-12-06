@@ -71,7 +71,7 @@ export default {
       return _chart
     },
     updateChart(source) {
-      this.option = {
+      const option = {
         tooltip: {
           trigger: 'item',
           show: true, //显示提示框
@@ -156,6 +156,7 @@ export default {
           },
         ],
       }
+      this.option = this.$deepMerge(option, this.echartOptions)
       this.chart.setOption(this.option)
     },
   },

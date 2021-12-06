@@ -21,10 +21,18 @@ export default {
     chartData: {
       type: Object,
       default: {}
-    }
+    },
+    options: {
+      type: Object,
+      default() {
+        return {
+        }
+      }
+    },
   },
   data() {
     return {
+      option: {},
       chart: null
     };
   },
@@ -40,8 +48,8 @@ export default {
         document.getElementById(this.chartId),
         "chalk"
       );
-      let { lineTitle, barTitle, xdata, ydata, ydata2 } = this.chartData;
-      let option = {
+      const { lineTitle, barTitle, xdata, ydata, ydata2 } = this.chartData;
+      const option = {
         tooltip: {
           trigger: "axis",
           backgroundColor: "transparent",
@@ -217,7 +225,8 @@ export default {
           }
         ]
       };
-      this.chart.setOption(option);
+      this.option = this.$deepMerge(option, this.options)
+      this.chart.setOption(this.option);
       window.addEventListener("resize", () => this.chart.resize(), false);
     }
   }

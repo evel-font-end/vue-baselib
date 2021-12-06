@@ -9,12 +9,9 @@
   - static/mock 组件数据源(json假数据)
 
 ## 组件通用属性说明
-  - ```source``` 组件数据源，类型: ```[Array, Object]```, 如果是Object类型，需在```initData()```方法中格式化为```Array```类型
-  - ```colorDic``` 组件颜色源，类型: ```[Object]```
+echart属性与外部属性options对象深度合并
 
 ## 组件通用方法说明
-  - ```initData()``` 对数据源进行格式化
-  - ```formatLabel``` 对label进行格式化
 
 ## 文档
   各类别组件编写规范，请见static/md下各组件类文件夹下README.md
@@ -30,7 +27,7 @@ node: 14.16.0
 npm: 8.1.1
 # install dependencies
 npm install
-
+ 
 # serve with hot reload at localhost:8080
 npm run dev
 

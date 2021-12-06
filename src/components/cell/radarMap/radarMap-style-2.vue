@@ -113,7 +113,7 @@ export default {
           indicator.push(sourceSub)
         });
       });
-      this.option = {
+      const option = {
         title: {
           text: '',
         },
@@ -127,6 +127,7 @@ export default {
         },
         series: series,
       };
+      this.option = this.$deepMerge(option, this.echartOptions)
       this.chart.setOption(this.option)
     },
   },
