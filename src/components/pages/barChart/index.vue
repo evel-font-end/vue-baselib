@@ -72,16 +72,26 @@ export default {
         ydata2: [421, 214, 343, 422, 535, 236, 527, 118]
       },
       barData3: {
-        xdata: ["北京", "天津", "上海", "重庆", "河北", "湖北", "山西", "辽宁"],
+        xdata: [],
         seriesData: [
-          { name: "指标一", value: [131, 534, 341, 244, 541, 763, 422, 321] },
-          { name: "指标二", value: [652, 455, 464, 244, 657, 866, 442, 214] },
-          { name: "指标三", value: [654, 124, 541, 579, 390, 489, 653, 124] }
-        ]
+          { name: "指标一", value: [] },
+          { name: "指标二", value: [] },
+          { name: "指标三", value: [] }
+        ],
+        tooltip: {
+          show: true,
+          formatter: (parames) => {
+            return 'tooltip'
+          }
+        },
+        grid: {
+          top: '10%',
+        }
       },
       spinShow1: true,
       spinShow2: true,
-      spinShow3: true
+      spinShow3: true,
+      chart: null
     };
   },
   mounted() {
@@ -90,6 +100,32 @@ export default {
       this.spinShow2 = false;
       this.spinShow3 = false;
     }, 1000);
+    this.chart = this.$echarts.init(
+      document.getElementById('bar7'),
+      "chalk"
+    );
+    this.chart.on("click", (e) => {
+      console.log('ssss');
+    });
+    setTimeout(() => {
+      this.barData3 = {
+        xdata: ["北京", "天津", "上海", "重庆", "河北", "湖北", "山西", "辽宁"],
+        seriesData: [
+          { name: "指标一", value: [131, 534, 341, 244, 541, 763, 422, 321] },
+          { name: "指标二", value: [652, 455, 464, 244, 657, 866, 442, 214] },
+          { name: "指标三", value: [654, 124, 541, 579, 390, 489, 653, 124] }
+        ],
+        tooltip: {
+          show: true,
+          formatter: (parames) => {
+            return 'tooltip'
+          }
+        },
+        grid: {
+          top: '10%',
+        }
+      }
+    }, 5000)
   },
   created() {},
   methods: {}

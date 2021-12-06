@@ -72,7 +72,7 @@ export default {
     updateChart(percentage) {
       this.angle = 0;//角度，用来做简单的动画效果的
       const value = 100;
-      this.option = {
+      const option = {
         backgroundColor: "transparent",
         title: {
           text: `{a|${value}}{c|%}`,
@@ -352,6 +352,7 @@ export default {
           },
         ]
       };
+      this.option = this.$deepMerge(option, this.echartOptions)
       this.timer = setInterval(() => {
         //用setInterval做动画感觉有问题
         this.draw()

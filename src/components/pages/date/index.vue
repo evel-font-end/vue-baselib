@@ -44,20 +44,12 @@ export default {
       format: 'yyyy年MM月dd日',
       isShowTitle: true,
       month: '2021-12',
-      year: '2025',
+      year: '2023',
       isShowTitle2: false,
       format2: 'yyyy/MM',
       format3: 'yyyy年',
       tip3: '请选择年份'
     };
-  },
-  watch: {
-    date1(val) {
-      console.log('父组件 watch date1', val);
-    },
-    month(val) {
-      console.log('month', val)
-    }
   },
   created() {
     this.spinShow1 = false;
@@ -71,9 +63,9 @@ export default {
   },
   components: {
     boxContainer,
-    'date-style-1': dateStyle1,
-    'date-style-2': dateStyle2,
-    'date-style-3': dateStyle3,
+    dateStyle1,
+    dateStyle2,
+    dateStyle3,
   }
 };
 </script>

@@ -319,7 +319,8 @@ export default {
           },
         ],
       }
-      this.chart.setOption(option);
+      this.option = this.$deepMerge(option, this.echartOptions)
+      this.chart.setOption(this.option);
     }
   },
 }

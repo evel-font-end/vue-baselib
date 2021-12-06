@@ -6,8 +6,8 @@
       :class="{active: currIndex === index}"
       @click="changeIndex(index)"
       >
-        <!-- <i :class="item.icon" :style="item.style"></i> -->
-        <span class="tabs-item-title">{{item.title}}</span>
+        <!-- <i v-if="item.icon" :class="item.icon" :style="item.style"></i> -->
+        <span class="tabs-item-title">{{item}}</span>
       </li>
     </ul>
     <div class="tabs-content">
@@ -45,7 +45,7 @@ export default {
   methods: {
     changeIndex(itemIndex) {
       this.currIndex = itemIndex;
-      console.log('this.firsScreenRadio', this.currIndex);
+      // console.log('this.firsScreenRadio', this.currIndex);
       this.$emit('tabsHandle', itemIndex);
     }
   }
@@ -63,6 +63,7 @@ export default {
     li {
       position: relative;
       list-style: none;
+      cursor: pointer;
       width: 153px;
       height: 38px;
       line-height: 38px;

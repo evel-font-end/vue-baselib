@@ -97,7 +97,7 @@ export default {
           }
         }
       });
-      this.option = {
+      const option = {
         legend: {
           type: 'plain',
           bottom: '1%',
@@ -198,6 +198,7 @@ export default {
         }
         ]
       }
+      this.option = this.$deepMerge(option, this.echartOptions)
       this.chart.setOption(this.option)
     },
   },

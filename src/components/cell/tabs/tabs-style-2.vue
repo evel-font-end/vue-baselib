@@ -64,7 +64,7 @@ export default {
   methods: {
     changeIndex(itemIndex) {
       this.currIndex = itemIndex;
-      console.log('this.firsScreenRadio', this.currIndex);
+      // console.log('this.firsScreenRadio', this.currIndex);
       this.$emit('tabsHandle', itemIndex);
     }
   }
@@ -83,6 +83,7 @@ export default {
       list-style: none;
       padding: 0 16px;
       margin: 0 9px;
+      cursor: pointer;
       // width: 100px;
       height: 40px;
       background: url('./images/tabs-2-2.png') no-repeat;
@@ -97,7 +98,7 @@ export default {
       &.active {
         background: url('./images/tabs-2-1.png') no-repeat;
         background-size: 100% 100%;
-        z-index: 9999;
+        // z-index: 9999;
         .iconfont {
           color: #fff !important;
         }

@@ -47,10 +47,23 @@ export default {
           fontSize: 14,
         },
         splitColor: '#09EFF5',
-        lineColor: ['#20EFFB', '#099EF5'],
-        pointColor: ['#45C3FF', '#45C3FF'],
+        line: {
+          cx: (api) => api.getWidth() / 2,
+          cy: (api) => api.getHeight() * 0.5,
+          r: (api) => (Math.min(api.getWidth(), api.getHeight()) / 2) * 0.7,
+        },
+        lineColor: ['#FF8161', '#36ECD6'],
+        lineWidth: 1,
+        pointColor: ['#FF8161', '#36ECD6'],
         label: {},
-        labelLineColor: '#DCDCDC'
+        labelLine: {},
+        labelLineColor: '#DCDCDC',
+        title: {},
+        gauge: {},
+        tooltip: {},
+        pie: {
+          radius: ['50%', '60%'],
+        }
       }
     }
   },
@@ -81,7 +94,7 @@ export default {
     updateChart(source) {
       const that = this;
       const value = 30;
-      this.option = {
+      const option = {
         backgroundColor: 'transparent',
         title: {
           text: this.echartOptions.text ? this.echartOptions.text : sum(source.map(sourceItem => sourceItem.value)),
@@ -91,6 +104,11 @@ export default {
           itemGap: 15, // 主副标题距离
           left: 'center',
           top: '42%',
+          ...this.echartOptions.title
+        },
+        tooltip: {
+          show: true,
+          ...this.echartOptions.tooltip
         },
         legend: {
           data: source.map(sourceItem => sourceItem.name),
@@ -153,6 +171,7 @@ export default {
             detail: {
               show: 0,
             },
+            ...this.echartOptions.gauge
           },
           // 做动画的线
           {
@@ -163,16 +182,16 @@ export default {
               return {
                 type: 'arc',
                 shape: {
-                  cx: api.getWidth() / 2,
-                  cy: api.getHeight() * 0.5,
-                  r: (Math.min(api.getWidth(), api.getHeight()) / 2) * 0.7,
+                  cx: that.echartOptions.line.cx(api),
+                  cy: that.echartOptions.line.cy(api),
+                  r: that.echartOptions.line.r(api),
                   startAngle: ((0 + value) * Math.PI) / 180,
                   endAngle: ((90 + value) * Math.PI) / 180,
                 },
                 style: {
                   stroke: that.echartOptions.lineColor[0],
                   fill: 'transparent',
-                  lineWidth: 1,
+                  lineWidth: that.echartOptions.lineWidth,
                 },
                 silent: true,
               };
@@ -187,16 +206,16 @@ export default {
               return {
                 type: 'arc',
                 shape: {
-                  cx: api.getWidth() / 2,
-                  cy: api.getHeight() * 0.5,
-                  r: (Math.min(api.getWidth(), api.getHeight()) / 2) * 0.7,
+                  cx: that.echartOptions.line.cx(api),
+                  cy: that.echartOptions.line.cy(api),
+                  r: that.echartOptions.line.r(api),
                   startAngle: ((180 + value) * Math.PI) / 180,
                   endAngle: ((270 + value) * Math.PI) / 180,
                 },
                 style: {
                   stroke: that.echartOptions.lineColor[1],
                   fill: 'transparent',
-                  lineWidth: 1,
+                  lineWidth: that.echartOptions.lineWidth,
                 },
                 silent: true,
               };
@@ -208,9 +227,9 @@ export default {
             type: 'custom',
             coordinateSystem: 'none',
             renderItem: function (params, api) {
-              const x0 = api.getWidth() / 2;
-              const y0 = api.getHeight() * 0.5;
-              const r = (Math.min(api.getWidth(), api.getHeight()) / 2) * 0.7;
+              const x0 = that.echartOptions.line.cx(api);
+              const y0 = that.echartOptions.line.cy(api);
+              const r = that.echartOptions.line.r(api);
               const point = that.getCirlPoint(
                 x0,
                 y0,
@@ -238,9 +257,9 @@ export default {
             type: 'custom',
             coordinateSystem: 'none',
             renderItem: function (params, api) {
-              const x0 = api.getWidth() / 2;
-              const y0 = api.getHeight() * 0.5;
-              const r = (Math.min(api.getWidth(), api.getHeight()) / 2) * 0.7;
+              const x0 = that.echartOptions.line.cx(api);
+              const y0 = that.echartOptions.line.cy(api);
+              const r = that.echartOptions.line.r(api);
               const point = that.getCirlPoint(
                 x0,
                 y0,
@@ -255,8 +274,8 @@ export default {
                   r: 2,
                 },
                 style: {
-                  stroke: that.echartOptions.pointColor[0],
-                  fill: that.echartOptions.pointColor[0],
+                  stroke: that.echartOptions.pointColor[1],
+                  fill: that.echartOptions.pointColor[1],
                 },
                 silent: true,
               };
@@ -268,9 +287,9 @@ export default {
             type: 'custom',
             coordinateSystem: 'none',
             renderItem: function (params, api) {
-              const x0 = api.getWidth() / 2;
-              const y0 = api.getHeight() * 0.5;
-              const r = (Math.min(api.getWidth(), api.getHeight()) / 2) * 0.7;
+              const x0 = that.echartOptions.line.cx(api);
+              const y0 = that.echartOptions.line.cy(api);
+              const r = that.echartOptions.line.r(api);
               const point = that.getCirlPoint(
                 x0,
                 y0,
@@ -298,9 +317,9 @@ export default {
             type: 'custom',
             coordinateSystem: 'none',
             renderItem: function (params, api) {
-              const x0 = api.getWidth() / 2;
-              const y0 = api.getHeight() * 0.5;
-              const r = (Math.min(api.getWidth(), api.getHeight()) / 2) * 0.7;
+              const x0 = that.echartOptions.line.cx(api);
+              const y0 = that.echartOptions.line.cy(api);
+              const r = that.echartOptions.line.r(api);
               const point = that.getCirlPoint(
                 x0,
                 y0,
@@ -315,8 +334,8 @@ export default {
                   r: 2,
                 },
                 style: {
-                  stroke: that.echartOptions.pointColor[0],
-                  fill: that.echartOptions.pointColor[0],
+                  stroke: that.echartOptions.pointColor[1],
+                  fill: that.echartOptions.pointColor[1],
                 },
                 silent: true,
               };
@@ -341,6 +360,7 @@ export default {
                   color: this.echartOptions.labelLineColor,
                 },
               },
+              ...this.echartOptions.labelLine
             },
             label: {
               show: true,
@@ -383,9 +403,11 @@ export default {
                 },
               },
             },
+            ...this.echartOptions.pie
           },
         ],
       };
+      this.option = this.$deepMerge(option, this.echartOptions)
       this.chart.setOption(this.option)
     },
     getCirlPoint(x0, y0, r, angle) {

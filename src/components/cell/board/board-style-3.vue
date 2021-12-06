@@ -62,6 +62,7 @@
         </p>
       </div>
     </div>
+    <slot />
   </div>
 </template>
 <script>

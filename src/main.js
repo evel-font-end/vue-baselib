@@ -13,6 +13,7 @@ import TFetch from 'tfetch'
 import mavonEditor from 'mavon-editor'
 import highcharts from 'highcharts'
 import highcharts3d from 'highcharts/highcharts-3d'
+import { deepMerge } from './assets/lib/utils';
 import '@/assets/lib/hljs';
 import 'mavon-editor/dist/css/index.css'
 // import 'iview/dist/styles/iview.css'
@@ -33,7 +34,7 @@ Vue.use(mavonEditor)
 highcharts3d(highcharts)
 
 Vue.prototype.$echarts = echarts
-
+Vue.prototype.$deepMerge = deepMerge;
 const http = new TFetch({
   baseUrl: './mock',
   timeout: 5000,

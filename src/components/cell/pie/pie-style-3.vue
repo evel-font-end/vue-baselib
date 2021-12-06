@@ -51,7 +51,14 @@ export default {
     data: {
       type: Array,
       default: () => []
-    }
+    },
+    options: {
+      type: Object,
+      default() {
+        return {
+        }
+      }
+    },
   },
   data() {
     return {
@@ -148,7 +155,8 @@ export default {
           this.$set(option.series[0].label.textStyle, key, labelStyle[key]);
         }
       }
-      this.chart.setOption(option);
+      this.option = this.$deepMerge(option, this.options)
+      this.chart.setOption(this.option);
       window.addEventListener("resize", () => this.chart.resize(), false);
       this.chart.dispatchAction({
         type: "highlight",

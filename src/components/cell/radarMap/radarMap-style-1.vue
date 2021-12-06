@@ -72,7 +72,7 @@ export default {
   watch: {
     source(newVal) {
       if (this.chart === null) {
-        this.initChart()
+        this.chart = this.initChart()
       }
       this.updateChart(newVal)
     },
@@ -80,9 +80,11 @@ export default {
   created() {
   },
   mounted() {
-    this.chart = this.initChart()
-    this.echartOptions = Object.assign(this.echartOptions, this.options)
-    this.updateChart(this.source)
+    this.$nextTick(async () => {
+      this.chart = this.initChart()
+      this.echartOptions = Object.assign(this.echartOptions, this.options)
+      this.updateChart(this.source)
+    });
   },
   methods: {
     initChart() {
@@ -124,7 +126,7 @@ export default {
           indicator.push(sourceSub)
         });
       });
-      this.option = {
+      const option = {
         backgroundColor: 'transparent',
         tooltip: {
           show: true, // 弹层数据去掉
@@ -141,6 +143,7 @@ export default {
         },
         series: series,
       };
+      this.option = this.$deepMerge(option, this.echartOptions)
       this.chart.setOption(this.option)
     },
   },

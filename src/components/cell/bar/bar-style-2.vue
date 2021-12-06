@@ -115,10 +115,18 @@ export default {
           "rgba(15,241,252,0.08)"
         ];
       }
-    }
+    },
+    options: {
+      type: Object,
+      default() {
+        return {
+        }
+      }
+    },
   },
   data() {
     return {
+      option: {},
       chart: null
     };
   },
@@ -134,8 +142,8 @@ export default {
         document.getElementById(this.chartId),
         "chalk"
       );
-      let { lineTitle, barTitle, xdata, barData, lineData } = this.chartData;
-      let option = {
+      const { lineTitle, barTitle, xdata, barData, lineData } = this.chartData;
+      const option = {
         color: this.legendColor,
         legend: {
           itemWidth: 13,
@@ -282,7 +290,8 @@ export default {
           }
         ]
       };
-      this.chart.setOption(option);
+      this.option = this.$deepMerge(option, this.options)
+      this.chart.setOption(this.option);
       window.addEventListener("resize", () => this.chart.resize(), false);
     }
   }

@@ -12,6 +12,7 @@ function getLinearColor(colorStart, colorEnd) {
   ]);
 }
 export default {
+  name: 'BarChart7',
   props: {
     chartId: {
       type: String,
@@ -20,34 +21,55 @@ export default {
     chartData: {
       type: Object,
       default: {}
-    }
+    },
+    options: {
+      type: Object,
+      default() {
+        return {
+        }
+      }
+    },
   },
   data() {
     return {
+      option: {},
       chart: null
     };
   },
-  watch: {},
+  watch: {
+    chartData(newVal) {
+      if (this.chart === null) {
+        this.chart = this.initChart()
+      }
+      this.updateChart(newVal)
+    }
+  },
   mounted() {
-    this.$nextTick(() => {
-      this.initChart();
+    this.$nextTick(async () => {
+      this.chart = await this.initChart()
+      this.updateChart(this.chartData)
     });
   },
   methods: {
     initChart() {
-      this.chart = this.$echarts.init(
-        document.getElementById(this.chartId),
-        "chalk"
-      );
-      let { seriesData, xdata } = this.chartData;
+      const el = document.getElementById(this.chartId)
+      const _chart = this.$echarts.init(el)
+      window.addEventListener('resize', () => {
+        _chart.resize();
+      })
+      return _chart;
+    },
+    updateChart(chartData) {
+      const { seriesData, xdata, tooltip, grid, axisLabel } = chartData;
       // console.log(this.chartData, '413131')
-      let option = {
+      const option = {
         tooltip: {
           show: false,
           trigger: "axis",
           axisPointer: {
             type: "shadow"
-          }
+          },
+          ...tooltip
         },
         legend: {
           itemWidth: 10,
@@ -59,7 +81,8 @@ export default {
           left: "3%",
           right: "0%",
           bottom: "0%",
-          containLabel: true
+          containLabel: true,
+          ...grid
         },
         xAxis: {
           type: "category",
@@ -85,7 +108,8 @@ export default {
             },
             interval: 0,
             margin: 15,
-            rotate: 30
+            rotate: 30,
+            ...axisLabel
           }
         },
         yAxis: {
@@ -129,7 +153,8 @@ export default {
             focus: "series"
           },
           barWidth: 10,
-          data: e.value
+          data: e.value,
+          itemStyle: e.itemStyle,
         };
       });
       const legendData = seriesData.map(ele => {
@@ -145,8 +170,8 @@ export default {
       });
       this.$set(option, "series", series);
       this.$set(option.legend, "data", legendData);
-      this.chart.setOption(option);
-      window.addEventListener("resize", () => this.chart.resize(), false);
+      this.option = this.$deepMerge(option, this.options)
+      this.chart.setOption(this.option);
     }
   }
 };

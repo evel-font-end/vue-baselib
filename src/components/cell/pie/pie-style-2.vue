@@ -58,7 +58,14 @@ export default {
     isShowLabel: {
       type: Boolean,
       default: true
-    }
+    },
+    options: {
+      type: Object,
+      default() {
+        return {
+        }
+      }
+    },
   },
   data() {
     return {
@@ -186,8 +193,9 @@ export default {
           this.$set(option.tooltip.style, key, tooltipStyle[key]);
         }
       }
-      this.option = option;
-      this.chart = HighCharts.chart(this.sid, option);
+      // this.option = option;
+      this.option = this.$deepMerge(option, this.options)
+      this.chart = HighCharts.chart(this.sid, this.option);
       // this.pieActive(option);
     },
     // 饼状图实现循环高亮

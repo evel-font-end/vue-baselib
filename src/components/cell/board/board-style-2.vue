@@ -71,7 +71,7 @@ export default {
         value: percentage,
         pos: ['50%', '60%'],
       };
-      this.option = {
+      const option = {
         title: {
           text: `${percentage}%`,
           bottom: '6%',
@@ -313,6 +313,7 @@ export default {
           },
         ],
       }
+      this.option = this.$deepMerge(option, this.echartOptions)
       this.chart.setOption(this.option)
     },
   },

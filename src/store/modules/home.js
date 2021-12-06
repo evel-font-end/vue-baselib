@@ -27,6 +27,7 @@ const mutations = {
     state.activeMenu = payload
   },
   [types.UPDATE_DIALOG_SHOW](state, payload) {
+    const app = document.getElementById("app");
     if (payload) {
       const md = capitalize(payload);
       const mdArray = md.split('-');
@@ -38,7 +39,9 @@ const mutations = {
           localStorage.setItem('dialogMd', `${error}`)
           state.dialogMd = `${error}`
         });
+      app.style.userSelect = 'auto'
     } else {
+      app.style.userSelect = 'none'
       // localStorage.setItem('dialogMd', '')
       // state.dialogMd = ''
     }

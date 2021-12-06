@@ -9,6 +9,7 @@
   </div>
 </template>
 <script>
+import { isFunction } from '@/assets/lib/utils';
 export default {
   name: 'RankingStyle5',
   props: {
@@ -19,7 +20,13 @@ export default {
     source: {
       type: [Array, Object],
       default: () => [
-        { text: '库水位', value: 100, score: '20' },
+        {
+          text: '库水位',
+          value: () => {
+            return '200'
+          },
+          score: '20'
+        },
         { text: '内部位移', value: 100, score: '20' },
         { text: '内部位移', value: 100, score: '20' },
         { text: '浸润线', value: 100, score: '20' },
@@ -89,7 +96,7 @@ export default {
           `<span class='rank'>${valueIndex + 1}<span>`);
         return ([
           indexText,
-          ...Object.keys(valueItem).map(valItem => valueItem[valItem])
+          ...Object.keys(valueItem).map(valItem => isFunction(valueItem[valItem]) ? valueItem[valItem]() : valueItem[valItem])
         ])
       });
       this.$refs["scrollBoard"].updateRows(rows, 0);

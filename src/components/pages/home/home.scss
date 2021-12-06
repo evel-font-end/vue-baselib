@@ -5,13 +5,16 @@
   .main-layout {
     width: 100%;
     height: 100%;
+    padding: 20px;
+    background: #051C36 !important;
   }
 
   .sider-cont {
     overflow: hidden;
     background: #132845 !important;
-
-    .ivu-layout-sider-children {}
+    border-radius: 16px;
+    .ivu-layout-sider-children {
+    }
 
     .logo-cont {
       height: 64px;
@@ -24,7 +27,9 @@
 
     .ivu-menu {
       background: #132845 !important;
-
+      padding: 0 20px;
+      height: 100%;
+      overflow: auto;
       .ivu-menu-item {
         color: #ffffff !important;
 
@@ -40,6 +45,26 @@
           color: #ffffff;
           line-height: 22px;
         }
+
+        &.ivu-menu-item-active{
+          background: #238AE6;
+          border-radius: 8px;
+          &::after{
+            display: none;
+          }
+        }
+      }
+      .router-link-active{
+        .ivu-menu-item {
+          background: #238AE6;
+          border-radius: 8px;
+          &::after{
+            display: none;
+          }
+        }
+      }
+      &::after{
+        display: none;
       }
     }
   }
@@ -94,7 +119,7 @@
     flex: 1;
     height: 100%;
     background: #051C36;
-    padding: 0 20px;
+    padding-left: 20px;
 
     .header-cont {
       // background-color: #fff;

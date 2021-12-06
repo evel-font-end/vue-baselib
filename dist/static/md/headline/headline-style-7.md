@@ -3,9 +3,9 @@
 >Use
 ```javascript
 
-<headline7 :title="title7" ref="headline7" :headlineClass="headlineClass"></headline7>
-<headline8 :title="title8" ref="headline8"></headline8>
-<headline9 :title="title9" ref="headline9"></headline9>
+<headline-style-7 :title="title7" :headlineClass="headlineClass"></headline-style-7>
+<headline-style-8 :title="title8"></headline-style-8>
+<headline-style-9 :title="title9"></headline-style-9>
 
 
 const title7 = "22省集约化";

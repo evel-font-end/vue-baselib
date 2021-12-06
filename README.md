@@ -9,12 +9,9 @@
   - static/mock 组件数据源(json假数据)
 
 ## 组件通用属性说明
-  - ```source``` 组件数据源，类型: ```[Array, Object]```, 如果是Object类型，需在```initData()```方法中格式化为```Array```类型
-  - ```colorDic``` 组件颜色源，类型: ```[Object]```
+echart属性与外部属性options对象深度合并
 
 ## 组件通用方法说明
-  - ```initData()``` 对数据源进行格式化
-  - ```formatLabel``` 对label进行格式化
 
 ## 文档
   各类别组件编写规范，请见static/md下各组件类文件夹下README.md
@@ -30,7 +27,7 @@ node: 14.16.0
 npm: 8.1.1
 # install dependencies
 npm install
-
+ 
 # serve with hot reload at localhost:8080
 npm run dev
 
@@ -68,7 +65,7 @@ npm who am i
 #  - 主版本号：做了不兼容修改或颠覆式的重写
 #  - 次版本号：向下兼容的功能性新增
 #  - 修订号：向下兼容的问题修正
-#  大版本为 1.0.0，小版本是0.1.0，小修复是0.0.2
+#  大版本为 1.0.0，小版本是0.1.0，小修复是0.0.1
 npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease [--preid=<prerelease-id>]
 
 # 发布@efont/vue-baselib

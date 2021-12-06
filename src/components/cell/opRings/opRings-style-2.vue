@@ -76,7 +76,7 @@ export default {
       return _chart
     },
     updateChart(value) {
-      this.option = {
+      const option = {
         title: [{
           left: '50%',
           top: '38%',
@@ -142,6 +142,7 @@ export default {
           // },
         ],
       }
+      this.option = this.$deepMerge(option, this.echartOptions)
       this.chart.setOption(this.option)
     },
   },

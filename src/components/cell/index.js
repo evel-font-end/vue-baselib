@@ -54,6 +54,8 @@ import headline from './headline'
 import date from './date'
 import pagination from './pagination'
 import tabs from './tabs'
+import barChart from './barChart'
+import line from './line'
 
 // 组件列表
 const components = [
@@ -72,6 +74,8 @@ const components = [
   ...date.components,
   ...pagination.components,
   ...tabs.components,
+  ...barChart.components,
+  ...line.components
 ]
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，那么所有的组件都会被注册
