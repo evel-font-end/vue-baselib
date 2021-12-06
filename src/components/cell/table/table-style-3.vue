@@ -41,13 +41,13 @@ export default {
     props: {
         orderTableDataList: { //表格数据
             type: Object,
-            default: function(){
-                let data = {
-                    dataList:[],
-                    titleList:[]
-                }
-                return data
-            }
+            // default: function(){
+            //     let data = {
+            //         dataList:[],
+            //         titleList:[]
+            //     }
+            //     return data
+            // }
         },
         emptyText: { // 空数据时显示的文本内容
             type: String,

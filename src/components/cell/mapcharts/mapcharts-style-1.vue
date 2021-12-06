@@ -57,7 +57,6 @@ export default {
                     fromCity:{
                         city:"北京市",
                         toCoord:[116.4551,40.2539],
-                        
                     },
                     upperMapItemStyle: { //上层地图ItemStyle配置项
                         normal: {
