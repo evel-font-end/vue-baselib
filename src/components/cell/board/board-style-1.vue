@@ -1,5 +1,11 @@
 <template>
-  <div :id='sid' class='board-container' />
+  <div class="main">
+    <div :id='sid' class='board-container' />
+    <slot />
+    <div class="btn">
+      {{btnText}}
+    </div>
+  </div>
 </template>
 <script>
 export default {
@@ -10,9 +16,15 @@ export default {
       default: () => 'board1',
     },
     source: {
+      type: Number,
+      default() {
+        return 80;
+      },
+    },
+    btnText: {
       type: String,
       default() {
-        return '80';
+        return '楼层';
       },
     },
     options: {
@@ -29,16 +41,12 @@ export default {
       chart: null,
       option: {},
       echartOptions: {
-        subtext: '稽核准确率',
+        subtext: '覆盖率',
         subtextStyle: {
-          color: '#99CBFC',
+          color: '#3B8DD5',
           fontSize: 14,
           top: 'center',
-          fontFamily: 'DINAlternateBold',
-        },
-        centerColor: '#004C8E',
-        pointerColor: '#00FFD6',
-        splitColor: '#129FF6'
+        }
       }
     }
   },
@@ -71,26 +79,23 @@ export default {
     },
     updateChart(percentage) {
       this.angle = 0;//角度，用来做简单的动画效果的
-      const value = 100;
+      const value = percentage;
       const option = {
         backgroundColor: "transparent",
         title: {
-          text: `{a|${value}}{c|%}`,
+          text: `{a|${value}%}`,
           x: 'center',
-          y: '60%',
+          y: '40%',
           textStyle: {
             rich: {
               a: {
-                fontSize: 48,
-                color: '#29EEF3'
-              },
-              c: {
-                fontSize: 20,
-                color: '#ffffff',
-                // padding: [5,0]
+                fontSize: 42,
+                color: '#FFFFFF'
               }
             }
-          }
+          },
+          subtext: this.echartOptions.subtext,
+          subtextStyle: this.echartOptions.subtextStyle,
         },
         legend: {
           type: "plain",
@@ -232,7 +237,8 @@ export default {
                 }
               }
             }
-            ]
+            ],
+            animation: false
           },
           {
             name: "",
@@ -244,7 +250,7 @@ export default {
             startAngle: 210,
             endAngle: -30,
             splitNumber: 6,
-            hoverAnimation: true,
+            hoverAnimation: false,
             axisTick: {
               show: false
             },
@@ -294,6 +300,20 @@ export default {
                   color: 'rgba(27,110,255,0)'
                 }
                 ]),
+                // borderWidth: 2,
+                // borderColor: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                //   offset: 0,
+                //   color: 'rgba(123,174,255,1)'
+                // },
+                // {
+                //   offset: 0.5,
+                //   color: 'rgba(123,174,255,0.5)'
+                // },
+                // {
+                //   offset: 1,
+                //   color: 'rgba(123,174,255,1)'
+                // }
+                // ]),
                 label: {
                   show: false
                 },
@@ -309,11 +329,12 @@ export default {
               }
             },
             data: [100],
+            animation: false
           },
           {
             // name: "白色圈刻度",
             type: "gauge",
-            radius: "67%",
+            radius: "64%",
             startAngle: 225, //刻度起始
             endAngle: -134.8, //刻度结束
             z: 4,
@@ -366,8 +387,33 @@ export default {
 }
 </script>
 <style lang='scss' scoped>
-.board-container{
+.main{
   width: 100%;
   height: 100%;
+  position: relative;
+  .board-container{
+    width: 100%;
+    height: 100%;
+  }
+  .btn{
+    position: absolute;
+    width: 116px;
+    height: 47px;
+    background: url('./images/btn.png') no-repeat center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-family: PingFangSC, PingFangSC-Semibold;
+    font-weight: 600;
+    text-align: center;
+    color: #ffffff;
+    line-height: 25px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 116%);
+  }
 }
+
 </style>

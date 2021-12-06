@@ -6,11 +6,8 @@
     @showOptionHandler='showOption("board1")'>
       <board-style-1
         sid='board1'
-        source='80'
+        :source='80'
         :options="{
-          title: {
-            y: '50%',
-          }
         }"
         ref='board1' />
     </box-container>

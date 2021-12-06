@@ -19,7 +19,6 @@ echart属性与外部属性options对象深度合并
 ## 预览
 https://evel-font-end.github.io/vue-baselib/dist/
 
-
 ## Build Setup
 
 ``` bash
