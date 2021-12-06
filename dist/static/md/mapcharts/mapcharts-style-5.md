@@ -1,89 +1,303 @@
-## CrumbsStyle1
+## mapchartsStyle5
 
 > Use
-
 ``` javascript
 
-<table-style-3 
-    :orderTableDataList="orderTableDataList3" 
-    @operatorhandleEdit="operatorhandleEdit" 
-    @tablehangClick="tablehangClick" 
-    ref="table3" />
+<mapcharts-style-5 :mapDataList="mapDataList" :options="options5"  ref="mapcharts5"/>
 
-const orderTableDataList3 = {
-    titleList: [
-        {
-            title: "地市",
-            field: "text1",
-            width:'100',
+
+const mapDataList = [
+    {
+        name:'移动网',
+        color:"#FF9E08",
+        type:"line",
+        dataList:[
+            {
+                name: '黑龙江',
+                value: 10
+            },
+            {
+                name: '内蒙古',
+                value: 10
+            },
+            {
+                name: '辽宁',
+                value: 10
+            },
+            {
+                name: '新疆',
+                value: 10
+            },
+        ],
+    },
+    {   
+        name:'传输网',
+        color:"#00E88D",
+        type:"line",
+        dataList:[
+            {
+                name: '山西',
+                value: 10
+            },
+            {
+                name: '甘肃',
+                value: 10
+            },
+        ]
+    },
+    {
+        name:'IP网',
+        color:"#EADF38",
+        type:"line",
+        dataList:[
+            {
+                name: '青海',
+                value: 10
+            },
+            {
+                name: '重庆',
+                value: 10
+            },
+            {
+                name: '西藏',
+                value: 10
+            },
+            {
+                name: '山东',
+                value: 10
+            },
+        ]
+    },
+    {   
+        name:'传输',
+        color:"#6AFFEC",
+        type:"line",
+        dataList:[
+            {
+                name: '河南',
+                value: 10
+            },
+            {
+                name: '浙江',
+                value: 10
+            },
+        ],
+    },
+    {
+        name:'家宽',
+        color:"#FC6767",
+        type:"line",
+        dataList:[
+            {
+                name: '福建',
+                value: 10
+            },
+            {
+                name: '贵州',
+                value: 10
+            },
+            {
+                name: '广东',
+                value: 10
+            },
+            {
+                name: '上海',
+                value: 10
+            },
+        ],
+    },
+    {
+        name:'总部',
+        color:"#27E477",
+        type:"stroke",
+        dataList:[
+            {
+                name: '福建',
+                value: 10
+            },
+            {
+                name: '贵州',
+                value: 10
+            },
+            {
+                name: '广东',
+                value: 10
+            },
+            {
+                name: '上海',
+                value: 10
+            },
+            {
+                name: '河南',
+                value: 10
+            },
+            {
+                name: '浙江',
+                value: 10
+            },
+        ],
+    },
+    {
+        name:'大区',
+        color:"#FF9D47",
+        type:"stroke",
+        dataList:[
+            {
+                name: '青海',
+                value: 10
+            },
+            {
+                name: '重庆',
+                value: 10
+            },
+            {
+                name: '西藏',
+                value: 10
+            },
+            {
+                name: '山东',
+                value: 10
+            },
+        ],
+    },
+    {
+        name:'默认',
+        color:"#FFEE71",
+        type:"stroke",
+        dataList:[
+            {
+                name: '黑龙江',
+                value: 10
+            },
+            {
+                name: '内蒙古',
+                value: 10
+            },
+            {
+                name: '辽宁',
+                value: 10
+            },
+            {
+                name: '新疆',
+                value: 10
+            },
+            {
+                name: '山西',
+                value: 10
+            },
+            {
+                name: '甘肃',
+                value: 10
+            },
+        ],
+    },
+]
+const options5 = {
+    fromCity:{
+        city:"北京市",
+        toCoord:[116.4551,40.2539],
+        value:"10"
+    },
+    upperMapItemStyle: { //上层地图ItemStyle配置项
+        normal: {
+            areaColor:"rgba(8,164,230)",
+            borderColor: '#79e1ff', //省市边界线00fcff 516a89
+            borderWidth: 1,
+            globalCoord: true, // 缺省为 false
         },
-        {
-            title: "客户名称",
-            field: "text2",
-            width:'340',
+        emphasis: {
+            areaColor:"#1ACFFF", //悬浮背景
         },
-        {
-            title: "宽带",
-            field: "text3",
-            width:'80',
+    },
+    startdRippleEffect: { //涟漪特效
+        period: 4, //动画时间，值越小速度越快
+        brushType: 'stroke', //波纹绘制方式 stroke, fill
+        scale: 6 //波纹圆环最大限制，值越大波纹越大
+    },
+    startdLabel: {
+        normal: {
+            show: false,
+            position: 'bottom', //显示位置
+            offset: [0, 10], //偏移设置
+            formatter: function(params){ //圆环显示文字
+                return params.data.name;
+            },
+            fontSize: 13,
+            color: "#ffffff", //省份文字颜色
         },
-        {
-            title: "业务号码",
-            field: "text4",
-            width:'',
+        emphasis: {
+            show: true
+        }
+    },
+    startdItemStyle: {
+        normal: {
+            show: false,
+            color: '#FFEE71',
+        }
+    },
+    tooltip:{
+        show: true ,
+        confine: "true",
+        extraCssText: 'z-index:10;',
+        formatter: function(params, ticket, callback) {
+            return `<div class="tipsbox5">
+                <div class="tipstitle">${params.name}</div>
+                <div class="tipscontent">
+                    <div class="tipsitem">
+                        <div class='title'>CPU(核)</div>
+                        <div class='num'>177932</div>
+                    </div>
+                    <div class="tipsitem">
+                        <div class='title'>内存(TB)</div>
+                        <div class='num'>2103.1</div>
+                    </div>
+                    <div class="tipsitem">
+                        <div class='title'>存储(PB)</div>
+                        <div class='num'>0.45</div>
+                    </div>
+                </div>
+            </div>`;
+        }
+    },
+    backgroundColor:"#132845", //地图画布背景色
+    geoLabel: {
+        normal: {
+            show: true,
+            color: '#fff',
         },
-        {
-            title: "数据来源",
-            field: "text5",
-            width:'',
+        emphasis: {
+            show: true,
+            color: '#fff',
+        }
+    },
+    geoItemStyle: {
+        normal: {
+            color: 'rgba(8,164,230)', //地图背景色
+            borderColor: '#79e1ff', //省市边界线00fcff 516a89
+            borderWidth: 1,
+            shadowColor:'#0073B2', //地图阴影设置
+            shadowOffsetX: 0,
+            shadowOffsetY: 23,
         },
-        {
-            title: "操作类型",
-            field: "text6",
-            width:'',
+        emphasis: {
+            color: '#1ACFFF', //悬浮背景
         },
+    },
+    geoRegions:[
         {
-            title: "电路状态",
-            field: "text7",
-            width:'',
-        },
-        {
-            title: "文本路由",
-            field: "text8",
-            width:'200',
-        },
-    ],
-    dataList: [
-        {
-            text1:'广东省',
-            text2:'广东省广州市天河区白云黑土集团有限公司',
-            text3:'2M',
-            text4:'107357269',
-            text5:'政企中台',
-            text6:'新增',
-            text7:'占用',
-            text8:'这是一段文本路由…',
-        },
-        {
-            text1:'北京市',
-            text2:'北京市海淀区世铎股份有限公司',
-            text3:'2M',
-            text4:'GD46285',
-            text5:'政企中台',
-            text6:'新增',
-            text7:'空闲',
-            text8:'这是一段文本路由…',
-        },
-        {
-            text1:'广东省',
-            text2:'广东省广州市天河区白云黑土集团有限公司',
-            text3:'2M',
-            text4:'107357269',
-            text5:'政企中台',
-            text6:'变更',
-            text7:'空闲',
-            text8:'这是一段文本路由…',
-        },
+            name: '南海诸岛',
+            itemStyle: {
+                areaColor: 'rgba(0, 10, 52, 1)',
+                borderColor: 'rgba(0, 10, 52, 1)',
+                normal: {
+                    opacity: 0,
+                    label: {
+                        show: false,
+                        color: "#009cc9",
+                    }
+                }
+            },
+        }
     ]
 }
 ```
@@ -91,40 +305,17 @@ const orderTableDataList3 = {
 > Props
 
 参数|说明|类型|可选值|默认值
--|-|-|-|-|
-orderTableDataList|表格数据|Object|-|-
-emptyText|空数据时显示的文本内容|String|-|暂无数据
-loadingText|数据加载时显示的文本内容|String|-|数据加载中...
-showOverflowTooltip|当内容过长被隐藏时显示|Boolean|-|true
-colAlign|每列文字的对齐方式|String|-|left
-operator|是否显示操作列|Boolean|-|true
-tableSelect|表格是否显示可勾选|Boolean|-|true
-operatorWidth|操作列的宽度|String|-|180
+-|-|-|-|-
+mapDataList|地图展示数据|Array|-|-
 
-> orderTableDataList
+> Options
 
 参数|说明|类型|可选值|默认值
 -|-|-|-|-
-titleList|表头数据|Array|-|-
-dataList|表格行数据|Array|-|-
-
-> orderTableDataList.titleList
-
-参数|说明|类型|可选值|默认值
--|-|-|-|-
-title|列文案|String|-|-
-field|列字段|String|-|-
-width|列宽|String|-|-
-
-> orderTableDataList.dataList
-
-参数|说明|类型|可选值|默认值
--|-|-|-|-
-XXX|对应列字段|String|-|-
-
->Table Methods
-
-事件|说明|类型|可选值|默认值
--|-|-|-|-
-operatorhandleEdit|操作列点击事件|Function|-|index、row、text
-tablehangClick|勾选事件|Function|-|data
+upperlabel|上层地图label配置项（可查看Echarts配置项文档）|Object|-|-
+upperItemStyle|上层地图itemstyle配置项（可查看Echarts配置项文档）|Object|-|-
+tooltip|提示框配置（可查看Echarts配置项文档）|Object|-|-
+backgroundColor|地图画布背景色|String|-|'#132845'
+geoLabel|geoLabel配置项（可查看Echarts配置项文档）|Object|-|-
+geoItemStyle|geoItemStyle配置项（可查看Echarts配置项文档）|Object|-|-
+geoRegions|geoRegions配置项（可查看Echarts配置项文档）|Array|-|-
