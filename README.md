@@ -1,25 +1,40 @@
 # @efont/Vue-baselib 
 
-> Vue大屏项目组件库
+## 安装
+```
+npm i @efont/vue-baselib --save
+```
+## main全局引入
+```javascript
+import vueBaselib from '@efont/vue-baselib'
+
+Vue.use(vueBaselib)
+```
 
 ## 结构说明
+```
   - src/server api接口服务目录
   - src/components/cell 组件单元目录
   - src/components/pages 组件类预览页面目录
   - static/mock 组件数据源(json假数据)
+```
 
 ## 组件通用属性说明
+```
 echart属性与外部属性options对象深度合并
+```
 
-## 组件通用方法说明
+## 使用文档
+```
+各类别组件编写规范，请见static/md下各组件类文件夹下README.md
+```
 
-## 文档
-  各类别组件编写规范，请见static/md下各组件类文件夹下README.md
-
-## 预览
+## 线上预览地址
+```
 https://evel-font-end.github.io/vue-baselib/dist/
+```
 
-## Build Setup
+## 线上预览文件
 
 ``` bash
 node: 14.16.0
