@@ -3,7 +3,7 @@
     <ul class="tabs-list">
       <li v-for="(item, index) in tabsList"
       :key="index"
-      :class="{active: currIndex === index}"
+      :class="{active: value === index}"
       @click="changeIndex(index)"
       >
         <!-- <i v-if="item.icon" :class="item.icon" :style="item.style"></i> -->
@@ -23,7 +23,11 @@ export default {
     tabsList:{
       type: Array,
       default: []
-    }
+    },
+    value: {
+      type: Number,
+      default: 0,
+    },
   },
   data() {
     return {
@@ -50,13 +54,11 @@ export default {
       //     style: {}
       //   },
       // ],
-      currIndex: 0,
     }
   },
   methods: {
     changeIndex(itemIndex) {
-      this.currIndex = itemIndex;
-      // console.log('this.firsScreenRadio', this.currIndex);
+       this.$emit('input', itemIndex);
       this.$emit('tabsHandle', itemIndex);
     }
   }

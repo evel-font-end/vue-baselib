@@ -5,7 +5,7 @@
         v-for="(tab, i) in tabsList"
         :key="i"
         class="tab-item"
-        :class="{ active: currIndex == i }"
+        :class="{ active: value == i }"
         @click.stop="changeIndex(i)">
         <!-- :class="{ active: menuTabIndex == i }" -->
         <i v-html="tab"> </i>
@@ -24,7 +24,11 @@ export default {
     tabsList:{
       type: Array,
       default: []
-    }
+    },
+    value: {
+      type: Number,
+      default: 0,
+    },
   },
   data () {
     return {
@@ -36,12 +40,11 @@ export default {
       //     name: '局站'
       //   }
       // ],
-      currIndex: 0,
     };
   },
   methods: {
-     changeIndex(itemIndex) {
-      this.currIndex = itemIndex;
+    changeIndex(itemIndex) {
+      this.$emit('input', itemIndex)
       this.$emit('tabsHandle', itemIndex);
     },
   },

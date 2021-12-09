@@ -5,7 +5,7 @@
         <li
           v-for="(item, itemIndex) in tabsList"
           :key="itemIndex"
-          :class="{ active: currIndex === itemIndex }"
+          :class="{ active: value === itemIndex }"
           @click="changeIndex(itemIndex)"
         >
           {{ item }}
@@ -21,6 +21,16 @@
 <script>
 export default {
   name: 'tabs-style-1',
+  props: {
+    tabsList:{
+      type: Array,
+      default: []
+    },
+    value: {
+      type: Number,
+      default: 0,
+    },
+  },
   data() {
     return {
       //  tabsList: [
@@ -31,19 +41,11 @@ export default {
       //   '骨干网设备端口',
       //   '城域网设备',
       // ],
-      currIndex: 0,
-    }
-  },
-  props: {
-    tabsList:{
-      type: Array,
-      default: []
     }
   },
   methods: {
     changeIndex(itemIndex) {
-      this.currIndex = itemIndex;
-      // console.log('this.firsScreenRadio', this.currIndex);
+      this.$emit('input', itemIndex)
       this.$emit('tabsHandle', itemIndex);
     }
   }

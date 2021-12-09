@@ -6,31 +6,31 @@
       title="横向tab标签"
       :width="'calc(50% - 20px)'"
       @showOptionHandler="showOption('tabsStyle1')">
-        <tabs-style-1 :tabsList="tabsList1" @tabsHandle="tabsHandle1" ref="tabsStyle1">
+        <tabs-style-1  v-model="currIndex1" :tabsList="tabsList1" @tabsHandle="tabsHandle1" ref="tabsStyle1">
            <!-- <tabsContent1 v-if="currIndex1==0"></tabsContent1>
            <tabsContent2 v-if="currIndex1==1"></tabsContent2>
            <tabsContent3 v-if="currIndex1==2"></tabsContent3>
            <tabsContent4 v-if="currIndex1==3"></tabsContent4> -->
         </tabs-style-1>
-        <tabs-style-2 :tabsList="tabsList2" @tabsHandle="tabsHandle2">
+        <tabs-style-2 v-model="currIndex2" :tabsList="tabsList2" @tabsHandle="tabsHandle2">
           <!-- <tabsContent1 v-if="currIndex2==0"></tabsContent1>
           <tabsContent2 v-if="currIndex2==1"></tabsContent2>
           <tabsContent3 v-if="currIndex2==2"></tabsContent3>
           <tabsContent4 v-if="currIndex2==3"></tabsContent4>
           <tabsContent1 v-if="currIndex2==4"></tabsContent1> -->
         </tabs-style-2>
-        <tabs-style-3 :tabsList="tabsList3" @tabsHandle="tabsHandle3">
+        <tabs-style-3 v-model="currIndex3" :tabsList="tabsList3" @tabsHandle="tabsHandle3">
           <!-- <tabsContent1 v-if="currIndex2==0"></tabsContent1>
           <tabsContent2 v-if="currIndex3==1"></tabsContent2>
           <tabsContent3 v-if="currIndex3==2"></tabsContent3>
           <tabsContent4 v-if="currIndex3==3"></tabsContent4>
           <tabsContent1 v-if="currIndex3==4"></tabsContent1> -->
         </tabs-style-3>
-        <tabs-style-4 :tabsList="tabsList4" @tabsHandle="tabsHandle4">
+        <tabs-style-4 v-model="currIndex4" :tabsList="tabsList4" @tabsHandle="tabsHandle4">
           <!-- <tabsContent1 v-if="currIndex4==0"></tabsContent1>
           <tabsContent2 v-if="currIndex4==1"></tabsContent2> -->
         </tabs-style-4>
-        <tabs-style-5 :tabsList="tabsList5" @tabsHandle="tabsHandle5">
+        <tabs-style-5 v-model="currIndex5" :tabsList="tabsList5" @tabsHandle="tabsHandle5">
             <!-- <tabsContent1 v-if="currIndex5==0"></tabsContent1>
            <tabsContent2 v-if="currIndex5==1"></tabsContent2>
            <tabsContent3 v-if="currIndex5==2"></tabsContent3>
@@ -43,13 +43,13 @@
       title="竖向Tab标签"
       :width="'calc(50% - 20px)'"
       @showOptionHandler="showOption('tabsStyle6')">
-      <tabs-style-6 ref="tabsStyle6" :tabsList="tabsList6" @tabsHandle="tabsHandle6">
+      <tabs-style-6 ref="tabsStyle6" v-model="currIndex6" :tabsList="tabsList6" @tabsHandle="tabsHandle6">
           <!-- <tabsContent1 v-if="currIndex6==0"></tabsContent1>
            <tabsContent2 v-if="currIndex6==1"></tabsContent2>
            <tabsContent3 v-if="currIndex6==2"></tabsContent3>
            <tabsContent4 v-if="currIndex6==3"></tabsContent4> -->
       </tabs-style-6>
-      <tabs-style-7 :tabsList="tabsList7" @tabsHandle="tabsHandle7">
+      <tabs-style-7 :tabsList="tabsList7" v-model="currIndex7" @tabsHandle="tabsHandle7">
          <!-- <tabsContent1 v-if="currIndex7==0"></tabsContent1>
           <tabsContent2 v-if="currIndex7==1"></tabsContent2> -->
       </tabs-style-7>
@@ -144,18 +144,13 @@ export default {
         },
       ],
       tabsList7:['机房', '局站'],
-     
-     
-
-
-
-      currIndex1: 0,
+      currIndex1: 3,
       currIndex2: 0,
-      currIndex3: 0,
+      currIndex3: 2,
       currIndex4: 0,
-      currIndex5: 0,
+      currIndex5: 2,
       currIndex6: 0,
-      currIndex7: 0,
+      currIndex7: 1,
     }
   },
   components: {
@@ -182,6 +177,8 @@ export default {
     },
     tabsHandle1(e) { // 切换tab方法
       this.currIndex1 = e;
+      // console.log(' this.currIndex1',  this.currIndex1);
+      // console.log('e',  e);
     },
     tabsHandle2(e) {
       this.currIndex2 = e;
