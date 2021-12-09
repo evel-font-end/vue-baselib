@@ -4,6 +4,7 @@ import liquidfill from 'echarts-liquidfill'
 import ElementUI from 'element-ui'
 import dataV from '@jiaminghi/data-view'
 import TFetch from 'tfetch'
+import { deepMerge } from '@/assets/lib/utils';
 import 'iview/dist/styles/iview.css'
 import 'element-ui/lib/theme-chalk/index.css'
 
@@ -89,7 +90,7 @@ const install = function (Vue) {
   Vue.use(liquidfill)
   Vue.use(dataV)
   Vue.use(ElementUI)
-
+  Vue.prototype.$deepMerge = deepMerge;
   Vue.prototype.$echarts = echarts
   Vue.prototype.$http = http
   Vue.prototype.$fetchMock = fetchMock
