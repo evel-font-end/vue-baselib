@@ -2,15 +2,15 @@
 
 >Use
 ```javascript
-    <tabs-style-6 :tabsList="tabsList6" @tabsHandle="tabsHandle6">
+    <tabs-style-6 v-model="currIndex6" :tabsList="tabsList6" @tabsHandle="tabsHandle6">
       <tabsContent1 v-if="currIndex6==0"></tabsContent1>
       <tabsContent2 v-if="currIndex6==1"></tabsContent2>
       <tabsContent3 v-if="currIndex6==2"></tabsContent3>
       <tabsContent4 v-if="currIndex6==3"></tabsContent4>
     </tabs-style-6>
-    <tabs-style-7 :tabsList="tabsList7" @tabsHandle="tabsHandle7">
+    <tabs-style-7 v-model="currIndex7" :tabsList="tabsList7" @tabsHandle="tabsHandle7">
       <tabsContent1 v-if="currIndex7==0"></tabsContent1>
-      <tabsContent2 v-if="currIndex7==1"></tabsContent2> -->
+      <tabsContent2 v-if="currIndex7==1"></tabsContent2>
     </tabs-style-7>
 
     const tabsList6 = [
@@ -33,7 +33,7 @@
     const tabsList7 = ['机房','局站'],
     
     const currIndex6 = 0,
-    const currIndex7 = 0,
+    const currIndex7 = 1,
 ```
 
 > Props
@@ -41,6 +41,7 @@
 参数|说明|类型|可选值|默认值
 -|-|-|-|-
 tabsList|tabs数组|Array|-| -
+currIndex6|tabs选中默认值|Number|-| 0
 
 
 > tabsList
