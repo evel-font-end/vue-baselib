@@ -8,6 +8,10 @@ export function isFunction(fn) {
   return Object.prototype.toString.call(fn) === '[object Function]';
 }
 
+export function isArray(fn) {
+  return Object.prototype.toString.call(fn) === '[object Array]';
+}
+
 export function deepMerge(obj1, obj2) {
   let key;
   for (key in obj2) {

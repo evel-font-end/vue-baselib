@@ -6,7 +6,7 @@
       :title="'平滑折线图'"
       @showOptionHandler="showOption('line1')"
     >
-      <lineStyle1 :chartId="'line1'" ref="line1" :chartData="lineData1" />
+      <lineStyle1 :chartId="'line1'" ref="line1" :chartData="lineData3" />
     </box-container>
     <box-container
       class="bg-grey"
@@ -14,7 +14,13 @@
       :title="'基础折线图'"
       @showOptionHandler="showOption('line2')"
     >
-      <lineStyle2 :chartId="'line2'" ref="line2" :chartData="lineData1" />
+      <lineStyle2
+        :chartId="'line2'"
+        ref="line2"
+        :chartData="lineData1"
+        :options="{
+        }"
+      />
     </box-container>
     <box-container
       class="bg-grey"
@@ -22,7 +28,7 @@
       :title="'渐变堆叠面积图'"
       @showOptionHandler="showOption('line3')"
     >
-      <lineStyle3 :chartId="'line3'" ref="line3" :chartData="lineData1" />
+      <lineStyle3 :chartId="'line3'" ref="line3" :chartData="lineData3" />
     </box-container>
     <box-container
       class="bg-grey"
@@ -55,15 +61,29 @@ export default {
       lineData1: {
         lineTitle1: "指标一",
         lineTitle2: "指标二",
+        lineTitle: ["指标一", "指标二"],
         xdata: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月"],
-        ydata1: [134, 235, 312, 412, 512, 136, 457, 128],
-        ydata2: [421, 214, 343, 422, 535, 236, 527, 118]
+        ydata: [
+          [
+            [134, 235, 312, 412, 512, 136, 457, 128],
+            [21, 14, 343, 422, 535, 236, 127, 118]
+          ],
+          [421, 214, 343, 422, 535, 236, 527, 118],
+          [421, 114, 343, 422, 535, 236, 527, 118],
+        ]
       },
       lineData2: {
         lineTitle1: "",
         xdata: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月"],
         ydata1: [134, 235, 312, 412, 512, 136, 457, 128]
-      }
+      },
+      lineData3: {
+        lineTitle1: "指标一",
+        lineTitle2: "指标二",
+        xdata: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月"],
+        ydata1: [134, 235, 312, 412, 512, 136, 457, 128],
+        ydata2: [421, 214, 343, 422, 535, 236, 527, 118]
+      },
     };
   },
   mounted() {},

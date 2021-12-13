@@ -12,8 +12,10 @@ function getLinearColor(colorStart, colorMiddle, colorEnd) {
     { offset: 1, color: colorEnd }
   ]);
 }
+import { isFunction, isArray } from '@/assets/lib/utils';
+import { lineItemRecursion } from './utils';
 export default {
-  name: "lineStyle2",
+  name: "LineStyle2",
   props: {
     chartId: {
       type: String,
@@ -21,19 +23,19 @@ export default {
     },
     chartData: {
       type: Object,
-      default: function() {
+      default: function () {
         return {};
       }
     },
     legendColor: {
       type: Array,
-      default: function() {
+      default: function () {
         return ["#21B791", "#FFBA1E"]
       }
     },
     line1LegendStyle: {
       type: Object,
-      default: function() {
+      default: function () {
         return {
           fontSize: 14,
           fontFamily: "PingFangSC",
@@ -67,7 +69,13 @@ export default {
         document.getElementById(this.chartId),
         "chalk"
       );
-      const { lineTitle1, lineTitle2, xdata, ydata1, ydata2 } = this.chartData;
+      const { lineTitle1, lineTitle2, colors, lineTitle, xdata, ydata } = this.chartData;
+      const colorItems = colors || ['#21B791', '#FFBA1E']
+      const series = lineItemRecursion(ydata, {
+        lineTitle,
+        colors: colorItems
+      });
+      console.log('series', series);
       const option = {
         tooltip: {
           trigger: "axis"
@@ -111,8 +119,8 @@ export default {
             <span></span>
             ${element.seriesName}:</span> 
             <span style='text-align:right;flex:1;color: #51FEFFFF'>${Number(
-              element.value
-            )}</span></p>`;
+    element.value
+  )}</span></p>`;
             }
             text = `<div style='border: 1px solid #51feff;color: #ffffff;padding: 15px 15px 7px;border-radius: 5px;background: rgba(0,0,0,0.5);'>${text}</div>`;
             return text;
@@ -169,56 +177,7 @@ export default {
             }
           }
         ],
-        series: [
-          {
-            name: lineTitle1,
-            type: "line",
-            symbol: "circle", //拐点设置为实心
-            symbolSize: 6,
-            yAxisIndex: 0,
-            smooth: false,
-            itemStyle: {
-              normal: {
-                lineStyle: {
-                  width: 2,
-                  color: "#21B791" //改变折线颜色
-                }
-              }
-            },
-            itemStyle: {
-              normal: {
-                color: "#21B791", //拐点颜色
-                borderColor: "#FFFFFF", //拐点边框颜色
-                borderWidth: 2 //拐点边框大小
-              }
-            },
-            data: ydata1
-          },
-          {
-            name: lineTitle2,
-            type: "line",
-            symbol: "circle", //拐点设置为实心
-            symbolSize: 6,
-            yAxisIndex: 0,
-            smooth: false,
-            itemStyle: {
-              normal: {
-                lineStyle: {
-                  width: 2,
-                  color: "#FFBA1E" //改变折线颜色
-                }
-              }
-            },
-            itemStyle: {
-              normal: {
-                color: "#FFBA1E", //拐点颜色
-                borderColor: "#FFFFFF", //拐点边框颜色
-                borderWidth: 2 //拐点边框大小
-              }
-            },
-            data: ydata2
-          }
-        ]
+        series: series
       };
       this.option = this.$deepMerge(option, this.options)
       this.chart.setOption(this.option);
