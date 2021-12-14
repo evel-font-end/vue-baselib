@@ -4,15 +4,6 @@
   </div>
 </template>
 <script>
-const echarts = require("echarts");
-function getLinearColor(colorStart, colorMiddle, colorEnd) {
-  return new echarts.graphic.LinearGradient(0, 0, 1, 0, [
-    { offset: 0, color: colorStart },
-    { offset: 0.5, color: colorMiddle },
-    { offset: 1, color: colorEnd }
-  ]);
-}
-import { isFunction, isArray } from '@/assets/lib/utils';
 import { lineItemRecursion } from './utils';
 export default {
   name: "LineStyle2",
@@ -57,10 +48,24 @@ export default {
       chart: null
     };
   },
-  watch: {},
+  watch: {
+    options() {
+      if (this.chart === null) {
+        this.initChart()
+      }
+      this.updateChart()
+    },
+    chartData() {
+      if (this.chart === null) {
+        this.initChart()
+      }
+      this.updateChart()
+    },
+  },
   mounted() {
     this.$nextTick(() => {
       this.initChart();
+      this.updateChart()
     });
   },
   methods: {
@@ -69,13 +74,14 @@ export default {
         document.getElementById(this.chartId),
         "chalk"
       );
+    },
+    updateChart() {
       const { lineTitle1, lineTitle2, colors, lineTitle, xdata, ydata } = this.chartData;
       const colorItems = colors || ['#21B791', '#FFBA1E']
       const series = lineItemRecursion(ydata, {
         lineTitle,
         colors: colorItems
       });
-      console.log('series', series);
       const option = {
         tooltip: {
           trigger: "axis"

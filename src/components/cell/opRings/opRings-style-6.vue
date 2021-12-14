@@ -71,12 +71,15 @@ export default {
     }
   },
   watch: {
-    source(newVal) {
-      if (this.chart === null) {
-        this.initChart()
-      }
-      this.updateChart(newVal)
-    },
+    source: {
+      handler: function (newVal) {
+        if (this.chart === null) {
+          this.initChart()
+        }
+        this.updateChart(newVal)
+      },
+      deep: true
+    }
   },
   created() {
   },
@@ -92,6 +95,7 @@ export default {
       window.addEventListener('resize', () => {
         _chart.resize();
       })
+      this.chart = _chart;
       return _chart
     },
     updateChart(source) {
