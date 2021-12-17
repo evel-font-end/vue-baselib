@@ -7,7 +7,7 @@
 
 const month = "2022-12";
 const isShowTitle = "false";
-const tip = "请选择日期";
+const tip = "请选择月份";
 const format = "yyyy/MM";
 ```
 

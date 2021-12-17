@@ -28,7 +28,7 @@ export default {
     },
     tip: {
       type: String,
-      default: '选择日期',
+      default: '选择月份',
     },
     isShowTitle: {
       type: Boolean,
