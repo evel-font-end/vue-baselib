@@ -48,7 +48,7 @@ export default {
         document.getElementById(this.chartId),
         "chalk"
       );
-      const { barTitle, xdata, ydata } = this.chartData;
+      const { xdata, ydata } = this.chartData;
       const option = {
         tooltip: {
           trigger: "axis"
