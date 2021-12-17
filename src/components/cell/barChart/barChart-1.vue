@@ -48,7 +48,7 @@ export default {
         document.getElementById(this.chartId),
         "chalk"
       );
-      const { lineTitle, barTitle, xdata, ydata, ydata2 } = this.chartData;
+      const { barTitle, xdata, ydata } = this.chartData;
       const option = {
         tooltip: {
           trigger: "axis",
@@ -153,7 +153,7 @@ export default {
         ],
         series: [
           {
-            name: barTitle,
+            name: 'bar',
             type: "bar",
             yAxisIndex: 1,
             showBackground: true,

@@ -7,7 +7,7 @@
       :title="'折柱混合一'"
       @showOptionHandler="showOption('chartBar1')"
     >
-      <mix-base-Bar
+      <bar-style-1
         :chartId="'chartBar1'"
         ref="chartBar1"
         :chartData="mixtureData1"
@@ -19,7 +19,7 @@
       :title="'折柱混合二'"
       @showOptionHandler="showOption('chartBar2')"
     >
-      <mix-bar-style
+      <bar-style-2
         :chartId="'chartBar2'"
         ref="chartBar2"
         :chartData="mixtureData1"
@@ -31,7 +31,7 @@
       :title="'面积图折线图混合'"
       @showOptionHandler="showOption('chartBar3')"
     >
-      <mix-pictorial-Bar
+      <bar-style-3
         :chartId="'chartBar3'"
         ref="chartBar3"
         :chartData="mixtureData2"
@@ -41,16 +41,16 @@
 </template>
 <script>
 import boxContainer from "../common/box-container";
-import mixBaseBar from "~components/cell/bar/bar-style-1.vue";
-import mixBarStyle from "~components/cell/bar/bar-style-2.vue";
-import mixPictorialBar from "~components/cell/bar/bar-pictorial-style-1.vue";
+import BarStyle1 from "~components/cell/bar/bar-style-1.vue";
+import BarStyle2 from "~components/cell/bar/bar-style-2.vue";
+import BarStyle3 from "~components/cell/bar/bar-pictorial-style-1.vue";
 
 export default {
   components: {
     boxContainer,
-    mixBaseBar,
-    mixBarStyle,
-    mixPictorialBar
+    BarStyle1,
+    BarStyle2,
+    BarStyle3
   },
   data() {
     return {
@@ -63,11 +63,12 @@ export default {
         lineData: [1, 2, 3, 4, 5, 6, 7, 8]
       },
       mixtureData2: {
-        lineTitle1: "指标一",
-        lineTitle2: "指标二",
+        lineTitle: ["指标一", "指标二"],
         xdata: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月"],
-        ydata1: [134, 235, 312, 412, 512, 136, 457, 128],
-        ydata2: [421, 214, 343, 422, 535, 236, 527, 118]
+        ydata: [
+          [134, 235, 312, 412, 512, 136, 457, 128],
+          [421, 214, 343, 422, 535, 236, 527, 118]
+        ]
       },
       spinShow1: false
     };

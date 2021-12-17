@@ -37,6 +37,45 @@ function setLinearColor(colors) {
     ]);
   }
 }
+import { isFunction, isArray } from '@/assets/lib/utils';
+
+export const lineItemRecursion = (ydata, options, lineTitleName, color, areaColor) => {
+  const { lineTitle, colors, areaColors } = options;
+  const series = [];
+  ydata.map((ydataItem, ydataIndex) => {
+    if (isFunction(ydataItem)) {
+      series.push({
+        ...ydataItem
+      })
+    } else if (isArray(ydataItem) && (ydataItem.some(item => item instanceof Array))) {
+      const obj = [ ...lineItemRecursion(ydataItem, options, lineTitle[ydataIndex], colors[ydataIndex], areaColors[ydataIndex])];
+      series.push(...obj)
+    } else {
+      series.push({
+        name: lineTitleName || lineTitle[ydataIndex],
+        type: "line",
+        yAxisIndex: 0,
+        smooth: false,
+        symbol: "none",
+        areaStyle: {
+          normal: {
+            color: setAreaColor(areaColor || areaColors[ydataIndex]) //改变区域颜色
+          }
+        },
+        itemStyle: {
+          normal: {
+            lineStyle: {
+              color: setLinearColor(color || colors[ydataIndex]) //改变折线颜色
+            }
+          }
+        },
+        data: ydataItem
+      })
+    }
+  });
+  return series
+}
+
 export default {
   name: "BarStyle3",
   props: {
@@ -48,26 +87,6 @@ export default {
       type: Object,
       default: function() {
         return {};
-      }
-    },
-    line1LegendStyle: {
-      type: Object,
-      default: function() {
-        return {
-          fontSize: 14,
-          fontFamily: "PingFangSC",
-          color: "#ffff"
-        };
-      }
-    },
-    line2LegendStyle: {
-      type: Object,
-      default: function() {
-        return {
-          fontSize: 14,
-          fontFamily: "PingFangSC",
-          color: "#ffff"
-        };
       }
     },
     legendColor: {
@@ -117,24 +136,6 @@ export default {
         };
       }
     },
-    line1Color: {
-      type: Array,
-      default: function() {
-        return ["#FFBA1E"];
-      }
-    },
-    line2Color: {
-      type: Array,
-      default: function() {
-        return ["#21B791"];
-      }
-    },
-    line2Area: {
-      type: Array,
-      default: function() {
-        return ["rgba(18,186,149,0.38)", "rgba(18,186,149,0)"];
-      }
-    },
     options: {
       type: Object,
       default() {
@@ -161,7 +162,25 @@ export default {
         document.getElementById(this.chartId),
         "chalk"
       );
-      const { lineTitle1, lineTitle2, xdata, ydata1, ydata2 } = this.chartData;
+      const { lineTitle, xdata, colors, ydata, areaColors } = this.chartData;
+      const colorItems = colors || ['#21B791', '#FFBA1E']
+      const areaColorItems = areaColors || [["rgba(18,186,149,0.38)", "rgba(18,186,149,0)"], ["rgba(18,186,149,0.38)", "rgba(18,186,149,0)"]]
+      const series = lineItemRecursion(ydata, {
+        lineTitle,
+        colors: colorItems,
+        areaColors: areaColorItems,
+      });
+      const legend = lineTitle.map(lineTitleItem => {
+        return {
+          name: lineTitleItem,
+          icon: "stack",
+          textStyle: {
+            fontSize: 14,
+            fontFamily: "PingFangSC",
+            color: "#ffff"
+          }
+        }
+      })
       const option = {
         tooltip: {
           trigger: "axis"
@@ -171,18 +190,7 @@ export default {
           itemWidth: 13,
           itemHeight: 4,
           left: "right",
-          data: [
-            {
-              name: lineTitle1,
-              icon: "stack",
-              textStyle: this.line1LegendStyle
-            },
-            {
-              name: lineTitle2,
-              icon: "stack",
-              textStyle: this.line2LegendStyle
-            }
-          ]
+          data: legend
         },
         tooltip: {
           show: false,
@@ -240,43 +248,7 @@ export default {
             }
           }
         ],
-        series: [
-          {
-            name: lineTitle1,
-            type: "line",
-            yAxisIndex: 0,
-            smooth: false,
-            symbol: "none",
-            itemStyle: {
-              normal: {
-                lineStyle: {
-                  color: setLinearColor(this.line1Color) //改变折线颜色
-                }
-              }
-            },
-            data: ydata1
-          },
-          {
-            name: lineTitle2,
-            type: "line",
-            yAxisIndex: 0,
-            smooth: false,
-            symbol: "none",
-            areaStyle: {
-              normal: {
-                color: setAreaColor(this.line2Area) //改变区域颜色
-              }
-            },
-            itemStyle: {
-              normal: {
-                lineStyle: {
-                  color: setLinearColor(this.line2Color) //改变折线颜色
-                }
-              }
-            },
-            data: ydata2
-          }
-        ]
+        series: series
       };
       this.option = this.$deepMerge(option, this.options)
       this.chart.setOption(this.option);

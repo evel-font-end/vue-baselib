@@ -12,6 +12,15 @@ export const children = [{
   },
   component: res => require(['@/components/pages/mapcharts'], res),
 }, {
+  path: '/icons',
+  name: 'icons',
+  title: '图标',
+  icon: 'icon-hunhetubiao',
+  meta: {
+    title: '图标'
+  },
+  component: res => require(['@/components/pages/icons'], res),
+}, {
   path: '/bar',
   name: 'bar',
   title: '混合图表',
@@ -180,32 +189,6 @@ export const children = [{
   },
   component: res => require(['@/components/pages/pagination'], res),
 },
-  /* {
-    path: '/radar',
-    name: 'radar',
-    icon: 'ionic',
-    component: res => require(['@/components/pages/radar'], res),
-  }, {
-    path: '/table',
-    name: 'table',
-    component: res => require(['@/components/pages/table'], res),
-  }, {
-    path: '/box',
-    name: 'box',
-    component: res => require(['@/components/pages/box'], res),
-  }, {
-    path: '/load',
-    name: 'load',
-    component: res => require(['@/components/pages/load'], res),
-  }, {
-    path: '/funnel',
-    name: 'funnel',
-    component: res => require(['@/components/pages/funnel'], res),
-  }, {
-    path: '/ball',
-    name: 'ball',
-    component: res => require(['@/components/pages/ball'], res),
-  } */
 ]
 const router = new VueRouter({
   // mode: 'history',
