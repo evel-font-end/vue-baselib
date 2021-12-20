@@ -47,7 +47,7 @@ export const lineItemRecursion = (ydata, options, lineTitleName, color) => {
   return series
 }
 export default {
-  name: "LineStyle2",
+  name: "lineStyle2",
   props: {
     chartId: {
       type: String,

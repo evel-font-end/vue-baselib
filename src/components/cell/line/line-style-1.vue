@@ -4,54 +4,74 @@
   </div>
 </template>
 <script>
-const echarts = require("echarts");
-function getLinearColor(colors) {
-  if (colors.length == 1) {
-    return colors[0];
-  } else if (colors.length == 2) {
-    return new echarts.graphic.LinearGradient(0, 0, 1, 0, [
-      { offset: 0, color: colors[0] },
-      { offset: 1, color: colors[1] }
-    ]);
-  } else if (colors.length == 3) {
-    return new echarts.graphic.LinearGradient(0, 0, 1, 0, [
-      { offset: 0, color: colors[0] },
-      { offset: 0.5, color: colors[1] },
-      { offset: 1, color: colors[2] }
-    ]);
-  }
+import { isFunction, isArray } from '@/assets/lib/utils';
+
+export const lineItemRecursion = (ydata, options, lineTitleName, color) => {
+  const { lineTitle, colors } = options;
+  const series = [];
+  ydata.map((ydataItem, ydataIndex) => {
+    if (isFunction(ydataItem)) {
+      series.push({
+        ...ydataItem
+      })
+    } else if (isArray(ydataItem) && (ydataItem.some(item => item instanceof Array))) {
+      const obj = [ ...lineItemRecursion(ydataItem, options, lineTitle[ydataIndex], colors[ydataIndex])];
+      series.push(...obj)
+    } else {
+      series.push({
+        name: lineTitleName || lineTitle[ydataIndex],
+        type: "line",
+        symbol: "circle", //拐点设置为实心
+        showSymbol: false,
+        symbolSize: 3,
+        yAxisIndex: 0,
+        yAxisIndex: 0,
+        smooth: true,
+        emphasis: {
+          color: color || colors[ydataIndex] 
+        },
+        itemStyle: {
+          normal: {
+            lineStyle: {
+              width: 4,
+              color: color || colors[ydataIndex] //改变折线颜色
+            }
+          }
+        },
+        itemStyle: {
+          normal: {
+            color: color || colors[ydataIndex], //拐点颜色
+            borderColor: "#FFFFFF", //拐点边框颜色
+            borderWidth: 2 //拐点边框大小
+          }
+        },
+        data: ydataItem
+      })
+    }
+  });
+  return series
 }
 export default {
   name: "lineStyle1",
   props: {
     chartId: {
       type: String,
-      default: "lineChart"
+      default: ""
     },
     chartData: {
       type: Object,
-      default: function() {
+      default: function () {
         return {};
       }
     },
     legendColor: {
-      // legend图例颜色
+       // legend图例颜色
       type: Array,
-      default: function() {
-        return ["#38DFEF", "#27DDA8"];
+      default: function () {
+        return ["#38DFEF", "#27DDA8"]
       }
     },
-    line1LegendStyle: {
-      type: Object,
-      default: function() {
-        return {
-          fontSize: 14,
-          fontFamily: "PingFangSC",
-          color: "#ffff"
-        };
-      }
-    },
-    line2LegendStyle: {
+    lineLegendStyle: {//图例文字样式
       type: Object,
       default: function() {
         return {
@@ -101,26 +121,6 @@ export default {
         };
       }
     },
-    line1Color: {
-      type: Array,
-      default: function() {
-        return [
-          "rgba(56,223,239,0.08)",
-          "rgba(56,223,239,1)",
-          "rgba(56,223,239,0.08)"
-        ];
-      }
-    },
-    line2Color: {
-      type: Array,
-      default: function() {
-        return [
-          "rgba(39,221,168,0.08)",
-          "rgba(39,221,168,1)",
-          "rgba(39,221,168,0.08)"
-        ];
-      }
-    },
     options: {
       type: Object,
       default() {
@@ -135,10 +135,25 @@ export default {
       chart: null
     };
   },
-  watch: {},
+  watch: {
+    options(val) {
+      if (this.chart === null) {
+        this.initChart()
+      }
+      this.updateChart()
+      
+    },
+    chartData(val) {
+      if (this.chart === null) {
+        this.initChart()
+      }
+      this.updateChart()
+    },
+  },
   mounted() {
     this.$nextTick(() => {
       this.initChart();
+      this.updateChart()
     });
   },
   methods: {
@@ -147,7 +162,26 @@ export default {
         document.getElementById(this.chartId),
         "chalk"
       );
-      const { lineTitle1, lineTitle2, xdata, ydata1, ydata2 } = this.chartData;
+    },
+    updateChart() {
+      const { colors, lineTitle, xdata, ydata } = this.chartData;
+      const colorItems = colors || ['#21B791', '#FFBA1E']
+      const series = lineItemRecursion(ydata, {
+        lineTitle,
+        colors: colorItems
+      });
+      const legend = lineTitle.map((lineTitleItem, lineTitleIndex) => {
+        return {
+          name: lineTitleItem,
+          icon: "stack",
+          textStyle: this.lineLegendStyle
+          // {
+          //   fontSize: 14,
+          //   fontFamily: "PingFangSC",
+          //   color: "#ffff"
+          // }
+        }
+      })
       const option = {
         tooltip: {
           trigger: "axis"
@@ -157,18 +191,7 @@ export default {
           itemWidth: 10,
           itemHeight: 4,
           left: "right",
-          data: [
-            {
-              name: lineTitle1,
-              icon: "stack",
-              textStyle: this.line1LegendStyle
-            },
-            {
-              name: lineTitle2,
-              icon: "stack",
-              textStyle: this.line2LegendStyle
-            }
-          ]
+          data: legend,
         },
         tooltip: {
           trigger: "axis",
@@ -183,8 +206,8 @@ export default {
             <span></span>
             ${element.seriesName}:</span> 
             <span style='text-align:right;flex:1;color: #51FEFFFF'>${Number(
-              element.value
-            )}</span></p>`;
+    element.value
+  )}</span></p>`;
             }
             text = `<div style='border: 1px solid #51feff;color: #ffffff;padding: 15px 15px 7px;border-radius: 5px;background: rgba(0,0,0,0.5);'>${text}</div>`;
             return text;
@@ -199,10 +222,23 @@ export default {
         xAxis: {
           type: "category",
           axisLine: {
-            lineStyle: this.xAxisLineStyle
+            lineStyle: this.xAxisLineStyle,
+            normal: {
+              color: this.legendColor
+            }
+            // {
+            //   type: "solid",
+            //   color: "rgba(41,153,234,0.2)", //坐标轴的颜色
+            //   width: "1" //坐标轴的宽度
+            // }
           },
           axisLabel: {
             textStyle: this.xAxisLabel
+            // {
+            //   color: "#88D7FD",
+            //   fontSize: 14,
+            //   fontFamily: "PingFangSC"
+            // }
           },
           data: xdata
         },
@@ -219,46 +255,23 @@ export default {
             splitLine: {
               show: true,
               lineStyle: this.yAxisSplitLineStyle
+              // {
+              //   color: "rgba(41,153,234,0.2)",
+              //   width: 1,
+              //   type: "solid"
+              // }
             },
             axisLabel: {
               textStyle: this.yAxisLabel
+              // {
+              //   color: "#88D7FD",
+              //   fontSize: 14,
+              //   fontFamily: "PingFangSC"
+              // }
             }
           }
         ],
-        series: [
-          {
-            name: lineTitle1,
-            type: "line",
-            yAxisIndex: 0,
-            smooth: true,
-            symbol: "none",
-            itemStyle: {
-              normal: {
-                lineStyle: {
-                  width: 4,
-                  color: getLinearColor(this.line1Color)
-                }
-              }
-            },
-            data: ydata1
-          },
-          {
-            name: lineTitle2,
-            type: "line",
-            yAxisIndex: 0,
-            smooth: true,
-            symbol: "none",
-            itemStyle: {
-              normal: {
-                lineStyle: {
-                  width: 4,
-                  color: getLinearColor(this.line2Color)
-                }
-              }
-            },
-            data: ydata2
-          }
-        ]
+        series: series
       };
       this.option = this.$deepMerge(option, this.options)
       this.chart.setOption(this.option);
