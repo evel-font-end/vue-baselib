@@ -11,6 +11,40 @@ function getLinearColor(colorStart, colorEnd) {
     { offset: 1, color: colorEnd }
   ]);
 }
+import { isFunction, isArray } from '@/assets/lib/utils';
+
+export const lineItemRecursion = (ydata, options, barTitleName, color) => {
+  const { barTitle, colors } = options;
+  const series = [];
+  ydata.map((ydataItem, ydataIndex) => {
+    if (isFunction(ydataItem)) {
+      series.push({
+        ...ydataItem
+      })
+    } else if (isArray(ydataItem) && (ydataItem.some(item => item instanceof Array))) {
+      const obj = [ ...lineItemRecursion(ydataItem, options, barTitle[ydataIndex], colors[ydataIndex])];
+      series.push(...obj)
+    } else {
+      series.push({
+        name: barTitleName || barTitle[ydataIndex],
+        data: ydataItem,
+        type: "bar",
+        yAxisIndex: 1,
+        showSymbol: false,
+        hoverAnimation: false,
+        barWidth: 12, //柱图宽度
+        itemStyle: {
+          //左面
+          normal: {
+            color: color || colors[ydataIndex],
+            barBorderRadius: [0, 0, 0, 0]
+          }
+        }
+      })
+    }
+  });
+  return series
+}
 export default {
   name: 'BarChart4',
   props: {
@@ -48,8 +82,19 @@ export default {
         document.getElementById(this.chartId),
         "chalk"
       );
-      let { barTitle1, barTitle2, xdata, ydata1, ydata2 } = this.chartData;
-      let option = {
+      const { barTitle, xdata, ydata, colors } = this.chartData;
+      const colorItems = colors || [new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+        { offset: 0, color: "#00adff" },
+        { offset: 1, color: "rgba(0,173,255,0.25)" }
+      ]), new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+        { offset: 0, color: "#06e789" },
+        { offset: 1, color: "rgba(6,231,137,0.10)" }
+      ])]
+      const series = lineItemRecursion(ydata, {
+        barTitle,
+        colors: colorItems
+      });
+      const option = {
         tooltip: {
           trigger: "axis",
           backgroundColor: "transparent",
@@ -157,47 +202,7 @@ export default {
             }
           }
         ],
-        series: [
-          {
-            name: barTitle1,
-            type: "bar",
-            yAxisIndex: 1,
-            showSymbol: false,
-            hoverAnimation: false,
-            data: ydata1,
-            barWidth: 12, //柱图宽度
-            itemStyle: {
-              //左面
-              normal: {
-                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                  { offset: 0, color: "#00adff" },
-                  { offset: 1, color: "rgba(0,173,255,0.25)" }
-                ]),
-                barBorderRadius: [0, 0, 0, 0]
-              }
-            }
-          },
-          {
-            name: barTitle2,
-            type: "bar",
-            yAxisIndex: 1,
-            showSymbol: false,
-            hoverAnimation: false,
-            data: ydata2,
-            barWidth: 12, //柱图宽度
-            itemStyle: {
-              //左面
-              normal: {
-                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                  { offset: 0, color: "#06e789" },
-                  { offset: 1, color: "rgba(6,231,137,0.10)" }
-                ]),
-                barBorderRadius: [0, 0, 0, 0]
-              }
-            },
-            barGap: "-100%"
-          }
-        ]
+        series: series
       };
       this.option = this.$deepMerge(option, this.options)
       this.chart.setOption(this.option);

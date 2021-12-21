@@ -1,9 +1,9 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-// import Vue from 'vue'
+import Vue from 'vue'
 import App from './App'
 import router from './router'
-// import iView from 'iview'
+import iview from 'iview'
 import store from './store'
 import echarts from 'echarts'
 import liquidfill from 'echarts-liquidfill'
@@ -16,8 +16,8 @@ import highcharts3d from 'highcharts/highcharts-3d'
 import { deepMerge } from '@/assets/lib/utils';
 import '@/assets/lib/hljs';
 import 'mavon-editor/dist/css/index.css'
-// import 'iview/dist/styles/iview.css'
-// import 'element-ui/lib/theme-chalk/index.css'
+import 'iview/dist/styles/iview.css'
+import 'element-ui/lib/theme-chalk/index.css'
 // import MyComponent from '../lib/vue-baselib.js'
 
 require('./common/fonts/PingFangSC-Regular/PingFang Regular.css')

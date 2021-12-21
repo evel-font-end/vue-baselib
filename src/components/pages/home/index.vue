@@ -79,7 +79,7 @@ export default {
     },
     dialogVisible() {
       const dialogShow = this.$store.state.Home.dialogShow
-      return !!dialogShow && dialogShow.time >= Date.now() ? dialogShow.name : false;
+      return !!dialogShow && dialogShow.time >= Date.now() ? !!dialogShow.name : false;
     },
     htmlValue() {
       return this.$store.state.Home.dialogMd || '';

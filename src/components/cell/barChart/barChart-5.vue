@@ -11,6 +11,46 @@ function getLinearColor(colorStart, colorEnd) {
     { offset: 1, color: colorEnd }
   ]);
 }
+import { isFunction, isArray } from '@/assets/lib/utils';
+
+export const lineItemRecursion = (ydata, options, barTitleName, color) => {
+  const { barTitle, colors } = options;
+  const series = [];
+  ydata.map((ydataItem, ydataIndex) => {
+    if (isFunction(ydataItem)) {
+      series.push({
+        ...ydataItem
+      })
+    } else if (isArray(ydataItem) && (ydataItem.some(item => item instanceof Array))) {
+      const obj = [ ...lineItemRecursion(ydataItem, options, barTitle[ydataIndex], colors[ydataIndex])];
+      series.push(...obj)
+    } else {
+      series.push(...[{
+        z: 1,
+        name: barTitleName || barTitle[ydataIndex],
+        type: "pictorialBar",
+        symbolPosition: "end",
+        data: ydataItem,
+        symbol: "diamond",
+        symbolOffset: (color || colors[ydataIndex]).symbolOffset,
+        symbolSize: [15, 10],
+        itemStyle: (color || colors[ydataIndex]).itemStyle
+      },
+      {
+        z: 1,
+        type: "bar",
+        name: barTitleName || barTitle[ydataIndex],
+        barWidth: 15,
+        barGap: (color || colors[ydataIndex]).barGap,
+        data: ydataItem,
+        itemStyle: {
+          color: (color || colors[ydataIndex]).color
+        }
+      }])
+    }
+  });
+  return series
+}
 export default {
   name: 'BarChart5',
   props: {
@@ -48,7 +88,63 @@ export default {
         document.getElementById(this.chartId),
         "chalk"
       );
-      const { barTitle1, barTitle2, xdata, ydata1, ydata2 } = this.chartData;
+      const { barTitle, colors, xdata, ydata } = this.chartData;
+      const colorItems = colors || [{
+        symbolOffset: ["-70%", "-50%"],
+        itemStyle: {
+          borderColor: "#07F096",
+          color: "#07F096"
+        },
+        barGap: "-50%",
+        color: {
+          type: "linear",
+          x: 0,
+          x2: 1,
+          y: 0,
+          y2: 0,
+          colorStops: [
+            { offset: 0, color: "rgba(7,240,150, .7)" },
+            { offset: 0.5, color: "rgba(7,240,150, .7)" },
+            { offset: 0.5, color: "rgba(7,240,150, .3)" },
+            { offset: 1, color: "rgba(7,240,150, .3)" }
+          ]
+        }
+      }, {
+        symbolOffset: ["65%", "-50%"],
+        itemStyle: {
+          borderColor: "#5D9EFF",
+          color: "#5D9EFF"
+        },
+        barGap: "40%",
+        color: {
+          type: "linear",
+          x: 0,
+          x2: 1,
+          y: 0,
+          y2: 0,
+          colorStops: [
+            { offset: 0, color: "rgba(93,158,255, .7)" },
+            { offset: 0.5, color: "rgba(93,158,255, .7)" },
+            { offset: 0.5, color: "rgba(93,158,255, .3)" },
+            { offset: 1, color: "rgba(93,158,255, .3)" }
+          ]
+        }
+      }]
+      const series = lineItemRecursion(ydata, {
+        barTitle,
+        colors: colorItems
+      });
+      const legend = barTitle.map(barTitleItem => {
+        return {
+          name: barTitleItem,
+          icon: "stack",
+          textStyle: {
+            fontSize: 14,
+            fontFamily: "PingFangSC",
+            color: "#FFFFFF"
+          }
+        }
+      })
       const option = {
         // tooltip
         color: ["#07ED96", "#5C9CFC"],
@@ -56,26 +152,7 @@ export default {
           itemWidth: 10,
           itemHeight: 10,
           left: "right",
-          data: [
-            {
-              name: barTitle1,
-              icon: "stack",
-              textStyle: {
-                fontSize: 14,
-                fontFamily: "PingFangSC",
-                color: "#FFFFFF"
-              }
-            },
-            {
-              name: barTitle2,
-              icon: "stack",
-              textStyle: {
-                fontSize: 14,
-                fontFamily: "PingFangSC",
-                color: "#FFFFFF"
-              }
-            }
-          ]
+          data: legend
         },
         grid: {
           left: "3%",
@@ -145,82 +222,7 @@ export default {
           }
         },
         // series
-        series: [
-          {
-            z: 1,
-            name: barTitle1,
-            type: "pictorialBar",
-            symbolPosition: "end",
-            data: ydata1,
-            symbol: "diamond",
-             symbolOffset: ["-70%", "-50%"],
-            symbolSize: [15, 10],
-            itemStyle: {
-              borderColor: "#07F096",
-              color: "#07F096"
-            }
-          },
-          {
-            z: 1,
-            type: "bar",
-            name: barTitle1,
-            barWidth: 15,
-            barGap: "-50%",
-            data: ydata1,
-            itemStyle: {
-              color: {
-                type: "linear",
-                x: 0,
-                x2: 1,
-                y: 0,
-                y2: 0,
-                colorStops: [
-                  { offset: 0, color: "rgba(7,240,150, .7)" },
-                  { offset: 0.5, color: "rgba(7,240,150, .7)" },
-                  { offset: 0.5, color: "rgba(7,240,150, .3)" },
-                  { offset: 1, color: "rgba(7,240,150, .3)" }
-                ]
-              }
-            }
-          },
-          {
-            z: 2,
-            name:  barTitle2,
-            type: "pictorialBar",
-            symbolPosition: "end",
-            data: ydata2,
-            symbol: "diamond",
-            symbolOffset: ["65%", "-50%"],
-            symbolSize: [15, 10],
-            itemStyle: {
-              borderColor: "#5D9EFF",
-              color: "#5D9EFF"
-            }
-          },
-          {
-            z: 2,
-            type: "bar",
-            name: barTitle2,
-            barWidth: 15,
-            barGap: "40%",
-            data: ydata2,
-            itemStyle: {
-              color: {
-                type: "linear",
-                x: 0,
-                x2: 1,
-                y: 0,
-                y2: 0,
-                colorStops: [
-                  { offset: 0, color: "rgba(93,158,255, .7)" },
-                  { offset: 0.5, color: "rgba(93,158,255, .7)" },
-                  { offset: 0.5, color: "rgba(93,158,255, .3)" },
-                  { offset: 1, color: "rgba(93,158,255, .3)" }
-                ]
-              }
-            }
-          }
-        ]
+        series: series
       };
       this.option = this.$deepMerge(option, this.options)
       this.chart.setOption(this.option);

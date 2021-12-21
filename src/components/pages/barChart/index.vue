@@ -19,7 +19,7 @@
       :spinShow="spinShow3"
       :title="'柱状图3'"
       @showOptionHandler='showOption("barChart3")'>
-      <barChart-3 :chartId="'barChart3'" ref="barChart3" :chartData="barData22" />
+      <barChart-3 :chartId="'barChart3'" ref="barChart3" :chartData="barData2" />
     </box-container>
     <box-container
       class="bg-grey"
@@ -40,14 +40,14 @@
       :spinShow="spinShow3"
       :title="'柱状图6'"
       @showOptionHandler='showOption("barChart6")'>
-      <barChart-6 :chartId="'barChart6'" ref="barChart6" :chartData="mixtureData2" />
+      <barChart-6 :chartId="'barChart6'" ref="barChart6" :chartData="barData2" />
     </box-container>
     <box-container
       class="bg-grey"
       :spinShow="spinShow3"
       :title="'堆叠柱状图'"
       @showOptionHandler='showOption("barChart7")'>
-      <barChart-7 :chartId="'barChart7'" ref="barChart7" :chartData="barData3" />
+      <barChart-7 :chartId="'barChart7'" ref="barChart7" :chartData="barData2" />
     </box-container>
     <box-container
       class="bg-grey"
@@ -86,38 +86,18 @@ export default {
     return {
       // 数据结构
       barData1: {
-        barTitle: "",
+        barTitle: ["指标一"],
         xdata: ["北京", "天津", "上海", "重庆", "河北", "湖北", "山西", "辽宁"],
-        ydata: [1, 2, 3, 4, 5, 6, 7, 8]
+        ydata: [
+          [1, 2, 3, 4, 5, 6, 7, 8]
+        ]
       },
-      barData22: {
+      barData2: {
         barTitle: ["指标一", "指标二"],
         xdata: ["北京", "天津", "上海", "重庆", "河北", "湖北", "山西", "辽宁"],
         ydata: [
           [124, 214, 253, 344, 125, 316, 417, 538],
           [141, 142, 453, 544, 575, 136, 247, 548]
-        ]
-      },
-      barData2: {
-        barTitle1: "指标一",
-        barTitle2: "指标二",
-        xdata: ["北京", "天津", "上海", "重庆", "河北", "湖北", "山西", "辽宁"],
-        ydata1: [124, 214, 253, 344, 125, 316, 417, 538],
-        ydata2: [141, 142, 453, 544, 575, 136, 247, 548]
-      },
-      mixtureData2: {
-        barTitle1: "指标一",
-        barTitle2: "指标二",
-        xdata: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月"],
-        ydata1: [134, 235, 312, 412, 512, 136, 457, 128],
-        ydata2: [421, 214, 343, 422, 535, 236, 527, 118]
-      },
-      barData3: {
-        xdata: [],
-        seriesData: [
-          { name: "指标一", value: [] },
-          { name: "指标二", value: [] },
-          { name: "指标三", value: [] }
         ],
         tooltip: {
           show: true,

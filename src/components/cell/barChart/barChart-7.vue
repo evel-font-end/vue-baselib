@@ -11,6 +11,35 @@ function getLinearColor(colorStart, colorEnd) {
     { offset: 1, color: colorEnd }
   ]);
 }
+import { isFunction, isArray } from '@/assets/lib/utils';
+
+export const lineItemRecursion = (ydata, options, barTitleName, color) => {
+  const { barTitle, colors } = options;
+  const series = [];
+  ydata.map((ydataItem, ydataIndex) => {
+    if (isFunction(ydataItem)) {
+      series.push({
+        ...ydataItem
+      })
+    } else if (isArray(ydataItem) && (ydataItem.some(item => item instanceof Array))) {
+      const obj = [ ...lineItemRecursion(ydataItem, options, barTitle[ydataIndex], colors[ydataIndex])];
+      series.push(...obj)
+    } else {
+      series.push({
+        name: barTitleName || barTitle[ydataIndex],
+        type: "bar",
+        stack: "Ad",
+        emphasis: {
+          focus: "series"
+        },
+        barWidth: 10,
+        data: ydataItem,
+        itemStyle: (color || colors[ydataIndex]).itemStyle || {},
+      })
+    }
+  });
+  return series
+}
 export default {
   name: 'BarChart7',
   props: {
@@ -60,7 +89,27 @@ export default {
       return _chart;
     },
     updateChart(chartData) {
-      const { seriesData, xdata, tooltip, grid, axisLabel } = chartData;
+      const { ydata, xdata, barTitle, tooltip, grid, axisLabel, colors } = chartData;
+      const colorItems = colors || [{
+        itemStyle: {}
+      }, {
+        itemStyle: {}
+      }]
+      const series = lineItemRecursion(ydata, {
+        barTitle,
+        colors: colorItems
+      });
+      const legendData = barTitle.map(barTitleItem => {
+        return {
+          name: barTitleItem,
+          icon: "stack",
+          textStyle: {
+            fontSize: 14,
+            fontFamily: "PingFangSC",
+            color: "#FFFFFF"
+          }
+        }
+      })
       // console.log(this.chartData, '413131')
       const option = {
         tooltip: {
@@ -74,7 +123,8 @@ export default {
         legend: {
           itemWidth: 10,
           itemHeight: 10,
-          left: "right"
+          left: "right",
+          data: legendData
         },
         color: ["#5D56CE", "#5B8DF9", "#1EDFFF", "#84FFC9", "#DFFF84"],
         grid: {
@@ -142,34 +192,9 @@ export default {
               width: 2 //  改变坐标线的颜色
             }
           }
-        }
+        },
+        series
       };
-      const series = seriesData.map(e => {
-        return {
-          name: e.name,
-          type: "bar",
-          stack: "Ad",
-          emphasis: {
-            focus: "series"
-          },
-          barWidth: 10,
-          data: e.value,
-          itemStyle: e.itemStyle,
-        };
-      });
-      const legendData = seriesData.map(ele => {
-        return {
-          name: ele.name,
-          icon: "stack",
-          textStyle: {
-            fontSize: 14,
-            fontFamily: "PingFangSC",
-            color: "#FFFFFF"
-          }
-        };
-      });
-      this.$set(option, "series", series);
-      this.$set(option.legend, "data", legendData);
       this.option = this.$deepMerge(option, this.options)
       this.chart.setOption(this.option);
     }
