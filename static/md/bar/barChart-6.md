@@ -54,7 +54,7 @@
 
 参数|说明|类型|可选值|默认值
 -|-|-|-|-|
-sid|组件id|string|-|'barChart4'
+sid|组件id|string|-|'barChart6'
 source|数据源|object|-|source
 options|配置项|object|-|options
 
