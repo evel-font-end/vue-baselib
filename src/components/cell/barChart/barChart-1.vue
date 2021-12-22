@@ -11,6 +11,95 @@ function getLinearColor(colorStart, colorEnd) {
     { offset: 1, color: colorEnd }
   ]);
 }
+import { isFunction, isArray } from '@/assets/lib/utils';
+
+export const lineItemRecursion = (ydata, options, barTitleName, color) => {
+  const { barTitle, colors } = options;
+  const series = [];
+  ydata.map((ydataItem, ydataIndex) => {
+    if (isFunction(ydataItem)) {
+      series.push({
+        ...ydataItem
+      })
+    } else if (isArray(ydataItem) && (ydataItem.some(item => item instanceof Array))) {
+      const obj = [ ...lineItemRecursion(ydataItem, options, barTitle[ydataIndex], colors[ydataIndex])];
+      series.push(...obj)
+    } else {
+      series.push(...[{
+        name: barTitleName || barTitle[ydataIndex],
+        type: "bar",
+        yAxisIndex: 1,
+        showBackground: true,
+        backgroundStyle: {
+          color: "#3B9DE629",
+          shadowBlur: 0,
+          shadowColor: "#3B9DE629",
+          shadowOffsetX: 6
+        },
+        showSymbol: false,
+        hoverAnimation: false,
+        data: ydataItem,
+        barWidth: 8, //柱图宽度
+        itemStyle: {
+          //左面
+          normal: {
+            color: (color || colors[ydataIndex]).leftColor,
+            barBorderRadius: [0, 0, 0, 0]
+          }
+        }
+      },
+      {
+        name: "a",
+        tooltip: {
+          show: false
+        },
+        type: "bar",
+        yAxisIndex: 1,
+        showBackground: true,
+        backgroundStyle: {
+          color: "#3B9DE629",
+          shadowBlur: 0,
+          shadowColor: "#3B9DE629",
+          shadowOffsetX: -13
+        },
+        barWidth: 7,
+        itemStyle: {
+          //右面
+          normal: {
+            color: (color || colors[ydataIndex]).rightColor,
+            barBorderRadius: [0, 0, 0, 0]
+          }
+        },
+        data: ydataItem,
+        barGap: 0
+      },
+      {
+        name: "b",
+        tooltip: {
+          show: false
+        },
+        yAxisIndex: 1,
+        type: "pictorialBar",
+        itemStyle: {
+          //顶部
+          normal: {
+            color: "#39FCF7",
+            borderColor: "#2996e7",
+            borderWidth: 0.01
+          }
+        },
+        // symbolRotate: 9,
+        symbol: "diamond",
+        symbolSize: ["16", "3"],
+        symbolOffset: [0, "-38%"],
+        symbolPosition: "end",
+        data: ydataItem,
+        z: 3
+      }])
+    }
+  });
+  return series
+}
 export default {
   name: 'BarChart1',
   props: {
@@ -48,7 +137,15 @@ export default {
         document.getElementById(this.chartId),
         "chalk"
       );
-      const { barTitle, xdata, ydata } = this.chartData;
+      const { barTitle, xdata, ydata, colors } = this.chartData;
+      const colorItems = colors || [{
+        leftColor: getLinearColor("#10DAFF", "#015BCC"),
+        rightColor: getLinearColor("#2B89FC", "#023E8A"),
+      }]
+      const series = lineItemRecursion(ydata, {
+        barTitle,
+        colors: colorItems
+      });
       const option = {
         tooltip: {
           trigger: "axis",
@@ -63,8 +160,8 @@ export default {
             <span></span>
             ${element.name}</span> 
             <span style='text-align:right;flex:1;color: #51FEFFFF'>${Number(
-              element.value
-            )}</span></p>`;
+    element.value
+  )}</span></p>`;
             }
             text = `<div style='border: 1px solid #51feff;color: #ffffff;padding: 15px 15px 7px;border-radius: 5px;background: rgba(0,0,0,0.5);'>${text}</div>`;
             return text;
@@ -151,79 +248,7 @@ export default {
             }
           }
         ],
-        series: [
-          {
-            name: 'bar',
-            type: "bar",
-            yAxisIndex: 1,
-            showBackground: true,
-            backgroundStyle: {
-              color: "#3B9DE629",
-              shadowBlur: 0,
-              shadowColor: "#3B9DE629",
-              shadowOffsetX: 6
-            },
-            showSymbol: false,
-            hoverAnimation: false,
-            data: ydata,
-            barWidth: 8, //柱图宽度
-            itemStyle: {
-              //左面
-              normal: {
-                color: getLinearColor("#10DAFF", "#015BCC"),
-                barBorderRadius: [0, 0, 0, 0]
-              }
-            }
-          },
-          {
-            name: "a",
-            tooltip: {
-              show: false
-            },
-            type: "bar",
-            yAxisIndex: 1,
-            showBackground: true,
-            backgroundStyle: {
-              color: "#3B9DE629",
-              shadowBlur: 0,
-              shadowColor: "#3B9DE629",
-              shadowOffsetX: -13
-            },
-            barWidth: 7,
-            itemStyle: {
-              //右面
-              normal: {
-                color: getLinearColor("#2B89FC", "#023E8A"),
-                barBorderRadius: [0, 0, 0, 0]
-              }
-            },
-            data: ydata,
-            barGap: 0
-          },
-          {
-            name: "b",
-            tooltip: {
-              show: false
-            },
-            yAxisIndex: 1,
-            type: "pictorialBar",
-            itemStyle: {
-              //顶部
-              normal: {
-                color: "#39FCF7",
-                borderColor: "#2996e7",
-                borderWidth: 0.01
-              }
-            },
-            // symbolRotate: 9,
-            symbol: "diamond",
-            symbolSize: ["16", "3"],
-            symbolOffset: [0, "-38%"],
-            symbolPosition: "end",
-            data: ydata,
-            z: 3
-          }
-        ]
+        series: series
       };
       this.option = this.$deepMerge(option, this.options)
       this.chart.setOption(this.option);

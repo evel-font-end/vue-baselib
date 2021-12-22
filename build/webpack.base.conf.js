@@ -27,13 +27,13 @@ module.exports = {
     // echarts: ['echarts'],
   },
   externals: {
-    "vue": 'Vue',
+    // "vue": 'Vue',
     "vuex": "Vuex",
     "vue-router": "VueRouter",
     // 'element-ui': 'ELEMENT',
     // '@jiaminghi/data-view': 'dataV',
     'axios': 'axios',
-    'iview': 'iview'
+    // 'iview': 'iview'
   },
   output: {
     path: config.build.assetsRoot,

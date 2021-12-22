@@ -11,6 +11,75 @@ function getLinearColor(colorStart, colorEnd) {
     { offset: 1, color: colorEnd }
   ]);
 }
+import { isFunction, isArray } from '@/assets/lib/utils';
+
+export const lineItemRecursion = (ydata, options, barTitleName, color) => {
+  const { barTitle, colors } = options;
+  const series = [];
+  ydata.map((ydataItem, ydataIndex) => {
+    if (isFunction(ydataItem)) {
+      series.push({
+        ...ydataItem
+      })
+    } else if (isArray(ydataItem) && (ydataItem.some(item => item instanceof Array))) {
+      const obj = [ ...lineItemRecursion(ydataItem, options, barTitle[ydataIndex], colors[ydataIndex])];
+      series.push(...obj)
+    } else {
+      series.push(...[
+        {
+        // For shadow
+          name: barTitleName || barTitle[ydataIndex],
+          type: 'bar',
+          itemStyle: {
+            color: (color || colors[ydataIndex]).shadowColor,
+            barBorderRadius: 10
+          },
+          barGap: "-87%",
+          barCategoryGap: "40%",
+          barWidth: 24,
+          data: ydataItem,
+          tooltip: {
+            show: false
+          },
+          z: 1
+        },
+        {
+          name: barTitleName || barTitle[ydataIndex],
+          type: 'bar',
+          barWidth: 18,
+          itemStyle: {
+            normal: {
+              color: (color || colors[ydataIndex]).itemColor,
+              barBorderRadius: 7,
+              borderColor: "#001a3a",
+              borderWidth: 4
+            }
+          },
+          data: ydataItem,
+          tooltip: {
+            trigger: "item",
+            backgroundColor: "transparent",
+            padding: 0,
+            formatter(params) {
+              let text = "";
+              text += `<p style='display:flex;justify-conten:space-between;'>
+                <span style='text-align:left;width: 100px;'>
+                <span></span>
+                ${params.name}:</span> 
+                <span style='text-align:right;flex:1;color: #51FEFFFF'>${params.value}</span></p>`;
+              text = `<div style='border: 1px solid #51feff;color: #ffffff;
+            padding: 7px;
+            border-radius: 5px;
+            background: rgba(0,0,0,0.5);'>${text}</div>`;
+              return text;
+            }
+          },
+          z: 2
+        }])
+    }
+  });
+  return series
+}
 export default {
   name: 'BarChart2',
   props: {
@@ -48,7 +117,15 @@ export default {
         document.getElementById(this.chartId),
         "chalk"
       );
-      const { xdata, ydata } = this.chartData;
+      const { barTitle, xdata, ydata, colors } = this.chartData;
+      const colorItems = colors || [{
+        shadowColor: getLinearColor("rgba(255,255,255,0.28)", "rgba(255,255,255,0)"),
+        itemColor: getLinearColor("rgba(0,239,255,1)", "rgba(0,161,255,0)"),
+      }]
+      const series = lineItemRecursion(ydata, {
+        barTitle,
+        colors: colorItems
+      });
       const option = {
         tooltip: {
           trigger: "axis"
@@ -118,56 +195,7 @@ export default {
             }
           }
         },
-        series: [
-          {
-            // For shadow
-            type: "bar",
-            itemStyle: {
-              color: getLinearColor("rgba(255,255,255,0.28)", "rgba(255,255,255,0)"),
-              barBorderRadius: 10
-            },
-            barGap: "-87%",
-            barCategoryGap: "40%",
-            barWidth: 24,
-            data: ydata,
-            tooltip: {
-              show: false
-            },
-            z: 1
-          },
-          {
-            type: "bar",
-            barWidth: 18,
-            itemStyle: {
-              normal: {
-                color: getLinearColor("rgba(0,239,255,1)", "rgba(0,161,255,0)"),
-                barBorderRadius: 7,
-                borderColor: "#001a3a",
-                borderWidth: 4
-              }
-            },
-            data: ydata,
-            tooltip: {
-              trigger: "item",
-              backgroundColor: "transparent",
-              padding: 0,
-              formatter(params) {
-                let text = "";
-                text += `<p style='display:flex;justify-conten:space-between;'>
-                <span style='text-align:left;width: 100px;'>
-                <span></span>
-                ${params.name}:</span> 
-                <span style='text-align:right;flex:1;color: #51FEFFFF'>${params.value}</span></p>`;
-                text = `<div style='border: 1px solid #51feff;color: #ffffff;
-            padding: 7px;
-            border-radius: 5px;
-            background: rgba(0,0,0,0.5);'>${text}</div>`;
-                return text;
-              }
-            },
-            z: 2
-          }
-        ]
+        series: series
       };
       this.option = this.$deepMerge(option, this.options)
       this.chart.setOption(this.option);

@@ -11,6 +11,36 @@ function getLinearColor(colorStart, colorEnd) {
     { offset: 1, color: colorEnd }
   ]);
 }
+import { isFunction, isArray } from '@/assets/lib/utils';
+
+export const lineItemRecursion = (ydata, options, barTitleName, color) => {
+  const { barTitle, colors } = options;
+  const series = [];
+  ydata.map((ydataItem, ydataIndex) => {
+    if (isFunction(ydataItem)) {
+      series.push({
+        ...ydataItem
+      })
+    } else if (isArray(ydataItem) && (ydataItem.some(item => item instanceof Array))) {
+      const obj = [ ...lineItemRecursion(ydataItem, options, barTitle[ydataIndex], colors[ydataIndex])];
+      series.push(...obj)
+    } else {
+      series.push({
+        z: 1,
+        name: barTitleName || barTitle[ydataIndex],
+        type: "bar",
+        data: ydataItem,
+        barWidth: "6px",
+        itemStyle: {
+          normal: {
+            color: color || colors[ydataIndex]
+          }
+        }
+      })
+    }
+  });
+  return series
+}
 export default {
   name: 'BarChart6',
   props: {
@@ -48,7 +78,55 @@ export default {
         document.getElementById(this.chartId),
         "chalk"
       );
-      const { barTitle1, barTitle2, xdata, ydata1, ydata2 } = this.chartData;
+      const { barTitle, xdata, ydata, colors } = this.chartData;
+      const colorItems = colors || [new echarts.graphic.LinearGradient(
+        0,
+        0,
+        0,
+        1,
+        [
+          {
+            offset: 0,
+            color: "rgba(15,221,255,1)" // 0% 处的颜色
+          },
+          {
+            offset: 1,
+            color: "rgba(15,221,255,0)" // 100% 处的颜色
+          }
+        ],
+        false
+      ), new echarts.graphic.LinearGradient(
+        0,
+        0,
+        0,
+        1,
+        [
+          {
+            offset: 0,
+            color: "rgba(132,255,201,1)" // 0% 处的颜色
+          },
+          {
+            offset: 1,
+            color: "rgba(132,255,201,0)" // 100% 处的颜色
+          }
+        ],
+        false
+      )]
+      const series = lineItemRecursion(ydata, {
+        barTitle,
+        colors: colorItems
+      });
+      const legend = barTitle.map(barTitleItem => {
+        return {
+          name: barTitleItem,
+          icon: "stack",
+          textStyle: {
+            fontSize: 14,
+            fontFamily: "PingFangSC",
+            color: "#FFFFFF"
+          }
+        }
+      })
       const option = {
         tooltip: {
           show: false
@@ -64,26 +142,7 @@ export default {
           itemWidth: 10,
           itemHeight: 10,
           left: "right",
-          data: [
-            {
-              name: barTitle1,
-              icon: "stack",
-              textStyle: {
-                fontSize: 14,
-                fontFamily: "PingFangSC",
-                color: "#FFFFFF"
-              }
-            },
-            {
-              name: barTitle2,
-              icon: "stack",
-              textStyle: {
-                fontSize: 14,
-                fontFamily: "PingFangSC",
-                color: "#FFFFFF"
-              }
-            }
-          ]
+          data: legend
         },
         xAxis: {
           type: "category",
@@ -142,63 +201,7 @@ export default {
             }
           }
         },
-        series: [
-          {
-            name: barTitle1,
-            type: "bar",
-            data: ydata1,
-            barWidth: "6px",
-            itemStyle: {
-              normal: {
-                color: new echarts.graphic.LinearGradient(
-                  0,
-                  0,
-                  0,
-                  1,
-                  [
-                    {
-                      offset: 0,
-                      color: "rgba(15,221,255,1)" // 0% 处的颜色
-                    },
-                    {
-                      offset: 1,
-                      color: "rgba(15,221,255,0)" // 100% 处的颜色
-                    }
-                  ],
-                  false
-                )
-              }
-            }
-          },
-          {
-            name: barTitle2,
-            type: "bar",
-            data: ydata2,
-            barWidth: "6px",
-            barGap: "80%",
-            itemStyle: {
-              normal: {
-                color: new echarts.graphic.LinearGradient(
-                  0,
-                  0,
-                  0,
-                  1,
-                  [
-                    {
-                      offset: 0,
-                      color: "rgba(132,255,201,1)" // 0% 处的颜色
-                    },
-                    {
-                      offset: 1,
-                      color: "rgba(132,255,201,0)" // 100% 处的颜色
-                    }
-                  ],
-                  false
-                )
-              }
-            }
-          }
-        ]
+        series: series
       };
       this.option = this.$deepMerge(option, this.options)
       this.chart.setOption(this.option);

@@ -26,44 +26,17 @@ const data = {
 | chartId             | 组件 id                      | String | -            | **_lineChart_**                                                              |
 | chartData           | 数据源                       | Object | -            | -                                                                            |
 | legendColor         | legend 图例背景色            | Array  | -            | **_["#21B791", "#FFBA1E"]_**                                                 |
-| line1LegendStyle    | 折线图 1 legend 图例文字样式 | Object | -            | **_{fontSize: 14,fontFamily: "PingFangSC",color: "#ffff"}_**                 |
-| line2LegendStyle    | 折线图 1 legend 图例文字样式 | Object | -            | **_{fontSize: 14,fontFamily: "PingFangSC",color: "#ffff"}_**                 |
 | xAxisLabel          | X 轴坐标刻度文字样式         | Object | -            | **_{color: "#88D7FD",fontSize: 14,fontFamily: "PingFangSC"}_**               |
 | yAxisLabel          | Y 轴坐标刻度文字样式         | Object | -            | **_{color: "#88D7FD",fontSize: 14,fontFamily: "PingFangSC"}_**               |
 | xAxisLineStyle      | X 坐标轴样式                 | Object | -            | **_{type: "solid",color: "rgba(41,153,234,0.2)",width: "1" }_**              |
-| yAxisSplitLineStyle | Y 轴 网格线样式              | Object | -            | **_{color: "rgba(41,153,234,0.2)",width: 1,type: "solid"}_**                 |
-| line1Color          | 折线图 1 折线颜色            | Array  | 支持颜色渐变 | **_["rgba(56,223,239,0.08)","rgba(56,223,239,1)","rgba(56,223,239,0.08)"]_** |
-| line2Color          | 折线图 2 折线颜色            | Array  | 支持颜色渐变 | **_["rgba(39,221,168,0.08)","rgba(39,221,168,1)","rgba(39,221,168,0.08)"]_** |
+| yAxisSplitLineStyle | Y 轴 网格线样式              | Object | -            | **_{color: "rgba(41,153,234,0.2)",width: 1,type: "solid"}_**
 
 > data
 
 | 参数       | 说明              | 类型   | 可选值 | 默认值 |
 | ---------- | ----------------- | ------ | ------ | ------ |
-| lineTitle | 折线图 标题     | String | -      | -      |
-| colors | 折线图 颜色     | String | -      | -      |
+| lineTitle | 折线图标题     | Array | -      | -      |
+| colors | 折线图颜色     | Array | -      | -      |
 | xdata      | 横轴数据集合      | Array  | -      | -      |
 | ydata     | 折线图  数据集合 | Array  | -      | -      |
 
-> line1Color
-
-> > 折线图 1 折线颜色
-
-**_可添加配置：_**
-
-```js
-最多只能设置三个值。如：["#07F096", "#07F0E2", "#88D7FD"],也可只设置一个值：["#07F096"]
-折线颜色渐变取值为从左到右方向取值
-
-```
-
-> line2Color
-
-> > 折线图 2 折线颜色
-
-**_可添加配置：_**
-
-```js
-最多只能设置三个值。如：["#07F096", "#07F0E2", "#88D7FD"],也可只设置一个值：["#07F096"]
-折线颜色渐变取值为从左到右方向取值
-
-```

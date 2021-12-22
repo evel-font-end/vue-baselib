@@ -1,3 +1,4 @@
+import Vue from 'vue'
 import iView from 'iview'
 import echarts from 'echarts'
 import liquidfill from 'echarts-liquidfill'
@@ -99,6 +100,8 @@ const install = function (Vue) {
 // 判断是否是直接引入文件
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
+} else {
+  install(Vue)
 }
 
 export default {

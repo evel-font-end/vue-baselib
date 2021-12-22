@@ -11,6 +11,63 @@ function getLinearColor(colorStart, colorEnd) {
     { offset: 1, color: colorEnd }
   ]);
 }
+import { isFunction, isArray } from '@/assets/lib/utils';
+
+export const lineItemRecursion = (ydata, options, barTitleName, color) => {
+  const { barTitle, colors } = options;
+  const series = [];
+  ydata.map((ydataItem, ydataIndex) => {
+    if (isFunction(ydataItem)) {
+      series.push({
+        ...ydataItem
+      })
+    } else if (isArray(ydataItem) && (ydataItem.some(item => item instanceof Array))) {
+      const obj = [ ...lineItemRecursion(ydataItem, options, barTitle[ydataIndex], colors[ydataIndex])];
+      series.push(...obj)
+    } else {
+      series.push(...[{
+        name: barTitleName || barTitle[ydataIndex],
+        type: "pictorialBar",
+        symbolSize: [10, 6],
+        symbolOffset: [0, -3],
+        symbolPosition: "end",
+        z: 12,
+        // label: {
+        //   normal: {
+        //     show: true,
+        //     position: 'top',
+        //     formatter: '{c}%',
+        //   },
+        // },
+        itemStyle: {
+          normal: {
+            color: "rgba(169,243,255,1)"
+          }
+        },
+        data: ydataItem
+      },
+      {
+        type: "bar",
+        itemStyle: {
+          normal: {
+            color: color || colors[ydataIndex]
+          }
+        },
+        barWidth: "10",
+        data: ydataItem,
+        markLine: {
+          silent: true,
+          symbol: "none",
+          label: {
+            position: "middle",
+            formatter: "{b}"
+          }
+        }
+      }])
+    }
+  });
+  return series
+}
 export default {
   name: 'BarChart8',
   props: {
@@ -48,7 +105,28 @@ export default {
         document.getElementById(this.chartId),
         "chalk"
       );
-      const { barTitle, xdata, ydata } = this.chartData;
+      const { barTitle, xdata, ydata, colors } = this.chartData;
+      const colorItems = colors || [new echarts.graphic.LinearGradient(
+        0,
+        0,
+        0,
+        1,
+        [
+          {
+            offset: 0,
+            color: "rgba(78,219,223,1)" // 0% 处的颜色
+          },
+          {
+            offset: 1,
+            color: "rgba(133,239,241,0)" // 100% 处的颜色
+          }
+        ],
+        false
+      )]
+      const series = lineItemRecursion(ydata, {
+        barTitle,
+        colors: colorItems
+      });
       const option = {
         color: ["#3cefff"],
         tooltip: {
@@ -117,63 +195,7 @@ export default {
             }
           }
         },
-        series: [
-          {
-            name: "",
-            type: "pictorialBar",
-            symbolSize: [10, 6],
-            symbolOffset: [0, -3],
-            symbolPosition: "end",
-            z: 12,
-            // label: {
-            //   normal: {
-            //     show: true,
-            //     position: 'top',
-            //     formatter: '{c}%',
-            //   },
-            // },
-            itemStyle: {
-              normal: {
-                color: "rgba(169,243,255,1)"
-              }
-            },
-            data: ydata
-          },
-          {
-            type: "bar",
-            itemStyle: {
-              normal: {
-                color: new echarts.graphic.LinearGradient(
-                  0,
-                  0,
-                  0,
-                  1,
-                  [
-                    {
-                      offset: 0,
-                      color: "rgba(78,219,223,1)" // 0% 处的颜色
-                    },
-                    {
-                      offset: 1,
-                      color: "rgba(133,239,241,0)" // 100% 处的颜色
-                    }
-                  ],
-                  false
-                )
-              }
-            },
-            barWidth: "10",
-            data: ydata,
-            markLine: {
-              silent: true,
-              symbol: "none",
-              label: {
-                position: "middle",
-                formatter: "{b}"
-              }
-            }
-          }
-        ]
+        series: series
       };
       this.option = this.$deepMerge(option, this.options)
       this.chart.setOption(this.option);
