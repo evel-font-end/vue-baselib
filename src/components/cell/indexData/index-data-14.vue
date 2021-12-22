@@ -11,8 +11,8 @@
         </div>
         <div class="btnImg">
           <p class="btn" :style="{ backgroundImage: 'url(' + btnImg + ')' }">
-            <span :style="btn.style">
-              {{btn.value}}
+            <span :style="btnText.style">
+              {{btnText.value}}
             </span>
           </p>
         </div>
@@ -48,7 +48,7 @@ export default {
       type: Object,
       default: {}
     },
-    btn: {
+    btnText: {
       type: Object,
       default: {}
     }
