@@ -9,7 +9,6 @@
           :placeholder="tip"
           :value-format="valueFormat"
           :format="format"
-          :picker-options="pickerOptions"
           @change="dateChange"
         ></el-date-picker>
       </div>
@@ -61,7 +60,7 @@ export default {
   },
   methods: {
     isString(obj) {// 判断是不是字符串
-      Object.prototype.toString.call(obj).slice(8, -1).toLowerCase() === 'string'
+      return Object.prototype.toString.call(obj).slice(8, -1).toLowerCase() === 'string'
     },
     getformatDate(date) {
       if (this.isString(date) && /^(\d{4})(\d{2})(\d{2})$/.test(date)) { // 修正来自移动端的'20220229'的数据
