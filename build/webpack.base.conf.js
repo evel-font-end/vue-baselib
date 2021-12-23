@@ -27,7 +27,7 @@ module.exports = {
     // echarts: ['echarts'],
   },
   externals: {
-    // "vue": 'Vue',
+    "vue": 'Vue',
     "vuex": "Vuex",
     "vue-router": "VueRouter",
     // 'element-ui': 'ELEMENT',

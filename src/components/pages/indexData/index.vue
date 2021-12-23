@@ -1,293 +1,242 @@
 <template>
   <div class="content">
-    <div class="show-item bg-black">
-      <p class="title">单指标数据</p>
-      <div class="item-content">
-        <div class="module indexData1">
-          <!-- <box-container :title="'立体饼图1'"> -->
-            <indexData1
-              :iconImg="indexData1.iconImg"
-              :bgImg="indexData1.bgImg"
-              :gifImg="indexData1.gifImg"
-              :num="indexData1.num"
-              :text="indexData1.text"
-            />
-          <!-- </box-container> -->
-        </div>
-        <div class="module indexData2">
-          <indexData2
-            :iconImg="indexData2.iconImg"
-            :bgImg="indexData2.bgImg"
-            :num="indexData2.num"
-            :text="indexData2.text"
-          />
-        </div>
-        <div class="module indexData3">
-          <indexData3
-            :num="indexData3.num"
-            :borderStyle="indexData3.borderStyle"
-            :backgroundStyle="indexData3.backgroundStyle"
-            :text="indexData3.text"
-            :iconClass="indexData3.iconClass"
-            :iconStyle="indexData3.iconStyle"
-            :iconBgStyle="indexData3.iconBgStyle"
-          />
-        </div>
-        <div class="module indexData4">
-          <indexData4
-            :bgImg="indexData4.bgImg"
-            :num="indexData4.num"
-            :text="indexData4.text"
-            :iconClass="indexData4.iconClass"
-            :iconStyle="indexData4.iconStyle"
-          />
-        </div>
-        <div class="module indexData5">
-          <indexData5
-            :iconImg="indexData5.iconImg"
-            :num="indexData5.num"
-            :text="indexData5.text"
-            :borderStyle="indexData5.borderStyle"
-            :backgroundStyle="indexData5.backgroundStyle"
-          />
-        </div>
-        <div class="module indexData6">
-          <indexData6
-            :iconImg="indexData6.iconImg"
-            :num="indexData6.num"
-            :text="indexData6.text"
-            :borderStyle="indexData6.borderStyle"
-            :backgroundStyle="indexData6.backgroundStyle"
-          />
-        </div>
-        <div class="module indexData7">
-          <indexData7
-            :num="indexData7.num"
-            :text="indexData7.text"
-            :bgImg="indexData7.bgImg"
-          />
-        </div>
-        <div class="module indexData8">
-          <indexData8
-            :num="indexData8.num"
-            :text="indexData8.text"
-            :iconTitle="indexData8.iconTitle"
-            :iconBgStyle="indexData8.iconBgStyle"
-            :borderStyle="indexData8.borderStyle"
-            :backgroundStyle="indexData8.backgroundStyle"
-          />
-        </div>
-        <div class="module indexData9">
-          <indexData9
-            :num="indexData9.num"
-            :text="indexData9.text"
-            :iconImg="indexData9.iconImg"
-            :unit="indexData9.unit"
-          />
-        </div>
-        <div class="module indexData10">
-          <indexData10
-            :icon="indexData10.icon"
-            :buildTitle="indexData10.buildTitle"
-            :timeText="indexData10.timeText"
-            :num="indexData10.num"
-            :boxStyle="indexData10.boxStyle"
-          />
-        </div>
-        <div class="module indexData11">
-          <indexData11
-            :num="indexData11.num"
-            :text="indexData11.text"
-            :iconImg="indexData11.iconImg"
-            :icon="indexData11.icon"
-            :borderStyle="indexData11.borderStyle"
-            :backgroundStyle="indexData11.backgroundStyle"
-          />
-        </div>
-        <div class="module indexData12">
-          <indexData12
-            :num="indexData12.num"
-            :text="indexData12.text"
-            :unit="indexData12.unit"
-            :iconImg="indexData12.iconImg"
-            :borderStyle="indexData12.borderStyle"
-            :backgroundStyle="indexData12.backgroundStyle"
-            :progressBgStyle="indexData12.progressBgStyle"
-            :progressValueStyle="indexData12.progressValueStyle"
-          />
-        </div>
-        <div class="module indexData13">
-          <indexData13
-            :num="indexData13.num"
-            :text="indexData13.text"
-            :iconImg="indexData13.iconImg"
-            :borderStyle="indexData13.borderStyle"
-            :backgroundStyle="indexData13.backgroundStyle"
-          />
-        </div>
-        <div class="module indexData14">
-          <indexData14
-            :num="indexData14.num"
-            :text="indexData14.text"
-            :bgImg="indexData14.bgImg"
-            :btnImg="indexData14.btnImg"
-            :icon="indexData14.icon"
-            :btn="indexData14.btn"
-          />
-        </div>
-        <div class="module indexData15">
-          <indexData15
-            :num="indexData15.num"
-            :text="indexData15.text"
-            :bgImg="indexData15.bgImg"
-            :iconImg="indexData15.iconImg"
-          />
-        </div>
-        <div class="module indexData16">
-          <indexData16
-            :num="indexData16.num"
-            :text="indexData16.text"
-            :bgImg="indexData16.bgImg"
-          />
-        </div>
-        <div class="module indexData17">
-          <indexData17
-            :num="indexData17.num"
-            :text="indexData17.text"
-            :bgImg="indexData17.bgImg"
-          />
-        </div>
-        <div class="module indexData18">
-          <indexData18
-            :text="indexData18.text"
-            :bgImg="indexData18.bgImg"
-            :icon="indexData18.icon"
-          />
-        </div>
-        <div class="module indexData19">
-          <indexData19
-            :num="indexData19.num"
-            :text="indexData19.text"
-            :bottomBgImg="indexData19.bottomBgImg"
-            :topBgImg="indexData19.topBgImg"
-            :btnText="indexData19.btnText"
-          />
-        </div>
-        <div class="module indexData20">
-          <indexData20
-            :num="indexData20.num"
-            :unit="indexData20.unit"
-            :text="indexData20.text"
-            :bgImg="indexData20.bgImg"
-            :icon="indexData20.icon"
-          />
-        </div>
-        <div class="module indexData21">
-          <indexData21
-            :num="indexData21.num"
-            :text="indexData21.text"
-            :bgImg="indexData21.bgImg"
-          />
-        </div>
-        <div class="module indexData22">
-          <indexData22
-            :num="indexData22.num"
-            :text="indexData22.text"
-            :bgImg="indexData22.bgImg"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="show-item bg-black">
-      <p class="title">多指标数据</p>
-      <div class="item-content">
-        <div class="module">
-          <div class="module indexData23">
-            <indexData23
-              :num="indexData23.num"
-              :text="indexData23.text"
-              :province="indexData23.province"
-              :backgroundStyle="indexData23.backgroundStyle"
-              :pieChartData="indexData23.pieChartData"
-              :lineChartData="indexData23.lineChartData"
-            />
-          </div>
-        </div>
-        <div class="module indexData24">
-          <indexData24
-            :normal="indexData24.normal"
-            :abnormal="indexData24.abnormal"
-            :title="indexData24.title"
-            :info1="indexData24.info1"
-            :info2="indexData24.info2"
-            :allNum="indexData24.allNum"
-            :progress="indexData24.progress"
-            :backgroundStyle="indexData24.backgroundStyle"
-          />
-        </div>
-        <div class="module indexData25">
-          <indexData25
-            :title="indexData25.title"
-            :info1="indexData25.info1"
-            :info2="indexData25.info2"
-            :info3="indexData25.info3"
-            :info4="indexData25.info4"
-            :bgImg="indexData25.bgImg"
-          />
-        </div>
-        <div class="module indexData26">
-          <indexData26
-            :title="indexData26.title"
-            :info1="indexData26.info1"
-            :info2="indexData26.info2"
-            :unit="indexData26.unit"
-            :backgroundStyle="indexData26.backgroundStyle"
-          />
-        </div>
-        <div class="module indexData27">
-          <indexData27
-            :title1="indexData27.title1"
-            :title2="indexData27.title2"
-            :iconImg="indexData27.iconImg"
-            :progress1="indexData27.progress1"
-            :progress2="indexData27.progress2"
-            :backgroundStyle="indexData27.backgroundStyle"
-          />
-        </div>
-        <div class="module indexData28">
-          <indexData28
-            :icon="indexData28.icon"
-            :title="indexData28.title"
-            :info="indexData28.info"
-            :backgroundStyle="indexData28.backgroundStyle"
-          />
-        </div>
-        <div class="module indexData29">
-          <indexData29
-            :title="indexData29.title"
-            :iconImg="indexData29.iconImg"
-            :icon="indexData29.icon"
-            :backgroundStyle="indexData29.backgroundStyle"
-            :info="indexData29.info"
-          />
-        </div>
-        <div class="module indexData30">
-          <indexData30
-            :title="indexData30.title"
-            :backgroundStyle="indexData30.backgroundStyle"
-            :info="indexData30.info"
-          />
-        </div>
-        <div class="module indexData31">
-          <indexData31
-            :tag="indexData31.tag"
-            :backgroundStyle="indexData31.backgroundStyle"
-            :info="indexData31.info"
-            :borderStyle="indexData31.borderStyle"
-          />
-        </div>
-      </div>
-    </div>
+    <box-container
+      class="bg-grey"
+      :spinShow="spinShow1"
+      title="单指标数据"
+      :width="'calc(100%)'"
+      @showOptionHandler="showOption('indexData1')">
+      <indexData1
+        ref="indexData1"
+        class="module indexData1"
+        :iconImg="indexData1.iconImg"
+        :bgImg="indexData1.bgImg"
+        :gifImg="indexData1.gifImg"
+        :num="indexData1.num"
+        :text="indexData1.text"/>
+      <indexData2
+        class="module indexData2"
+        :iconImg="indexData2.iconImg"
+        :bgImg="indexData2.bgImg"
+        :num="indexData2.num"
+        :text="indexData2.text"/>
+      <indexData3
+        class="module indexData3"
+        :num="indexData3.num"
+        :borderStyle="indexData3.borderStyle"
+        :backgroundStyle="indexData3.backgroundStyle"
+        :text="indexData3.text"
+        :iconClass="indexData3.iconClass"
+        :iconStyle="indexData3.iconStyle"
+        :iconBgStyle="indexData3.iconBgStyle"/>
+      <indexData4
+         class="module indexData4"
+         :bgImg="indexData4.bgImg"
+         :num="indexData4.num"
+         :text="indexData4.text"
+         :iconClass="indexData4.iconClass"
+         :iconStyle="indexData4.iconStyle"/>
+      <indexData5
+        class="module indexData5"
+        :iconImg="indexData5.iconImg"
+        :num="indexData5.num"
+        :text="indexData5.text"
+        :borderStyle="indexData5.borderStyle"
+        :backgroundStyle="indexData5.backgroundStyle"/>
+      <indexData6
+        class="module indexData6"
+        :iconImg="indexData6.iconImg"
+        :num="indexData6.num"
+        :text="indexData6.text"
+        :borderStyle="indexData6.borderStyle"
+        :backgroundStyle="indexData6.backgroundStyle"/>
+      <indexData7
+        class="module indexData7"
+        :num="indexData7.num"
+        :text="indexData7.text"
+        :bgImg="indexData7.bgImg"/>
+      <indexData8
+        class="module indexData8"
+        :num="indexData8.num"
+        :text="indexData8.text"
+        :iconTitle="indexData8.iconTitle"
+        :iconBgStyle="indexData8.iconBgStyle"
+        :borderStyle="indexData8.borderStyle"
+        :backgroundStyle="indexData8.backgroundStyle"/>
+      <indexData9
+        class="module indexData9"
+        :num="indexData9.num"
+        :text="indexData9.text"
+        :iconImg="indexData9.iconImg"
+        :unit="indexData9.unit"/>
+      <indexData10
+        class="module indexData10"
+        :icon="indexData10.icon"
+        :buildTitle="indexData10.buildTitle"
+        :timeText="indexData10.timeText"
+        :num="indexData10.num"
+        :boxStyle="indexData10.boxStyle"/>
+      <indexData11
+        class="module indexData11"
+        :num="indexData11.num"
+        :text="indexData11.text"
+        :iconImg="indexData11.iconImg"
+        :icon="indexData11.icon"
+        :borderStyle="indexData11.borderStyle"
+        :backgroundStyle="indexData11.backgroundStyle"/>
+       <indexData12
+        class="module indexData12"
+        :num="indexData12.num"
+        :text="indexData12.text"
+        :unit="indexData12.unit"
+        :iconImg="indexData12.iconImg"
+        :borderStyle="indexData12.borderStyle"
+        :backgroundStyle="indexData12.backgroundStyle"
+        :progressBgStyle="indexData12.progressBgStyle"
+        :progressValueStyle="indexData12.progressValueStyle"/>
+      <indexData13
+        class="module indexData13"
+        :num="indexData13.num"
+        :text="indexData13.text"
+        :iconImg="indexData13.iconImg"
+        :borderStyle="indexData13.borderStyle"
+        :backgroundStyle="indexData13.backgroundStyle"/>
+      <indexData14
+       class="module indexData14"
+        :num="indexData14.num"
+        :text="indexData14.text"
+        :bgImg="indexData14.bgImg"
+        :btnImg="indexData14.btnImg"
+        :icon="indexData14.icon"
+        :btnText="indexData14.btnText"/>
+      <indexData15
+        class="module indexData15"
+        :num="indexData15.num"
+        :text="indexData15.text"
+        :bgImg="indexData15.bgImg"
+        :iconImg="indexData15.iconImg"/>
+      <indexData16
+        class="module indexData16"
+        :num="indexData16.num"
+        :text="indexData16.text"
+        :bgImg="indexData16.bgImg"/>
+      <indexData17
+        class="module indexData17"
+        :num="indexData17.num"
+        :text="indexData17.text"
+        :bgImg="indexData17.bgImg"/>
+      <indexData18
+        class="module indexData18"
+        :text="indexData18.text"
+        :bgImg="indexData18.bgImg"
+        :icon="indexData18.icon"/>
+      <indexData19
+        class="module indexData19"
+        :num="indexData19.num"
+        :text="indexData19.text"
+        :bottomBgImg="indexData19.bottomBgImg"
+        :topBgImg="indexData19.topBgImg"
+        :btnText="indexData19.btnText"/>
+      <indexData20
+        class="module indexData20"
+        :num="indexData20.num"
+        :unit="indexData20.unit"
+        :text="indexData20.text"
+        :bgImg="indexData20.bgImg"
+        :icon="indexData20.icon"/>
+      <indexData21
+        class="module indexData21"
+        :num="indexData21.num"
+        :text="indexData21.text"
+        :bgImg="indexData21.bgImg"/>
+      <indexData22
+        class="module indexData22"
+        :num="indexData22.num"
+        :text="indexData22.text"
+        :bgImg="indexData22.bgImg"/>
+    </box-container>
+    <box-container
+      class="bg-grey"
+      :spinShow="spinShow2"
+      title="多指标数据"
+      :width="'calc(100%)'"
+      @showOptionHandler="showOption('indexData23')">
+      <indexData23
+        class="module indexData23"
+        ref="indexData23"
+        :num="indexData23.num"
+        :text="indexData23.text"
+        :province="indexData23.province"
+        :backgroundStyle="indexData23.backgroundStyle"
+        :pieChartData="indexData23.pieChartData"
+        :lineChartData="indexData23.lineChartData"
+      />
+      <indexData24
+        class="module indexData24"
+        :normal="indexData24.normal"
+        :abnormal="indexData24.abnormal"
+        :title="indexData24.title"
+        :info1="indexData24.info1"
+        :info2="indexData24.info2"
+        :allNum="indexData24.allNum"
+        :progress="indexData24.progress"
+        :backgroundStyle="indexData24.backgroundStyle"
+      />
+      <indexData25
+        class="module indexData25"
+        :title="indexData25.title"
+        :info1="indexData25.info1"
+        :info2="indexData25.info2"
+        :info3="indexData25.info3"
+        :info4="indexData25.info4"
+        :bgImg="indexData25.bgImg"
+      />
+      <indexData26
+        class="module indexData26"
+        :title="indexData26.title"
+        :info1="indexData26.info1"
+        :info2="indexData26.info2"
+        :unit="indexData26.unit"
+        :backgroundStyle="indexData26.backgroundStyle"
+      />
+      <indexData27
+        class="module indexData27"
+        :title1="indexData27.title1"
+        :title2="indexData27.title2"
+        :iconImg="indexData27.iconImg"
+        :progress1="indexData27.progress1"
+        :progress2="indexData27.progress2"
+        :backgroundStyle="indexData27.backgroundStyle"
+      />
+      <indexData28
+        class="module indexData28"
+        :icon="indexData28.icon"
+        :title="indexData28.title"
+        :info="indexData28.info"
+        :backgroundStyle="indexData28.backgroundStyle"
+      />
+      <indexData29
+        class="module indexData29"
+        :title="indexData29.title"
+        :iconImg="indexData29.iconImg"
+        :icon="indexData29.icon"
+        :backgroundStyle="indexData29.backgroundStyle"
+        :info="indexData29.info"
+      />
+      <indexData30
+        class="module indexData30"
+        :title="indexData30.title"
+        :backgroundStyle="indexData30.backgroundStyle"
+        :info="indexData30.info"
+      />
+      <indexData31
+        class="module indexData31"
+        :tag="indexData31.tag"
+        :backgroundStyle="indexData31.backgroundStyle"
+        :info="indexData31.info"
+        :borderStyle="indexData31.borderStyle"
+      />
+    </box-container>
   </div>
 </template>
 <script>
@@ -361,6 +310,8 @@ export default {
   },
   data() {
     return {
+      spinShow1: true,
+      spinShow2: true,
       indexData1: {
         iconImg: require("../../cell/indexData/images/tooltip.png"),
         bgImg: require("../../cell/indexData/images/gray_bg.png"),
@@ -588,7 +539,7 @@ export default {
           value: "板卡",
           style: {}
         },
-        btn: {
+        btnText: {
           value: "查看",
           style: {}
         }
@@ -1149,8 +1100,16 @@ export default {
       }
     };
   },
+  created() {
+    this.spinShow1 = false;
+    this.spinShow2 = false;
+  },
   mounted() {},
-  methods: {}
+  methods: {
+    showOption(ref) {
+      this.$store.commit('UPDATE_DIALOG_SHOW', this.$refs[ref].$options._componentTag);
+    },
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -1164,164 +1123,309 @@ $showBoxWidth: 100%;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
-}
-.show-item {
-  width: $showBoxWidth;
+  >>> .show-item {
+    // width: $showBoxWidth;
   // height: $showBoxHeight;
-  margin: 15px;
-  border-radius: 16px;
-  background-color: #fff;
-  padding: 15px;
-  box-sizing: border-box;
-  position: relative;
-
-  &.bg-black {
-    background-color: #132845;
-    color: rgba(255, 255, 255, 0.8);
-  }
-  .title {
-    font-size: 16px;
-    font-family: PingFangSC;
-    font-weight: 600;
-    text-align: left;
-    color: #ffffff;
-  }
-  .item-content {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    .module {
-      margin-right: 30px;
-      margin-bottom: 40px;
-      &:nth-child(6) {
-        margin-right: none;
+  // margin: 15px;
+  // border-radius: 16px;
+  // background-color: #fff;
+  // padding: 15px;
+  // box-sizing: border-box;
+  // position: relative;
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      .module {
+        margin-right: 30px;
+        margin-bottom: 40px;
+        // &:nth-child(6) {
+        //   margin-right: none;
+        // }
+      }
+      .indexData1 {
+        width: 300px;
+        height: 130px;
+      }
+      .indexData2 {
+        width: 310px;
+        height: 110px;
+      }
+      .indexData3 {
+        width: 193px;
+        height: 80px;
+      }
+      .indexData4 {
+        width: 230px;
+        height: 60px;
+      }
+      .indexData5 {
+        width: 214px;
+        height: 60px;
+      }
+      .indexData6 {
+        width: 128px;
+        height: 50px;
+      }
+      .indexData7 {
+        width: 168px;
+        height: 90px;
+      }
+      .indexData8 {
+        width: 132px;
+        height: 50px;
+      }
+      .indexData9 {
+        width: 190px;
+        height: 80px;
+      }
+      .indexData10 {
+        width: 205px;
+        height: 60px;
+      }
+      .indexData11 {
+        width: 240px;
+        height: 60px;
+      }
+      .indexData12 {
+        width: 100px;
+        height: 46px;
+      }
+      .indexData13 {
+        width: 230px;
+        height: 37px;
+      }
+      .indexData14 {
+        width: 275px;
+        height: 225px;
+      }
+      .indexData15 {
+        width: 172px;
+        height: 180px;
+      }
+      .indexData16 {
+        width: 200px;
+        height: 175px;
+      }
+      .indexData17 {
+        width: 130px;
+        height: 98px;
+      }
+      .indexData18 {
+        width: 100px;
+        height: 152px;
+      }
+      .indexData19 {
+        width: 120px;
+        height: 142px;
+      }
+      .indexData20 {
+        width: 80px;
+        height: 150px;
+      }
+      .indexData21 {
+        width: 110px;
+        height: 110px;
+      }
+      .indexData22 {
+        width: 140px;
+        height: 80px;
+      }
+      .indexData23 {
+        width: 400px;
+        height: 290px;
+      }
+      .indexData24 {
+        width: 220px;
+        height: 166px;
+      }
+      .indexData25 {
+        width: 125px;
+        height: 160px;
+      }
+      .indexData26 {
+        width: 126px;
+        height: 140px;
+      }
+      .indexData27 {
+        width: 320px;
+        height: 66px;
+      }
+      .indexData28 {
+        width: 280px;
+        height: 72px;
+      }
+      .indexData29 {
+        width: 205px;
+        height: 36px;
+      }
+      .indexData30 {
+        width: 370px;
+        height: 88px;
+      }
+      .indexData31 {
+        width: 397px;
+        height: 62px;
       }
     }
-    .indexData1 {
-      width: 300px;
-      height: 130px;
-    }
-    .indexData2 {
-      width: 310px;
-      height: 110px;
-    }
-    .indexData3 {
-      width: 193px;
-      height: 80px;
-    }
-    .indexData4 {
-      width: 230px;
-      height: 60px;
-    }
-    .indexData5 {
-      width: 214px;
-      height: 60px;
-    }
-    .indexData6 {
-      width: 128px;
-      height: 50px;
-    }
-    .indexData7 {
-      width: 168px;
-      height: 90px;
-    }
-    .indexData8 {
-      width: 132px;
-      height: 50px;
-    }
-    .indexData9 {
-      width: 190px;
-      height: 80px;
-    }
-    .indexData10 {
-      width: 205px;
-      height: 60px;
-    }
-    .indexData11 {
-      width: 240px;
-      height: 60px;
-    }
-    .indexData12 {
-      width: 100px;
-      height: 46px;
-    }
-    .indexData13 {
-      width: 230px;
-      height: 37px;
-    }
-    .indexData14 {
-      width: 275px;
-      height: 225px;
-    }
-    .indexData15 {
-      width: 172px;
-      height: 180px;
-    }
-    .indexData16 {
-      width: 200px;
-      height: 175px;
-    }
-    .indexData17 {
-      width: 130px;
-      height: 98px;
-    }
-    .indexData18 {
-      width: 100px;
-      height: 152px;
-    }
-    .indexData19 {
-      width: 120px;
-      height: 142px;
-    }
-    .indexData20 {
-      width: 80px;
-      height: 150px;
-    }
-    .indexData21 {
-      width: 110px;
-      height: 110px;
-    }
-    .indexData22 {
-      width: 140px;
-      height: 80px;
-    }
-    .indexData23 {
-      width: 400px;
-      height: 290px;
-    }
-    .indexData24 {
-      width: 220px;
-      height: 166px;
-    }
-    .indexData25 {
-      width: 125px;
-      height: 160px;
-    }
-    .indexData26 {
-      width: 126px;
-      height: 140px;
-    }
-    .indexData27 {
-      width: 320px;
-      height: 66px;
-    }
-    .indexData28 {
-      width: 280px;
-      height: 72px;
-    }
-    .indexData29 {
-      width: 205px;
-      height: 36px;
-    }
-    .indexData30 {
-      width: 370px;
-      height: 88px;
-    }
-    .indexData31 {
-      width: 397px;
-      height: 62px;
-    }
   }
 }
+// .show-item {
+//   width: $showBoxWidth;
+//   // height: $showBoxHeight;
+//   margin: 15px;
+//   border-radius: 16px;
+//   background-color: #fff;
+//   padding: 15px;
+//   box-sizing: border-box;
+//   position: relative;
+
+//   &.bg-black {
+//     background-color: #132845;
+//     color: rgba(255, 255, 255, 0.8);
+//   }
+//   .title {
+//     font-size: 16px;
+//     font-family: PingFangSC;
+//     font-weight: 600;
+//     text-align: left;
+//     color: #ffffff;
+//   }
+//   .item-content {
+//     display: flex;
+//     align-items: center;
+//     justify-content: flex-start;
+//     flex-wrap: wrap;
+//     .module {
+//       margin-right: 30px;
+//       margin-bottom: 40px;
+//       &:nth-child(6) {
+//         margin-right: none;
+//       }
+//     }
+//     .indexData1 {
+//       width: 300px;
+//       height: 130px;
+//     }
+//     .indexData2 {
+//       width: 310px;
+//       height: 110px;
+//     }
+//     .indexData3 {
+//       width: 193px;
+//       height: 80px;
+//     }
+//     .indexData4 {
+//       width: 230px;
+//       height: 60px;
+//     }
+//     .indexData5 {
+//       width: 214px;
+//       height: 60px;
+//     }
+//     .indexData6 {
+//       width: 128px;
+//       height: 50px;
+//     }
+//     .indexData7 {
+//       width: 168px;
+//       height: 90px;
+//     }
+//     .indexData8 {
+//       width: 132px;
+//       height: 50px;
+//     }
+//     .indexData9 {
+//       width: 190px;
+//       height: 80px;
+//     }
+//     .indexData10 {
+//       width: 205px;
+//       height: 60px;
+//     }
+//     .indexData11 {
+//       width: 240px;
+//       height: 60px;
+//     }
+//     .indexData12 {
+//       width: 100px;
+//       height: 46px;
+//     }
+//     .indexData13 {
+//       width: 230px;
+//       height: 37px;
+//     }
+//     .indexData14 {
+//       width: 275px;
+//       height: 225px;
+//     }
+//     .indexData15 {
+//       width: 172px;
+//       height: 180px;
+//     }
+//     .indexData16 {
+//       width: 200px;
+//       height: 175px;
+//     }
+//     .indexData17 {
+//       width: 130px;
+//       height: 98px;
+//     }
+//     .indexData18 {
+//       width: 100px;
+//       height: 152px;
+//     }
+//     .indexData19 {
+//       width: 120px;
+//       height: 142px;
+//     }
+//     .indexData20 {
+//       width: 80px;
+//       height: 150px;
+//     }
+//     .indexData21 {
+//       width: 110px;
+//       height: 110px;
+//     }
+//     .indexData22 {
+//       width: 140px;
+//       height: 80px;
+//     }
+//     .indexData23 {
+//       width: 400px;
+//       height: 290px;
+//     }
+//     .indexData24 {
+//       width: 220px;
+//       height: 166px;
+//     }
+//     .indexData25 {
+//       width: 125px;
+//       height: 160px;
+//     }
+//     .indexData26 {
+//       width: 126px;
+//       height: 140px;
+//     }
+//     .indexData27 {
+//       width: 320px;
+//       height: 66px;
+//     }
+//     .indexData28 {
+//       width: 280px;
+//       height: 72px;
+//     }
+//     .indexData29 {
+//       width: 205px;
+//       height: 36px;
+//     }
+//     .indexData30 {
+//       width: 370px;
+//       height: 88px;
+//     }
+//     .indexData31 {
+//       width: 397px;
+//       height: 62px;
+//     }
+//   }
+// }
 </style>
