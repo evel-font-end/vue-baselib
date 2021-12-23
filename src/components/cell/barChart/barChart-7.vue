@@ -129,7 +129,7 @@ export default {
         color: ["#5D56CE", "#5B8DF9", "#1EDFFF", "#84FFC9", "#DFFF84"],
         grid: {
           left: "3%",
-          right: "0%",
+          right: "3%",
           bottom: "0%",
           containLabel: true,
           ...grid
