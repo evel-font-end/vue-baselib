@@ -245,7 +245,7 @@ export default {
             }
           },
           {
-            name: "a",
+            name: barTitle,
             tooltip: {
               show: false
             },
@@ -270,7 +270,7 @@ export default {
             barGap: 0
           },
           {
-            name: "b",
+            name: barTitle,
             tooltip: {
               show: false
             },
