@@ -15,6 +15,11 @@ import highcharts from 'highcharts'
 import highcharts3d from 'highcharts/highcharts-3d'
 import { deepMerge } from '@/assets/lib/utils';
 import '@/assets/lib/hljs';
+
+import '@/assets/icon/LampPoleIconFont/iconfont.css';
+import '@/assets/icon/NetWorkIconFont/iconfont.css';
+import '@/assets/icon/UIIconFont/iconfont.css';
+
 import 'mavon-editor/dist/css/index.css'
 import 'iview/dist/styles/iview.css'
 import 'element-ui/lib/theme-chalk/index.css'

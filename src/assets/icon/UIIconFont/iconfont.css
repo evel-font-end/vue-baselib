@@ -1,0 +1,231 @@
+@font-face {
+  font-family: "UIiconfont"; /* Project id 2855815 */
+  src: url('iconfont.woff2?t=1640159713946') format('woff2'),
+       url('iconfont.woff?t=1640159713946') format('woff'),
+       url('iconfont.ttf?t=1640159713946') format('truetype');
+}
+
+.UIiconfont {
+  font-family: "UIiconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.UIicon-ditu:before {
+  content: "\e765";
+}
+
+.UIicon-riqi:before {
+  content: "\e74a";
+}
+
+.UIicon-tuoputu:before {
+  content: "\e73f";
+}
+
+.UIicon-jizhan1:before {
+  content: "\e764";
+}
+
+.UIicon-tiaodan:before {
+  content: "\e75f";
+}
+
+.UIicon-shebei:before {
+  content: "\e760";
+}
+
+.UIicon-rili:before {
+  content: "\e761";
+}
+
+.UIicon-zongshu:before {
+  content: "\e762";
+}
+
+.UIicon-jizhan:before {
+  content: "\e763";
+}
+
+.UIicon-banka:before {
+  content: "\e756";
+}
+
+.UIicon-louyu2:before {
+  content: "\e757";
+}
+
+.UIicon-chatou:before {
+  content: "\e758";
+}
+
+.UIicon-jifang:before {
+  content: "\e759";
+}
+
+.UIicon-dianlu1:before {
+  content: "\e75a";
+}
+
+.UIicon-dibiao:before {
+  content: "\e75b";
+}
+
+.UIicon-wangluo:before {
+  content: "\e75c";
+}
+
+.UIicon-zhenduan:before {
+  content: "\e75d";
+}
+
+.UIicon-wangyuantuiwang:before {
+  content: "\e75e";
+}
+
+.UIicon-chakan:before {
+  content: "\e750";
+}
+
+.UIicon-louyu1:before {
+  content: "\e751";
+}
+
+.UIicon-bianji:before {
+  content: "\e752";
+}
+
+.UIicon-xiayi:before {
+  content: "\e753";
+}
+
+.UIicon-shanchu:before {
+  content: "\e754";
+}
+
+.UIicon-shangyi:before {
+  content: "\e755";
+}
+
+.UIicon-guangboqi:before {
+  content: "\e6d9";
+}
+
+.UIicon-guanglan:before {
+  content: "\e6bb";
+}
+
+.UIicon-louyu:before {
+  content: "\e6c0";
+}
+
+.UIicon-dianlu:before {
+  content: "\e6c5";
+}
+
+.UIicon-riqi1:before {
+  content: "\e6e8";
+}
+
+.UIicon-guojiziyuan:before {
+  content: "\e70f";
+}
+
+.UIicon-Dlei:before {
+  content: "\e71d";
+}
+
+.UIicon-huangguan:before {
+  content: "\e71f";
+}
+
+.UIicon-Blei:before {
+  content: "\e722";
+}
+
+.UIicon-Clei:before {
+  content: "\e723";
+}
+
+.UIicon-Nlei:before {
+  content: "\e725";
+}
+
+.UIicon-Alei:before {
+  content: "\e726";
+}
+
+.UIicon-shuliang:before {
+  content: "\e739";
+}
+
+.UIicon-mingcheng:before {
+  content: "\e73a";
+}
+
+.UIicon-paiming1:before {
+  content: "\e73b";
+}
+
+.UIicon-leidatu:before {
+  content: "\e74e";
+}
+
+.UIicon-zhibiaoshuju:before {
+  content: "\e74f";
+}
+
+.UIicon-fenye:before {
+  content: "\e74c";
+}
+
+.UIicon-mianbaoxiedaohang:before {
+  content: "\e74d";
+}
+
+.UIicon-Tabbiaoqian:before {
+  content: "\e747";
+}
+
+.UIicon-xuanfuchuang:before {
+  content: "\e748";
+}
+
+.UIicon-biaoge:before {
+  content: "\e749";
+}
+
+.UIicon-biaoti:before {
+  content: "\e74b";
+}
+
+.UIicon-huanxingtu:before {
+  content: "\e746";
+}
+
+.UIicon-paiming:before {
+  content: "\e740";
+}
+
+.UIicon-zhexiantu:before {
+  content: "\e741";
+}
+
+.UIicon-zhuzhuangtu:before {
+  content: "\e742";
+}
+
+.UIicon-bingzhuangtu:before {
+  content: "\e743";
+}
+
+.UIicon-hunhetubiao:before {
+  content: "\e744";
+}
+
+.UIicon-yibiaopan:before {
+  content: "\e745";
+}
+
