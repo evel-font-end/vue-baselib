@@ -8,6 +8,9 @@ import TFetch from 'tfetch'
 import { deepMerge } from '@/assets/lib/utils';
 import 'iview/dist/styles/iview.css'
 import 'element-ui/lib/theme-chalk/index.css'
+import '@/assets/icon/LampPoleIconFont/iconfont.css';
+import '@/assets/icon/NetWorkIconFont/iconfont.css';
+import '@/assets/icon/UIIconFont/iconfont.css';
 
 require('../../common/fonts/PingFangSC-Regular/PingFang Regular.css')
 require('../../common/fonts/DIN_Alternate_Bold.css')
