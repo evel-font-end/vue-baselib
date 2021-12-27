@@ -59,7 +59,7 @@ import headline from './headline'
 import date from './date'
 import pagination from './pagination'
 import tabs from './tabs'
-import barChart from './barChart'
+import Barchart from './barchart'
 import line from './line'
 
 // 组件列表
@@ -79,7 +79,7 @@ const components = [
   ...date.components,
   ...pagination.components,
   ...tabs.components,
-  ...barChart.components,
+  ...Barchart.components,
   ...line.components
 ]
 

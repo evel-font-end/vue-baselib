@@ -1,22 +1,22 @@
-import BarChart1 from './barChart-1'
-import BarChart2 from './barChart-2'
-import BarChart3 from './barChart-3'
-import BarChart4 from './barChart-4'
-import BarChart5 from './barChart-5'
-import BarChart6 from './barChart-6'
-import BarChart7 from './barChart-7'
-import BarChart8 from './barChart-8'
+import Barchart1 from './barchart-1'
+import Barchart2 from './barchart-2'
+import Barchart3 from './barchart-3'
+import Barchart4 from './barchart-4'
+import Barchart5 from './barchart-5'
+import Barchart6 from './barchart-6'
+import Barchart7 from './barchart-7'
+import Barchart8 from './barchart-8'
 
 // 导出组件
 export default {
   components: [
-    BarChart1,
-    BarChart2,
-    BarChart3,
-    BarChart4,
-    BarChart5,
-    BarChart6,
-    BarChart7,
-    BarChart8,
+    Barchart1,
+    Barchart2,
+    Barchart3,
+    Barchart4,
+    Barchart5,
+    Barchart6,
+    Barchart7,
+    Barchart8,
   ]
 }

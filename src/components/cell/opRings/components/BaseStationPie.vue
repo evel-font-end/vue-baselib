@@ -34,7 +34,7 @@ export default {
   },
   data() {
     return {
-      barChart: null,
+      barchart: null,
     }
   },
   mounted() {
@@ -45,9 +45,9 @@ export default {
   methods: {
     initBar() {
       const chartDom = this.$refs.baseStationPie
-      this.barChart = this.$echarts.init(chartDom);
+      this.barchart = this.$echarts.init(chartDom);
       window.addEventListener('resize', () => {
-        this.barChart.resize();
+        this.barchart.resize();
       });
       const infoValueList = this.info.map(infoItem => infoItem.value)
       const offset = infoValueList[1] * 100 > 25 ? [-2, -30] : [-2, -10]
@@ -235,7 +235,7 @@ export default {
           },
         ],
       }
-      options && this.barChart.setOption(options);
+      options && this.barchart.setOption(options);
     },
   },
 }

@@ -40,14 +40,14 @@ export const children = [{
   component: res => require(['@/components/pages/line'], res),
 },
 {
-  path: '/barChart',
-  name: 'barChart',
+  path: '/barchart',
+  name: 'barchart',
   title: '柱状图',
   icon: 'icon-zhuzhuangtu',
   meta: {
     title: '柱状图'
   },
-  component: res => require(['@/components/pages/barChart'], res),
+  component: res => require(['@/components/pages/barchart'], res),
 },
 {
   path: '/indexData',

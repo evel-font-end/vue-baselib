@@ -4,83 +4,83 @@
       class="bg-grey"
       :spinShow="spinShow1"
       :title="'柱状图1'"
-      @showOptionHandler='showOption("barChart1")'>
-      <barChart-1 :chartId="'barChart1'" ref="barChart1" :chartData="barData1" />
+      @showOptionHandler='showOption("barchart1")'>
+      <barchart-1 :chartId="'barchart1'" ref="barchart1" :chartData="barData1" />
     </box-container>
     <box-container
       class="bg-grey"
       :spinShow="spinShow2"
       :title="'柱状图2'"
-      @showOptionHandler='showOption("barChart2")'>
-      <barChart-2 :chartId="'barChart2'" ref="barChart2" :chartData="barData1" />
+      @showOptionHandler='showOption("barchart2")'>
+      <barchart-2 :chartId="'barchart2'" ref="barchart2" :chartData="barData1" />
     </box-container>
     <box-container
       class="bg-grey"
       :spinShow="spinShow3"
       :title="'柱状图3'"
-      @showOptionHandler='showOption("barChart3")'>
-      <barChart-3 :chartId="'barChart3'" ref="barChart3" :chartData="barData2" />
+      @showOptionHandler='showOption("barchart3")'>
+      <barchart-3 :chartId="'barchart3'" ref="barchart3" :chartData="barData2" />
     </box-container>
     <box-container
       class="bg-grey"
       :spinShow="spinShow3"
       :title="'柱状图4'"
-      @showOptionHandler='showOption("barChart4")'>
-      <barChart-4 :chartId="'barChart4'" ref="barChart4" :chartData="barData2" />
+      @showOptionHandler='showOption("barchart4")'>
+      <barchart-4 :chartId="'barchart4'" ref="barchart4" :chartData="barData2" />
     </box-container>
     <box-container
       class="bg-grey"
       :spinShow="spinShow3"
       :title="'柱状图5'"
-      @showOptionHandler='showOption("barChart5")'>
-      <barChart-5 :chartId="'barChart5'" ref="barChart5" :chartData="barData2" />
+      @showOptionHandler='showOption("barchart5")'>
+      <barchart-5 :chartId="'barchart5'" ref="barchart5" :chartData="barData2" />
     </box-container>
     <box-container
       class="bg-grey"
       :spinShow="spinShow3"
       :title="'柱状图6'"
-      @showOptionHandler='showOption("barChart6")'>
-      <barChart-6 :chartId="'barChart6'" ref="barChart6" :chartData="barData2" />
+      @showOptionHandler='showOption("barchart6")'>
+      <barchart-6 :chartId="'barchart6'" ref="barchart6" :chartData="barData2" />
     </box-container>
     <box-container
       class="bg-grey"
       :spinShow="spinShow3"
       :title="'堆叠柱状图'"
-      @showOptionHandler='showOption("barChart7")'>
-      <barChart-7 :chartId="'barChart7'" ref="barChart7" :chartData="barData2" />
+      @showOptionHandler='showOption("barchart7")'>
+      <barchart-7 :chartId="'barchart7'" ref="barchart7" :chartData="barData2" />
     </box-container>
     <box-container
       class="bg-grey"
       :spinShow="spinShow3"
       :title="'柱状图8'"
-      @showOptionHandler='showOption("barChart8")'>
-      <barChart-8 :chartId="'barChart8'" ref="barChart8" :chartData="barData1" />
+      @showOptionHandler='showOption("barchart8")'>
+      <barchart-8 :chartId="'barchart8'" ref="barchart8" :chartData="barData1" />
     </box-container>
   </div>
 </template>
 <script>
 import boxContainer from "../common/box-container";
-import barChart1 from "~components/cell/barChart/barChart-1.vue";
-import barChart2 from "~components/cell/barChart/barChart-2.vue";
-import barChart3 from "~components/cell/barChart/barChart-3.vue";
-import barChart4 from "~components/cell/barChart/barChart-4.vue";
-import barChart5 from "~components/cell/barChart/barChart-5.vue";
-import barChart6 from "~components/cell/barChart/barChart-6.vue";
-import barChart7 from "~components/cell/barChart/barChart-7.vue";
-import barChart8 from "~components/cell/barChart/barChart-8.vue";
+import barchart1 from "~components/cell/barchart/barchart-1.vue";
+import barchart2 from "~components/cell/barchart/barchart-2.vue";
+import barchart3 from "~components/cell/barchart/barchart-3.vue";
+import barchart4 from "~components/cell/barchart/barchart-4.vue";
+import barchart5 from "~components/cell/barchart/barchart-5.vue";
+import barchart6 from "~components/cell/barchart/barchart-6.vue";
+import barchart7 from "~components/cell/barchart/barchart-7.vue";
+import barchart8 from "~components/cell/barchart/barchart-8.vue";
 
 export default {
-  name: 'BarChart',
+  name: 'Barchart',
   components: {
     boxContainer,
-    barChart1,
-    barChart2,
-    barChart3,
-    barChart4,
-    barChart5,
-    barChart6,
-    barChart7,
-    barChart8
+    barchart1,
+    barchart2,
+    barchart3,
+    barchart4,
+    barchart5,
+    barchart6,
+    barchart7,
+    barchart8
   },
   data() {
     return {
@@ -122,11 +122,11 @@ export default {
       this.spinShow3 = false;
     }, 1000);
     this.chart = this.$echarts.init(
-      document.getElementById('barChart7'),
+      document.getElementById('barchart7'),
       "chalk"
     );
     this.chart.on("click", (e) => {
-      console.log('点击barChart7');
+      console.log('点击barchart7');
     });
     setTimeout(() => {
       this.barData3 = {
