@@ -88,8 +88,8 @@ export default {
       })
       return _chart;
     },
-    updateChart(chartData) {
-      const { ydata, xdata, barTitle, tooltip, grid, axisLabel, colors } = chartData;
+    updateChart(chartDataValue) {
+      const { ydata, xdata, barTitle, tooltip, grid, axisLabel, colors } = chartDataValue;
       const colorItems = colors || [{
         itemStyle: {}
       }, {

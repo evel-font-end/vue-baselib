@@ -95,13 +95,13 @@ export default {
       this.chart = _chart;
       return _chart
     },
-    updateChart(source) {
+    updateChart(sourceValue) {
       const that = this;
       const value = 30;
       const option = {
         backgroundColor: 'transparent',
         title: {
-          text: this.echartOptions.text ? this.echartOptions.text : sum(source.map(sourceItem => sourceItem.value)),
+          text: this.echartOptions.text ? this.echartOptions.text : sum(sourceValue.map(sourceItem => sourceItem.value)),
           textStyle: this.echartOptions.textStyle,
           subtext: this.echartOptions.subtext,
           subtextStyle: this.echartOptions.subtextStyle,
@@ -115,7 +115,7 @@ export default {
           ...this.echartOptions.tooltip
         },
         legend: {
-          data: source.map(sourceItem => sourceItem.name),
+          data: sourceValue.map(sourceItem => sourceItem.name),
           itemHeight: 10,
           itemWidth: 10,
           icon: 'roundRect',
@@ -353,7 +353,7 @@ export default {
             clockWise: false,
             center: ['50%', '50%'],
             radius: ['50%', '60%'],
-            data: source,
+            data: sourceValue,
             startAngle: -45,
             hoverAnimation: false,
             labelLine: {

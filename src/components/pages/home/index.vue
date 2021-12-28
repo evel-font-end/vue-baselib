@@ -31,6 +31,7 @@
           <span>{{ getActiveName }}</span>
         </div>
         <Content class="main-cont">
+           <!-- <BarChart7 :chartId="'barchart7'" ref="barchart7" :chartData="barData2" /> -->
           <router-view />
         </Content>
       </Layout>
@@ -64,7 +65,24 @@ export default {
     return {
       note,
       menus: [],
-      isCollapsed: false
+      isCollapsed: false,
+      barData2: {
+        barTitle: ["指标一", "指标二"],
+        xdata: ["北京", "天津", "上海", "重庆", "河北", "湖北", "山西", "辽宁"],
+        ydata: [
+          [124, 214, 253, 344, 125, 316, 417, 538],
+          [141, 142, 453, 544, 575, 136, 247, 548]
+        ],
+        tooltip: {
+          show: true,
+          formatter: (parames) => {
+            return 'tooltip'
+          }
+        },
+        grid: {
+          top: '10%',
+        }
+      },
     };
   },
   computed: {
