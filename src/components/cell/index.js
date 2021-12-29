@@ -103,7 +103,7 @@ const install = function (Vue) {
 // 判断是否是直接引入文件
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
-} else {
+} else if (typeof window === 'undefined') { // 判断不是windows环境情况下引用Vue
   install(Vue)
 }
 
