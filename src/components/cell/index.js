@@ -43,7 +43,7 @@ const fetchMock = url => {
 
 
 // 导入组件
-// import Bar from './bar'
+import Bar from './bar'
 import RadarMap from './radarMap'
 import Board from './board'
 import OpRings from './opRings'
@@ -64,6 +64,7 @@ import line from './line'
 
 // 组件列表
 const components = [
+  ...Bar.components,
   ...RadarMap.components,
   ...Board.components,
   ...OpRings.components,

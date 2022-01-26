@@ -3,7 +3,6 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path')
-
 module.exports = {
   dev: {
 
@@ -64,9 +63,9 @@ module.exports = {
     index: path.resolve(__dirname, '../dist/index.html'),
 
     // Paths
-    assetsRoot: path.resolve(__dirname, '../dist'),
+    assetsRoot: (process.env.BUILD_ENV !== 'devBuild') ? path.resolve(__dirname, '../dist') : path.resolve(__dirname, '../devDist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/vue-baselib/dist/',
+    assetsPublicPath: (process.env.BUILD_ENV !== 'devBuild') ? '/vue-baselib/dist/' : './',
 
     /**
      * Source Maps

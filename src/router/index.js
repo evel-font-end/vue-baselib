@@ -1,7 +1,7 @@
 import Vue from 'vue'
-// import Router from 'vue-router'
+import Router from 'vue-router'
 import store from '@/store/index';
-Vue.use(VueRouter)
+Vue.use(Router)
 export const children = [{
   path: '/mapcharts',
   name: 'mapcharts',
@@ -190,7 +190,7 @@ export const children = [{
   component: res => require(['@/components/pages/pagination'], res),
 },
 ]
-const router = new VueRouter({
+const router = new Router({
   // mode: 'history',
   routes: [
     {

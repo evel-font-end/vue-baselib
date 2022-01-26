@@ -9,7 +9,8 @@
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
-    "build": "node build/build.js",
+    "build": "cross-env BUILD_ENV=production && node build/build.js",
+    "build:devBuild": "cross-env BUILD_ENV=devBuild && node build/build.js",
     "build:vue-baselib": "node build/publish.js"
   },
   "dependencies": {
@@ -49,6 +50,7 @@
     "chalk": "^2.0.1",
     "compression-webpack-plugin": "^1.1.11",
     "copy-webpack-plugin": "^4.0.1",
+    "cross-env": "^7.0.3",
     "css-loader": "^0.28.11",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^10.2.1",
